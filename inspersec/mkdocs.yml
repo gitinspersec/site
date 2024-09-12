@@ -1,0 +1,30 @@
+site_name: "inspersec"
+
+theme:
+  name: 'material'
+  languge: 'pt-br'
+  palette:
+
+    # Alternância para o modo claro
+    - scheme: default
+      toggle:
+        icon: material/brightness-7  # Ícone do modo claro
+        name: Switch to dark mode     # Nome do toggle para o modo escuro
+
+    # Alternância para o modo escuro
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4  # Ícone do modo escuro
+        name: Switch to light mode    # Nome do toggle para o modo claro
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Instalando o Kali WSL: Instalação/kaliWindows.md
+  - Aulas:
+    - Aula 1:
+          - Linux Básico: aulas/aula1/basicLinux.md
+          - Nmap: aulas/aula1/nmap.md
+
+
