@@ -466,30 +466,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scripts do Nmap:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scrpit-htmlheader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scrpit html.header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#script-htmltitle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Script html.title
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -651,30 +627,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scripts do Nmap:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scrpit-htmlheader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scrpit html.header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#script-htmltitle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Script html.title
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -785,16 +737,9 @@
 <li><strong>--script:</strong> Executa scripts NSE (Nmap Scripting Engine).</li>
 </ul>
 <h2 id="scripts-do-nmap">Scripts do Nmap:</h2>
-<p>O Nmap tem suporte a NSE (Nmap Scripting Engine), que permite executar scripts personalizados para ampliar as funcionalidades da ferramenta. Dois desses scripts são html.header e html.title, que analisam servidores web e retornam informações sobre o conteúdo HTML.</p>
-<h3 id="scrpit-htmlheader">Scrpit html.header</h3>
-<p>O script html.header retorna os cabeçalhos HTTP de uma página. Esses cabeçalhos contêm metadados sobre a página web e são enviados pelo servidor junto com o conteúdo da página.</p>
-<p>Para usar o script html.header, execute o seguinte comando:</p>
-<pre><code class="language-bash">nmap --script http-headers [alvo]
-</code></pre>
-<h3 id="script-htmltitle">Script html.title</h3>
-<p>O script html.title retorna o título de uma página HTML. O título é uma tag HTML que define o título da página, exibido na aba do navegador.</p>
-<p>Para usar o script html.title, execute o seguinte comando:</p>
-<pre><code class="language-bash">nmap --script http-title [alvo]
+<p>O Nmap tem suporte a NSE (Nmap Scripting Engine), que permite executar scripts personalizados para ampliar as funcionalidades da ferramenta.
+para executar um script, use a opção <code>--script</code> seguida do nome do script. Por exemplo:</p>
+<pre><code class="language-bash">nmap --script [nome do script] [alvo]
 </code></pre>
 <h2 id="exemplos-de-uso">Exemplos de Uso</h2>
 <h3 id="exemplo-1-scan-basico-de-um-alvo">Exemplo 1: Scan basico de um alvo</h3>
