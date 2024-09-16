@@ -26,5 +26,7 @@ nav:
     - Aula 1:
           - Linux Básico: aulas/aula1/basicLinux.md
           - Nmap: aulas/aula1/nmap.md
+    - Virus:
+          - Aula 1: aulas/aulaVirus/aula1.md
 
 
