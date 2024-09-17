@@ -23,10 +23,11 @@ nav:
   - Home: index.md
   - Instalando o Kali WSL: Instalação/kaliWindows.md
   - Aulas:
-    - Aula 1:
-          - Linux Básico: aulas/aula1/basicLinux.md
-          - Nmap: aulas/aula1/nmap.md
+    - Pentest:
+      - Aula 1:
+          - Linux Básico: aulas/pentest/aula1/basicLinux.md
+          - Nmap: aulas/pentest/aula1/nmap.md
     - Virus:
-          - Aula 1: aulas/aulaVirus/aula1.md
+          - Aula 1: aulas/Virus/aula1/aula1.md
 
 

