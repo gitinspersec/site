@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../nmap/">
+        <link rel="prev" href="../gophish/">
       
       
-        <link rel="next" href="../../aula2/burpSuite/">
+        <link rel="next" href="../zphisher/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Nikto - inspersec</title>
+        <title>Sherlock - inspersec</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nikto" class="md-skip">
+        <a href="#sherlock-ferramenta-para-identificar-nomes-de-usuario-em-redes-sociais" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nikto
+              Sherlock
             
           </span>
         </div>
@@ -301,19 +301,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -327,7 +325,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Pentest
@@ -338,19 +336,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
@@ -364,7 +360,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1_1">
             <span class="md-nav__icon md-icon"></span>
             Aula 1
@@ -378,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basicLinux/" class="md-nav__link">
+      <a href="../../../pentest/aula1/basicLinux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -399,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nmap/" class="md-nav__link">
+      <a href="../../../pentest/aula1/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,30 +413,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Nikto
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../pentest/aula1/nikto/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -449,161 +425,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#o-que-e-a-ferramenta-nikto" class="md-nav__link">
-    <span class="md-ellipsis">
-      O que é a ferramenta Nikto?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacao-no-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalação no Ubuntu
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalação no Ubuntu">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#atualize-a-lista-de-pacotes-do-sistema" class="md-nav__link">
-    <span class="md-ellipsis">
-      Atualize a lista de pacotes do sistema:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#instale-a-ferramenta-nikto-utilizando-o-apt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instale a ferramenta Nikto utilizando o apt:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uso-e-parametros" class="md-nav__link">
-    <span class="md-ellipsis">
-      Uso e Parâmetros
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Uso e Parâmetros">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#comando-basico" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comando Básico
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametros-importantes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parâmetros Importantes
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplos de Uso
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exemplos de Uso">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#varredura-padrao-em-um-site" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura padrão em um site:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-com-saida-para-um-arquivo-de-relatorio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura com saída para um arquivo de relatório:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-em-um-site-forcando-o-uso-de-ssl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura em um site forçando o uso de SSL:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-especificando-uma-porta-personalizada-por-exemplo-8080" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura especificando uma porta personalizada (por exemplo, 8080):
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-com-tempo-limite-ajustado-para-10-segundos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura com tempo limite ajustado para 10 segundos:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -659,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula2/burpSuite/" class="md-nav__link">
+      <a href="../../../pentest/aula2/burpSuite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula2/criptografia/" class="md-nav__link">
+      <a href="../../../pentest/aula2/criptografia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -778,17 +599,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -802,7 +625,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Módulos Suplementares
@@ -813,17 +636,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
@@ -837,7 +662,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3_1">
             <span class="md-nav__icon md-icon"></span>
             Engenharia Social
@@ -851,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../complementos/engenharia_social/sobre/" class="md-nav__link">
+      <a href="../sobre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -872,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../complementos/engenharia_social/setoolkit/" class="md-nav__link">
+      <a href="../setoolkit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -893,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../complementos/engenharia_social/gophish/" class="md-nav__link">
+      <a href="../gophish/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -911,10 +736,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../complementos/engenharia_social/sherlock/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sherlock
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -923,6 +768,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivos-da-aula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos da Aula
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-o-sherlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é o Sherlock?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacao-do-sherlock-usando-o-pipx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalação do Sherlock Usando o pipx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalação do Sherlock Usando o pipx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instalar-o-pipx" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Instalar o pipx
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-instalar-o-sherlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Instalar o Sherlock
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-usar-o-sherlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como Usar o Sherlock?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Usar o Sherlock?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametros-mais-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parâmetros Mais Comuns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -935,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../complementos/engenharia_social/zphisher/" class="md-nav__link">
+      <a href="../zphisher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -999,37 +966,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#o-que-e-a-ferramenta-nikto" class="md-nav__link">
+  <a href="#introducao" class="md-nav__link">
     <span class="md-ellipsis">
-      O que é a ferramenta Nikto?
+      Introdução
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacao-no-ubuntu" class="md-nav__link">
+  <a href="#objetivos-da-aula" class="md-nav__link">
     <span class="md-ellipsis">
-      Instalação no Ubuntu
+      Objetivos da Aula
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Instalação no Ubuntu">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-o-sherlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é o Sherlock?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacao-do-sherlock-usando-o-pipx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalação do Sherlock Usando o pipx
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalação do Sherlock Usando o pipx">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#atualize-a-lista-de-pacotes-do-sistema" class="md-nav__link">
+  <a href="#1-instalar-o-pipx" class="md-nav__link">
     <span class="md-ellipsis">
-      Atualize a lista de pacotes do sistema:
+      1. Instalar o pipx
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#instale-a-ferramenta-nikto-utilizando-o-apt" class="md-nav__link">
+  <a href="#2-instalar-o-sherlock" class="md-nav__link">
     <span class="md-ellipsis">
-      Instale a ferramenta Nikto utilizando o apt:
+      2. Instalar o Sherlock
     </span>
   </a>
   
@@ -1041,28 +1026,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uso-e-parametros" class="md-nav__link">
+  <a href="#como-usar-o-sherlock" class="md-nav__link">
     <span class="md-ellipsis">
-      Uso e Parâmetros
+      Como Usar o Sherlock?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Uso e Parâmetros">
+    <nav class="md-nav" aria-label="Como Usar o Sherlock?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#comando-basico" class="md-nav__link">
+  <a href="#exemplo-de-uso" class="md-nav__link">
     <span class="md-ellipsis">
-      Comando Básico
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametros-importantes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parâmetros Importantes
+      Exemplo de Uso
     </span>
   </a>
   
@@ -1074,62 +1050,20 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemplos-de-uso" class="md-nav__link">
+  <a href="#parametros-mais-comuns" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplos de Uso
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exemplos de Uso">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#varredura-padrao-em-um-site" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura padrão em um site:
+      Parâmetros Mais Comuns
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-com-saida-para-um-arquivo-de-relatorio" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
     <span class="md-ellipsis">
-      Varredura com saída para um arquivo de relatório:
+      Conclusão
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-em-um-site-forcando-o-uso-de-ssl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura em um site forçando o uso de SSL:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-especificando-uma-porta-personalizada-por-exemplo-8080" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura especificando uma porta personalizada (por exemplo, 8080):
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#varredura-com-tempo-limite-ajustado-para-10-segundos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Varredura com tempo limite ajustado para 10 segundos:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1148,55 +1082,78 @@
                   
 
 
-<h1 id="nikto">Nikto</h1>
-<h2 id="o-que-e-a-ferramenta-nikto">O que é a ferramenta Nikto?</h2>
-<p>Nikto é um scanner de vulnerabilidades de servidores web que verifica a presença de falhas de segurança conhecidas, configurações incorretas e potenciais exposições de arquivos. Ele é amplamente utilizado por profissionais de segurança e administradores de sistemas para identificar problemas em websites e garantir a integridade e segurança dos servidores.</p>
-<p>Nikto é uma ferramenta de código aberto e tem a capacidade de realizar varreduras em servidores web rapidamente, destacando:</p>
+<h1 id="sherlock-ferramenta-para-identificar-nomes-de-usuario-em-redes-sociais">Sherlock - Ferramenta para Identificar Nomes de Usuário em Redes Sociais</h1>
+<h2 id="introducao">Introdução</h2>
+<p>A ferramenta <strong>Sherlock</strong> é amplamente utilizada para a pesquisa e descoberta de nomes de usuários em diversas plataformas online. Essa ferramenta permite que você insira um nome de usuário e obtenha resultados em várias redes sociais, verificando se o nome está disponível ou sendo utilizado em diversas plataformas ao mesmo tempo.</p>
+<p>Nesta aula, vamos aprender como instalar o Sherlock utilizando o <strong>pipx</strong>, além de explorar os principais parâmetros e como utilizar a ferramenta para realizar buscas eficientes.</p>
+<hr />
+<h2 id="objetivos-da-aula">Objetivos da Aula</h2>
 <ul>
-<li>Arquivos e diretórios inseguros ou expostos.</li>
-<li>Vulnerabilidades conhecidas em softwares de servidores web.</li>
-<li>Certificados SSL/TLS mal configurados.</li>
-<li>Ferramentas ou bibliotecas obsoletas com falhas de segurança.</li>
+<li>Entender o que é o Sherlock e para que serve.</li>
+<li>Aprender a instalar o Sherlock utilizando o <strong>pipx</strong>.</li>
+<li>Conhecer os parâmetros mais úteis e suas funcionalidades.</li>
+<li>Executar pesquisas de nomes de usuário em múltiplas plataformas.</li>
 </ul>
-<h2 id="instalacao-no-ubuntu">Instalação no Ubuntu</h2>
-<p>Para instalar o Nikto no Ubuntu, siga os passos abaixo:</p>
-<h3 id="atualize-a-lista-de-pacotes-do-sistema">Atualize a lista de pacotes do sistema:</h3>
-<pre><code class="language-bash">sudo apt update
-</code></pre>
-<h3 id="instale-a-ferramenta-nikto-utilizando-o-apt">Instale a ferramenta Nikto utilizando o apt:</h3>
-<pre><code class="language-bash">sudo apt install nikto
-</code></pre>
-<h2 id="uso-e-parametros">Uso e Parâmetros</h2>
-<p>Uma vez instalado, você pode utilizar o Nikto para varrer um servidor web em busca de vulnerabilidades.</p>
-<h3 id="comando-basico">Comando Básico</h3>
-<p>Para realizar uma varredura básica em um site, utilize o comando:</p>
-<pre><code class="language-bash">nikto -h http://www.exemplo.com
-</code></pre>
-<h3 id="parametros-importantes">Parâmetros Importantes</h3>
+<hr />
+<h2 id="o-que-e-o-sherlock">O que é o Sherlock?</h2>
+<p><strong>Sherlock</strong> é uma ferramenta de código aberto que busca por nomes de usuário em diferentes sites de redes sociais. Isso é útil para:</p>
 <ul>
-<li><code>-h &lt;host&gt;</code>: Define o alvo (domínio ou IP) para a varredura.</li>
-<li><code>-o &lt;arquivo&gt;</code>: Define um arquivo de saída para salvar o relatório da varredura.</li>
-<li><code>-ssl</code>: Força o uso de SSL, mesmo que a URL especificada seja HTTP.</li>
-<li><code>-port &lt;número&gt;</code>: Especifica uma porta diferente para a varredura.</li>
-<li><code>-timeout &lt;segundos&gt;</code>: Define o tempo limite de espera para respostas do servidor.</li>
+<li>Verificar se um nome de usuário está disponível em várias plataformas.</li>
+<li>Realizar pesquisas de segurança ou de investigações digitais para identificar o uso de um nome em diferentes contextos.</li>
 </ul>
-<h2 id="exemplos-de-uso">Exemplos de Uso</h2>
-<p>Aqui estão alguns exemplos práticos de como utilizar o Nikto em diferentes cenários:</p>
-<h3 id="varredura-padrao-em-um-site">Varredura padrão em um site:</h3>
-<pre><code class="language-bash">nikto -h http://www.meusite.com
+<p>Sherlock foi desenvolvido para ser rápido e eficiente, verificando uma grande variedade de plataformas e apresentando os resultados em uma única interface.</p>
+<hr />
+<h2 id="instalacao-do-sherlock-usando-o-pipx">Instalação do Sherlock Usando o pipx</h2>
+<p>Para instalar o Sherlock com o <strong>pipx</strong>, siga os passos abaixo:</p>
+<h3 id="1-instalar-o-pipx">1. Instalar o pipx</h3>
+<p>O <strong>pipx</strong> é uma ferramenta que permite a instalação de aplicativos Python em ambientes virtuais isolados, garantindo que as dependências não afetem outras partes do sistema. Para instalar o pipx:</p>
+<pre><code class="language-bash">python3 -m pip install --user pipx
+python3 -m pipx ensurepath
 </code></pre>
-<h3 id="varredura-com-saida-para-um-arquivo-de-relatorio">Varredura com saída para um arquivo de relatório:</h3>
-<pre><code class="language-bash">nikto -h http://www.meusite.com -o relatorio.txt
+<h3 id="2-instalar-o-sherlock">2. Instalar o Sherlock</h3>
+<p>Agora, com o pipx instalado, você pode instalar o Sherlock diretamente executando o comando:</p>
+<pre><code class="language-bash">pipx install sherlock-project
 </code></pre>
-<h3 id="varredura-em-um-site-forcando-o-uso-de-ssl">Varredura em um site forçando o uso de SSL:</h3>
-<pre><code class="language-bash">nikto -h http://www.siteinseguro.com -ssl
+<p>Este comando instalará o Sherlock e o tornará disponível para uso em seu terminal.</p>
+<hr />
+<h2 id="como-usar-o-sherlock">Como Usar o Sherlock?</h2>
+<p>Após instalar, você pode começar a usar o <strong>Sherlock</strong> para buscar nomes de usuário. O uso básico da ferramenta segue o seguinte formato:</p>
+<pre><code class="language-bash">sherlock &lt;nome_de_usuario&gt;
 </code></pre>
-<h3 id="varredura-especificando-uma-porta-personalizada-por-exemplo-8080">Varredura especificando uma porta personalizada (por exemplo, 8080):</h3>
-<pre><code class="language-bash">nikto -h http://www.meusite.com -p 8080
+<p>Por exemplo, para buscar o nome de usuário <code>exemplo_user</code> em várias plataformas, você executaria:</p>
+<pre><code class="language-bash">sherlock exemplo_user
 </code></pre>
-<h3 id="varredura-com-tempo-limite-ajustado-para-10-segundos">Varredura com tempo limite ajustado para 10 segundos:</h3>
-<pre><code class="language-bash">nikto -h http://www.meusite.com -timeout 10
+<h3 id="exemplo-de-uso">Exemplo de Uso</h3>
+<pre><code class="language-bash">sherlock exemplo_user
 </code></pre>
+<p>Isso fará com que o Sherlock procure o nome <code>exemplo_user</code> em várias redes sociais e sites, retornando links onde o nome está em uso ou indicando que o nome está disponível.</p>
+<hr />
+<h2 id="parametros-mais-comuns">Parâmetros Mais Comuns</h2>
+<p>Além do uso básico, o Sherlock oferece alguns parâmetros que podem ser úteis para diferentes finalidades:</p>
+<ul>
+<li><strong>--timeout</strong>: Define o tempo limite (em segundos) para cada site.</li>
+</ul>
+<p><code>bash
+  sherlock exemplo_user --timeout 10</code></p>
+<ul>
+<li><strong>--proxy</strong>: Usa um proxy para fazer as buscas.</li>
+</ul>
+<p><code>bash
+  sherlock exemplo_user --proxy http://127.0.0.1:8080</code></p>
+<ul>
+<li><strong>--json</strong>: Exporta os resultados para um arquivo JSON.</li>
+</ul>
+<p><code>bash
+  sherlock exemplo_user --json resultados.json</code></p>
+<ul>
+<li><strong>--site</strong>: Limita a busca para uma lista específica de sites.</li>
+</ul>
+<p><code>bash
+  sherlock exemplo_user --site twitter facebook</code></p>
+<hr />
+<h2 id="conclusao">Conclusão</h2>
+<p>O <strong>Sherlock</strong> é uma ferramenta poderosa para investigar a presença de nomes de usuário em diferentes plataformas, sendo muito útil em investigações de segurança e na verificação de disponibilidade de nomes. Ao aprender a instalar e utilizar a ferramenta corretamente, você estará preparado para realizar buscas detalhadas e eficazes.</p>
+<hr />
 
 
 
