@@ -34,8 +34,11 @@ nav:
           - Burp Suite: aulas/pentest/aula2/burpSuite.md
           - Criptografia: aulas/pentest/aula2/criptografia.md
     - Virus:
-      - Virus Basico: aulas/Virus/aula1.md
-      - RAT: aulas/Virus/aula2.md
+      - Virus Basico: aulas/Virus/Aula1/aula1.md
+      - RAT: 
+          - Criando um Bot: aulas/Virus/Rat/discordbot.md
+          - Criando um RAT : aulas/Virus/Rat/rat.md
+
 
 markdown_extensions:
   - pymdownx.highlight:
