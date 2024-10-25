@@ -31,6 +31,7 @@ nav:
           - Burp Suite: aulas/pentest/aula2/burpSuite.md
           - Criptografia: aulas/pentest/aula2/criptografia.md
     - Virus:
-          - Aula 1: aulas/Virus/aula1/aula1.md
+          - Virus Basico: aulas/Virus/aula1.md
+          - RAT: aulas/Virus/aula2.md
 
 
