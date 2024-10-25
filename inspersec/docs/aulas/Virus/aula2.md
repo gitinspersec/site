@@ -30,7 +30,7 @@ Caso você ainda não tenha uma conta no Discord, crie uma em [discord.com](http
 
 ## Criando o nosso RAT
 
-Para facilitar, já existe um repositório no GitHub com o código do RAT pronto. Se você deseja conferir o código do "RAT do Maraba", acesse [este link](https://github.com/gitinspersec/rat)
+Para facilitar, já existe um repositório no GitHub com o código do RAT pronto. Se você deseja conferir o código do "RAT do Maraba", acesse [este link](https://github.com/gitinspersec/RAT-inspersec)
 
 > **Palavras do Maraba:** "Eu me empolguei um pouco neste RAT, ele tem mais de 40 comandos que podem ser executados remotamente."
 
