@@ -2,9 +2,8 @@ site_name: "inspersec"
 
 theme:
   name: 'material'
-  languge: 'pt-br'
+  language: 'pt-br'  # Corrigido de 'languge' para 'language'
   palette:
-
     # Alternância para o modo claro
     - scheme: default
       toggle:
@@ -16,8 +15,12 @@ theme:
       toggle:
         icon: material/brightness-4  # Ícone do modo escuro
         name: Switch to light mode    # Nome do toggle para o modo claro
+
+  features:
+    - content.code.copy  # Adiciona a funcionalidade de copiar código
+
 plugins:
-  - search
+  - search  # Habilita a busca no site
 
 nav:
   - Home: index.md
@@ -31,7 +34,15 @@ nav:
           - Burp Suite: aulas/pentest/aula2/burpSuite.md
           - Criptografia: aulas/pentest/aula2/criptografia.md
     - Virus:
-          - Virus Basico: aulas/Virus/aula1.md
-          - RAT: aulas/Virus/aula2.md
+      - Virus Basico: aulas/Virus/aula1.md
+      - RAT: aulas/Virus/aula2.md
 
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true  # Adiciona links nos números das linhas
+      line_spans: __span     # Adiciona span em cada linha do código
+      pygments_lang_class: true  # Identifica a linguagem do código para o tema Pygments
+  - pymdownx.inlinehilite  # Realce de sintaxe para código inline
+  - pymdownx.snippets      # Permite embutir conteúdo de outros arquivos
+  - pymdownx.superfences    # Suporte avançado para blocos de código e aninhamento
 
