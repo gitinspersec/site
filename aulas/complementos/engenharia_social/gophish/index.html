@@ -1,0 +1,1706 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sobre/">
+      
+      
+        <link rel="next" href="../setoolkit/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>GoPhish - inspersec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gophish" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            inspersec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GoPhish
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    inspersec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalando o Kali WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aulas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aulas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pentest
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Pentest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aula 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Aula 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pentest/aula1/basicLinux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux Básico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pentest/aula1/nmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aula 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Aula 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pentest/aula2/burpSuite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Burp Suite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pentest/aula2/criptografia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criptografia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Virus
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Virus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virus/Aula1/aula1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virus Basico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RAT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            RAT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virus/Rat/discordbot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criando um Bot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virus/Rat/rat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criando um RAT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Complementos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Complementos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Engenharia Social
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Engenharia Social
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sobre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GoPhish
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    GoPhish
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é o GoPhish?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-utilizar-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que Utilizar o GoPhish?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalando-o-gophish-no-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalando o GoPhish no Ubuntu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalando o GoPhish no Ubuntu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-baixar-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 1: Baixar o GoPhish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-extrair-o-arquivo-baixado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 2: Extrair o Arquivo Baixado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-executar-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 3: Executar o GoPhish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-4-acessar-o-painel-de-administracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 4: Acessar o Painel de Administração
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando o GoPhish
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando o GoPhish">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configurar-o-perfil-de-envio-sending-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Configurar o Perfil de Envio (Sending Profile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-criar-modelos-de-e-mail-email-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Criar Modelos de E-mail (Email Templates)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-criar-paginas-de-phishing-landing-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Criar Páginas de Phishing (Landing Pages)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-criar-grupos-de-usuarios-users-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Criar Grupos de Usuários (Users &amp; Groups)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-criar-e-lancar-a-campanha" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Criar e Lançar a Campanha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitorando-e-analisando-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitorando e Analisando Resultados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-e-consideracoes-eticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boas Práticas e Considerações Éticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas e Considerações Éticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uso-responsavel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso Responsável
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conformidade-legal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conformidade Legal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-e-treinamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback e Treinamento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicas-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas Adicionais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dicas Adicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguranca-do-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segurança do GoPhish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infraestrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infraestrutura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melhores-praticas-em-campanhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Melhores Práticas em Campanhas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anexos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setoolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setoolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sherlock/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sherlock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zphisher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zphisher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é o GoPhish?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-utilizar-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que Utilizar o GoPhish?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalando-o-gophish-no-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalando o GoPhish no Ubuntu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalando o GoPhish no Ubuntu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-baixar-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 1: Baixar o GoPhish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-extrair-o-arquivo-baixado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 2: Extrair o Arquivo Baixado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-executar-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 3: Executar o GoPhish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-4-acessar-o-painel-de-administracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 4: Acessar o Painel de Administração
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurando-o-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando o GoPhish
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando o GoPhish">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configurar-o-perfil-de-envio-sending-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Configurar o Perfil de Envio (Sending Profile)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-criar-modelos-de-e-mail-email-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Criar Modelos de E-mail (Email Templates)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-criar-paginas-de-phishing-landing-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Criar Páginas de Phishing (Landing Pages)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-criar-grupos-de-usuarios-users-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Criar Grupos de Usuários (Users &amp; Groups)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-criar-e-lancar-a-campanha" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Criar e Lançar a Campanha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitorando-e-analisando-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitorando e Analisando Resultados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boas-praticas-e-consideracoes-eticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boas Práticas e Considerações Éticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boas Práticas e Considerações Éticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uso-responsavel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso Responsável
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conformidade-legal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conformidade Legal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedback-e-treinamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback e Treinamento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dicas-adicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dicas Adicionais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dicas Adicionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguranca-do-gophish" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segurança do GoPhish
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infraestrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infraestrutura
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melhores-praticas-em-campanhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Melhores Práticas em Campanhas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anexos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="gophish">GoPhish</h1>
+<hr />
+<p>Nesta sessão, exploraremos em detalhes o que é o GoPhish, como instalá-lo e utilizá-lo para criar campanhas de phishing simuladas, com o objetivo de fortalecer a segurança cibernética e a conscientização dentro de uma organização.</p>
+<hr />
+<h2 id="o-que-e-o-gophish">O que é o GoPhish?</h2>
+<p>O <strong>GoPhish</strong> é uma ferramenta de código aberto projetada para ajudar organizações a realizarem campanhas de phishing simuladas. Ele permite que profissionais de segurança e treinadores de conscientização criem, lancem e monitorem campanhas de phishing de forma eficiente, ajudando a identificar vulnerabilidades humanas e educar os usuários sobre as melhores práticas de segurança.</p>
+<hr />
+<h2 id="por-que-utilizar-o-gophish">Por que Utilizar o GoPhish?</h2>
+<ul>
+<li><strong>Conscientização de Segurança</strong>: Ajuda a educar funcionários sobre as ameaças de phishing.</li>
+<li><strong>Identificação de Vulnerabilidades</strong>: Revela lacunas no conhecimento e práticas de segurança dos usuários.</li>
+<li><strong>Treinamento Prático</strong>: Fornece experiência realista sem os riscos associados a ataques reais.</li>
+<li><strong>Medição de Resultados</strong>: Oferece métricas e relatórios detalhados para avaliar a eficácia das campanhas.</li>
+</ul>
+<hr />
+<h2 id="instalando-o-gophish-no-ubuntu">Instalando o GoPhish no Ubuntu</h2>
+<p>Vamos aos passos para instalar o GoPhish em um sistema Ubuntu.</p>
+<h3 id="pre-requisitos">Pré-requisitos</h3>
+<ul>
+<li>Sistema operacional <strong>Ubuntu</strong> (ou outra distribuição Linux compatível).</li>
+<li>Acesso ao terminal com prívilégios de administrador.</li>
+<li>Conexão à internet.</li>
+</ul>
+<h3 id="passo-1-baixar-o-gophish">Passo 1: Baixar o GoPhish</h3>
+<p>Acesse o site oficial do GoPhish ou o repositório no GitHub para baixar a versão mais recente.</p>
+<p>No terminal, você pode usar o comando <code>wget</code> para baixar diretamente o pacote. Por exemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget<span class="w"> </span>https://github.com/gophish/gophish/releases/download/v0.11.0/gophish-v0.11.0-linux-64bit.zip
+</span></code></pre></div>
+<blockquote>
+<p><strong>Nota</strong>: Verifique a página de lançamentos do GitHub para confirmar a versão mais recente.</p>
+</blockquote>
+<h3 id="passo-2-extrair-o-arquivo-baixado">Passo 2: Extrair o Arquivo Baixado</h3>
+<p>Descompacte o arquivo <code>.zip</code> que você baixou:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>unzip<span class="w"> </span>gophish-v0.11.0-linux-64bit.zip
+</span></code></pre></div>
+<p>Isso criará uma pasta com os arquivos do GoPhish.</p>
+<h3 id="passo-3-executar-o-gophish">Passo 3: Executar o GoPhish</h3>
+<p>Navegue até o diretório do GoPhish:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>gophish
+</span></code></pre></div>
+<p>Conceda permissão de execução ao arquivo binário (se necessário):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>gophish
+</span></code></pre></div>
+<p>Execute o GoPhish:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./gophish
+</span></code></pre></div>
+<p>Ao iniciar, o GoPhish exibiraá informações no terminal, incluindo:</p>
+<ul>
+<li>A porta em que a interface administrativa está sendo executada (por padrão, <strong>3333</strong>).</li>
+<li>A senha temporária gerada para o usuário <strong>admin</strong>.</li>
+</ul>
+<h3 id="passo-4-acessar-o-painel-de-administracao">Passo 4: Acessar o Painel de Administração</h3>
+<p>Abra seu navegador e acesse:</p>
+<div class="language-arduino highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nl">https</span><span class="p">:</span><span class="c1">//localhost:3333</span>
+</span></code></pre></div>
+<blockquote>
+<p><strong>Nota</strong>: Como o GoPhish utiliza certificados autoassinados, você receberá um aviso de segurança. Prossiga adicionando uma exceção no navegador.</p>
+</blockquote>
+<p>Faça login com as credenciais:</p>
+<ul>
+<li><strong>Usuário</strong>: admin</li>
+<li><strong>Senha</strong>: a senha gerada exibida no terminal.</li>
+</ul>
+<p>Após o primeiro login, é recomendável alterar a senha padrão para garantir a segurança do painel administrativo.</p>
+<hr />
+<h2 id="configurando-o-gophish">Configurando o GoPhish</h2>
+<p>Com o GoPhish em execução, você pode começar a configurar suas campanhas.</p>
+<h3 id="1-configurar-o-perfil-de-envio-sending-profile">1. Configurar o Perfil de Envio (Sending Profile)</h3>
+<p>Para enviar e-mails, você precisa configurar um servidor <strong>SMTP</strong>.</p>
+<ul>
+<li>Navegue até "Sending Profiles" no menu lateral.</li>
+<li>Clique em "New Profile".</li>
+<li>Preencha os campos:</li>
+<li><strong>Name</strong>: Nome descritivo para o perfil.</li>
+<li><strong>From</strong>: Endereço de e-mail que aparecerá como remetente.</li>
+<li><strong>Host</strong>: Endereço do servidor SMTP (por exemplo, <code>smtp.seudominio.com</code>).</li>
+<li><strong>Username</strong> e <strong>Password</strong>: Credenciais de autenticação SMTP.</li>
+<li><strong>Use TLS</strong>: Marque se o servidor SMTP requer TLS.</li>
+<li>Clique em "Save" para salvar o perfil.</li>
+</ul>
+<blockquote>
+<p><strong>Dicas</strong>:
+- Utilize um servidor SMTP que você tenha permissão para usar.
+- Evite utilizar serviços de e-mail que possam bloquear envios suspeitos ou marcar suas mensagens como spam.</p>
+</blockquote>
+<h3 id="2-criar-modelos-de-e-mail-email-templates">2. Criar Modelos de E-mail (Email Templates)</h3>
+<ul>
+<li>Selecione "Email Templates" no menu.</li>
+<li>Clique em "New Template".</li>
+<li>Preencha os campos:</li>
+<li><strong>Name</strong>: Nome do modelo.</li>
+<li><strong>Subject</strong>: Assunto do e-mail.</li>
+<li><strong>HTML</strong>: Corpo do e-mail em formato HTML.</li>
+</ul>
+<p>Você pode utilizar variáveis para personalizar os e-mails: <code>{{.FirstName}}</code>, <code>{{.LastName}}</code>, <code>{{.Email}}</code>, etc.</p>
+<p>Adicione links que direcionem para sua página de phishing (landing page).</p>
+<ul>
+<li>Clique em "Save".</li>
+</ul>
+<p><strong>Exemplo de Corpo de E-mail</strong>:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Olá {{.FirstName}},
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Notamos uma atividade suspeita em sua conta. Por favor, acesse o link abaixo para verificar suas informações:
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{.URL}}&quot;</span><span class="p">&gt;</span>Verificar Conta<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Atenciosamente,
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>Equipe de Segurança
+</span></code></pre></div>
+<h3 id="3-criar-paginas-de-phishing-landing-pages">3. Criar Páginas de Phishing (Landing Pages)</h3>
+<ul>
+<li>Vá para "Landing Pages".</li>
+<li>Clique em "New Page".</li>
+<li>Você pode criar uma página do zero ou clonar uma existente:</li>
+<li>Para clonar, insira a URL na opção "Import Site" e clique em "Import".</li>
+<li>Edite o conteúdo conforme necessário.</li>
+<li>Marque "Capture Submitted Data" para registrar dados inseridos pelos usuários.</li>
+<li>Se quiser redirecionar os usuários após a submissão, insira uma URL em "Redirect to URL".</li>
+<li>Clique em "Save".</li>
+</ul>
+<h3 id="4-criar-grupos-de-usuarios-users-groups">4. Criar Grupos de Usuários (Users &amp; Groups)</h3>
+<ul>
+<li>Selecione "Users &amp; Groups".</li>
+<li>Clique em "New Group".</li>
+<li>Insira o <strong>Name</strong> do grupo.</li>
+<li>Adicione usuários manualmente ou importe de um arquivo CSV com as colunas <code>first_name</code>, <code>last_name</code>, <code>email</code>.</li>
+<li>Clique em "Save".</li>
+</ul>
+<h3 id="5-criar-e-lancar-a-campanha">5. Criar e Lançar a Campanha</h3>
+<ul>
+<li>Acesse "Campaigns".</li>
+<li>Clique em "New Campaign".</li>
+<li>Preencha os detalhes:</li>
+<li><strong>Name</strong>: Nome da campanha.</li>
+<li><strong>Email Template</strong>: Selecione o modelo criado.</li>
+<li><strong>Landing Page</strong>: Escolha a página de phishing.</li>
+<li><strong>Sending Profile</strong>: Selecione o perfil de envio.</li>
+<li><strong>URL</strong>: O domínio ou IP que será usado nos links dos e-mails.</li>
+<li><strong>Launch Date</strong>: Data e hora de início (opcional).</li>
+<li><strong>Groups</strong>: Escolha os grupos de usuários.</li>
+<li>Clique em "Launch Campaign".</li>
+</ul>
+<hr />
+<h2 id="monitorando-e-analisando-resultados">Monitorando e Analisando Resultados</h2>
+<p>Após o lançamento, você pode acompanhar o progresso em tempo real:</p>
+<ul>
+<li><strong>Visão Geral</strong>: Exibe estatísticas gerais como e-mails enviados, abertos, cliques e submissões.</li>
+<li><strong>Detalhes dos Usuários</strong>: Veja ações individuais de cada usuário.</li>
+<li><strong>Relatórios</strong>: Gere relatórios para análise e apresentação.</li>
+</ul>
+<p><strong>Métricas Importantes</strong>:</p>
+<ul>
+<li><strong>Open Rate</strong>: Percentual de usuários que abriram o e-mail.</li>
+<li><strong>Click Rate</strong>: Percentual que clicou no link.</li>
+<li><strong>Submission Rate</strong>: Percentual que submeteu dados na página.</li>
+</ul>
+<p>Utilize essas informações para identificar áreas que necessitam de treinamento adicional.</p>
+<hr />
+<h2 id="boas-praticas-e-consideracoes-eticas">Boas Práticas e Considerações Éticas</h2>
+<h3 id="uso-responsavel">Uso Responsável</h3>
+<ul>
+<li><strong>Consentimento</strong>: Tenha aprovação da gerência e, se possível, informe previamente os funcionários sobre possíveis simulações.</li>
+<li><strong>Privacidade</strong>: Trate os dados coletados com confidencialidade.</li>
+<li><strong>Objetivo Educacional</strong>: Foque em educar e melhorar a segurança, não em penalizar.</li>
+</ul>
+<h3 id="conformidade-legal">Conformidade Legal</h3>
+<ul>
+<li>Esteja ciente das leis locais, como a <strong>LGPD</strong> no Brasil.</li>
+<li>Evite práticas que possam ser consideradas invasivas ou ilegais.</li>
+</ul>
+<h3 id="feedback-e-treinamento">Feedback e Treinamento</h3>
+<ul>
+<li>Forneça feedback construtivo aos participantes.</li>
+<li>Ofereça treinamentos e recursos para ajudar a reconhecer e-mails de phishing.</li>
+</ul>
+<hr />
+<h2 id="dicas-adicionais">Dicas Adicionais</h2>
+<h3 id="seguranca-do-gophish">Segurança do GoPhish</h3>
+<ul>
+<li><strong>Atualizações</strong>: Mantenha o GoPhish atualizado.</li>
+<li><strong>Acesso Seguro</strong>: Proteja o acesso ao painel administrativo.</li>
+<li><strong>Firewall</strong>: Configure regras de firewall para limitar o acesso ao servidor.</li>
+</ul>
+<h3 id="infraestrutura">Infraestrutura</h3>
+<ul>
+<li>Considere utilizar nomes de domínio e certificados SSL válidos para aumentar a credibilidade dos e-mails e páginas.</li>
+<li>Utilize servidores dedicados ou ambientes isolados para evitar conflitos com outros serviços.</li>
+</ul>
+<h3 id="melhores-praticas-em-campanhas">Melhores Práticas em Campanhas</h3>
+<ul>
+<li><strong>Realismo</strong>: Crie cenários realistas, mas evite temas sensíveis ou que possam causar pânico.</li>
+<li><strong>Diversificação</strong>: Varie os tipos de ataques (e.g., anexos maliciosos, links suspeitos) para cobrir diferentes vetores.</li>
+<li><strong>Comunicação Pós-Campanha</strong>: Compartilhe os resultados agregados e destaque pontos de melhoria.</li>
+</ul>
+<hr />
+<h2 id="conclusao">Conclusão</h2>
+<p>O <strong>GoPhish</strong> é uma ferramenta poderosa para fortalecer a segurança cibernética através da conscientização e treinamento. Ao simular ataques de phishing de forma ética e controlada, você pode:</p>
+<ul>
+<li>Educar funcionários sobre as ameaças atuais.</li>
+<li>Reduzir o risco de comprometimento por ataques reais.</li>
+<li>Criar uma cultura de segurança dentro da organização.</li>
+</ul>
+<p>Lembre-se sempre de utilizar o GoPhish de maneira responsável, respeitando as leis, políticas internas e a privacidade dos indivíduos.</p>
+<hr />
+<h2 id="anexos">Anexos</h2>
+<ul>
+<li><a href="https://getgophish.com/">Site Oficial do GoPhish</a></li>
+<li><a href="https://github.com/gophish/gophish">Repositório no GitHub</a></li>
+<li><a href="https://getgophish.com/documentation/">Documentação Oficial</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
