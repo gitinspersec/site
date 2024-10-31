@@ -2,7 +2,7 @@ site_name: "inspersec"
 
 theme:
   name: 'material'
-  language: 'pt-br'  # Corrigido de 'languge' para 'language'
+  language: 'pt-BR'  # Corrigido de 'languge' para 'language'
   palette:
     # Alternância para o modo claro
     - scheme: default
@@ -38,6 +38,14 @@ nav:
       - RAT: 
           - Criando um Bot: aulas/Virus/Rat/discordbot.md
           - Criando um RAT : aulas/Virus/Rat/rat.md
+
+    - Complementos:
+      - Engenharia Social:
+        - Sobre: aulas/complementos/engenharia_social/sobre.md
+        - GoPhish: aulas/complementos/engenharia_social/gophish.md
+        - Setoolkit: aulas/complementos/engenharia_social/setoolkit.md
+        - Sherlock: aulas/complementos/engenharia_social/sherlock.md
+        - Zphisher: aulas/complementos/engenharia_social/zphisher.md
 
 
 markdown_extensions:
