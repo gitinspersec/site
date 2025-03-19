@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../../../Virus/Rat/rat/">
       
       
-        <link rel="next" href="../vpnHaaukins/">
+        <link rel="next" href="../wireshark/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>Instalando o Kali WSL - inspersec</title>
+        <title>Introdução ao Blue Team - inspersec</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#material-necessario" class="md-skip">
+        <a href="#introducao-a-forense-de-rede" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -88,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Instalando o Kali WSL
+              Introdução ao Blue Team
             
           </span>
         </div>
@@ -209,7 +209,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -227,7 +227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -245,19 +245,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -272,7 +270,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Tutorias
@@ -283,29 +281,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Instalando o Kali WSL
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -315,84 +294,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#material-necessario" class="md-nav__link">
-    <span class="md-ellipsis">
-      Material Necessário
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacao-do-kali-linux-no-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalação do Kali Linux no Windows
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalação do Kali Linux no Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#passo-1-habilitar-o-wsl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passo 1: Habilitar o WSL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-2-instalar-o-kali-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passo 2: Instalar o Kali Linux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-3-configuracao-inicial" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passo 3: Configuração Inicial
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalacao-da-interface-grafica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instalação da Interface Gráfica
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -405,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpnHaaukins/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -431,17 +332,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -456,7 +359,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Aulas
@@ -542,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/pentest/aula1/basicLinux/" class="md-nav__link">
+      <a href="../../../pentest/aula1/basicLinux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/pentest/aula1/nmap/" class="md-nav__link">
+      <a href="../../../pentest/aula1/nmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/pentest/aula2/burpSuite/" class="md-nav__link">
+      <a href="../../../pentest/aula2/burpSuite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -652,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/pentest/aula2/criptografia/" class="md-nav__link">
+      <a href="../../../pentest/aula2/criptografia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -726,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/Virus/Aula1/aula1/" class="md-nav__link">
+      <a href="../../../Virus/Aula1/aula1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -784,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/Virus/Rat/discordbot/" class="md-nav__link">
+      <a href="../../../Virus/Rat/discordbot/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -806,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/Virus/Rat/rat/" class="md-nav__link">
+      <a href="../../../Virus/Rat/rat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -841,17 +744,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -866,7 +771,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Blue Team
@@ -877,17 +782,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
@@ -902,7 +809,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3_1">
             <span class="md-nav__icon md-icon"></span>
             Aula 1
@@ -913,10 +820,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../aulas/blueTeam/aula1/intro/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introdução ao Blue Team
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -926,6 +854,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-vamos-aprender" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que vamos aprender:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quando-forense-de-rede-e-usada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quando Forense de Rede é usada?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ferramenta-foco-da-aula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ferramenta foco da aula:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -938,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/blueTeam/aula1/wireshark/" class="md-nav__link">
+      <a href="../wireshark/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1048,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/complementos/engenharia_social/sobre/" class="md-nav__link">
+      <a href="../../../complementos/engenharia_social/sobre/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/complementos/engenharia_social/gophish/" class="md-nav__link">
+      <a href="../../../complementos/engenharia_social/gophish/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1092,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/complementos/engenharia_social/setoolkit/" class="md-nav__link">
+      <a href="../../../complementos/engenharia_social/setoolkit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1114,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/complementos/engenharia_social/sherlock/" class="md-nav__link">
+      <a href="../../../complementos/engenharia_social/sherlock/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1136,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aulas/complementos/engenharia_social/zphisher/" class="md-nav__link">
+      <a href="../../../complementos/engenharia_social/zphisher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,6 +1166,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1199,60 +1176,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#material-necessario" class="md-nav__link">
+  <a href="#o-que-vamos-aprender" class="md-nav__link">
     <span class="md-ellipsis">
-      Material Necessário
+      O que vamos aprender:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacao-do-kali-linux-no-windows" class="md-nav__link">
+  <a href="#quando-forense-de-rede-e-usada" class="md-nav__link">
     <span class="md-ellipsis">
-      Instalação do Kali Linux no Windows
+      Quando Forense de Rede é usada?
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Instalação do Kali Linux no Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#passo-1-habilitar-o-wsl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passo 1: Habilitar o WSL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-2-instalar-o-kali-linux" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passo 2: Instalar o Kali Linux
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-3-configuracao-inicial" class="md-nav__link">
-    <span class="md-ellipsis">
-      Passo 3: Configuração Inicial
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#instalacao-da-interface-grafica" class="md-nav__link">
+  <a href="#ferramenta-foco-da-aula" class="md-nav__link">
     <span class="md-ellipsis">
-      Instalação da Interface Gráfica
+      Ferramenta foco da aula:
     </span>
   </a>
   
@@ -1274,47 +1218,28 @@
 
 
 
-  <h1>Instalando o Kali WSL</h1>
-
-<h3 id="material-necessario">Material Necessário</h3>
-<p>Para os laboratórios práticos, utilizaremos o <strong>Kali Linux</strong>, uma das distribuições mais completas para pentest e segurança. Sabemos que muitos não desejam instalar o Kali em uma máquina virtual ou fazer dual boot, então aqui está uma alternativa que chamamos de <strong>Kali Windows</strong>, que permite rodar o Kali diretamente no <strong>Windows 10</strong> usando o WSL (Windows Subsystem for Linux).</p>
-<p>Caso prefira instalar o Kali Linux em uma máquina virtual ou fazer dual boot, entre em contato com a gestão para obter ajuda, ou vá até a sala 404 do Prédio 1 e procure o Rogério para um suporte mais detalhado.</p>
-<h2 id="instalacao-do-kali-linux-no-windows">Instalação do Kali Linux no Windows</h2>
-<h3 id="passo-1-habilitar-o-wsl">Passo 1: Habilitar o WSL</h3>
-<p>Primeiro, habilite o <strong>Windows Subsystem for Linux (WSL)</strong> no seu Windows. Você pode baixar o WSL diretamente da Microsoft Store clicando no link abaixo:</p>
+<h1 id="introducao-a-forense-de-rede">Introdução à Forense de Rede</h1>
+<p>A Forense Digital de Rede é uma disciplina focada na captura, preservação e análise de tráfego de rede para identificar incidentes de segurança, intrusões ou atividades maliciosas.</p>
+<h2 id="o-que-vamos-aprender">O que vamos aprender:</h2>
 <ul>
-<li><a href="https://apps.microsoft.com/store/detail/windows-subsystem-for-linux/9P9TQF7MRM4R">Baixar WSL</a></li>
+<li>Fundamentos de forense de rede</li>
+<li>Uso do Wireshark para análise de tráfego</li>
+<li>Identificação de evidências em capturas reais</li>
+<li>Resolução de um mini-CTF com um arquivo <code>.pcap</code></li>
 </ul>
-<h3 id="passo-2-instalar-o-kali-linux">Passo 2: Instalar o Kali Linux</h3>
-<p>Após instalar o WSL, você pode proceder com a instalação do <strong>Kali Linux</strong>. Siga o link abaixo para a instalação:</p>
+<hr />
+<h2 id="quando-forense-de-rede-e-usada">Quando Forense de Rede é usada?</h2>
 <ul>
-<li><a href="https://apps.microsoft.com/detail/9pkr34tncv07?hl=en-us&amp;gl=US">Baixar Kali Linux</a></li>
+<li>Investigações de incidentes corporativos</li>
+<li>Resposta a incidentes (IR)</li>
+<li>Detecção de vazamento de dados</li>
+<li>CTFs e desafios de segurança</li>
+<li>Suporte a perícias judiciais</li>
 </ul>
-<h3 id="passo-3-configuracao-inicial">Passo 3: Configuração Inicial</h3>
-<p>Após a instalação, abra o Kali Linux e siga as instruções para configurar seu usuário e senha. </p>
-<blockquote>
-<p><strong>Importante</strong>: Caso encontre algum erro, como "Error: não especificado" ou "Error: (null)", entre em contato com o <strong>presidente da InsperSec</strong> para obter ajuda.</p>
-</blockquote>
-<h2 id="instalacao-da-interface-grafica">Instalação da Interface Gráfica</h2>
-<p>Para muitos testes e atividades, uma interface gráfica é útil. Para instalar a interface gráfica no Kali Linux, siga os passos abaixo:</p>
-<ol>
-<li>
-<p>No terminal do Kali, atualize os pacotes:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</span></code></pre></div>
-</li>
-<li>
-<p>Instale a interface gráfica com o comando:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>kali-win-kex
-</span></code></pre></div>
-</li>
-<li>
-<p>Após a instalação, inicie o Kali Linux com a interface gráfica usando:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kex<span class="w"> </span>--win<span class="w"> </span>-s
-</span></code></pre></div>
-</li>
-</ol>
-<p>E pronto! Agora você tem o <strong>Kali Linux</strong> rodando no <strong>Windows</strong> com uma interface gráfica, ou seja, o <strong>Kali Windows</strong>.</p>
+<h2 id="ferramenta-foco-da-aula">Ferramenta foco da aula:</h2>
+<ul>
+<li><strong>Wireshark</strong></li>
+</ul>
 
 
 
@@ -1361,10 +1286,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>

@@ -42,6 +42,11 @@ nav:
           - Criando um Bot: aulas/Virus/Rat/discordbot.md
           - Criando um RAT : aulas/Virus/Rat/rat.md
 
+    - Blue Team:
+      - Aula 1:
+          - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
+          - Wireshark: aulas/blueTeam/aula1/wireshark.md
+
     - Complementos:
       - Engenharia Social:
         - Sobre: aulas/complementos/engenharia_social/sobre.md
