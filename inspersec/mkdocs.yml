@@ -25,7 +25,8 @@ plugins:
 nav:
   - Home: index.md
 
-  - Tutorias:
+  - Tutoriais:
+    - Cadastro de horas de Atividade Complementar: Instalação/horasComplementar.md
     - Instalando o Kali WSL: Instalação/kaliWindows.md
     - Instalando a VPN do Haaukins: Instalação/vpnHaaukins.md
   - Aulas:
