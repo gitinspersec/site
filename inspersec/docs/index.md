@@ -8,6 +8,8 @@ No Mkdocs do InsperSec, você encontrará a documentação de projetos, atividad
 
 Para começar, você pode navegar pelos tópicos disponíveis no menu lateral. Se você está procurando por algo específico, você pode usar a barra de pesquisa no canto superior direito.
 
+Não se esqueçam de [cadastrar suas horas de Atividade Complementar no sistema.](Instalação/horasComplementar.md)
+
 ## Aviso
 
 Este portal é um repositório oficial da InsperSec. Não é permitido a reprodução ou cópia de qualquer conteúdo sem a autorização da gestão da InsperSec. Tudo aqui é para fins educacionais e de pesquisa.
