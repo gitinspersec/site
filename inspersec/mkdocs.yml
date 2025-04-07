@@ -29,14 +29,23 @@ nav:
     - Cadastro de horas de Atividade Complementar: Instalação/horasComplementar.md
     - Instalando o Kali WSL: Instalação/kaliWindows.md
     - Instalando a VPN do Haaukins: Instalação/vpnHaaukins.md
+
   - Aulas:
-    - Pentest:
+    - Red Team:
       - Aula 1:
           - Linux Básico: aulas/pentest/aula1/basicLinux.md
           - Nmap: aulas/pentest/aula1/nmap.md
       - Aula 2:
           - Burp Suite: aulas/pentest/aula2/burpSuite.md
           - Criptografia: aulas/pentest/aula2/criptografia.md
+      - Aula 3:
+          - Engenharia Social:
+            - Sobre: aulas/complementos/engenharia_social/sobre.md
+            - GoPhish: aulas/complementos/engenharia_social/gophish.md
+            - Setoolkit: aulas/complementos/engenharia_social/setoolkit.md
+            - Sherlock: aulas/complementos/engenharia_social/sherlock.md
+            - Zphisher: aulas/complementos/engenharia_social/zphisher.md
+
     - Virus:
       - Virus Basico: aulas/Virus/Aula1/aula1.md
       - RAT: 
@@ -48,14 +57,9 @@ nav:
           - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
           - Wireshark: aulas/blueTeam/aula1/wireshark.md
 
-    - Complementos:
-      - Engenharia Social:
-        - Sobre: aulas/complementos/engenharia_social/sobre.md
-        - GoPhish: aulas/complementos/engenharia_social/gophish.md
-        - Setoolkit: aulas/complementos/engenharia_social/setoolkit.md
-        - Sherlock: aulas/complementos/engenharia_social/sherlock.md
-        - Zphisher: aulas/complementos/engenharia_social/zphisher.md
-
+  - Entregas:
+    - Projetos:
+      - Projeto 1: entregas/projetos/projeto1.md
 
 markdown_extensions:
   - pymdownx.highlight:
