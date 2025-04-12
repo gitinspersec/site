@@ -52,3 +52,74 @@ Antigamente, ferramentas assim eram caras e fechadas. O Wireshark mudou esse cen
 
 ...
 
+## Funcionamento básico da rede e dos protocolos
+
+...............................
+
+
+## Prática com Wireshark
+
+### Instalação
+
+#### Windows:
+
+- Baixe o instalador no site oficial: https://www.wireshark.org/download.html
+
+-  Durante a instalação, marque a opção de instalar o *WinPcap* ou *Npcap*, que são necessários para capturar pacotes em tempo real.
+
+#### macOS:
+
+- Rode o comando: 
+```bash
+brew install --cask wireshark
+```
+
+- Autorize a captura de pacotes via terminal com permissões especiais.
+
+#### Linux:
+
+- Rode o comando: 
+```bash
+sudo apt update
+sudo apt install wireshark
+```
+- Durante a instalação, o sistema vai perguntar se você quer que usuários não-root possam capturar pacotes - é uma boa prática permitir isso.
+
+#### Permissões
+
+- Para capturar tráfego de rede, o Wireshark precisa de permissão de acesso à interface de rede. Em alguns sistemas, isso exige abrir o Wireshark com permissões elevadas (como sudo no Linux).
+
+- No Linux, após a instalação, pode rodar:
+
+```bash
+sudo usermod -aG wireshark $USER
+```
+
+E depois reiniciar a sessão para conseguir capturar pacotes sem usar ```sudo```.
+
+### Captura de Tráfego HTTP de um Site
+
+Este exemplo demonstra como capturar e analisar o tráfego HTTP gerado ao acessar um site externo. Será utilizado o site [http://neverssl.com](http://neverssl.com), que é mantido especificamente para testes em conexões **não criptografadas** (HTTP).
+
+#### Captura dos pacotes com Wireshark
+
+- Iniciar o Wireshark.
+- Selecionar a interface de rede que está conectada à internet (ex: `wlan0` para Wi-Fi ou `eth0` para cabo).
+- Clicar em **Start Capturing** para iniciar a captura de pacotes.
+- Acessar o endereço `http://neverssl.com` pelo navegador.
+- No Wireshark, aplicar o filtro:
+
+```wireshark
+http
+```
+
+##### O que observar
+
+- A requisição ```GET /``` será exibida, enviada ao domínio neverssl.com.
+ 
+- A resposta do servidor incluirá o conteúdo da página HTML, visível diretamente nos dados do pacote.
+ 
+- No painel de detalhes do pacote, é possível visualizar os campos Host, User-Agent, Connection, Content-Type, entre outros.
+
+- Clicando com o botão direito em um dos pacotes HTTP e selecionando Follow > HTTP Stream, é possível visualizar a conversa completa entre cliente e servidor.
+
