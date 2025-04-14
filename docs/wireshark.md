@@ -54,7 +54,21 @@ Antigamente, ferramentas assim eram caras e fechadas. O Wireshark mudou esse cen
 
 ## Funcionamento básico da rede e dos protocolos
 
-...............................
+### O que são protocolos?
+
+Pense em protocolos como regras de conversação entre dispositivos de rede. Assim como humanos precisam de um idioma comum para se entenderem, computadores usam protocolos como TCP, UDP, HTTP e DNS, para trocarem dados corretamente.
+
+#### Diferença entre TCP e UDP
+
+- TCP (Transmission Control Protocol) é como uma conversa por mensagens com confirmação: você manda um “oi”, espera resposta, e só continua quando tem certeza de que a outra pessoa te entendeu. É confiável, mas mais lento.
+
+- UDP (User Datagram Protocol) é como gritar algo na rua: você manda uma mensagem e torce para que alguém escute — sem garantias de entrega. É rápido, mas não confiável.
+
+#### HTTP e HTTPS
+
+- HTTP (e sua versão segura, HTTPS) é o protocolo de aplicação que usamos para acessar páginas web. Ele funciona sobre TCP, e define como o navegador pede e recebe arquivos (como HTML, CSS, imagens).
+
+- HTTPS usa criptografia TLS para proteger os dados, o que dificulta a interceptação (sniffing) por ferramentas como o Wireshark — mas ainda é possível ver metadados (IP, domínios SNI, tamanho dos pacotes, etc.).
 
 
 ## Prática com Wireshark
