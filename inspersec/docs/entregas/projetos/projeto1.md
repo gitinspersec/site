@@ -1,6 +1,6 @@
-# Projeto 1 - Análise e Relatório de Vulnerabilidades em Websites
+# Projeto 1 A - Análise e Relatório de Vulnerabilidades em Websites
 
-Neste primeiro projeto, cada participante deverá selecionar um site de sua preferência para realizar uma análise detalhada com o objetivo de identificar vulnerabilidades de segurança. Utilizando ferramentas especializadas em análises de vulnerabilidade, o aluno deverá detectar ao menos uma vulnerabilidade existente no website escolhido.
+Neste primeiro projeto, cada dupla deverá selecionar um site de sua preferência para realizar uma análise detalhada com o objetivo de identificar vulnerabilidades de segurança. Utilizando ferramentas especializadas em análises de vulnerabilidade,a dupla deverá detectar ao menos uma vulnerabilidade existente no website escolhido.
 
 ## Introdução à Importância da Identificação de Vulnerabilidades
 
@@ -29,23 +29,29 @@ Para a execução deste projeto, recomenda-se o uso das seguintes ferramentas:
 
 ## Estímulo à Documentação do Processo
 
-Os alunos devem incluir no relatório uma explicação detalhada do processo investigativo que levou à identificação da vulnerabilidade. Isso inclui a descrição das etapas seguidas, decisões tomadas, ferramentas utilizadas, bem como registros visuais como capturas de tela (prints) e logs gerados durante a análise. Essa documentação valoriza o pensamento analítico, demonstra domínio técnico e ajuda a desenvolver a mentalidade de um analista de segurança da informação.
+As duplas devem incluir no relatório uma explicação detalhada do processo investigativo que levou à identificação da vulnerabilidade. Isso inclui a descrição das etapas seguidas, decisões tomadas, ferramentas utilizadas, bem como registros visuais como capturas de tela (prints) e logs gerados durante a análise. Essa documentação valoriza o pensamento analítico, demonstra domínio técnico e ajuda a desenvolver a mentalidade de um analista de segurança da informação.
 
 ## Rubrica de Avaliação
 
-A avaliação do projeto será feita com base nos seguintes critérios:
+- **Identificação clara da vulnerabilidade (25%)**  
+  Avalia a precisão e detalhamento com que a vulnerabilidade foi descrita, demonstrando entendimento aprofundado da falha encontrada.
 
-- Identificação clara da vulnerabilidade (25%)
-- Classificação e análise CVE (25%)
-- Qualidade do relatório PDF (20%)
-- Qualidade da apresentação oral (20%)
-- Uso correto das ferramentas (10%)
+- **Classificação e análise CVE (25%)**  
+  Verifica se houve identificação correta da vulnerabilidade em termos de padrões de classificação (CVE ou equivalente), analisando criticidade, impacto e contexto.
+
+- **Qualidade do relatório PDF (30%)**  
+  Avalia a organização, clareza, objetividade e completude do relatório. Deve incluir documentações detalhadas das etapas, evidências (prints, logs) e sugestões de mitigação.
+
+- **Uso correto das ferramentas (20%)**  
+  Verifica se foram utilizadas as ferramentas adequadas (Nikto, Nmap, OWASP ZAP, entre outras) de forma correta, com demonstração de conhecimento e domínio técnico.
+
 
 ## Entrega
+- **Formato**: A entrega do projeto deve ser feita em formato PDF, com no máximo 10 páginas
+- **Prazo Final de Entrega**:
+  - **Data**: 14/04/2024
+  - **Horário**: 23h59min
+- **Link de Entrega**: [Link de Entrega](https://forms.gle/q2jgQMLVJNgff45VA)
 
-- **Relatório PDF:** Deve conter uma descrição clara e detalhada da vulnerabilidade identificada, a classificação CVE atribuída e sugestões para mitigar ou solucionar a vulnerabilidade.
-- **Apresentação:** Cada participante apresentará suas descobertas para a equipe de gestão da entidade, destacando pontos importantes e respondendo eventuais dúvidas sobre a análise realizada, caso queira fazer uma apresentação com slides será bem-vinda.
 
-### Prazo Final de Entrega
 
-**14/04**
