@@ -1,16 +1,6 @@
 # Wireshark: Análise de Pacotes de Rede
 
-## Uma breve história do Wireshark
-
-O Wireshark surgiu em 1997, quando Gerald Combs precisava de uma ferramenta para solucionar problemas de rede e, ao mesmo tempo, aprender mais sobre o funcionamento de redes. Ele então começou a desenvolver o Ethereal, o nome original do projeto.
-
-O Ethereal foi lançado oficialmente em julho de 1998 e logo ganhou a atenção da comunidade, que passou a enviar correções, melhorias e novos recursos. Com o tempo, diversos colaboradores contribuíram com dissectors, que são responsáveis por interpretar protocolos específicos dentro dos pacotes de rede.
-
-Em 2006, o projeto passou a se chamar Wireshark, e em 2008 foi lançada a versão 1.0, considerada a primeira versão “completa”. A conferência Sharkfest, voltada para desenvolvedores e usuários, também foi criada nesse ano.
-
-A versão 2.0 chegou em 2015 com uma interface totalmente redesenhada. Em 2023, o projeto passou a ser mantido pela Wireshark Foundation, uma organização sem fins lucrativos que apoia o desenvolvimento da ferramenta e promove a educação sobre redes.
-
-## O que é?
+## O que é Wireshark?
 
 O Wireshark é um analisador de pacotes de rede. Ele permite que você "enxergue" o que está passando pela sua rede com um nível de detalhe impressionante — como se fosse um multímetro, mas em vez de medir eletricidade, ele mede e interpreta os dados que trafegam nos cabos de rede.
 
@@ -20,7 +10,7 @@ Antigamente, ferramentas assim eram caras e fechadas. O Wireshark mudou esse cen
 
 - O Wireshark tem diversas aplicações práticas, como:
 
-- Administradores de rede o usam para diagnosticar - problemas de conexão
+- Administradores de rede o usam para diagnosticar problemas de conexão
 
 - Profissionais de segurança analisam falhas e ataques de rede
 
@@ -137,3 +127,32 @@ http
 
 - Clicando com o botão direito em um dos pacotes HTTP e selecionando Follow > HTTP Stream, é possível visualizar a conversa completa entre cliente e servidor.
 
+### Captura de Tráfego UDP (DNS)
+
+O protocolo UDP é usado por diversas aplicações, especialmente quando a velocidade é mais importante que a confiabilidade. Um dos exemplos mais comuns é o DNS (Domain Name System), que geralmente utiliza UDP na porta 53.
+
+#### Captura dos pacotes com Wireshark
+
+- Iniciar o Wireshark.
+- Selecionar a interface de rede conectada à internet.
+- Clicar em **Start Capturing**.
+- No navegador, acessar qualquer site (ex: `https://www.google.com.br/`) para gerar uma consulta DNS.
+- No Wireshark, aplicar o filtro:
+
+```bash
+udp.port == 53
+```
+
+- Observar os pacotes DNS sendo enviados e recebidos.
+
+**Dica** : Para gerar múltiplas consultas DNS, é possível limpar o cache DNS local e acessar novos domínios, como:
+
+#### Linux/macOS:
+```bash
+sudo systemd-resolve --flush-caches
+```
+
+#### Windows (CMD como administrador):
+```bash
+ipconfig /flushdns
+```
