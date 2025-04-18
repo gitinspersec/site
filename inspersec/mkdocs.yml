@@ -61,6 +61,9 @@ nav:
     - Projetos:
       - Projeto 1: entregas/projetos/projeto1.md
 
+  - Ferramentas:
+    - BurpSuite: ferramentas/burp.md
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true  # Adiciona links nos números das linhas
