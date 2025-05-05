@@ -287,3 +287,11 @@ import requests
 import psutil
 import shutil
 ```
+
+E se quiser compilar o rat, use:
+
+```
+pyinstaller --onefile --noconsole rat.py
+```
+
+(Troque `rat.py` pelo nome de seu arquivo se não for o mesmo.)
