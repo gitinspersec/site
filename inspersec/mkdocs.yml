@@ -32,6 +32,8 @@ nav:
     - Criando uma Máquina Virtual (VM): Instalação/vmWindows.md
 
   - Aulas:
+    - Game Hacking:
+      - introdução: aulas/GameHacking/introducao.md
     - Red Team:
       - Aula 1:
           - Linux Básico: aulas/pentest/aula1/basicLinux.md
