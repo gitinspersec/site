@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../intro/">
+        <link rel="prev" href="../../../../Instala%C3%A7%C3%A3o/vmWindows/">
       
       
-        <link rel="next" href="../../../GameHacking/introducao/">
+        <link rel="next" href="../nmap/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Wireshark - inspersec</title>
+        <title>Linux Básico - inspersec</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introducao-ao-wireshark" class="md-skip">
+        <a href="#linux-basico" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Wireshark
+              Linux Básico
             
           </span>
         </div>
@@ -426,18 +426,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -453,7 +455,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Red Team
@@ -464,18 +466,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
@@ -491,7 +495,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1_1">
             <span class="md-nav__icon md-icon"></span>
             Aula 1
@@ -502,10 +506,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../redTeam/aula1/basicLinux/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Linux Básico
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -516,6 +542,335 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é Linux?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é Linux?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-do-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes do Linux:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-sao-distribuicoes-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que são Distribuições Linux?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que são Distribuições Linux?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-existem-tantas-distribuicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que existem tantas distribuições?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizacao-de-arquivos-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organização de Arquivos no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organização de Arquivos no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diretorios-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diretórios Principais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caminho-absoluto-vs-relativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caminho Absoluto vs. Relativo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-basicos-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos Básicos no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos Básicos no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navegacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegação:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulacao-de-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulação de Arquivos:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacoes-do-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informações do Sistema:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes-e-permissoes-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerenciamento de Pacotes e Permissões no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gerenciamento de Pacotes e Permissões no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando sudo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes-com-apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerenciamento de Pacotes com apt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remover-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover Pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando curl
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comando curl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-do-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções do curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxe-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxe Básica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcoes-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opções Comuns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-de-arquivos-com-o-comando-wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download de Arquivos com o Comando wget
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes-com-dpkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerenciamento de Pacotes com dpkg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferencas-entre-apt-e-dpkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diferenças entre apt e dpkg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editores-de-texto-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editores de Texto no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Editores de Texto no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nano
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gedit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um Alias
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -528,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula1/nmap/" class="md-nav__link">
+      <a href="../nmap/" class="md-nav__link">
         
   
   
@@ -597,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula2/burpSuite/" class="md-nav__link">
+      <a href="../../aula2/burpSuite/" class="md-nav__link">
         
   
   
@@ -620,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula2/criptografia/" class="md-nav__link">
+      <a href="../../aula2/criptografia/" class="md-nav__link">
         
   
   
@@ -727,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/sobre/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/sobre/" class="md-nav__link">
         
   
   
@@ -750,7 +1105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/gophish/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/gophish/" class="md-nav__link">
         
   
   
@@ -773,7 +1128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/setoolkit/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/setoolkit/" class="md-nav__link">
         
   
   
@@ -796,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/sherlock/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/sherlock/" class="md-nav__link">
         
   
   
@@ -819,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/zphisher/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/zphisher/" class="md-nav__link">
         
   
   
@@ -896,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/introducao/" class="md-nav__link">
+      <a href="../../aula4/introducao/" class="md-nav__link">
         
   
   
@@ -919,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/gobuster/" class="md-nav__link">
+      <a href="../../aula4/gobuster/" class="md-nav__link">
         
   
   
@@ -942,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/john/" class="md-nav__link">
+      <a href="../../aula4/john/" class="md-nav__link">
         
   
   
@@ -965,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/xss/" class="md-nav__link">
+      <a href="../../aula4/xss/" class="md-nav__link">
         
   
   
@@ -988,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/wordlist/" class="md-nav__link">
+      <a href="../../aula4/wordlist/" class="md-nav__link">
         
   
   
@@ -1011,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/hashs/" class="md-nav__link">
+      <a href="../../aula4/hashs/" class="md-nav__link">
         
   
   
@@ -1047,20 +1402,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -1076,7 +1429,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Blue Team
@@ -1087,20 +1440,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
         
           
           <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
@@ -1116,7 +1467,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_1">
             <span class="md-nav__icon md-icon"></span>
             Aula 1
@@ -1130,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intro/" class="md-nav__link">
+      <a href="../../../blueTeam/aula1/intro/" class="md-nav__link">
         
   
   
@@ -1150,32 +1501,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Wireshark
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../blueTeam/aula1/wireshark/" class="md-nav__link">
         
   
   
@@ -1186,77 +1515,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#interface-do-wireshark" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interface do Wireshark
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filtros-uteis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Filtros úteis
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filtros úteis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#filtros-basicos" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Filtros básicos:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtros-mais-avancados" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Filtros mais avançados:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dica" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 Dica
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1656,37 +1914,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#interface-do-wireshark" class="md-nav__link">
+  <a href="#o-que-e-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Interface do Wireshark
+      O que é Linux?
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filtros-uteis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Filtros úteis
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filtros úteis">
+    <nav class="md-nav" aria-label="O que é Linux?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#filtros-basicos" class="md-nav__link">
+  <a href="#componentes-do-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Filtros básicos:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filtros-mais-avancados" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Filtros mais avançados:
+      Componentes do Linux:
     </span>
   </a>
   
@@ -1698,11 +1938,287 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dica" class="md-nav__link">
+  <a href="#o-que-sao-distribuicoes-linux" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 Dica
+      O que são Distribuições Linux?
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="O que são Distribuições Linux?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-existem-tantas-distribuicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que existem tantas distribuições?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizacao-de-arquivos-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organização de Arquivos no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organização de Arquivos no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diretorios-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diretórios Principais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caminho-absoluto-vs-relativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caminho Absoluto vs. Relativo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-basicos-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos Básicos no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandos Básicos no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navegacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegação:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulacao-de-arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulação de Arquivos:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informacoes-do-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informações do Sistema:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes-e-permissoes-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerenciamento de Pacotes e Permissões no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gerenciamento de Pacotes e Permissões no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comando-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando sudo:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes-com-apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerenciamento de Pacotes com apt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remover-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remover Pacotes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comando-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando curl
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comando curl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcoes-do-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funções do curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxe-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxe Básica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcoes-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opções Comuns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-de-arquivos-com-o-comando-wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download de Arquivos com o Comando wget
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerenciamento-de-pacotes-com-dpkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gerenciamento de Pacotes com dpkg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferencas-entre-apt-e-dpkg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diferenças entre apt e dpkg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editores-de-texto-no-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editores de Texto no Linux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Editores de Texto no Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nano
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gedit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gedit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alias
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criar-um-alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criar um Alias
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1722,78 +2238,241 @@
 
 
 
-<h1 id="introducao-ao-wireshark">Introdução ao Wireshark</h1>
-<p>Wireshark é um analisador de pacotes de rede utilizado para examinar protocolos e detectar atividades suspeitas.</p>
-<h2 id="interface-do-wireshark">Interface do Wireshark</h2>
+<h1 id="linux-basico">Linux Básico</h1>
+<h2 id="o-que-e-linux">O que é Linux?</h2>
+<p>O <strong>Linux</strong> é o núcleo que faz um sistema operacional funcionar. Assim como um motor é essencial para um carro, o Linux é o coração que gerencia o hardware do computador.</p>
+<h3 id="componentes-do-linux">Componentes do Linux:</h3>
 <ul>
-<li><strong>Painel de pacotes</strong></li>
-<li><strong>Detalhes do pacote</strong></li>
-<li><strong>Painel de bytes brutos</strong></li>
+<li><strong>Sistema Operacional</strong>: O Linux gerencia todo o hardware, permitindo que o computador funcione de forma eficiente.</li>
+<li><strong>Kernel (Núcleo)</strong>: O núcleo é a parte principal do sistema que faz a comunicação entre o software e o hardware.</li>
+<li><strong>Distribuições Linux</strong>: Assim como existem diferentes modelos de carros, o Linux tem várias distribuições (ex.: Ubuntu, Fedora), cada uma adaptada para necessidades e preferências específicas.</li>
 </ul>
 <hr />
-<h2 id="filtros-uteis">Filtros úteis</h2>
-<h3 id="filtros-basicos">🎯 Filtros básicos:</h3>
+<h2 id="o-que-sao-distribuicoes-linux">O que são Distribuições Linux?</h2>
+<p>As <strong>Distribuições Linux</strong> são "versões" diferentes do Linux, criadas para atender a diversos tipos de usuários e cenários.</p>
+<h3 id="por-que-existem-tantas-distribuicoes">Por que existem tantas distribuições?</h3>
 <ul>
-<li><code>ip.addr == X.X.X.X</code> — Mostra pacotes de um IP específico</li>
-<li><code>tcp.port == 21</code> — Mostra tráfego na porta 21</li>
-<li><code>http</code> — Mostra requisições HTTP</li>
-<li><code>dns</code> — Mostra requisições/respostas DNS</li>
+<li>Cada distribuição é otimizada para diferentes fins, como:</li>
+<li><strong>Uso pessoal</strong></li>
+<li><strong>Empresas</strong></li>
+<li><strong>Servidores</strong></li>
+<li><strong>Desenvolvimento</strong></li>
 </ul>
-<h3 id="filtros-mais-avancados">🎯 Filtros mais avançados:</h3>
-<ul>
-<li><code>ftp.request.command == "STOR"</code> — Upload via FTP</li>
-<li><code>tcp.flags.syn == 1 &amp;&amp; tcp.flags.ack == 0</code> — Detecta SYN Scans</li>
-</ul>
-<h2 id="dica">📌 Dica</h2>
-<p>Utilize <strong>Follow TCP Stream</strong> para ver uma sessão completa!</p>
+<p>Todas compartilham o mesmo <strong>kernel</strong>, mas com configurações e ferramentas próprias.</p>
 <hr />
-<h1 id="protocolos-comuns-na-forense-de-rede">Protocolos comuns na Forense de Rede</h1>
-<h2 id="ftp-file-transfer-protocol">FTP (File Transfer Protocol)</h2>
+<h2 id="organizacao-de-arquivos-no-linux">Organização de Arquivos no Linux</h2>
+<p>No Linux, <strong>tudo é um arquivo</strong>, desde programas até dispositivos. O sistema de arquivos é organizado em uma estrutura hierárquica, partindo do diretório raiz (<code>/</code>).</p>
+<h3 id="diretorios-principais">Diretórios Principais</h3>
 <ul>
-<li>Porta 21 (comando) / 20 (dados)</li>
-<li><strong>Problema:</strong> Transmite credenciais em texto claro</li>
-</ul>
-<h2 id="http">HTTP</h2>
-<ul>
-<li>Porta 80 (sem TLS)</li>
-<li><strong>Problema:</strong> Dados transmitidos sem criptografia</li>
-</ul>
-<h2 id="dns">DNS</h2>
-<ul>
-<li>Porta 53</li>
-<li><strong>Importância:</strong> Detecta domínios suspeitos ou comandos de C2</li>
+<li><strong>/</strong>: Diretório raiz, o ponto de partida do sistema de arquivos.</li>
+<li><strong>/bin</strong>: Armazena os comandos essenciais e programas do sistema.</li>
+<li><strong>/etc</strong>: Contém os arquivos de configuração do sistema e dos programas.</li>
+<li><strong>/dev</strong>: Representa os dispositivos de hardware como arquivos.</li>
+<li><strong>/home</strong>: Diretórios pessoais dos usuários, onde estão seus arquivos e configurações.</li>
+<li><strong>/lib</strong>: Contém as bibliotecas essenciais para o funcionamento dos programas.</li>
+<li><strong>/tmp</strong>: Usado para armazenar arquivos temporários.</li>
+<li><strong>/usr</strong>: Armazena programas e bibliotecas adicionais para os usuários.</li>
+<li><strong>/var</strong>: Armazena arquivos variáveis, como logs e dados temporários.</li>
 </ul>
 <hr />
-<h2 id="outros-protocolos-uteis">Outros protocolos úteis:</h2>
+<h2 id="caminho-absoluto-vs-relativo">Caminho Absoluto vs. Relativo</h2>
 <ul>
-<li><strong>SMB</strong> — Compartilhamento de arquivos em rede</li>
-<li><strong>HTTPS</strong> — TLS handshake, SNI visível</li>
-<li><strong>ICMP</strong> — Ping/echo requests</li>
-<li><strong>SFTP</strong> - Secure/SSH File Transfer Protocol</li>
-</ul>
-<h2 id="sftp">SFTP</h2>
-<p>Para contornar o problema do FTP tradicional, que transmite dados e credenciais em texto claro, o <strong>SFTP (SSH File Transfer Protocol)</strong> foi criado para suprir a necessidade de uma transferência de arquivos mais segura.</p>
-<p>O <strong>SFTP</strong> utiliza o protocolo <strong>SSH</strong> (porta padrão 22) para criar um canal criptografado de ponta a ponta, garantindo:
-- <strong>Confidencialidade</strong> dos dados transmitidos.
-- <strong>Autenticação</strong> robusta com chaves SSH ou senhas.
-- <strong>Integridade</strong> durante a transferência, evitando que arquivos sejam interceptados ou alterados.</p>
-<p>Diferente do FTP + FTPS (que usa SSL/TLS em cima do FTP tradicional), o <strong>SFTP</strong> é um protocolo completamente separado e mais simples de configurar em ambientes seguros.</p>
-<h3 id="por-que-isso-e-importante-na-forense">⚠️ Por que isso é importante na forense?</h3>
-<ul>
-<li>Em capturas de rede, o <strong>SFTP</strong> não revela credenciais nem arquivos em texto claro.</li>
-<li>Somente o handshake SSH será visível no Wireshark, e os dados transferidos estarão criptografados.</li>
+<li><strong>Caminho Absoluto</strong>: Começa sempre com o diretório raiz (<code>/</code>) e define o caminho completo até o destino.</li>
+<li>Exemplo: <code>/etc/X11/xinit</code></li>
+<li><strong>Caminho Relativo</strong>: Baseia-se no diretório atual.</li>
+<li>Exemplo: <code>X11/xinit</code> (se você já estiver no diretório <code>/etc</code>)</li>
 </ul>
 <hr />
-<h1 id="mini-ctf-forense-wireshark">Mini-CTF Forense - Wireshark</h1>
-<h2 id="objetivo">🎯 Objetivo:</h2>
-<p>Analisar uma captura de rede e encontrar a flag escondida.</p>
-<blockquote>
-<p>Enunciado: Um atacante invadiu a rede da organização e parece ter transferido arquivos e credenciais de forma insegura. Sua missão é analisar a captura de pacotes e encontrar a flag escondida.</p>
-</blockquote>
-<h2 id="arquivo">📦 Arquivo:</h2>
+<h2 id="comandos-basicos-no-linux">Comandos Básicos no Linux</h2>
+<h3 id="navegacao">Navegação:</h3>
 <ul>
-<li><a href="../forense_ctf.pcap">forense_ctf.pcap</a></li>
+<li><strong>cd [diretório]</strong>: Muda para o diretório especificado.</li>
+<li><strong>ls</strong>: Lista os arquivos e diretórios no diretório atual.</li>
+<li><strong>pwd</strong>: Exibe o caminho absoluto do diretório atual.</li>
 </ul>
+<h3 id="manipulacao-de-arquivos">Manipulação de Arquivos:</h3>
+<ul>
+<li><strong>cp [origem] [destino]</strong>: Copia arquivos ou diretórios.</li>
+<li><strong>mv [origem] [destino]</strong>: Move ou renomeia arquivos.</li>
+<li><strong>rm [arquivo]</strong>: Remove arquivos (use <code>rm -r</code> para remover diretórios).</li>
+<li><strong>mkdir [nome_do_diretório]</strong>: Cria um novo diretório.</li>
+</ul>
+<h3 id="informacoes-do-sistema">Informações do Sistema:</h3>
+<ul>
+<li><strong>whoami</strong>: Mostra o nome do usuário logado.</li>
+<li><strong>df -h</strong>: Exibe o uso do disco de forma legível para humanos.</li>
+<li><strong>cat [arquivo]</strong>: Exibe o conteúdo de um arquivo.</li>
+<li><strong>more</strong> / <strong>less</strong>: Permitem visualizar arquivos longos de maneira paginada.</li>
+</ul>
+<hr />
+<h2 id="gerenciamento-de-pacotes-e-permissoes-no-linux">Gerenciamento de Pacotes e Permissões no Linux</h2>
+<h3 id="comando-sudo">Comando <strong>sudo</strong>:</h3>
+<p>O comando <strong>sudo</strong> permite que um usuário execute comandos com privilégios de administrador (root).</p>
+<ul>
+<li><strong>Sintaxe</strong>: <code>sudo [comando]</code></li>
+<li><strong>Exemplo</strong>: <code>sudo apt update</code></li>
+</ul>
+<p>No Linux, tarefas que afetam todo o sistema, como instalar ou remover pacotes, requerem privilégios de administrador.</p>
+<hr />
+<h2 id="gerenciamento-de-pacotes-com-apt">Gerenciamento de Pacotes com <strong>apt</strong></h2>
+<p>O <strong>apt</strong> é o gerenciador de pacotes usado em distribuições baseadas no Debian, como o Ubuntu.</p>
+<ul>
+<li><strong>Atualizar Lista de Pacotes</strong>: 
+  <code>bash
+  sudo apt update</code></li>
+</ul>
+<hr />
+<h2 id="instalar-pacotes">Instalar Pacotes</h2>
+<p>Para instalar pacotes no Linux usando o gerenciador de pacotes <code>apt</code>, utilize o seguinte comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="o">[</span>nome_do_pacote<span class="o">]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="remover-pacotes">Remover Pacotes</h2>
+<p>Para remover pacotes no Linux usando o gerenciador de pacotes <code>apt</code>, utilize o seguinte comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span><span class="o">[</span>nome_do_pacote<span class="o">]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="comando-curl">Comando <code>curl</code></h2>
+<p>O <code>curl</code> é uma ferramenta de linha de comando extremamente útil para transferir dados de ou para um servidor. Ele suporta diversos protocolos, como HTTP, HTTPS, FTP, entre outros.</p>
+<h3 id="funcoes-do-curl">Funções do <code>curl</code></h3>
+<ul>
+<li><strong>Download de arquivos</strong>: Baixar arquivos de um servidor diretamente pelo terminal.</li>
+<li><strong>Envio de dados</strong>: Enviar dados para servidores, comumente usado para fazer requisições POST.</li>
+<li><strong>Testes de API</strong>: Fazer requisições GET, POST, PUT e DELETE para APIs RESTful.</li>
+</ul>
+<h3 id="sintaxe-basica">Sintaxe Básica</h3>
+<p>A sintaxe do <code>curl</code> segue o seguinte formato:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span><span class="o">[</span>opções<span class="o">]</span><span class="w"> </span><span class="o">[</span>URL<span class="o">]</span>
+</span></code></pre></div>
+<ul>
+<li><strong>Exemplo</strong>: <code>curl -O https://exemplo.com/arquivo.txt</code></li>
+</ul>
+<h3 id="opcoes-comuns">Opções Comuns</h3>
+<ul>
+<li><strong>-O</strong>: Salva o arquivo com o mesmo nome do arquivo remoto.</li>
+<li><strong>-o [nome_do_arquivo]</strong>: Salva o arquivo com um nome específico.</li>
+<li><strong>-X [método]</strong>: Especifica o método HTTP (GET, POST, PUT, DELETE).</li>
+<li><strong>-d [dados]</strong>: Envia dados para o servidor (usado com POST).</li>
+<li><strong>-H [cabeçalho]</strong>: Adiciona cabeçalhos personalizados à requisição.</li>
+<li><strong>-i</strong>: Exibe os cabeçalhos da resposta.</li>
+</ul>
+<hr />
+<h2 id="download-de-arquivos-com-o-comando-wget">Download de Arquivos com o Comando <strong>wget</strong></h2>
+<p>O comando <strong>wget</strong> é usado para baixar arquivos da internet diretamente no terminal.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>wget<span class="w"> </span><span class="o">[</span>URL_do_arquivo<span class="o">]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="gerenciamento-de-pacotes-com-dpkg">Gerenciamento de Pacotes com <strong>dpkg</strong></h2>
+<p>O <strong>dpkg</strong> é uma ferramenta de baixo nível para gerenciamento de pacotes <strong>.deb</strong>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span><span class="o">[</span>nome_do_pacote.deb<span class="o">]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="diferencas-entre-apt-e-dpkg">Diferenças entre <strong>apt</strong> e <strong>dpkg</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>apt</strong></th>
+<th><strong>dpkg</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interface de mais alto nível</td>
+<td>Interface de baixo nível</td>
+</tr>
+<tr>
+<td>Gerencia automaticamente dependências</td>
+<td>Não gerencia dependências automaticamente</td>
+</tr>
+<tr>
+<td>Usa repositórios online para buscar pacotes</td>
+<td>Gerencia pacotes <code>.deb</code> localmente</td>
+</tr>
+<tr>
+<td>Suporta operações como atualização e upgrade</td>
+<td>Focado apenas na instalação, remoção e consulta</td>
+</tr>
+<tr>
+<td>Verifica e resolve dependências automaticamente</td>
+<td>Não resolve dependências, exigindo configuração manual</td>
+</tr>
+<tr>
+<td>Adequado para uso cotidiano de usuários</td>
+<td>Adequado para uso avançado e administração manual</td>
+</tr>
+<tr>
+<td>Pode remover pacotes e dependências associadas automaticamente</td>
+<td>Remove apenas pacotes sem considerar dependências</td>
+</tr>
+<tr>
+<td>Integração com outras ferramentas de repositório</td>
+<td>Funciona de forma isolada, sem busca online</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="editores-de-texto-no-linux">Editores de Texto no Linux</h2>
+<h3 id="vim">Vim</h3>
+<ul>
+<li><strong>Função</strong>: Editor de texto poderoso com muitos recursos avançados.</li>
+<li><strong>Instalação</strong>:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>vim
+</span></code></pre></div>
+<ul>
+<li>
+<p><strong>Comandos Básicos</strong>:</p>
+</li>
+<li>
+<p><strong>Modo Normal</strong>: Pressione <code>i</code> para entrar no modo de edição.</p>
+</li>
+<li><strong>Modo de Edição</strong>: Pressione <code>Esc</code> para voltar ao modo normal.</li>
+<li><strong>Salvar e Sair</strong>: No modo normal, digite <code>:wq</code> e pressione <code>Enter</code>.</li>
+</ul>
+<hr />
+<h3 id="nano">Nano</h3>
+<ul>
+<li><strong>Função</strong>: Editor de texto simples e fácil de usar.</li>
+<li><strong>Instalação</strong>:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nano
+</span></code></pre></div>
+<ul>
+<li>
+<p><strong>Comandos Básicos</strong>:</p>
+</li>
+<li>
+<p><strong>Salvar e Sair</strong>: Pressione <code>Ctrl</code> + <code>O</code> para salvar e <code>Ctrl</code> + <code>X</code> para sair.</p>
+</li>
+</ul>
+<hr />
+<h3 id="gedit">Gedit</h3>
+<ul>
+<li><strong>Função</strong>: Editor de texto com interface gráfica.</li>
+<li><strong>Instalação</strong>:</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gedit
+</span></code></pre></div>
+<ul>
+<li>
+<p><strong>Comandos Básicos</strong>:</p>
+</li>
+<li>
+<p><strong>Abrir Arquivo</strong>: Execute <code>gedit [arquivo]</code> para abrir um arquivo específico.</p>
+</li>
+</ul>
+<hr />
+<h2 id="alias">Alias</h2>
+<p>Os <strong>aliases</strong> são atalhos que permitem criar comandos personalizados no terminal.</p>
+<h3 id="criar-um-alias">Criar um Alias</h3>
+<p>Para criar um <strong>alias</strong> voce pode adicionar o comando no arquivo <code>.bashrc</code> que fica no diretório <code>home</code> do usuário.
+Você pode criar um arquivo separado para os aliases, como <code>.alias</code>, e adicionar a seguinte linha no <code>.bashrc</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">  </span>~/.alias
+</span></code></pre></div>
+<p>Com isso, você pode adicionar seus aliases no arquivo <code>.alias</code> e eles serão carregados toda vez que você abrir um terminal.</p>
+<p><strong>Sinatxe para criar um alias:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">alias</span><span class="w"> </span><span class="o">[</span>nome_do_alias<span class="o">]=</span><span class="s1">&#39;[comando]&#39;</span>
+</span></code></pre></div>
 
 
 
