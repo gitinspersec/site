@@ -32,30 +32,35 @@ nav:
     - Criando uma Máquina Virtual (VM): Instalação/vmWindows.md
 
   - Aulas:
-    - Game Hacking:
-      - introdução: aulas/GameHacking/introducao.md
     - Red Team:
       - Aula 1:
-          - Linux Básico: aulas/pentest/aula1/basicLinux.md
-          - Nmap: aulas/pentest/aula1/nmap.md
+          - Linux Básico: aulas/redTeam/aula1/basicLinux.md
+          - Nmap: aulas/redTeam/aula1/nmap.md
       - Aula 2:
-          - Burp Suite: aulas/pentest/aula2/burpSuite.md
-          - Criptografia: aulas/pentest/aula2/criptografia.md
+          - Burp Suite: aulas/redTeam/aula2/burpSuite.md
+          - Criptografia: aulas/redTeam/aula2/criptografia.md
       - Aula 3:
           - Engenharia Social:
-            - Sobre: aulas/complementos/engenharia_social/sobre.md
-            - GoPhish: aulas/complementos/engenharia_social/gophish.md
-            - Setoolkit: aulas/complementos/engenharia_social/setoolkit.md
-            - Sherlock: aulas/complementos/engenharia_social/sherlock.md
-            - Zphisher: aulas/complementos/engenharia_social/zphisher.md
+            - Sobre: aulas/redTeam/aula3/engenharia_social/sobre.md
+            - GoPhish: aulas/redTeam/aula3/engenharia_social/gophish.md
+            - Setoolkit: aulas/redTeam/aula3/engenharia_social/setoolkit.md
+            - Sherlock: aulas/redTeam/aula3/engenharia_social/sherlock.md
+            - Zphisher: aulas/redTeam/aula3/engenharia_social/zphisher.md
       - Aula 4:
-        - Introdução: aulas/pentest/aula4/introducao.md
-        - GoBuster: aulas/pentest/aula4/gobuster.md
-        - John the Ripper: aulas/pentest/aula4/john.md
-        - XSS: aulas/pentest/aula4/xss.md
-        - WordList: aulas/pentest/aula4/wordlist.md
-        - Hash: aulas/pentest/aula4/hashs.md
+        - Introdução: aulas/redTeam/aula4/introducao.md
+        - GoBuster: aulas/redTeam/aula4/gobuster.md
+        - John the Ripper: aulas/redTeam/aula4/john.md
+        - XSS: aulas/redTeam/aula4/xss.md
+        - WordList: aulas/redTeam/aula4/wordlist.md
+        - Hash: aulas/redTeam/aula4/hashs.md
 
+    - Blue Team:
+      - Aula 1:
+          - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
+          - Wireshark: aulas/blueTeam/aula1/wireshark.md
+
+    - Game Hacking:
+      - introdução: aulas/GameHacking/introducao.md
 
     - Virus:
       - Virus Basico: aulas/Virus/Aula1/aula1.md
@@ -63,10 +68,6 @@ nav:
           - Criando um Bot: aulas/Virus/Rat/discordbot.md
           - Criando um RAT : aulas/Virus/Rat/rat.md
 
-    - Blue Team:
-      - Aula 1:
-          - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
-          - Wireshark: aulas/blueTeam/aula1/wireshark.md
 
   - Entregas:
     - Projetos:

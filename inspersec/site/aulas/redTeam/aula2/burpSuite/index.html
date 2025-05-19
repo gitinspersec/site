@@ -9,23 +9,25 @@
       
       
       
-        <link rel="prev" href="../../../aulas/Virus/Rat/rat/">
+        <link rel="prev" href="../../aula1/nmap/">
       
       
+        <link rel="next" href="../criptografia/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Projeto 1 - inspersec</title>
+        <title>Burp Suite - inspersec</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#projeto-1-a-analise-e-relatorio-de-vulnerabilidades-em-websites" class="md-skip">
+        <a href="#burpsuite" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -86,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Projeto 1
+              Burp Suite
             
           </span>
         </div>
@@ -210,7 +212,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -228,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -288,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
         
   
   
@@ -311,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
         
   
   
@@ -334,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
         
   
   
@@ -357,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
         
   
   
@@ -384,18 +386,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -411,7 +415,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Aulas
@@ -422,18 +426,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -449,7 +455,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             Red Team
@@ -501,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula1/basicLinux/" class="md-nav__link">
+      <a href="../../aula1/basicLinux/" class="md-nav__link">
         
   
   
@@ -524,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula1/nmap/" class="md-nav__link">
+      <a href="../../aula1/nmap/" class="md-nav__link">
         
   
   
@@ -552,18 +558,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
@@ -579,7 +587,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1_2">
             <span class="md-nav__icon md-icon"></span>
             Aula 2
@@ -590,10 +598,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula2/burpSuite/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Burp Suite
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -604,6 +634,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-o-burpsuite" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é o BurpSuite?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais funcionalidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-forca-bruta" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é Força Bruta?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analisando-requisicoes-http-com-o-burp-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analisando Requisições HTTP com o Burp Proxy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -616,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula2/criptografia/" class="md-nav__link">
+      <a href="../criptografia/" class="md-nav__link">
         
   
   
@@ -723,7 +809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula3/engenharia_social/sobre/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/sobre/" class="md-nav__link">
         
   
   
@@ -746,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula3/engenharia_social/gophish/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/gophish/" class="md-nav__link">
         
   
   
@@ -769,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula3/engenharia_social/setoolkit/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/setoolkit/" class="md-nav__link">
         
   
   
@@ -792,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula3/engenharia_social/sherlock/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/sherlock/" class="md-nav__link">
         
   
   
@@ -815,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula3/engenharia_social/zphisher/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/zphisher/" class="md-nav__link">
         
   
   
@@ -892,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula4/introducao/" class="md-nav__link">
+      <a href="../../aula4/introducao/" class="md-nav__link">
         
   
   
@@ -915,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula4/gobuster/" class="md-nav__link">
+      <a href="../../aula4/gobuster/" class="md-nav__link">
         
   
   
@@ -938,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula4/john/" class="md-nav__link">
+      <a href="../../aula4/john/" class="md-nav__link">
         
   
   
@@ -961,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula4/xss/" class="md-nav__link">
+      <a href="../../aula4/xss/" class="md-nav__link">
         
   
   
@@ -984,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula4/wordlist/" class="md-nav__link">
+      <a href="../../aula4/wordlist/" class="md-nav__link">
         
   
   
@@ -1007,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/redTeam/aula4/hashs/" class="md-nav__link">
+      <a href="../../aula4/hashs/" class="md-nav__link">
         
   
   
@@ -1122,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/blueTeam/aula1/intro/" class="md-nav__link">
+      <a href="../../../blueTeam/aula1/intro/" class="md-nav__link">
         
   
   
@@ -1145,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/blueTeam/aula1/wireshark/" class="md-nav__link">
+      <a href="../../../blueTeam/aula1/wireshark/" class="md-nav__link">
         
   
   
@@ -1222,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/GameHacking/introducao/" class="md-nav__link">
+      <a href="../../../GameHacking/introducao/" class="md-nav__link">
         
   
   
@@ -1291,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/Virus/Aula1/aula1/" class="md-nav__link">
+      <a href="../../../Virus/Aula1/aula1/" class="md-nav__link">
         
   
   
@@ -1352,7 +1438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/Virus/Rat/discordbot/" class="md-nav__link">
+      <a href="../../../Virus/Rat/discordbot/" class="md-nav__link">
         
   
   
@@ -1375,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulas/Virus/Rat/rat/" class="md-nav__link">
+      <a href="../../../Virus/Rat/rat/" class="md-nav__link">
         
   
   
@@ -1418,20 +1504,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -1447,7 +1531,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Entregas
@@ -1458,20 +1542,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
         
           
           <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
@@ -1487,7 +1569,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_1">
             <span class="md-nav__icon md-icon"></span>
             Projetos
@@ -1498,32 +1580,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Projeto 1
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../entregas/projetos/projeto1/" class="md-nav__link">
         
   
   
@@ -1534,89 +1594,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introducao-a-importancia-da-identificacao-de-vulnerabilidades" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introdução à Importância da Identificação de Vulnerabilidades
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#objetivos-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objetivos do Projeto
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Observação
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ferramentas-recomendadas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ferramentas Recomendadas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#estimulo-a-documentacao-do-processo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Estímulo à Documentação do Processo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rubrica-de-avaliacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rubrica de Avaliação
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrega" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entrega
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1664,63 +1641,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introducao-a-importancia-da-identificacao-de-vulnerabilidades" class="md-nav__link">
+  <a href="#o-que-e-o-burpsuite" class="md-nav__link">
     <span class="md-ellipsis">
-      Introdução à Importância da Identificação de Vulnerabilidades
+      O que é o BurpSuite?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#objetivos-do-projeto" class="md-nav__link">
+  <a href="#principais-funcionalidades" class="md-nav__link">
     <span class="md-ellipsis">
-      Objetivos do Projeto
+      Principais funcionalidades
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#observacao" class="md-nav__link">
+  <a href="#o-que-e-forca-bruta" class="md-nav__link">
     <span class="md-ellipsis">
-      Observação
+      O que é Força Bruta?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ferramentas-recomendadas" class="md-nav__link">
+  <a href="#analisando-requisicoes-http-com-o-burp-proxy" class="md-nav__link">
     <span class="md-ellipsis">
-      Ferramentas Recomendadas
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#estimulo-a-documentacao-do-processo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Estímulo à Documentação do Processo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rubrica-de-avaliacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rubrica de Avaliação
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entrega" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entrega
+      Analisando Requisições HTTP com o Burp Proxy
     </span>
   </a>
   
@@ -1742,56 +1692,58 @@
 
 
 
-<h1 id="projeto-1-a-analise-e-relatorio-de-vulnerabilidades-em-websites">Projeto 1 A - Análise e Relatório de Vulnerabilidades em Websites</h1>
-<p>Neste primeiro projeto, cada dupla deverá selecionar um site de sua preferência para realizar uma análise detalhada com o objetivo de identificar vulnerabilidades de segurança. Utilizando ferramentas especializadas em análises de vulnerabilidade,a dupla deverá detectar ao menos uma vulnerabilidade existente no website escolhido.</p>
-<h2 id="introducao-a-importancia-da-identificacao-de-vulnerabilidades">Introdução à Importância da Identificação de Vulnerabilidades</h2>
-<p>No contexto da cibersegurança, uma vulnerabilidade representa uma fraqueza em um sistema que pode ser explorada por atacantes para obter acesso não autorizado ou causar danos. Essas falhas podem surgir devido a erros de programação, configurações incorretas, ausência de atualizações de segurança, entre outros fatores. A identificação e correção dessas vulnerabilidades são fundamentais para a proteção de dados e a integridade dos sistemas.</p>
-<p>No mercado corporativo, essa habilidade é altamente valorizada. Profissionais como analistas, engenheiros e consultores de segurança da informação são constantemente demandados para realizar avaliações de risco e identificar possíveis falhas. Além disso, muitas empresas contratam serviços especializados para a execução de testes de penetração e auditorias de vulnerabilidade em suas redes e sistemas.</p>
-<p>Uma competência cada vez mais exigida desses profissionais é a capacidade de pesquisar e aprender o uso de ferramentas de análise de segurança, como scanners de vulnerabilidade. Essa habilidade demonstra proatividade, adaptabilidade e domínio técnico – qualidades essenciais no setor de segurança cibernética.</p>
-<h2 id="objetivos-do-projeto">Objetivos do Projeto</h2>
-<ul>
-<li>Identificar e documentar pelo menos uma vulnerabilidade presente em um website escolhido.</li>
-<li>Realizar um estudo sobre a classificação das vulnerabilidades utilizando o padrão CVE (Common Vulnerabilities and Exposures).</li>
-<li>Gerar um relatório detalhado (formato PDF) descrevendo a vulnerabilidade encontrada, incluindo sua classificação CVE, implicações e possíveis medidas corretivas ou mitigadoras.</li>
-</ul>
-<h2 id="observacao">Observação</h2>
-<p>Caso não encontre nenhuma vulnerabilidade, o aluno deve apresentar um relatório com a descrição do processo de análise realizado, as ferramentas utilizadas e os resultados obtidos. </p>
-<h2 id="ferramentas-recomendadas">Ferramentas Recomendadas</h2>
-<p>Para a execução deste projeto, recomenda-se o uso das seguintes ferramentas:</p>
-<ul>
-<li><strong>Nikto</strong> - Ferramenta open-source para escaneamento de servidores web.</li>
-<li><strong>OWASP ZAP</strong> - Ferramenta de código aberto para testes de segurança em aplicações web.</li>
-<li><strong>Nmap</strong> - Utilitário para descoberta de rede e auditoria de segurança.</li>
-</ul>
-<h2 id="estimulo-a-documentacao-do-processo">Estímulo à Documentação do Processo</h2>
-<p>As duplas devem incluir no relatório uma explicação detalhada do processo investigativo que levou à identificação da vulnerabilidade. Isso inclui a descrição das etapas seguidas, decisões tomadas, ferramentas utilizadas, bem como registros visuais como capturas de tela (prints) e logs gerados durante a análise. Essa documentação valoriza o pensamento analítico, demonstra domínio técnico e ajuda a desenvolver a mentalidade de um analista de segurança da informação.</p>
-<h2 id="rubrica-de-avaliacao">Rubrica de Avaliação</h2>
+<h1 id="burpsuite">BurpSuite</h1>
+<h2 id="o-que-e-o-burpsuite">O que é o BurpSuite?</h2>
+<p>O Burp Suite é uma ferramenta de teste de segurança de aplicativos da web desenvolvida pela PortSwigger. Ele é usado para realizar testes manuais de segurança em aplicativos da web. O Burp Suite é composto por várias ferramentas que trabalham juntas para suportar todo o processo de teste de segurança de aplicativos da web, desde a fase inicial de mapeamento e análise de ataques até a exploração e pós-exploração.</p>
+<p>Diferente das outras ferramentas que estudamos, o <strong>Burp</strong> é uma ferramenta com interface gráfica, o que facilita a visualização e a interação com os resultados dos testes.</p>
+<p>O <strong>Burp</strong> funciona em todas as plataformas, para baixar a versão gratuita, acesse o <a href="https://portswigger.net/burp/communitydownload">site oficial</a>.</p>
+<h2 id="principais-funcionalidades">Principais funcionalidades</h2>
+<p>O <strong>Burp Suite</strong> possui várias funcionalidades que o tornam uma ferramenta poderosa para testes de segurança de aplicativos da web. Algumas das principais funcionalidades incluem:</p>
 <ul>
 <li>
-<p><strong>Identificação clara da vulnerabilidade (25%)</strong><br />
-  Avalia a precisão e detalhamento com que a vulnerabilidade foi descrita, demonstrando entendimento aprofundado da falha encontrada.</p>
+<p><strong>Proxy:</strong> O <strong>Burp Proxy</strong> é uma ferramenta de interceptação de proxy que permite monitorar e modificar o tráfego entre o navegador e o servidor web. Ele é usado para analisar e modificar solicitações e respostas HTTP, permitindo identificar vulnerabilidades de segurança e realizar testes de segurança em aplicativos da web.</p>
 </li>
 <li>
-<p><strong>Classificação e análise CVE (25%)</strong><br />
-  Verifica se houve identificação correta da vulnerabilidade em termos de padrões de classificação (CVE ou equivalente), analisando criticidade, impacto e contexto.</p>
+<p><strong>Scanner:</strong> O <strong>Burp Scanner</strong> é uma ferramenta de varredura de segurança automatizada que identifica vulnerabilidades de segurança em aplicativos da web. Ele realiza varreduras de segurança em aplicativos da web em busca de vulnerabilidades comuns, como injeção de SQL, cross-site scripting (XSS) e falsificação de solicitação entre sites (CSRF).</p>
 </li>
 <li>
-<p><strong>Qualidade do relatório PDF (30%)</strong><br />
-  Avalia a organização, clareza, objetividade e completude do relatório. Deve incluir documentações detalhadas das etapas, evidências (prints, logs) e sugestões de mitigação.</p>
+<p><strong>Repeater:</strong> O <strong>Burp Repeater</strong> é uma ferramenta de repetição de solicitações que permite reenviar solicitações HTTP para o servidor web. Ele é usado para testar e explorar vulnerabilidades de segurança em aplicativos da web, permitindo modificar e reenviar solicitações para analisar o comportamento do aplicativo.</p>
 </li>
 <li>
-<p><strong>Uso correto das ferramentas (20%)</strong><br />
-  Verifica se foram utilizadas as ferramentas adequadas (Nikto, Nmap, OWASP ZAP, entre outras) de forma correta, com demonstração de conhecimento e domínio técnico.</p>
+<p><strong>Intruder:</strong> O <strong>Burp Intruder</strong> é uma ferramenta de ataque de força bruta que automatiza ataques de força bruta em aplicativos da web. Ele é usado para testar a segurança de aplicativos da web, permitindo automatizar ataques de força bruta em parâmetros de solicitação, como senhas e tokens de sessão.</p>
 </li>
 </ul>
-<h2 id="entrega">Entrega</h2>
+<h2 id="o-que-e-forca-bruta">O que é Força Bruta?</h2>
+<p>Força bruta é uma técnica usada para quebrar senhas ou chaves criptográficas por meio de tentativas repetidas. O atacante tenta todas as combinações possíveis de caracteres até encontrar a senha correta. O ataque de força bruta é um método de ataque comum usado por hackers para obter acesso não autorizado a sistemas e aplicativos.</p>
+<p>Hoje em dia, a força bruta é uma técnica de ataque menos eficaz devido à complexidade das senhas e ao uso de medidas de segurança, como bloqueio de contas após várias tentativas de login malsucedidas. No entanto, ainda é importante estar ciente desse tipo de ataque e tomar medidas para proteger suas senhas e chaves criptográficas.</p>
+<!-- quote -->
+<blockquote>
+<p><strong>Palavras do Maraba</strong>: "Não consigo invadir, tentei tudo que sei e mesmo assim não consigo, vou ter que apelar"</p>
+</blockquote>
+<h2 id="analisando-requisicoes-http-com-o-burp-proxy">Analisando Requisições HTTP com o Burp Proxy</h2>
+<p>O <strong>Burp Proxy</strong> é uma ferramenta de interceptação de proxy que permite monitorar e modificar o tráfego entre o navegador e o servidor web. Ele é usado para analisar e modificar solicitações e respostas HTTP, permitindo identificar vulnerabilidades de segurança e realizar testes de segurança em aplicativos da web.</p>
+<p>O que é possivel fazer com o proxy?</p>
 <ul>
-<li><strong>Formato</strong>: A entrega do projeto deve ser feita em formato PDF, com no máximo 10 páginas</li>
-<li><strong>Prazo Final de Entrega</strong>:</li>
-<li><strong>Data</strong>: 14/04/2024</li>
-<li><strong>Horário</strong>: 23h59min</li>
-<li><strong>Link de Entrega</strong>: <a href="https://forms.gle/q2jgQMLVJNgff45VA">Link de Entrega</a></li>
+<li>
+<p><strong>Interceptar e modificar solicitações HTTP:</strong> O <strong>Burp Proxy</strong> permite interceptar e modificar solicitações HTTP entre o navegador e o servidor web. Isso permite analisar e modificar os parâmetros da solicitação, como cookies, cabeçalhos e parâmetros de URL.</p>
+</li>
+<li>
+<p><strong>Analisar solicitações e respostas HTTP:</strong> O <strong>Burp Proxy</strong> permite analisar solicitações e respostas HTTP para identificar vulnerabilidades de segurança, como injeção de SQL, cross-site scripting (XSS) e falsificação de solicitação entre sites (CSRF).</p>
+</li>
+<li>
+<p><strong>SQL Injection:</strong> O <strong>Burp Proxy</strong> pode ser usado para identificar vulnerabilidades de injeção de SQL em aplicativos da web. Ele permite analisar solicitações e respostas HTTP em busca de parâmetros vulneráveis que podem ser explorados para realizar ataques de injeção de SQL.</p>
+</li>
+<li>
+<p><strong>Cross-Site Scripting (XSS):</strong> O <strong>Burp Proxy</strong> pode ser usado para identificar vulnerabilidades de cross-site scripting (XSS) em aplicativos da web. Ele permite analisar solicitações e respostas HTTP em busca de scripts maliciosos que podem ser injetados em páginas da web para roubar informações confidenciais dos usuários.</p>
+</li>
+<li>
+<p><strong>Falsificação de Solicitação entre Sites (CSRF):</strong> O <strong>Burp Proxy</strong> pode ser usado para identificar vulnerabilidades de falsificação de solicitação entre sites (CSRF) em aplicativos da web. Ele permite analisar solicitações e respostas HTTP em busca de solicitações maliciosas que podem ser usadas para realizar ações não autorizadas em nome do usuário.</p>
+</li>
+<li>
+<p><strong>Header Manipulation and Injection:</strong> O <strong>Burp Proxy</strong> permite manipular e injetar cabeçalhos HTTP em solicitações e respostas HTTP. Isso pode ser usado para testar a segurança de aplicativos da web e identificar vulnerabilidades de segurança relacionadas a cabeçalhos HTTP.</p>
+</li>
 </ul>
+<p>Vamos para a prática? Acesse o <a href="http://10.142.100.198:80">site de testes</a>. Vamos fazer um exemplo pratico de como usar</p>
 
 
 
@@ -1840,10 +1792,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
