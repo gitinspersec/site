@@ -48,6 +48,12 @@ nav:
             - Setoolkit: aulas/complementos/engenharia_social/setoolkit.md
             - Sherlock: aulas/complementos/engenharia_social/sherlock.md
             - Zphisher: aulas/complementos/engenharia_social/zphisher.md
+      - Aula 4:
+        - Introdução: aulas/pentest/aula4/introducao.md
+        - GoBuster: aulas/pentest/aula4/gobuster.md
+        - John the Ripper: aulas/pentest/aula4/john.md
+        - XSS: aulas/pentest/aula4/xss.md
+
 
     - Virus:
       - Virus Basico: aulas/Virus/Aula1/aula1.md
