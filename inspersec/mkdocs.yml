@@ -53,6 +53,8 @@ nav:
         - GoBuster: aulas/pentest/aula4/gobuster.md
         - John the Ripper: aulas/pentest/aula4/john.md
         - XSS: aulas/pentest/aula4/xss.md
+        - WordList: aulas/pentest/aula4/wordlist.md
+        - Hash: aulas/pentest/aula4/hashs.md
 
 
     - Virus:
