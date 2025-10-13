@@ -56,8 +56,11 @@ nav:
 
     - Blue Team:
       - Aula 1:
+          - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
           - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
           - Wireshark: aulas/blueTeam/aula1/wireshark.md
+      - Aula 2:
+          - Redes: aulas/blueTeam/aula2/aula2.md
 
     - Game Hacking:
       - introdução: aulas/GameHacking/introducao.md
