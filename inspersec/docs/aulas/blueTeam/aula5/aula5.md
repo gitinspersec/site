@@ -1,24 +1,136 @@
-Arquitetura de Cloud em Redes e Segurança (Aula 02 — Tópicos Avançados)
-Dentro do nosso objetivo de construir uma base sólida em redes e entender onde aplicar controles de segurança, a Arquitetura de Cloud (IaaS) representa a próxima fronteira. Ela pega os fundamentos que discutimos — como endereçamento, roteamento e segmentação — e os aplica em um ambiente virtualizado e altamente dinâmico, introduzindo novos conceitos e controles essenciais para a cibersegurança.
-________________________________________
-O Ambiente Virtual da Nuvem
-Quando migramos para a Nuvem, o primeiro conceito essencial é a Rede Privada Virtual (VPC) ou VNet. Pense na VPC como o seu data center virtual isolado na Nuvem. Dentro desta VPC, criamos Sub-redes que, assim como no mundo físico com as VLANs (802.1Q), são subconjuntos lógicos da rede principal, definidos por blocos CIDR/máscaras (L3) para organizar e segmentar recursos. Cada Sub-rede é associada a uma Tabela de Rotas (Route Table) que dita como o tráfego deve ser encaminhado, se localmente (dentro da VPC), para a Internet, ou para outras redes.
-A conexão da sua VPC com a Internet é controlada por Internet Gateways (para entrada e saída de tráfego público) e NAT Gateways (para permitir que instâncias em sub-redes privadas acessem a Internet sem terem um IP público).
-________________________________________
-Controles de Segurança e Segmentação
-Na Cloud IaaS, a segurança de rede é implementada em múltiplas camadas virtuais:
-1.	Network Access Control Lists (NACLs): Estes operam no nível da sub-rede e são stateless (sem estado). Isso significa que, se você permitir o tráfego de entrada (inbound) para uma porta, você deve explicitamente permitir o tráfego de retorno de saída (outbound) na mesma porta. Eles funcionam como um primeiro filtro, antes do tráfego chegar à instância.
-2.	Security Groups (SGs): Estes operam no nível da instância (interface de rede virtual) e são stateful (com estado). Eles lembram o tráfego que foi iniciado. Se uma regra permitir o tráfego de entrada, o tráfego de retorno correspondente é automaticamente permitido, simplificando muito a gestão. Em termos de segurança, eles funcionam como Firewalls distribuídos L3/L4 (stateful) aplicados diretamente ao ativo. O uso de Security Groups juntamente com NACLs oferece uma defesa em profundidade (defense-in-depth), onde a NACL atua na borda da sub-rede e o Security Group protege o recurso final.
-Em uma arquitetura moderna e segura, a segmentação (separar redes por função ou sensibilidade) é vital, reforçando o conceito de Zero Trust na Nuvem.
-________________________________________
-Conexões Avançadas e Híbridas
-Para conectar múltiplas VPCs (seja dentro da mesma conta ou para terceiros), usamos o Peering de VPCs. Já o Transit Gateway é uma evolução, agindo como um hub central de roteamento, conectando dezenas ou centenas de VPCs e redes on-premise de forma escalável, eliminando a complexidade de gerenciar conexões full-mesh (todos com todos).
-A ponte entre a nuvem e o seu data center físico (on-premise) é feita através de serviços como Direct Connect ou ExpressRoute, que fornecem uma conexão privada e dedicada (sem passar pela Internet pública) e de alta largura de banda, sendo cruciais para cenários de Arquitetura Híbrida.
-________________________________________
-Redes em Contêineres (Kubernetes)
-Em plataformas de contêineres, como o Kubernetes, a rede é abstraída pela interface CNI (Container Network Interface).
-•	Cada Pod recebe seu próprio IP (geralmente de uma faixa diferente dos IPs do Node que o hospeda), permitindo que sejam endereçáveis e comunicáveis como se fossem máquinas virtuais.
-•	Um Service atua como um Balanceador de Carga virtual (L4 ou L7) para um conjunto de Pods, provendo um IP estável e DNS interno para acesso (tipos ClusterIP, NodePort, LoadBalancer).
-•	Para impor os controles de segurança L3/L4 entre os Pods ou Namespaces (segmentação), utilizamos as Network Policies. Elas definem quais Pods podem se comunicar com quais, baseadas em labels ou endereços, sendo a ferramenta primária de segurança de rede microsegmentada dentro do Kubernetes.
-Em resumo, a arquitetura de Nuvem virtualiza e distribui os controles de rede — Endereçamento, Roteamento, Switching e Segurança. Como profissionais de Cibersegurança, nosso papel é entender como esses componentes virtuais (VPC, Sub-redes, Route Tables, SGs, NACLs) se mapeiam para os modelos de referência (OSI/TCP-IP) e garantir que as Políticas de Acesso e a Segmentação estejam corretamente configuradas para mitigar as ameaças de rede (como spoofing, DoS ou acesso não autorizado).
-________________________________________
+# Aula 05 — Arquitetura de Cloud para Redes e Segurança
+
+> Objetivo: sair do “zero” em cloud networking, entender os blocos essenciais (VPC, sub-rede, rota, firewall) e fechar com a visão de cibersegurança na nuvem.
+
+## 1. Começando do básico
+
+### 1.1 O que é “nuvem” em poucas palavras
+
+- **IaaS (Infrastructure as a Service):** você aluga servidores, redes e armazenamento, mas configura tudo.
+- **PaaS e SaaS:** serviços mais prontos (bancos gerenciados, e-mail, CRM). Conhecer o modelo importa porque define quem protege o quê (shared responsibility).
+
+### 1.2 Como pensar em redes na nuvem
+
+- Troque “data center físico” por **VPC/VNet/VPC Network**: blocos IP isolados dentro de AWS, Azure e GCP.
+- Dentro da rede virtual criamos **sub-redes** (CIDRs) como fazemos com VLANs.
+- Conectamos tudo com **route tables** (regras que dizem para onde vai cada destino).
+
+| Conceito | AWS | Azure | GCP |
+|----------|-----|-------|-----|
+| Rede virtual | VPC | VNet | VPC Network |
+| Sub-rede | Subnet | Subnet | Subnet |
+| Firewall estadoful | Security Group | NSG | Firewall Rules |
+| Logs de fluxo | VPC Flow Logs | NSG Flow Logs | VPC Flow Logs |
+
+> Quer ver isso na prática? Confira a aula complementar [`aula5/gcp.md`](./gcp.md) com um laboratório passo a passo no Google Cloud Platform.
+
+!!! tip
+	Antes de criar qualquer recurso, desenhe o diagrama com blocos IP e anote quem precisa falar com quem. Evita retrabalho e conflitos.
+
+## 2. Construindo a rede virtual
+
+| Bloco | AWS | Azure | GCP | Analogia no data center |
+|-------|-----|-------|-----|-------------------------|
+| Rede virtual | VPC | VNet | VPC Network | Campus / data center |
+| Tabela de rotas | Route Table | Route Table | Route Table | Tabela de roteador |
+| Sub-rede | Subnet | Subnet | Subnet | VLAN |
+| Saída pública | Internet Gateway | Internet Gateway | Internet Gateway | Link dedicado / firewall de borda |
+| Saída privada | NAT Gateway | NAT Gateway | Cloud NAT | Proxy/NAT corporativo |
+
+Passos típicos:
+
+1. Escolher um bloco CIDR amplo (ex.: `10.50.0.0/16`).
+2. Dividir em sub-redes públicas (com acesso de entrada controlado) e privadas (somente saída via NAT).
+3. Associar route tables: tráfego interno vai direto, tráfego para Internet sai pelo gateway apropriado.
+
+## 3. Segurança e segmentação
+
+### 3.1 NACL x Security Group
+
+| Característica | NACL | Security Group |
+|----------------|------|----------------|
+| Onde atua | Sub-rede | Interface/instância |
+| Estado | Stateless (precisa permitir ida e volta) | Stateful (resposta liberada automaticamente) |
+| Uso típico | Filtro grosso na borda da sub-rede | Firewall fino por aplicação |
+
+Boas práticas:
+
+- Use NACLs para bloquear tráfego totalmente proibido (ex.: portas administrativas).
+- Use Security Groups com nomes claros (SG-Web, SG-DB) e limite-os ao mínimo necessário.
+- Versione regras em Git/Terraform para saber quem alterou o que.
+
+### 3.2 Segmentação e Zero Trust
+
+- Separe ambientes (prod, dev, teste) em VPCs ou sub-redes distintas.
+- Não confie em “rede interna segura”. Trate cada salto como potencialmente hostil.
+- Registre e monitore todos os acessos (CloudTrail, Azure Activity Logs, VPC Flow Logs).
+
+## 4. Conectividade além da VPC
+
+| Cenário | Solução | Quando usar |
+|---------|---------|-------------|
+| Rede ↔ rede (mesmo provedor) | VPC Peering (AWS/GCP), VNet Peering (Azure) | Poucas conexões, baixa complexidade |
+| Muitas redes/contas | Transit Gateway (AWS), Virtual WAN Hub (Azure), Cloud Router + VPC Peering (GCP) | Precisa centralizar roteamento |
+| Empresa ↔ nuvem | VPN site-to-site (IPsec) | Rápido, custo baixo |
+| Baixa latência / alta banda | Direct Connect (AWS), ExpressRoute (Azure), Cloud Interconnect (GCP) | Workloads críticos, replicação |
+
+Checklist para ambientes híbridos:
+
+1. Confirme que os blocos IP não se sobrepõem.
+2. Planeje redundância (duas VPNs, duas zonas).
+3. Monitore métricas (latência, disponibilidade) e configure alertas para quedas de túnel.
+
+## 5. Contêineres? Só depois
+
+Redes de contêineres (Kubernetes, CNI, Network Policies) merecem uma aula exclusiva. Por enquanto, entenda que:
+
+- Cada pod recebe um IP próprio.
+- Services e ingressos agem como balanceadores.
+- As mesmas ideias de segmentação se aplicam, só que com ferramentas diferentes (Network Policies, service mesh).
+
+## 6. Cloud + redes + cibersegurança
+
+### 6.1 Shared Responsibility aplicada à rede
+
+- **Provedor:** garante a segurança da nuvem (física, hipervisor, backbone).
+- **Cliente:** protege o que está na nuvem (configurações de rede, senhas, chaves, logs).
+
+### 6.2 Principais riscos de rede em cloud
+
+| Risco | Como aparece | Mitigação |
+|-------|--------------|-----------|
+| Porta aberta ao mundo | SG com `0.0.0.0/0` liberando SSH/RDP | Restringir origem, usar bastion + MFA |
+| Falta de logs | Flow Logs desativados | Habilitar logs e enviar ao SIEM |
+| Segredo exposto | Chaves/credenciais em instâncias | Usar serviços de cofres (AWS KMS/Secrets Manager, Azure Key Vault) |
+| Escala rápida de ataque | Recursos públicos mal configurados | Automação de detecção (Config, Defender, Security Hub) |
+
+### 6.3 Instrumentação para o SOC
+
+- **Flow Logs:** VPC/NSG Flow Logs (AWS/Azure/GCP) mostram quem falou com quem (IP, porta, ação allow/deny).
+- **CloudTrail / Activity Logs / Cloud Audit Logs:** auditam mudanças em SGs, NACLs, VPCs.
+- **GuardDuty / Defender for Cloud / Security Command Center:** detectam comportamentos suspeitos (port scanning, criptomoedas).
+- Integre tudo no SIEM e crie playbooks (SOAR) para isolar instâncias, revogar chaves, ajustar regras automaticamente.
+
+### 6.4 Procedimento mínimo de resposta
+
+1. Identificar recurso afetado (instância, SG, VPC).
+2. Isolar: mover para SG de quarentena ou remover regra permissiva.
+3. Coletar evidências (logs, snapshots, estado da rota).
+4. Corrigir configuração raiz (terraform/apply) e documentar lições aprendidas.
+
+## 7. Resumo visual (mental)
+
+1. **Desenhe a VPC** → sub-redes públicas/privadas → rotas.
+2. **Aplique filtros** → NACL (macro) + SG (micro).
+3. **Conecte com responsabilidade** → VPN ou Direct Connect.
+4. **Observe e reaja** → Flow Logs, CloudTrail, automação.
+
+> Conecte com as aulas anteriores: se entendeu VLAN, roteamento e firewalls físicos, você já tem 70% do caminho. A nuvem apenas virtualiza essas peças e adiciona APIs para gerenciar tudo em poucos cliques ou scripts. Para aprofundar, leia a aula prática de GCP (`aula5/gcp.md`) e replique o desenho em AWS e Azure.
+
+## Referências rápidas
+
+- AWS Well-Architected Framework — Pilar de Segurança.
+- Azure Architecture Center — Redes e Conectividade.
+- Google Cloud Architecture Framework — Área de Segurança.
+- [Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/).
+- Ferramentas: Terraform, AWS CDK, Azure Bicep (infra como código para garantir consistência).
