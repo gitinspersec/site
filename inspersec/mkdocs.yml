@@ -24,28 +24,26 @@ plugins:
 
 nav:
   - Home: index.md
-
   - Tutoriais:
     - Cadastro de horas de Atividade Complementar: Instalação/horasComplementar.md
     - Instalando o Kali WSL: Instalação/kaliWindows.md
     - Instalando a VPN do Haaukins: Instalação/vpnHaaukins.md
     - Criando uma Máquina Virtual (VM): Instalação/vmWindows.md
-
   - Aulas:
     - Red Team:
       - Aula 1:
-          - Linux Básico: aulas/redTeam/aula1/basicLinux.md
-          - Nmap: aulas/redTeam/aula1/nmap.md
+        - Linux Básico: aulas/redTeam/aula1/basicLinux.md
+        - Nmap: aulas/redTeam/aula1/nmap.md
       - Aula 2:
-          - Burp Suite: aulas/redTeam/aula2/burpSuite.md
-          - Criptografia: aulas/redTeam/aula2/criptografia.md
+        - Burp Suite: aulas/redTeam/aula2/burpSuite.md
+        - Criptografia: aulas/redTeam/aula2/criptografia.md
       - Aula 3:
-          - Engenharia Social:
-            - Sobre: aulas/redTeam/aula3/engenharia_social/sobre.md
-            - GoPhish: aulas/redTeam/aula3/engenharia_social/gophish.md
-            - Setoolkit: aulas/redTeam/aula3/engenharia_social/setoolkit.md
-            - Sherlock: aulas/redTeam/aula3/engenharia_social/sherlock.md
-            - Zphisher: aulas/redTeam/aula3/engenharia_social/zphisher.md
+        - Engenharia Social:
+          - Sobre: aulas/redTeam/aula3/engenharia_social/sobre.md
+          - GoPhish: aulas/redTeam/aula3/engenharia_social/gophish.md
+          - Setoolkit: aulas/redTeam/aula3/engenharia_social/setoolkit.md
+          - Sherlock: aulas/redTeam/aula3/engenharia_social/sherlock.md
+          - Zphisher: aulas/redTeam/aula3/engenharia_social/zphisher.md
       - Aula 4:
         - Introdução: aulas/redTeam/aula4/introducao.md
         - GoBuster: aulas/redTeam/aula4/gobuster.md
@@ -53,25 +51,28 @@ nav:
         - XSS: aulas/redTeam/aula4/xss.md
         - WordList: aulas/redTeam/aula4/wordlist.md
         - Hash: aulas/redTeam/aula4/hashs.md
-
     - Blue Team:
       - Aula 1:
-          - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
-          - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
-          - Wireshark: aulas/blueTeam/aula1/wireshark.md
+        - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
+        - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
+        - Wireshark: aulas/blueTeam/aula1/wireshark.md
       - Aula 2:
-          - Redes: aulas/blueTeam/aula2/aula2.md
-
+        - Redes Parte 1: aulas/blueTeam/aula2/redes1.md
+      - Aula 3:
+        - Redes Parte 2: aulas/blueTeam/aula3/resdes2.md
+      - Aula 4:
+        - Criptografia Avançada: aulas/blueTeam/aula4/criptografia_avancada.md
+      - Aula 5:
+        - Cloud Networking: aulas/blueTeam/aula5/aula5.md
+        - Containers e Segurança: aulas/blueTeam/aula5/containers.md
+        - Laboratório GCP: aulas/blueTeam/aula5/gcp.md
     - Game Hacking:
-      - introdução: aulas/GameHacking/introducao.md
-
+      - Introdução: aulas/GameHacking/introducao.md
     - Virus:
-      - Virus Basico: aulas/Virus/Aula1/aula1.md
-      - RAT: 
-          - Criando um Bot: aulas/Virus/Rat/discordbot.md
-          - Criando um RAT : aulas/Virus/Rat/rat.md
-
-
+      - Virus Básico: aulas/Virus/Aula1/aula1.md
+      - RAT:
+        - Criando um Bot: aulas/Virus/Rat/discordbot.md
+        - Criando um RAT: aulas/Virus/Rat/rat.md
   - Entregas:
     - Projetos:
       - Projeto 1: entregas/projetos/projeto1.md
