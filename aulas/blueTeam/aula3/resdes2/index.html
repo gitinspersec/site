@@ -1,0 +1,4708 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../aula2/redes1/">
+      
+      
+        <link rel="next" href="../../aula4/criptografia_avancada/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Redes Parte 2 - inspersec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aula-02-redes-de-computadores-parte-ii" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            inspersec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Redes Parte 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    inspersec
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutoriais
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutoriais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cadastro de horas de Atividade Complementar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalando o Kali WSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalando a VPN do Haaukins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criando uma Máquina Virtual (VM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aulas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aulas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Red Team
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Red Team
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula1/basicLinux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula1/nmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula2/burpSuite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Burp Suite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula2/criptografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criptografia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_1" id="__nav_3_1_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engenharia Social
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Engenharia Social
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula3/engenharia_social/sobre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula3/engenharia_social/gophish/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GoPhish
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula3/engenharia_social/setoolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setoolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula3/engenharia_social/sherlock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sherlock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula3/engenharia_social/zphisher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zphisher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula4/introducao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introdução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula4/gobuster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GoBuster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula4/john/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    John the Ripper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula4/xss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    XSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula4/wordlist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WordList
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../redTeam/aula4/hashs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hash
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blue Team
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blue Team
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula1/fundamentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos de Blue Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula1/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introdução ao Blue Team
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula1/wireshark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireshark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula2/redes1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redes Parte 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 3
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redes Parte 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redes Parte 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#secao-0-ponte-com-redes-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 0 — Ponte com Redes I
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 0 — Ponte com Redes I">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-recapitulacao-expressa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 Recapitulação expressa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-progressao-planejada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 Progressão planejada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-pre-labs-e-ferramentas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 Pré-labs e ferramentas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-1-enderecamento-avancado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 1 — Endereçamento avançado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 1 — Endereçamento avançado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-cidr-e-vlsm-sem-sustos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 CIDR e VLSM sem sustos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-nat-cgnat-e-limites-operacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 NAT, CGNAT e limites operacionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-ipv6-em-producao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 IPv6 em produção
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-2-comutacao-e-segmentacao-avancada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 2 — Comutação e segmentação avançada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 2 — Comutação e segmentação avançada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-vlans-e-dominios-controlados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 VLANs e domínios controlados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-spanning-tree-e-prevencao-de-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Spanning Tree e prevenção de loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-lacp-e-enlaces-agregados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 LACP e enlaces agregados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-controle-de-acesso-em-l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Controle de acesso em L2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-3-roteamento-em-l3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 3 — Roteamento em L3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 3 — Roteamento em L3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-estatico-vs-dinamico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Estático vs dinâmico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-protocolos-de-interior-igp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Protocolos de interior (IGP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-bgp-egp-em-alto-nivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 BGP (EGP) em alto nível
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-equal-cost-multi-path-ecmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Equal-Cost Multi-Path (ECMP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-alta-disponibilidade-de-gateway-vrrphsrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Alta disponibilidade de gateway (VRRP/HSRP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-4-dns-aprofundado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 4 — DNS aprofundado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 4 — DNS aprofundado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-arquitetura-hierarquica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Arquitetura hierárquica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-fluxo-recursivo-vs-iterativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Fluxo recursivo vs iterativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ataques-classicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Ataques clássicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-dnssec-e-cadeia-de-confianca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 DNSSEC e cadeia de confiança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-privacidade-moderna-dot-e-doh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Privacidade moderna — DoT e DoH
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-5-protocolos-de-aplicacao-segura-httptlsquic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 5 — Protocolos de aplicação segura (HTTP/TLS/QUIC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 5 — Protocolos de aplicação segura (HTTP/TLS/QUIC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-evolucao-do-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Evolução do HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-tls-em-camadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 TLS em camadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-quic-e-inspecao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 QUIC e inspeção
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-6-wi-fi-e-mobilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 6 — Wi-Fi e mobilidade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 6 — Wi-Fi e mobilidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-bandas-e-padroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Bandas e padrões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-planejamento-de-capacidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Planejamento de capacidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-seguranca-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Segurança Wi-Fi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-telemetria-para-o-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Telemetria para o SOC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-7-qualidade-de-servico-e-desempenho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 7 — Qualidade de serviço e desempenho
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 7 — Qualidade de serviço e desempenho">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-metricas-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Métricas essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-bufferbloat-e-controle-de-fila" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Bufferbloat e controle de fila
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-classificacao-e-marcacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Classificação e marcação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-bandwidth-delay-product-bdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Bandwidth-Delay Product (BDP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-8-servicos-auxiliares-de-rede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 8 — Serviços auxiliares de rede
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 8 — Serviços auxiliares de rede">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 DHCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-ntp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 NTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-snmp-e-telemetria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 SNMP e Telemetria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-syslog-centralizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Syslog centralizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-ipamcmdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 IPAM/CMDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-9-seguranca-de-rede-e-zero-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 9 — Segurança de rede e Zero Trust
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 9 — Segurança de rede e Zero Trust">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-controles-em-camadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Controles em camadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-zero-trust-aplicado-a-rede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Zero Trust aplicado à rede
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-vpns-e-acesso-seguro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 VPNs e acesso seguro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-ameacas-comuns-e-respostas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Ameaças comuns e respostas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-10-nuvem-e-conexoes-hibridas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 10 — Nuvem e conexões híbridas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 10 — Nuvem e conexões híbridas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-componentes-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Componentes principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-controle-de-acesso-em-linguagem-direta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Controle de acesso em linguagem direta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-ligando-nuvem-e-rede-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Ligando nuvem e rede local
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-11-arquiteturas-de-referencia-e-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 11 — Arquiteturas de referência e troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 11 — Arquiteturas de referência e troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-topologias-modernas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Topologias modernas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-metodologia-de-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Metodologia de troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-runbooks-e-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Runbooks e playbooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossario-essencial-complementar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossário essencial (complementar)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula4/criptografia_avancada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criptografia Avançada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aula 5
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aula 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula5/aula5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula5/containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers e Segurança
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aula5/gcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laboratório GCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Game Hacking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Game Hacking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../GameHacking/introducao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introdução
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virus
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Virus
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virus/Aula1/aula1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virus Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RAT
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RAT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virus/Rat/discordbot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criando um Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Virus/Rat/rat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criando um RAT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entregas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Entregas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projetos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projetos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../entregas/projetos/projeto1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#secao-0-ponte-com-redes-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 0 — Ponte com Redes I
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 0 — Ponte com Redes I">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-recapitulacao-expressa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 Recapitulação expressa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-progressao-planejada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 Progressão planejada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03-pre-labs-e-ferramentas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 Pré-labs e ferramentas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-1-enderecamento-avancado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 1 — Endereçamento avançado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 1 — Endereçamento avançado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-cidr-e-vlsm-sem-sustos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 CIDR e VLSM sem sustos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-nat-cgnat-e-limites-operacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 NAT, CGNAT e limites operacionais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-ipv6-em-producao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 IPv6 em produção
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-2-comutacao-e-segmentacao-avancada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 2 — Comutação e segmentação avançada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 2 — Comutação e segmentação avançada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-vlans-e-dominios-controlados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 VLANs e domínios controlados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-spanning-tree-e-prevencao-de-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Spanning Tree e prevenção de loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-lacp-e-enlaces-agregados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 LACP e enlaces agregados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-controle-de-acesso-em-l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Controle de acesso em L2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-3-roteamento-em-l3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 3 — Roteamento em L3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 3 — Roteamento em L3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-estatico-vs-dinamico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Estático vs dinâmico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-protocolos-de-interior-igp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Protocolos de interior (IGP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-bgp-egp-em-alto-nivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 BGP (EGP) em alto nível
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-equal-cost-multi-path-ecmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Equal-Cost Multi-Path (ECMP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-alta-disponibilidade-de-gateway-vrrphsrp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Alta disponibilidade de gateway (VRRP/HSRP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-4-dns-aprofundado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 4 — DNS aprofundado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 4 — DNS aprofundado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-arquitetura-hierarquica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Arquitetura hierárquica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-fluxo-recursivo-vs-iterativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Fluxo recursivo vs iterativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-ataques-classicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Ataques clássicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-dnssec-e-cadeia-de-confianca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 DNSSEC e cadeia de confiança
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-privacidade-moderna-dot-e-doh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Privacidade moderna — DoT e DoH
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-5-protocolos-de-aplicacao-segura-httptlsquic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 5 — Protocolos de aplicação segura (HTTP/TLS/QUIC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 5 — Protocolos de aplicação segura (HTTP/TLS/QUIC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-evolucao-do-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Evolução do HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-tls-em-camadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 TLS em camadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-quic-e-inspecao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 QUIC e inspeção
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-6-wi-fi-e-mobilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 6 — Wi-Fi e mobilidade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 6 — Wi-Fi e mobilidade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-bandas-e-padroes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Bandas e padrões
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-planejamento-de-capacidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Planejamento de capacidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-seguranca-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Segurança Wi-Fi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-telemetria-para-o-soc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Telemetria para o SOC
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-7-qualidade-de-servico-e-desempenho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 7 — Qualidade de serviço e desempenho
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 7 — Qualidade de serviço e desempenho">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-metricas-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Métricas essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-bufferbloat-e-controle-de-fila" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Bufferbloat e controle de fila
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-classificacao-e-marcacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Classificação e marcação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-bandwidth-delay-product-bdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Bandwidth-Delay Product (BDP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-8-servicos-auxiliares-de-rede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 8 — Serviços auxiliares de rede
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 8 — Serviços auxiliares de rede">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 DHCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-ntp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 NTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-snmp-e-telemetria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 SNMP e Telemetria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-syslog-centralizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Syslog centralizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-ipamcmdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 IPAM/CMDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-9-seguranca-de-rede-e-zero-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 9 — Segurança de rede e Zero Trust
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 9 — Segurança de rede e Zero Trust">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-controles-em-camadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Controles em camadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-zero-trust-aplicado-a-rede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Zero Trust aplicado à rede
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-vpns-e-acesso-seguro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 VPNs e acesso seguro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-ameacas-comuns-e-respostas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Ameaças comuns e respostas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-10-nuvem-e-conexoes-hibridas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 10 — Nuvem e conexões híbridas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 10 — Nuvem e conexões híbridas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-componentes-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Componentes principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-controle-de-acesso-em-linguagem-direta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Controle de acesso em linguagem direta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-ligando-nuvem-e-rede-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Ligando nuvem e rede local
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secao-11-arquiteturas-de-referencia-e-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seção 11 — Arquiteturas de referência e troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seção 11 — Arquiteturas de referência e troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-topologias-modernas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Topologias modernas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-metodologia-de-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Metodologia de troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-runbooks-e-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Runbooks e playbooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossario-essencial-complementar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossário essencial (complementar)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referências
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="aula-02-redes-de-computadores-parte-ii">Aula 02 — Redes de Computadores (Parte II)</h1>
+<blockquote>
+<p>Continuação direta de <code>redes1.md</code>. Este capítulo assume domínio dos fundamentos e aprofunda aplicações práticas, segurança e operações modernas de rede.</p>
+</blockquote>
+<h2 id="secao-0-ponte-com-redes-i">Seção 0 — Ponte com Redes I</h2>
+<p>Esta parte pressupõe domínio dos blocos 1–7 de <a href="../../aula2/redes1/"><code>redes1.md</code></a>: definição de redes, modelos OSI/TCP-IP, meios físicos e protocolos básicos (ICMP, TCP, UDP). Aqui avançamos da <strong>gramática</strong> para a <strong>sintaxe aplicada</strong>, explorando como projetar, proteger e operar redes reais.</p>
+<h3 id="01-recapitulacao-expressa">0.1 Recapitulação expressa</h3>
+<ul>
+<li><strong>Vocabulário comum:</strong> tipos de rede (PAN → WAN), topologias (estrela, malha, leaf-spine) e domínios (broadcast, colisão, falha).</li>
+<li><strong>Camadas:</strong> habilidade de mapear protocolos às camadas OSI/TCP-IP.</li>
+<li><strong>L2/L3 essenciais:</strong> switches, MAC, ARP/ND, noções de IPv4/IPv6 e portas conhecidas.</li>
+<li><strong>Ferramentas de apoio:</strong> tabelas rápidas e <code>!!! tip</code>/<code>!!! warning</code> utilizados em Redes I continuam válidos.</li>
+</ul>
+<p>Se algum dos itens acima não estiver claro, retorne às seções correspondentes antes de avançar. O restante do material parte dessas bases sem reexplicar conceitos introdutórios.</p>
+<h3 id="02-progressao-planejada">0.2 Progressão planejada</h3>
+<table>
+<thead>
+<tr>
+<th>Parte I (Redes I)</th>
+<th>Parte II (este capítulo)</th>
+<th>Resultado esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endereçamento básico (CIDR introdutório)</td>
+<td>CIDR avançado, VLSM, NAT/CGNAT, IPv6 profundo</td>
+<td>Capacidade de desenhar planos de endereçamento para campus e provedores.</td>
+</tr>
+<tr>
+<td>Switch L2 e domínios</td>
+<td>Segmentação (VLAN, STP, Port-Sec)</td>
+<td>Projetar LANs resilientes e seguras.</td>
+</tr>
+<tr>
+<td>Roteamento básico</td>
+<td>Protocolos dinâmicos, BGP, HA</td>
+<td>Operar redes multi-site e com Internet redundante.</td>
+</tr>
+<tr>
+<td>DNS visão geral</td>
+<td>DNS hierárquico, ataques e defesas modernas</td>
+<td>Explicar riscos de spoofing e propor mitigação (DNSSEC, DoH).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="03-pre-labs-e-ferramentas">0.3 Pré-labs e ferramentas</h3>
+<ul>
+<li><strong>Simuladores:</strong> GNS3/EVE-NG para testar roteamento e VLANs; Wireshark para capturar DNS/QUIC.</li>
+<li><strong>Documentação recomendada:</strong> RFCs citadas ao longo do texto, <code>Computer Networks</code> (Peterson &amp; Davie), <code>Practical BGP</code> (Cloudflare Radar posts).</li>
+<li><strong>Checklist pessoal:</strong> confirme acesso a pelo menos um laboratório virtual ou físico com dois roteadores virtuais, um switch gerenciável e uma VM cliente.</li>
+</ul>
+<p>!!! tip
+    Mantenha um caderno (ou documento versionado) com diagramas, sub-redes criadas e decisões de projeto. Isso vira ativo para atividades práticas e para o SOC quando precisar responder incidentes em redes complexas.</p>
+<h2 id="secao-1-enderecamento-avancado">Seção 1 — Endereçamento avançado</h2>
+<h3 id="11-cidr-e-vlsm-sem-sustos">1.1 CIDR e VLSM sem sustos</h3>
+<p>O CIDR (Classless Inter-Domain Routing) permite escolher qualquer tamanho de prefixo, quebrando as antigas classes A/B/C. A fórmula para hosts úteis em IPv4 permanece:</p>
+<p>$$n_{hosts} = 2^{(32-\text{prefix})} - 2$$</p>
+<p>Exemplo rápido: <code>/27</code> ⇒ $2^{5}-2 = 30$ hosts.</p>
+<p><strong>VLSM (Variable Length Subnet Mask)</strong> habilita dividir um bloco pai em sub-redes de tamanhos diferentes, maximizando o aproveitamento. Fluxo sugerido:</p>
+<ol>
+<li>Ordene sub-redes pelo tamanho (da maior para a menor).</li>
+<li>Aloque cada sub-rede alinhando o prefixo ao limite binário correto.</li>
+<li>Atualize tabela de roteamento (estático ou dinâmico) sempre que criar novas divisões.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Cenário</th>
+<th>Bloco disponível</th>
+<th>Sub-redes necessárias</th>
+<th>Planejamento</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campus com 4 prédios</td>
+<td><code>10.40.0.0/22</code></td>
+<td>Core (100 hosts), Laboratórios (60), IoT (30), Gestão (20)</td>
+<td><code>/25</code>, <code>/26</code>, <code>/27</code>, <code>/27</code> respectivamente</td>
+<td>Reserve <code>/30</code> adicionais para enlaces roteados.</td>
+</tr>
+</tbody>
+</table>
+<p>!!! tip
+    Planilhas compartilhadas ou ferramentas como <code>ipcalc</code>, <code>subnetcalc</code> e módulos do NetBox ajudam a versionar o plano de endereçamento e evitam sobreposições.</p>
+<h3 id="12-nat-cgnat-e-limites-operacionais">1.2 NAT, CGNAT e limites operacionais</h3>
+<ul>
+<li><strong>NAT44 tradicional:</strong> traduz IPs privados RFC1918 para um ou mais IPs públicos. Usado em bordas corporativas e residenciais.</li>
+<li><strong>PAT (Port Address Translation):</strong> variação mais comum; múltiplos hosts compartilham um IP público, diferenciados por portas de origem.</li>
+<li><strong>NAT64 / DNS64:</strong> ponte entre clientes IPv6 e serviços IPv4 legados.</li>
+<li><strong>CGNAT (Carrier Grade NAT):</strong> operadoras usam o bloco <code>100.64.0.0/10</code> para NAT em massa, adicionando mais uma camada antes da Internet.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Bloco típico</th>
+<th>Vantagem</th>
+<th>Custo/risco</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NAT corporativo</td>
+<td>RFC1918 → IP público</td>
+<td>Conserva endereços, oculta topologia interna</td>
+<td>Pode quebrar aplicações P2P, exige regras de port-forwarding.</td>
+</tr>
+<tr>
+<td>CGNAT</td>
+<td><code>100.64.0.0/10</code></td>
+<td>Permite ISP atrasar adoção plena de IPv6</td>
+<td>Dificulta auditoria, bloqueios por reputação podem afetar clientes legítimos.</td>
+</tr>
+<tr>
+<td>NAT64</td>
+<td>IPv6-only → IPv4</td>
+<td>Facilita redes IPv6 puras em campus</td>
+<td>Dependência de tradutor e DNS64 bem configurados.</td>
+</tr>
+</tbody>
+</table>
+<p>!!! warning
+    <strong>NAT não é controle de segurança.</strong> Ele reduz exposição direta, mas não substitui firewall stateful, IDS/IPS ou políticas Zero Trust.</p>
+<h3 id="13-ipv6-em-producao">1.3 IPv6 em produção</h3>
+<p>Principais blocos:</p>
+<ul>
+<li><strong>Link-local:</strong> <code>fe80::/10</code> — obrigatório em cada interface, usado por ND.</li>
+<li><strong>ULA (Unique Local Address):</strong> <code>fc00::/7</code> — equivalente aos privados, porém roteáveis internamente.</li>
+<li><strong>Global Unicast:</strong> <code>2000::/3</code> — espaço público.</li>
+</ul>
+<p>Conceitos críticos:</p>
+<ul>
+<li><strong>Representação:</strong> grupos hexadecimais de 16 bits; zeros consecutivos podem ser comprimidos (<code>2001:db8::1</code>).</li>
+<li><strong>SLAAC vs DHCPv6:</strong> SLAAC (Stateless Address Autoconfiguration) cria endereços a partir dos anúncios de roteador (RA). DHCPv6 adiciona informações extras (DNS, domínio). É comum combinar ambos.</li>
+<li><strong>ND (Neighbor Discovery, RFC 4861):</strong> substitui ARP, inclui descoberta de roteadores, prefixos e detecção de endereços duplicados.</li>
+<li><strong>Prefix delegation:</strong> ISPs entregam <code>/56</code> ou <code>/48</code> para clientes; em campus, distribua <code>/64</code> por VLAN (recomendação do RIPE/ARIN).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Tarefa</th>
+<th>IPv4</th>
+<th>IPv6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descobrir gateway</td>
+<td>ARP para IP do gateway</td>
+<td>Neighbor Solicitation para endereço link-local do roteador</td>
+</tr>
+<tr>
+<td>Multicast equivalente ao broadcast</td>
+<td><code>255.255.255.255</code></td>
+<td><code>ff02::1</code> (todos os nós) / <code>ff02::2</code> (todos os roteadores)</td>
+</tr>
+<tr>
+<td>Reserva de host</td>
+<td>Endereços finais (rede/broadcast)</td>
+<td>Não é necessário reservar (não há broadcast)</td>
+</tr>
+</tbody>
+</table>
+<p>!!! tip
+    Automatize a publicação de prefixos IPv6 no NetBox/CMDB e gere templates de configuração (Terraform/Ansible) para manter consistência e evitar erros humanos.</p>
+<h2 id="secao-2-comutacao-e-segmentacao-avancada">Seção 2 — Comutação e segmentação avançada</h2>
+<h3 id="21-vlans-e-dominios-controlados">2.1 VLANs e domínios controlados</h3>
+<p><strong>VLAN (802.1Q)</strong> permite criar múltiplos domínios L2 sobre o mesmo hardware.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de porta</th>
+<th>Descrição</th>
+<th>Uso típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access</td>
+<td>Pertence a uma única VLAN, sem tags</td>
+<td>Estações de trabalho, impressoras</td>
+</tr>
+<tr>
+<td>Trunk</td>
+<td>Carrega várias VLANs com tags 802.1Q; pode ter VLAN nativa</td>
+<td>Enlaces entre switches, switches ↔ roteadores</td>
+</tr>
+<tr>
+<td>Hybrid</td>
+<td>Mistura access + trunk (alguns vendors)</td>
+<td>Voz + dados no mesmo cabo</td>
+</tr>
+</tbody>
+</table>
+<p>Boas práticas:</p>
+<ul>
+<li>Use VLANs únicas por finalidade (usuários, servidores, IoT, VoIP) para limitar broadcast e incidentes.</li>
+<li>Documente VLAN ID ↔ segmento IP ↔ ACL associada.</li>
+<li>Em ambientes VoIP, configure <strong>Voice VLAN</strong> dedicada com QoS (CoS 5/EF).</li>
+</ul>
+<h3 id="22-spanning-tree-e-prevencao-de-loops">2.2 Spanning Tree e prevenção de loops</h3>
+<p>Redes com múltiplos enlaces redundantes precisam de STP/RSTP/MSTP para evitar loops L2 que saturam o domínio de broadcast.</p>
+<ul>
+<li><strong>STP (802.1D):</strong> original, convergência lenta (30–50 s).</li>
+<li><strong>RSTP (802.1w):</strong> convergência sub-1s, compatível com STP.</li>
+<li><strong>MSTP (802.1s):</strong> grupos de VLANs com árvores diferentes, útil em campus grandes.</li>
+</ul>
+<p>Checklist mínimo:</p>
+<ol>
+<li>Defina manualmente o <strong>Root Bridge</strong> (menor prioridade) nos switches core.</li>
+<li>Habilite <strong>BPDU Guard</strong> em portas access para desligá-las se receberem BPDUs (previne loops via switch não gerenciado).</li>
+<li>Use <strong>PortFast</strong> em portas de usuário para reduzir tempo de ativação.</li>
+</ol>
+<p>!!! warning
+    Loops L2 derrubam a rede inteira em segundos. Ferramentas como <code>storm-control</code> e <code>loop guard</code> devem ser padrão, especialmente em redes com switches distribuídos em prédio/campus.</p>
+<h3 id="23-lacp-e-enlaces-agregados">2.3 LACP e enlaces agregados</h3>
+<p><strong>LACP (802.1AX)</strong> agrega múltiplos links físicos em um único link lógico (<strong>Port-Channel/EtherChannel</strong>). Benefícios:</p>
+<ul>
+<li>Aumento de throughput (soma das portas, respeitando algoritmo de hash).</li>
+<li>Tolerância a falhas: se uma porta cair, as demais continuam operando.</li>
+<li>Consistência de configuração (uma interface lógica para aplicar ACL/QoS).</li>
+</ul>
+<p>Recomendações:</p>
+<ul>
+<li>Sempre usar LACP ativo ↔ ativo para negociar automaticamente.</li>
+<li>Garantir compatibilidade de hashing nas duas pontas (MAC, IP, L4).</li>
+<li>Evitar misturar portas com velocidades diferentes; o menor denominador comum prevalece.</li>
+</ul>
+<h3 id="24-controle-de-acesso-em-l2">2.4 Controle de acesso em L2</h3>
+<ul>
+<li><strong>Port Security:</strong> limita número de MACs por porta, pode fixar MACs conhecidos ou aprender dinamicamente e gravar em running-config.</li>
+<li><strong>Dynamic ARP Inspection (DAI):</strong> valida ARP contra tabela DHCP Snooping para impedir ARP spoofing.</li>
+<li><strong>DHCP Snooping:</strong> constrói banco de IP↔MAC↔VLAN e bloqueia servidores DHCP não autorizados.</li>
+<li><strong>802.1X + NAC:</strong> autenticação por porta usando EAP (PEAP, EAP-TLS). Integra com RADIUS para aplicar VLAN dinâmica ou políticas específicas.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Benefício Blue Team</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Port Security</td>
+<td>Bloqueia hubs/switches clandestinos e ataques CAM overflow</td>
+<td>Exige manutenção quando troca-se hardware do usuário</td>
+</tr>
+<tr>
+<td>802.1X</td>
+<td>Garante que apenas dispositivos autorizados ingressam na rede</td>
+<td>Pode exigir supplicants em dispositivos IoT; use MAB (MAC Auth Bypass) como fallback controlado</td>
+</tr>
+<tr>
+<td>NAC posture</td>
+<td>Verifica antivírus, patches, etc. antes de liberar acesso</td>
+<td>Planeje exceções para equipamentos críticos (OT, impressoras)</td>
+</tr>
+</tbody>
+</table>
+<p>!!! tip
+    Combine 802.1X + VLANs dinâmicas: usuários autenticados caem em VLAN de produção, convidados em VLAN de acesso restrito com portal cativo.</p>
+<h2 id="secao-3-roteamento-em-l3">Seção 3 — Roteamento em L3</h2>
+<h3 id="31-estatico-vs-dinamico">3.1 Estático vs dinâmico</h3>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Estático</th>
+<th>Dinâmico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configuração</td>
+<td>Manual (route statements)</td>
+<td>Protocolos que trocam rotas automaticamente</td>
+</tr>
+<tr>
+<td>Escalabilidade</td>
+<td>Limitada; indicado para poucos enlaces</td>
+<td>Alta; ideal para redes com dezenas/centenas de rotas</td>
+</tr>
+<tr>
+<td>Convergência</td>
+<td>Dependente de scripts/automação</td>
+<td>Automática e geralmente mais rápida</td>
+</tr>
+<tr>
+<td>Visibilidade</td>
+<td>Sem métricas adicionais</td>
+<td>Suporta custo, largura de banda, políticas</td>
+</tr>
+</tbody>
+</table>
+<p>Estático continua útil para rotas de default/backup ou túneis específicos. Já protocolos dinâmicos oferecem adaptação automática a falhas.</p>
+<h3 id="32-protocolos-de-interior-igp">3.2 Protocolos de interior (IGP)</h3>
+<ul>
+<li><strong>RIP v2:</strong> hop-count, simples, porém limitado (máx 15 hops). Útil apenas em ambientes muito pequenos ou laboratoriais.</li>
+<li><strong>OSPF (RFC 2328) / OSPFv3 (RFC 5340):</strong> link-state com cálculo SPF (Dijkstra). Suporta áreas, summarization e autenticação. Escolha natural para LANs e redes campus.</li>
+<li><strong>IS-IS:</strong> link-state amplamente usado em provedores e grandes data centers; opera diretamente sobre camada 2 (CLNS).</li>
+</ul>
+<p>Elementos-chave do OSPF:</p>
+<ol>
+<li><strong>Áreas:</strong> backbone (Area 0) + áreas regulares/Stub/NSSA para reduzir LSAs.</li>
+<li><strong>Tipos de roteadores:</strong> DR/BDR em redes broadcast, ABR (interliga áreas), ASBR (redistribui rotas externas).</li>
+<li><strong>Autenticação:</strong> MD5 ou SHA para evitar LSAs maliciosos.</li>
+</ol>
+<h3 id="33-bgp-egp-em-alto-nivel">3.3 BGP (EGP) em alto nível</h3>
+<p><strong>BGP (Border Gateway Protocol)</strong> opera entre Sistemas Autônomos (AS) na Internet ou internamente (iBGP) em redes grandes. Características:</p>
+<ul>
+<li><strong>Baseado em políticas:</strong> decisões de roteamento consideram atributos (Local Preference, AS Path, MED, Communities).</li>
+<li><strong>Escalável:</strong> suporta centenas de milhares de rotas.</li>
+<li><strong>Anycast e multihoming:</strong> permite anunciar o mesmo prefixo em múltiplas localidades para distribuir tráfego/absorver DDoS.</li>
+</ul>
+<p>Boas práticas (RFC 7454):</p>
+<ul>
+<li>Filtrar prefixos privados/indesejados (RFC1918, default) nas bordas.</li>
+<li>Implementar <strong>BFD</strong> para detecção rápida de falhas em links BGP.</li>
+<li>Usar <strong>ROA/RPKI</strong> para validar que um AS está autorizado a anunciar determinado prefixo.</li>
+</ul>
+<h3 id="34-equal-cost-multi-path-ecmp">3.4 Equal-Cost Multi-Path (ECMP)</h3>
+<p>ECMP permite usar vários caminhos com custo igual para balancear tráfego em IGPs ou BGP. Requisitos:</p>
+<ul>
+<li>Protocolos precisam calcular múltiplos next-hops com mesma métrica.</li>
+<li>Equipamento deve suportar hashing baseado em campos L3/L4 para distribuir fluxos.</li>
+</ul>
+<p>Benefícios: melhora throughput agregado, reduz convergência (já que caminhos pré-calculados estão instalados) e aumenta tolerância a falhas.</p>
+<h3 id="35-alta-disponibilidade-de-gateway-vrrphsrp">3.5 Alta disponibilidade de gateway (VRRP/HSRP)</h3>
+<ul>
+<li><strong>HSRP (Cisco)</strong> e <strong>VRRP (RFC 5798)</strong> criam um gateway virtual compartilhado por dois ou mais roteadores.</li>
+<li>Um roteador atua como <strong>active/master</strong>, respondendo ao IP/MAC virtual; o outro fica em standby.</li>
+<li><code>preempt</code> garante que o roteador com prioridade mais alta reassuma quando voltar.</li>
+</ul>
+<p>Checklist HA:</p>
+<ol>
+<li>Use links redundantes e fontes de energia independentes.</li>
+<li>Sincronize tabelas ARP/CAM com timers coerentes para evitar flapping.</li>
+<li>Combine com <strong>tracking</strong> (ex.: decremento de prioridade se o link upstream cair).</li>
+</ol>
+<p>!!! tip
+    Automação com Ansible/Terraform + NetBox como fonte de verdade evita divergência entre tabelas de roteamento planejadas e configuradas. Versione mudanças de topologia como código (GitOps para rede).</p>
+<h2 id="secao-4-dns-aprofundado">Seção 4 — DNS aprofundado</h2>
+<h3 id="41-arquitetura-hierarquica">4.1 Arquitetura hierárquica</h3>
+<p>O DNS é uma árvore invertida distribuída:</p>
+<ol>
+<li><strong>Root Zone (<code>.</code>):</strong> mantida por 13 identificadores lógicos (A–M) com centenas de instâncias anycast globais.</li>
+<li><strong>TLDs (Top-Level Domains):</strong> <code>.com</code>, <code>.org</code>, <code>.gov</code>, ccTLDs como <code>.br</code>, <code>.uk</code>.</li>
+<li><strong>Second-Level Domains:</strong> <code>inspersec.com.br</code>, <code>example.org</code> — registrados por organizações.</li>
+<li><strong>Subdomínios:</strong> <code>www</code>, <code>mail</code>, <code>api</code> — administrados pelo dono do domínio.</li>
+</ol>
+<p>Servidores envolvidos:</p>
+<ul>
+<li><strong>Recursive Resolver:</strong> geralmente operado pelo ISP ou pela própria organização.</li>
+<li><strong>Root / TLD / Autoritativos:</strong> respondem iterativamente apontando para a próxima autoridade.</li>
+</ul>
+<h3 id="42-fluxo-recursivo-vs-iterativo">4.2 Fluxo recursivo vs iterativo</h3>
+<table>
+<thead>
+<tr>
+<th>Passo</th>
+<th>Agente</th>
+<th>Tipo de consulta</th>
+<th>Ação</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cliente (stub resolver)</td>
+<td>Recursiva</td>
+<td>Solicita <code>www.exemplo.com</code> ao resolvedor recursivo</td>
+<td>Resolvedor assume responsabilidade</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Resolvedor recursivo</td>
+<td>Iterativa</td>
+<td>Pergunta a um servidor raiz</td>
+<td>Recebe endereços do TLD <code>.com</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Resolvedor recursivo</td>
+<td>Iterativa</td>
+<td>Pergunta ao servidor do TLD <code>.com</code></td>
+<td>Recebe o NS autoritativo de <code>exemplo.com</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Resolvedor recursivo</td>
+<td>Iterativa</td>
+<td>Pergunta ao servidor autoritativo</td>
+<td>Recebe registro A/AAAA final</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Resolvedor recursivo</td>
+<td>Resposta final</td>
+<td>Armazena em cache (TTL) e retorna ao cliente</td>
+<td>Navegador se conecta ao IP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TTL (Time-To-Live):</strong> controla quanto tempo o cache é válido. TTLs longos reduzem tráfego, mas atrasam mudanças; TTLs curtos (ex.: migração ou resposta a incidentes) permitem ajustes rápidos, porém aumentam carga em autoritativos.</p>
+<h3 id="43-ataques-classicos">4.3 Ataques clássicos</h3>
+<ol>
+<li><strong>Cache Poisoning:</strong> atacante forja resposta DNS antes do autoritativo legítimo, envenenando o cache com IP malicioso (ex.: ataque de Kaminsky/2008). Mitigações: randomização de porta de origem + TXID, DNSSEC, limitar resolvers abertos.</li>
+<li><strong>Amplificação DNS:</strong> consultas pequenas (ex.: <code>ANY</code>, <code>DNSSEC</code>) geram respostas grandes. Com spoofing de IP, trafego refletido satura a vítima. Mitigações: desativar <code>ANY</code>, limitar recursion, usar rate-limit em autoritativos.</li>
+<li><strong>Túnel DNS:</strong> dados exfiltrados via registros TXT/CNAME. Detecte por tamanhos anormais de consultas/respostas e domínios DGA.</li>
+</ol>
+<h3 id="44-dnssec-e-cadeia-de-confianca">4.4 DNSSEC e cadeia de confiança</h3>
+<ul>
+<li><strong>DNSKEY:</strong> contém chave pública da zona; usada para validar assinaturas.</li>
+<li><strong>RRSIG:</strong> assinatura digital dos RRsets.</li>
+<li><strong>DS (Delegation Signer):</strong> hash da chave da zona filha publicado na zona pai.</li>
+</ul>
+<p>Fluxo de validação:</p>
+<ol>
+<li>Resolver possui <code>trust anchor</code> da raiz (chave pública).</li>
+<li>Ao consultar um TLD assinado, valida o <code>DS</code> e <code>DNSKEY</code> do filho.</li>
+<li>Propaga a confiança até o domínio final; se qualquer assinatura falhar, a resposta é descartada.</li>
+</ol>
+<p>Benefícios: impede que respostas forjadas (cache poisoning) sejam aceitas por resolvers validadores. Limitação: não oferece confidencialidade (dados ainda trafegam em texto puro).</p>
+<h3 id="45-privacidade-moderna-dot-e-doh">4.5 Privacidade moderna — DoT e DoH</h3>
+<table>
+<thead>
+<tr>
+<th>Tecnologia</th>
+<th>Porta</th>
+<th>Transporte</th>
+<th>Prós</th>
+<th>Desafios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DoT (DNS over TLS)</strong></td>
+<td>853</td>
+<td>TLS direto sobre TCP</td>
+<td>Simples, dedicado; fácil de bloquear/permitir</td>
+<td>Requer abertura explícita da porta 853 em firewalls</td>
+</tr>
+<tr>
+<td><strong>DoH (DNS over HTTPS)</strong></td>
+<td>443</td>
+<td>HTTPS/HTTP2/HTTP3</td>
+<td>Indistinguível do tráfego web; melhora privacidade</td>
+<td>Pode driblar filtros corporativos, dificulta interceptação lícita</td>
+</tr>
+</tbody>
+</table>
+<p>Implicações para Blue Team:</p>
+<ul>
+<li>Atualizar proxies/firewalls para inspecionar requisições DoH autorizadas e bloquear endpoints não suportados.</li>
+<li>Registrar logs de resolvedores locais mesmo quando clientes usam DoT/DoH internos.</li>
+<li>Em incidentes, correlacionar SNI/ESNI, JA3, domínios consultados e telemetria de endpoint para identificar uso malicioso.</li>
+</ul>
+<p>!!! tip
+    Mantenha autoritativos com <strong>Anycast</strong> e monitoramento ativo (latência, falhas de assinatura DNSSEC). Ferramentas como <code>dnsperf</code>, <code>dnsviz</code> e <code>delv</code> ajudam a validar configurações antes de publicar.</p>
+<h2 id="secao-5-protocolos-de-aplicacao-segura-httptlsquic">Seção 5 — Protocolos de aplicação segura (HTTP/TLS/QUIC)</h2>
+<h3 id="51-evolucao-do-http">5.1 Evolução do HTTP</h3>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Características</th>
+<th>Benefícios</th>
+<th>Pontos de atenção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP/1.1</td>
+<td>Conexões persistentes, pipeline limitado</td>
+<td>Simplicidade, compatibilidade universal</td>
+<td>Head-of-line blocking, múltiplas conexões paralelas</td>
+</tr>
+<tr>
+<td>HTTP/2</td>
+<td>Multiplexação em uma única conexão TCP + HPACK (compressão de cabeçalhos)</td>
+<td>Reduz latência e overhead</td>
+<td>Sensível a perda (bloqueio no TCP)</td>
+</tr>
+<tr>
+<td>HTTP/3</td>
+<td>Baseado em QUIC (UDP + TLS 1.3 embutido)</td>
+<td>Recuperação rápida, 0-RTT, melhor mobilidade</td>
+<td>Firewalls precisam permitir UDP 443; visibilidade reduzida</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Precisa revisar camadas? Consulte a Seção 4 (Modelos de Referência) em <a href="../../aula2/redes1/"><code>redes1.md</code></a> para contextualizar como HTTP/TLS se encaixam na pilha.</p>
+</blockquote>
+<h3 id="52-tls-em-camadas">5.2 TLS em camadas</h3>
+<p>Processo (TLS 1.3):</p>
+<ol>
+<li><strong>ClientHello:</strong> lista suites suportadas, versão TLS, extensões (SNI, ALPN).</li>
+<li><strong>ServerHello:</strong> seleciona suite, envia certificado e chave pública.</li>
+<li><strong>Key Schedule:</strong> derivação de chaves simétricas usando Diffie-Hellman (ECDHE) → sigilo perfeito (<strong>PFS</strong>).</li>
+<li><strong>Finished:</strong> ambos passam a criptografar dados da sessão.</li>
+</ol>
+<p>Implicações Blue Team:</p>
+<ul>
+<li><strong>SNI/ALPN:</strong> úteis para identificar aplicações mesmo com TLS. HTTP/3 usa QUIC, então observe <code>ALPN = h3</code>.</li>
+<li><strong>Certificados:</strong> monitore validade, cadeia e CAs autorizadas (registro CAA ajuda).</li>
+<li><strong>mTLS (mutual TLS):</strong> considerar para APIs internas e comunicação entre microserviços críticos.</li>
+</ul>
+<h3 id="53-quic-e-inspecao">5.3 QUIC e inspeção</h3>
+<ul>
+<li>Opera sobre UDP 443 com controle de congestionamento próprio; cada fluxo tem IDs independentes, evitando head-of-line blocking.</li>
+<li>Inclui TLS 1.3 nativamente, reduzindo handshakes (0-RTT para reconexões).</li>
+<li>Em redes corporativas, valide se firewalls/IDS suportam inspeção de QUIC ou se será necessário forçar fallback para HTTP/2 em certos domínios.</li>
+</ul>
+<p>!!! tip
+    Para visibilidade, use telemetria de <strong>JA3/JA4</strong> (impressões digitais de TLS) e monitore mudanças súbitas — pode indicar malware tentando disfarçar C2 como tráfego HTTPS legítimo.</p>
+<h2 id="secao-6-wi-fi-e-mobilidade">Seção 6 — Wi-Fi e mobilidade</h2>
+<h3 id="61-bandas-e-padroes">6.1 Bandas e padrões</h3>
+<table>
+<thead>
+<tr>
+<th>Banda</th>
+<th>Padrões</th>
+<th>Características</th>
+<th>Uso recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2,4 GHz</td>
+<td>802.11b/g/n</td>
+<td>Maior alcance, mais interferência (Bluetooth, micro-ondas), apenas 3 canais não sobrepostos</td>
+<td>IoT, áreas abertas com poucos APs</td>
+</tr>
+<tr>
+<td>5 GHz</td>
+<td>802.11a/n/ac/ax</td>
+<td>Mais canais, DFS, throughput maior</td>
+<td>Escritórios, ambientes densos</td>
+</tr>
+<tr>
+<td>6 GHz</td>
+<td>802.11ax (Wi-Fi 6E) / 802.11be (Wi-Fi 7)</td>
+<td>Larguras de canal largas (80/160 MHz), baixa interferência</td>
+<td>Laboratórios e aplicações de alta largura de banda</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-planejamento-de-capacidade">6.2 Planejamento de capacidade</h3>
+<ul>
+<li>Dimensione APs por <strong>densidade de clientes</strong> (quantidade de dispositivos simultâneos) e não apenas por área.</li>
+<li>Use <strong>site survey</strong> (Ekahau, AirMagnet) para validar cobertura, RSSI e SNR.</li>
+<li>Configure largura de canal adequada (20/40 MHz em ambientes densos) para reduzir interferência co-canal.</li>
+</ul>
+<h3 id="63-seguranca-wi-fi">6.3 Segurança Wi-Fi</h3>
+<ul>
+<li><strong>WPA3-SAE:</strong> substitui WPA2-PSK, resistente a ataques de dicionário offline.</li>
+<li><strong>802.1X (EAP-TLS/PEAP):</strong> autenticação individual com RADIUS; permita VLAN dinâmica ou grupos ACL.</li>
+<li><strong>PMF (Protected Management Frames):</strong> evita desassociação forjada.</li>
+<li>Desabilite WPS e oculta SSIDs convidados atrás de captive portal isolado.</li>
+</ul>
+<p>!!! warning
+    Reaproveitar a mesma senha PSK por anos facilita engenharia social e ataques passivos (captura de handshake). Estabeleça rotação periódica e considere WPA3-Enterprise sempre que possível.</p>
+<h3 id="64-telemetria-para-o-soc">6.4 Telemetria para o SOC</h3>
+<ul>
+<li>Colete eventos de roaming, falhas de autenticação e tentativas de associação a BSSIDs inexistentes (pode indicar Evil Twin).</li>
+<li>Integre controladoras Wi-Fi ao SIEM para acionar playbooks (ex.: isolar cliente comprometido movendo-o para VLAN de quarentena).</li>
+</ul>
+<h2 id="secao-7-qualidade-de-servico-e-desempenho">Seção 7 — Qualidade de serviço e desempenho</h2>
+<h3 id="71-metricas-essenciais">7.1 Métricas essenciais</h3>
+<ul>
+<li><strong>Latência:</strong> tempo ida/volta; monitore <code>p95</code>/<code>p99</code> e não apenas média.</li>
+<li><strong>Jitter:</strong> variação de latência entre pacotes; crítico para voz/vídeo.</li>
+<li><strong>Perda de pacotes:</strong> expressa em %; acima de 1% já afeta VoIP.</li>
+<li><strong>Throughput:</strong> taxa efetiva de dados.</li>
+</ul>
+<h3 id="72-bufferbloat-e-controle-de-fila">7.2 Bufferbloat e controle de fila</h3>
+<p>Buffers excessivos em roteadores/switches causam latências altas quando os links saturam.</p>
+<p>Mitigações:</p>
+<ul>
+<li><strong>AQM (Active Queue Management):</strong> RED/CoDel/PIE descartam pacotes preventivamente.</li>
+<li><strong>Shaping:</strong> limita tráfego a taxa definida, alisando bursts.</li>
+<li><strong>Policing:</strong> descarta tráfego excedente imediatamente (use com cautela).</li>
+</ul>
+<h3 id="73-classificacao-e-marcacao">7.3 Classificação e marcação</h3>
+<p>Use <strong>DSCP</strong> (camada 3) ou <strong>CoS</strong> (camada 2) para classificar tráfego.</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>DSCP</th>
+<th>Aplicação</th>
+<th>Tratamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EF (Expedited Forwarding)</td>
+<td>46</td>
+<td>Voz / control plane crítico</td>
+<td>Latência mínima, fila de prioridade (LLQ)</td>
+</tr>
+<tr>
+<td>AF41/31/21</td>
+<td>34/26/18</td>
+<td>Vídeo, aplicações interativas</td>
+<td>Fila com garantia de banda</td>
+</tr>
+<tr>
+<td>BE (Best Effort)</td>
+<td>0</td>
+<td>Tráfego padrão</td>
+<td>Fila padrão</td>
+</tr>
+<tr>
+<td>CS1 (Scavenger)</td>
+<td>8</td>
+<td>Backups, atualizações</td>
+<td>Pode ser limitado nos horários de produção</td>
+</tr>
+</tbody>
+</table>
+<h3 id="74-bandwidth-delay-product-bdp">7.4 Bandwidth-Delay Product (BDP)</h3>
+<p>Determina o volume de dados "em voo" necessário para saturar um enlace:</p>
+<p>$$BDP = \text{Bandwidth} \times \text{RTT}$$</p>
+<p>Exemplo: link de 100 Mbps com RTT 60 ms ⇒ $BDP = 7{,}5$ MB. Ajustar janelas TCP ou buffers a esse valor evita subutilização.</p>
+<p>!!! tip
+    Em troubleshooting de performance, siga a sequência: físico → L2 (erros CRC, duplex) → L3 (perda/latência) → L4 (retransmissões) → aplicação. Ferramentas como <code>iperf3</code>, <code>speedtest-cli</code> e medições SNMP/NetFlow ajudam a quantificar gargalos.</p>
+<h2 id="secao-8-servicos-auxiliares-de-rede">Seção 8 — Serviços auxiliares de rede</h2>
+<h3 id="81-dhcp">8.1 DHCP</h3>
+<ul>
+<li>Processo <strong>DORA</strong> (Discover → Offer → Request → Acknowledge) distribui configurações IP automaticamente.</li>
+<li><strong>Reservas</strong> garantem IPs fixos para servidores mas mantêm gestão centralizada.</li>
+<li><strong>DHCP Relay (IP Helper):</strong> encaminha broadcasts para servidores DHCP centralizados; essencial em redes roteadas.</li>
+<li>Habilite <strong>DHCP Snooping</strong> para bloquear ofertas falsas e gerar tabela confiável para DAI.</li>
+</ul>
+<h3 id="82-ntp">8.2 NTP</h3>
+<ul>
+<li>Sincroniza relógios; dependência crítica para logs, Kerberos, TLS, assinaturas.</li>
+<li>Use hierarquia <strong>Stratum</strong> (relógio atômico/GPS → servidores internos → clientes).</li>
+<li>Reforce NTP com <code>ntp auth</code> (chaves) ou redes dedicadas para evitar spoofing.</li>
+</ul>
+<h3 id="83-snmp-e-telemetria">8.3 SNMP e Telemetria</h3>
+<ul>
+<li>Prefira <strong>SNMPv3</strong> (autenticação + criptografia) para coletar métricas.</li>
+<li>MIBs relevantes: <code>ifTable</code> (interfaces), <code>ipNetToMedia</code> (ARP), <code>hrStorage</code>.</li>
+<li>Complementar com <strong>Streaming Telemetry</strong> (gNMI, model-driven) para granularidade fina.</li>
+</ul>
+<h3 id="84-syslog-centralizado">8.4 Syslog centralizado</h3>
+<ul>
+<li>Encaminhe logs de roteadores, firewalls, controladoras Wi-Fi para coletor central.</li>
+<li>Classifique por severidade (<code>debug</code>, <code>info</code>, <code>warning</code>, <code>critical</code>) e aplique retenção compatível com requisitos legais.</li>
+<li>Integre Syslog → SIEM para correlação, enriquecendo com contexto (IPAM, inventário).</li>
+</ul>
+<h3 id="85-ipamcmdb">8.5 IPAM/CMDB</h3>
+<ul>
+<li>IPAM (IP Address Management) mantém controle de sub-redes, reservas, estado (livre/usado).</li>
+<li>Integrações úteis: automação (Ansible/Terraform) consome dados do IPAM, evitando colisões.</li>
+<li>Ferramentas populares: NetBox (open source), Infoblox, phpIPAM.</li>
+</ul>
+<p>!!! tip
+    Configure alertas no IPAM para detectar blocos quase esgotados e automatize abertura de tickets para expansão (ex.: integração NetBox ↔ ServiceNow).</p>
+<h2 id="secao-9-seguranca-de-rede-e-zero-trust">Seção 9 — Segurança de rede e Zero Trust</h2>
+<h3 id="91-controles-em-camadas">9.1 Controles em camadas</h3>
+<ul>
+<li><strong>Firewalls L3/L4 (stateful):</strong> controlam tráfego por IP/porta; base para segmentação macro.</li>
+<li><strong>NGFW / L7:</strong> inspeção de aplicação, identificação de usuários, políticas baseadas em identidade.</li>
+<li><strong>WAF:</strong> especializado em HTTP/HTTPS (SQL injection, XSS, RCE).</li>
+<li><strong>IDS/IPS:</strong> Snort/Suricata, Zeek; detectam assinaturas e comportamentos.</li>
+<li><strong>NDR:</strong> monitora tráfego leste-oeste, detecta beaconing e movimento lateral.</li>
+</ul>
+<h3 id="92-zero-trust-aplicado-a-rede">9.2 Zero Trust aplicado à rede</h3>
+<p>Princípios:</p>
+<ol>
+<li><strong>Verifique explicitamente:</strong> autentique e autorize cada conexão (usuário, dispositivo, workload).</li>
+<li><strong>Aplique privilégio mínimo:</strong> segmentação micro (VLAN, VRF, SDN) e políticas específicas (SGT, NSG).</li>
+<li><strong>Assuma violação:</strong> monitore continuamente e automatize respostas.</li>
+</ol>
+<p>Implementações práticas:</p>
+<ul>
+<li><strong>Microsegmentação:</strong> NSX, ACI e firewalls distribuídos aplicam políticas L3/L4/L7 por workload.</li>
+<li><strong>SD-WAN + SASE:</strong> controles distribuídos na borda, inspeção consistente para usuários remotos.</li>
+<li><strong>ZTNA:</strong> substitui VPN tradicional por acesso baseado em identidade/contexto.</li>
+</ul>
+<h3 id="93-vpns-e-acesso-seguro">9.3 VPNs e acesso seguro</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Tecnologias</th>
+<th>Características</th>
+<th>Quando usar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPsec (IKEv2/ESP)</td>
+<td>Túnel site-to-site ou cliente</td>
+<td>Alta compatibilidade, suporta hardware offload</td>
+<td>Conectar filiais, backhaul para data center</td>
+</tr>
+<tr>
+<td>SSL VPN</td>
+<td>OpenVPN, AnyConnect</td>
+<td>Opera sobre TLS/HTTPS, fácil atravessar NAT</td>
+<td>Usuários remotos, BYOD</td>
+</tr>
+<tr>
+<td>WireGuard</td>
+<td>Curve25519 + ChaCha20, moderno</td>
+<td>Configuração simples, alto desempenho</td>
+<td>Ambientes DevOps, túnel overlay rápido</td>
+</tr>
+</tbody>
+</table>
+<h3 id="94-ameacas-comuns-e-respostas">9.4 Ameaças comuns e respostas</h3>
+<ul>
+<li><strong>DoS/DDoS:</strong> tratar com ACLs na borda, scrubbing center, anycast, rate-limit.</li>
+<li><strong>Spoofing/Man-in-the-Middle:</strong> proteger ARP (DAI), DHCP (snooping), usar 802.1X/mTLS.</li>
+<li><strong>Ataques de credenciais:</strong> MFA em VPNs, monitoramento de logins anômalos (Azure AD Sign-In logs, Duo, Okta).</li>
+<li><strong>Lateral Movement:</strong> segmentação, bloqueio de SMB/RDP fora de escopo, honeypots internos.</li>
+</ul>
+<p>!!! warning
+    Revisite periodicamente regras de firewall/ACL. Ambientes com "permit any" temporários esquecidos são terreno fértil para ataques. Automatize revisões (Infrastructure as Code + CI) para detectar deriva.</p>
+<h2 id="secao-10-nuvem-e-conexoes-hibridas">Seção 10 — Nuvem e conexões híbridas</h2>
+<p>Nesta etapa queremos apenas entender como as mesmas ideias de redes aparecem quando usamos AWS, Azure ou GCP. Kubernetes e redes de contêineres ficarão para aulas futuras.</p>
+<h3 id="101-componentes-principais">10.1 Componentes principais</h3>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Nome comum</th>
+<th>Explicação simples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rede virtual</td>
+<td>VPC (AWS/GCP) / VNet (Azure)</td>
+<td>Conjunto de sub-redes isoladas dentro da nuvem</td>
+</tr>
+<tr>
+<td>Controle estadoful</td>
+<td>Security Group / NSG</td>
+<td>Lista que diz “quem pode falar com esta máquina”</td>
+</tr>
+<tr>
+<td>ACL de sub-rede</td>
+<td>NACL / firewall de sub-rede</td>
+<td>Regras rápidas aplicadas na borda da sub-rede</td>
+</tr>
+<tr>
+<td>Saída para Internet</td>
+<td>Internet Gateway / NAT Gateway</td>
+<td>Porta de entrada/saída para tráfego público</td>
+</tr>
+<tr>
+<td>Observabilidade</td>
+<td>Flow Logs</td>
+<td>Registro de quem falou com quem (útil para o SIEM)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-controle-de-acesso-em-linguagem-direta">10.2 Controle de acesso em linguagem direta</h3>
+<ul>
+<li>Use <strong>Security Groups/NSG</strong> como se fossem mini firewalls ligados a cada servidor.</li>
+<li>Agrupe regras por função (web, banco, bastion) e dê nomes descritivos.</li>
+<li>Evite <code>0.0.0.0/0</code> aberto; sempre restrinja a origem (ex.: IP corporativo, VPN).</li>
+<li>Registre mudanças em repositório Git ou ferramenta de IaC para saber quem alterou o quê.</li>
+</ul>
+<h3 id="103-ligando-nuvem-e-rede-local">10.3 Ligando nuvem e rede local</h3>
+<ul>
+<li><strong>VPN site-to-site:</strong> túnel IPsec entre o data center e a nuvem. Simples e suficiente para a maioria dos laboratórios.</li>
+<li><strong>Links dedicados (Direct Connect / ExpressRoute / Interconnect):</strong> usados quando latência e largura de banda precisam ser garantidas.</li>
+<li><strong>Bastion/Jump Box:</strong> servidor exposto apenas para administração; de lá acessamos os demais recursos internos.</li>
+</ul>
+<p>!!! tip
+    Antes de criar túneis, confirme que os blocos IP em cada lado não se sobrepõem. Conflitos de CIDR geram rotas estranhas e horas de troubleshooting desnecessário.</p>
+<h2 id="secao-11-arquiteturas-de-referencia-e-troubleshooting">Seção 11 — Arquiteturas de referência e troubleshooting</h2>
+<h3 id="111-topologias-modernas">11.1 Topologias modernas</h3>
+<table>
+<thead>
+<tr>
+<th>Topologia</th>
+<th>Vantagens</th>
+<th>Desafios</th>
+<th>Uso típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hub-and-Spoke</td>
+<td>Controle centralizado, fácil aplicar políticas</td>
+<td>Hub pode virar gargalo; latência extra</td>
+<td>Filiais ↔ data center</td>
+</tr>
+<tr>
+<td>Full Mesh</td>
+<td>Latência mínima, redundância máxima</td>
+<td>Escala mal (n*(n-1)/2 links)</td>
+<td>Backbone de provedores, SD-WAN pequena</td>
+</tr>
+<tr>
+<td>Leaf-Spine</td>
+<td>Dois saltos previsíveis, fácil escalar horizontalmente</td>
+<td>Requer cabling estruturado e switches com high throughput</td>
+<td>Data centers modernos</td>
+</tr>
+<tr>
+<td>Anycast</td>
+<td>Resiliência, baixa latência global</td>
+<td>Necessita BGP e observabilidade distribuída</td>
+<td>DNS/CDN, serviços edge</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-metodologia-de-troubleshooting">11.2 Metodologia de troubleshooting</h3>
+<ol>
+<li><strong>Delimite o escopo:</strong> qual camada está falhando? física, lógica, aplicação?</li>
+<li><strong>Colete evidências:</strong> <code>show interface</code>, <code>ping</code>, <code>traceroute</code>, captura <code>pcap</code>, métricas SNMP.</li>
+<li><strong>Teste hipóteses rapidamente:</strong> alterne entre top-down (aplicação → físico) e bottom-up conforme sintomas.</li>
+<li><strong>Documente e automatize:</strong> registre causa raiz, ação corretiva e lições aprendidas.</li>
+</ol>
+<p>Ferramentas úteis:</p>
+<ul>
+<li><strong>Wireshark/tshark:</strong> análise de pacotes (ex.: handshake TLS, DNS).</li>
+<li><strong>NetFlow/IPFIX:</strong> quem está conversando com quem e quanto.</li>
+<li><strong>Path MTU Discovery / <code>tracepath</code>:</strong> identificar fragmentação/ICMP bloqueado.</li>
+</ul>
+<h3 id="113-runbooks-e-playbooks">11.3 Runbooks e playbooks</h3>
+<ul>
+<li>Crie runbooks versionados para incidentes recorrentes (ex.: "Latência alta entre filiais"; "BGP flap"), com passos e responsáveis.</li>
+<li>Playbooks automatizados (SOAR) podem executar testes básicos (ping, coleta de logs) assim que alertas forem disparados.</li>
+</ul>
+<p>!!! tip
+    Reforce a cultura de "post-mortem" sem culpados: cada incidente deve gerar ações preventivas (monitoria extra, automação, revisão de arquitetura). Isso fortalece o ciclo de melhoria contínua descrito em <code>fundamentos.md</code> (Seção 5 — Princípios de Segurança).</p>
+<h2 id="glossario-essencial-complementar">Glossário essencial (complementar)</h2>
+<ul>
+<li><strong>Anycast:</strong> técnica em que múltiplos servidores anunciam o mesmo prefixo IP via BGP; usuários são atendidos pelo nó mais próximo.</li>
+<li><strong>BFD (Bidirectional Forwarding Detection):</strong> protocolo leve para detectar falhas em links/adjacências em milissegundos.</li>
+<li><strong>BDP (Bandwidth-Delay Product):</strong> quantidade de dados "em voo" necessária para saturar um enlace. Fórmula: $BDP = BW \times RTT$.</li>
+<li><strong>DAI (Dynamic ARP Inspection):</strong> recurso que valida ARP usando base DHCP Snooping, prevenindo spoofing.</li>
+<li><strong>DSCP (Differentiated Services Code Point):</strong> campo de 6 bits no cabeçalho IP usado para priorizar tráfego.</li>
+<li><strong>DoH / DoT:</strong> DNS over HTTPS / DNS over TLS — protocolos que criptografam consultas DNS.</li>
+<li><strong>ECMP:</strong> Equal-Cost Multi-Path; permite múltiplos next-hops com mesmo custo.</li>
+<li><strong>MSTP/RSTP:</strong> evoluções do Spanning Tree para convergência rápida e múltiplas instâncias.</li>
+<li><strong>Security Group / NSG:</strong> firewall estadoful associado a máquinas na nuvem; define quem pode acessar determinado recurso.</li>
+<li><strong>Port Security:</strong> mecanismo em switches que limita MACs por porta e bloqueia dispositivos não autorizados.</li>
+<li><strong>RPKI/ROA:</strong> infraestrutura de chaves públicas para validar anúncios BGP (Route Origin Authorization).</li>
+<li><strong>SLAAC:</strong> Stateless Address Autoconfiguration — método para hosts IPv6 derivarem endereços automaticamente usando anúncios de roteador.</li>
+<li><strong>ZTNA (Zero Trust Network Access):</strong> acesso baseado em identidade/contexto que substitui VPN tradicional sempre aberta.</li>
+</ul>
+<h2 id="referencias">Referências</h2>
+<ul>
+<li>Peterson, Larry; Davie, Bruce. <em>Computer Networks: A Systems Approach</em>.</li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc4632">RFC 4632 — Classless Inter-domain Routing (CIDR)</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc4861">RFC 4861 — Neighbor Discovery for IPv6</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7454">RFC 7454 — BGP Operations and Security</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc1035">RFC 1035 — Domain Names: Implementation and Specification</a></li>
+<li><a href="https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html">Lockheed Martin — Cyber Kill Chain</a></li>
+<li><a href="https://attack.mitre.org/">MITRE ATT&amp;CK®</a> e <a href="https://d3fend.mitre.org/">MITRE D3FEND</a></li>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf">NIST SP 800-61 Rev. 2 — Computer Security Incident Handling Guide</a></li>
+<li><a href="https://www.cisecurity.org/controls/">CIS Controls v8</a></li>
+<li>Documentação oficial: AWS, Azure, GCP, WireGuard, Wi-Fi Alliance.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
