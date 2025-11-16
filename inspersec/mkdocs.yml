@@ -44,6 +44,7 @@ nav:
           - Setoolkit: aulas/redTeam/aula3/engenharia_social/setoolkit.md
           - Sherlock: aulas/redTeam/aula3/engenharia_social/sherlock.md
           - Zphisher: aulas/redTeam/aula3/engenharia_social/zphisher.md
+          - Prompt Injection: aulas/redTeam/aula3/engenharia_social/prompt_injection.md
       - Aula 4:
         - Introdução: aulas/redTeam/aula4/introducao.md
         - GoBuster: aulas/redTeam/aula4/gobuster.md

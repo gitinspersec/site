@@ -22,7 +22,7 @@
 | Firewall estadoful | Security Group | NSG | Firewall Rules |
 | Logs de fluxo | VPC Flow Logs | NSG Flow Logs | VPC Flow Logs |
 
-> Quer ver isso na prática? Confira a aula complementar [`aula5/gcp.md`](./gcp.md) com um laboratório passo a passo no Google Cloud Platform.
+> Quer ver isso na prática? Confira a aula complementar [`GCP/VPC`](./gcp/vpc_gcp.md) com um laboratório passo a passo no Google Cloud Platform.
 
 !!! tip
 	Antes de criar qualquer recurso, desenhe o diagrama com blocos IP e anote quem precisa falar com quem. Evita retrabalho e conflitos.
@@ -125,7 +125,7 @@ Redes de contêineres (Kubernetes, CNI, Network Policies) merecem uma aula exclu
 3. **Conecte com responsabilidade** → VPN ou Direct Connect.
 4. **Observe e reaja** → Flow Logs, CloudTrail, automação.
 
-> Conecte com as aulas anteriores: se entendeu VLAN, roteamento e firewalls físicos, você já tem 70% do caminho. A nuvem apenas virtualiza essas peças e adiciona APIs para gerenciar tudo em poucos cliques ou scripts. Para aprofundar, leia a aula prática de GCP (`aula5/gcp.md`) e replique o desenho em AWS e Azure.
+> Conecte com as aulas anteriores: se entendeu VLAN, roteamento e firewalls físicos, você já tem 70% do caminho. A nuvem apenas virtualiza essas peças e adiciona APIs para gerenciar tudo em poucos cliques ou scripts. Para aprofundar, leia a aula prática de GCP (`aula5/gcp/vpc_gcp.md`) e replique o desenho em AWS e Azure.
 
 ## Referências rápidas
 
