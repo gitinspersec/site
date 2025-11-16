@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../containers/">
+        <link rel="prev" href="../vpc_gcp/">
       
       
-        <link rel="next" href="../../../GameHacking/introducao/">
+        <link rel="next" href="../vm/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Laboratório GCP - inspersec</title>
+        <title>Guia de Deploy no GCP - inspersec</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-pratica-rede-segura-no-google-cloud-platform" class="md-skip">
+        <a href="#deploy-completo-backend-frontend-no-google-cloud-platform" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Laboratório GCP
+              Guia de Deploy no GCP
             
           </span>
         </div>
@@ -214,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
+      <a href="../../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
+      <a href="../../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
         
   
   
@@ -362,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
+      <a href="../../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
         
   
   
@@ -390,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
+      <a href="../../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
         
   
   
@@ -568,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula1/basicLinux/" class="md-nav__link">
+      <a href="../../../../redTeam/aula1/basicLinux/" class="md-nav__link">
         
   
   
@@ -596,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula1/nmap/" class="md-nav__link">
+      <a href="../../../../redTeam/aula1/nmap/" class="md-nav__link">
         
   
   
@@ -679,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula2/burpSuite/" class="md-nav__link">
+      <a href="../../../../redTeam/aula2/burpSuite/" class="md-nav__link">
         
   
   
@@ -707,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula2/criptografia/" class="md-nav__link">
+      <a href="../../../../redTeam/aula2/criptografia/" class="md-nav__link">
         
   
   
@@ -837,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/sobre/" class="md-nav__link">
+      <a href="../../../../redTeam/aula3/engenharia_social/sobre/" class="md-nav__link">
         
   
   
@@ -865,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/gophish/" class="md-nav__link">
+      <a href="../../../../redTeam/aula3/engenharia_social/gophish/" class="md-nav__link">
         
   
   
@@ -893,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/setoolkit/" class="md-nav__link">
+      <a href="../../../../redTeam/aula3/engenharia_social/setoolkit/" class="md-nav__link">
         
   
   
@@ -921,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/sherlock/" class="md-nav__link">
+      <a href="../../../../redTeam/aula3/engenharia_social/sherlock/" class="md-nav__link">
         
   
   
@@ -949,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula3/engenharia_social/zphisher/" class="md-nav__link">
+      <a href="../../../../redTeam/aula3/engenharia_social/zphisher/" class="md-nav__link">
         
   
   
@@ -1040,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/introducao/" class="md-nav__link">
+      <a href="../../../../redTeam/aula4/introducao/" class="md-nav__link">
         
   
   
@@ -1068,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/gobuster/" class="md-nav__link">
+      <a href="../../../../redTeam/aula4/gobuster/" class="md-nav__link">
         
   
   
@@ -1096,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/john/" class="md-nav__link">
+      <a href="../../../../redTeam/aula4/john/" class="md-nav__link">
         
   
   
@@ -1124,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/xss/" class="md-nav__link">
+      <a href="../../../../redTeam/aula4/xss/" class="md-nav__link">
         
   
   
@@ -1152,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/wordlist/" class="md-nav__link">
+      <a href="../../../../redTeam/aula4/wordlist/" class="md-nav__link">
         
   
   
@@ -1180,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redTeam/aula4/hashs/" class="md-nav__link">
+      <a href="../../../../redTeam/aula4/hashs/" class="md-nav__link">
         
   
   
@@ -1320,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula1/fundamentos/" class="md-nav__link">
+      <a href="../../../aula1/fundamentos/" class="md-nav__link">
         
   
   
@@ -1348,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula1/intro/" class="md-nav__link">
+      <a href="../../../aula1/intro/" class="md-nav__link">
         
   
   
@@ -1376,7 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula1/wireshark/" class="md-nav__link">
+      <a href="../../../aula1/wireshark/" class="md-nav__link">
         
   
   
@@ -1459,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula2/redes1/" class="md-nav__link">
+      <a href="../../../aula2/redes1/" class="md-nav__link">
         
   
   
@@ -1542,7 +1542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula3/resdes2/" class="md-nav__link">
+      <a href="../../../aula3/resdes2/" class="md-nav__link">
         
   
   
@@ -1625,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula4/criptografia_avancada/" class="md-nav__link">
+      <a href="../../../aula4/criptografia_avancada/" class="md-nav__link">
         
   
   
@@ -1710,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aula5/" class="md-nav__link">
+      <a href="../../aula5/" class="md-nav__link">
         
   
   
@@ -1738,7 +1738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../containers/" class="md-nav__link">
+      <a href="../../containers/" class="md-nav__link">
         
   
   
@@ -1746,6 +1746,83 @@
     
   
     Containers e Segurança
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5_3" id="__nav_3_2_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GCP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GCP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vpc_gcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPC no GCP
   
 
     
@@ -1782,7 +1859,7 @@
   <span class="md-ellipsis">
     
   
-    Laboratório GCP
+    Deploy no GCP - Cloud Run + Storage
   
 
     
@@ -1800,7 +1877,7 @@
   <span class="md-ellipsis">
     
   
-    Laboratório GCP
+    Deploy no GCP - Cloud Run + Storage
   
 
     
@@ -1826,10 +1903,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-objetivos" class="md-nav__link">
+  <a href="#1-arquitetura-de-referencia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Objetivos
+        1. Arquitetura de referência
       
     </span>
   </a>
@@ -1837,10 +1914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pre-requisitos" class="md-nav__link">
+  <a href="#2-pre-requisitos-rapidos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pré-requisitos
+        2. Pré-requisitos rápidos
       
     </span>
   </a>
@@ -1848,66 +1925,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-passo-a-passo" class="md-nav__link">
+  <a href="#3-backend-no-cloud-run-via-console" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Passo a passo
+        3. Backend no Cloud Run (via console)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Passo a passo">
+    <nav class="md-nav" aria-label="3. Backend no Cloud Run (via console)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-crie-a-vpc-e-sub-redes" class="md-nav__link">
+  <a href="#firewall-para-backend-console" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 Crie a VPC e sub-redes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-firewalls-estadoful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2 Firewalls estadoful
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-nat-para-workloads-privados" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3 NAT para workloads privados
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-bastion-instancias" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.4 Bastion + instâncias
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-observabilidade-e-soc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.5 Observabilidade e SOC
+        Firewall para backend (Console)
       
     </span>
   </a>
@@ -1920,10 +1953,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-extensoes-rapidas" class="md-nav__link">
+  <a href="#4-frontend-estatico-storage-cdn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Extensões rápidas
+        4. Frontend estático (Storage + CDN)
       
     </span>
   </a>
@@ -1931,10 +1964,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-checklist-final" class="md-nav__link">
+  <a href="#5-deploy-pipeline-sugerido" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Checklist final
+        5. Deploy pipeline sugerido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-checklist-de-seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Checklist de segurança
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-referencias-rapidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Referências rápidas
       
     </span>
   </a>
@@ -1944,6 +1999,42 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy no GCP em VM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -2020,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../GameHacking/introducao/" class="md-nav__link">
+      <a href="../../../../GameHacking/introducao/" class="md-nav__link">
         
   
   
@@ -2103,7 +2194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Virus/Aula1/aula1/" class="md-nav__link">
+      <a href="../../../../Virus/Aula1/aula1/" class="md-nav__link">
         
   
   
@@ -2178,7 +2269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Virus/Rat/discordbot/" class="md-nav__link">
+      <a href="../../../../Virus/Rat/discordbot/" class="md-nav__link">
         
   
   
@@ -2206,7 +2297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Virus/Rat/rat/" class="md-nav__link">
+      <a href="../../../../Virus/Rat/rat/" class="md-nav__link">
         
   
   
@@ -2351,7 +2442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../entregas/projetos/projeto1/" class="md-nav__link">
+      <a href="../../../../../entregas/projetos/projeto1/" class="md-nav__link">
         
   
   
@@ -2414,10 +2505,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-objetivos" class="md-nav__link">
+  <a href="#1-arquitetura-de-referencia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Objetivos
+        1. Arquitetura de referência
       
     </span>
   </a>
@@ -2425,10 +2516,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pre-requisitos" class="md-nav__link">
+  <a href="#2-pre-requisitos-rapidos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pré-requisitos
+        2. Pré-requisitos rápidos
       
     </span>
   </a>
@@ -2436,66 +2527,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-passo-a-passo" class="md-nav__link">
+  <a href="#3-backend-no-cloud-run-via-console" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Passo a passo
+        3. Backend no Cloud Run (via console)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Passo a passo">
+    <nav class="md-nav" aria-label="3. Backend no Cloud Run (via console)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-crie-a-vpc-e-sub-redes" class="md-nav__link">
+  <a href="#firewall-para-backend-console" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1 Crie a VPC e sub-redes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-firewalls-estadoful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.2 Firewalls estadoful
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-nat-para-workloads-privados" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3 NAT para workloads privados
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-bastion-instancias" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.4 Bastion + instâncias
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-observabilidade-e-soc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.5 Observabilidade e SOC
+        Firewall para backend (Console)
       
     </span>
   </a>
@@ -2508,10 +2555,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-extensoes-rapidas" class="md-nav__link">
+  <a href="#4-frontend-estatico-storage-cdn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Extensões rápidas
+        4. Frontend estático (Storage + CDN)
       
     </span>
   </a>
@@ -2519,10 +2566,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-checklist-final" class="md-nav__link">
+  <a href="#5-deploy-pipeline-sugerido" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Checklist final
+        5. Deploy pipeline sugerido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-checklist-de-seguranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Checklist de segurança
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-referencias-rapidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Referências rápidas
       
     </span>
   </a>
@@ -2546,158 +2615,134 @@
 
 
 
-<h1 id="aula-pratica-rede-segura-no-google-cloud-platform">Aula prática: rede segura no Google Cloud Platform</h1>
-<h2 id="1-objetivos">1. Objetivos</h2>
-<ul>
-<li>Construir uma topologia mínima em GCP com <strong>VPC</strong>, sub-redes públicas/privadas e NAT.</li>
-<li>Aplicar <strong>firewalls</strong>, <strong>Cloud NAT</strong> e <strong>Cloud Router</strong> para controlar tráfego.</li>
-<li>Integrar <strong>Cloud Logging / Cloud Monitoring</strong> para dar visibilidade ao SOC.</li>
-<li>Preparar a arquitetura para estender o desenho a AWS/Azure mudando apenas nomes.</li>
-</ul>
-<h2 id="2-pre-requisitos">2. Pré-requisitos</h2>
-<ul>
-<li>Conta GCP com permissão de <code>Project Editor</code> ou superior.</li>
-<li>Projeto selecionado (<code>gcloud config set project &lt;ID&gt;</code>).</li>
-<li>SDK instalado localmente <strong>ou</strong> acesso ao Cloud Shell.</li>
-<li>Aproveite os <strong>US$300 em créditos gratuitos por 90 dias</strong> oferecidos ao criar a conta: use-os para praticar sem custos (lembre-se de encerrar os recursos depois).</li>
-</ul>
-<h2 id="3-passo-a-passo">3. Passo a passo</h2>
-<h3 id="31-crie-a-vpc-e-sub-redes">3.1 Crie a VPC e sub-redes</h3>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># VPC customizada</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$project</span><span class="p">=</span><span class="s2">&quot;&lt;seu-projeto&gt;&quot;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">gcloud</span> <span class="n">compute</span> <span class="n">networks</span> <span class="n">create</span> <span class="n">blue-team-vpc</span> <span class="p">`</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="p">-</span><span class="n">-project</span><span class="p">=</span><span class="nv">$project</span> <span class="p">`</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="p">-</span><span class="n">-subnet-mode</span><span class="p">=</span><span class="n">custom</span> <span class="p">`</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="p">-</span><span class="n">-bgp-routing-mode</span><span class="p">=</span><span class="n">regional</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c"># Sub-rede pública (web)</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">gcloud</span> <span class="n">compute</span> <span class="n">networks</span> <span class="n">subnets</span> <span class="n">create</span> <span class="n">web-subnet</span> <span class="p">`</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="p">-</span><span class="n">-project</span><span class="p">=</span><span class="nv">$project</span> <span class="p">`</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  <span class="p">-</span><span class="n">-network</span><span class="p">=</span><span class="n">blue-team-vpc</span> <span class="p">`</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  <span class="p">-</span><span class="n">-range</span><span class="p">=</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">24</span> <span class="p">`</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  <span class="p">-</span><span class="n">-region</span><span class="p">=</span><span class="n">us-central1</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c"># Sub-rede privada (app)</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">gcloud</span> <span class="n">compute</span> <span class="n">networks</span> <span class="n">subnets</span> <span class="n">create</span> <span class="n">app-subnet</span> <span class="p">`</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  <span class="p">-</span><span class="n">-project</span><span class="p">=</span><span class="nv">$project</span> <span class="p">`</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  <span class="p">-</span><span class="n">-network</span><span class="p">=</span><span class="n">blue-team-vpc</span> <span class="p">`</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  <span class="p">-</span><span class="n">-range</span><span class="p">=</span><span class="n">10</span><span class="p">.</span><span class="n">10</span><span class="p">.</span><span class="n">20</span><span class="p">.</span><span class="n">0</span><span class="p">/</span><span class="n">24</span> <span class="p">`</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  <span class="p">-</span><span class="n">-region</span><span class="p">=</span><span class="n">us-central1</span>
-</span></code></pre></div>
-<h3 id="32-firewalls-estadoful">3.2 Firewalls estadoful</h3>
-<table>
-<thead>
-<tr>
-<th>Regra</th>
-<th>Direção</th>
-<th>Ação</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>allow-ssh-admin</code></td>
-<td>Ingress</td>
-<td>Allow</td>
-<td>Permite SSH para bastion (restrinja IP de origem).</td>
-</tr>
-<tr>
-<td><code>allow-http-web</code></td>
-<td>Ingress</td>
-<td>Allow</td>
-<td>Libera portas 80/443 somente para VMs da sub-rede pública.</td>
-</tr>
-<tr>
-<td><code>deny-all-default</code></td>
-<td>Ingress/Egress</td>
-<td>Deny</td>
-<td>Mantém padrão de negar o que não for explicitamente liberado.</td>
-</tr>
-</tbody>
-</table>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Exemplo de firewall HTTP</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">$sourceRange</span><span class="p">=</span><span class="s2">&quot;0.0.0.0/0&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">gcloud</span> <span class="n">compute</span> <span class="n">firewall-rules</span> <span class="n">create</span> <span class="n">allow-http-web</span> <span class="p">`</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  <span class="p">-</span><span class="n">-network</span><span class="p">=</span><span class="n">blue-team-vpc</span> <span class="p">`</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="p">-</span><span class="n">-direction</span><span class="p">=</span><span class="n">INGRESS</span> <span class="p">`</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  <span class="p">-</span><span class="n">-action</span><span class="p">=</span><span class="n">ALLOW</span> <span class="p">`</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="p">-</span><span class="n">-rules</span><span class="p">=</span><span class="n">tcp</span><span class="p">:</span><span class="n">80</span><span class="p">,</span><span class="n">tcp</span><span class="p">:</span><span class="n">443</span> <span class="p">`</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  <span class="p">-</span><span class="n">-target-tags</span><span class="p">=</span><span class="n">web</span> <span class="p">`</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  <span class="p">-</span><span class="n">-source-ranges</span><span class="p">=</span><span class="nv">$sourceRange</span>
-</span></code></pre></div>
-<h3 id="33-nat-para-workloads-privados">3.3 NAT para workloads privados</h3>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Cloud Router (necessário para NAT e VPN)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">gcloud</span> <span class="n">compute</span> <span class="n">routers</span> <span class="n">create</span> <span class="n">blue-router</span> <span class="p">`</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  <span class="p">-</span><span class="n">-network</span><span class="p">=</span><span class="n">blue-team-vpc</span> <span class="p">`</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  <span class="p">-</span><span class="n">-region</span><span class="p">=</span><span class="n">us-central1</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c"># Cloud NAT</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">gcloud</span> <span class="n">compute</span> <span class="n">routers</span> <span class="n">nats</span> <span class="n">create</span> <span class="n">blue-nat</span> <span class="p">`</span> 
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="p">-</span><span class="n">-router</span><span class="p">=</span><span class="n">blue-router</span> <span class="p">`</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  <span class="p">-</span><span class="n">-router-region</span><span class="p">=</span><span class="n">us-central1</span> <span class="p">`</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  <span class="p">-</span><span class="n">-nat-all-subnet-ip-ranges</span> <span class="p">`</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  <span class="p">-</span><span class="n">-auto-allocate-nat-external-ips</span>
-</span></code></pre></div>
-<blockquote>
-<p>Resultado: workloads na sub-rede <code>app-subnet</code> acessam Internet para updates sem expor IP público.</p>
-</blockquote>
-<h3 id="34-bastion-instancias">3.4 Bastion + instâncias</h3>
-<ol>
-<li>Crie uma VM <strong>bastion</strong> na sub-rede pública com tag <code>web</code> e chave SSH gerenciada pelo IAM.</li>
-<li>Crie VMs na sub-rede privada <strong>sem IP público</strong>, usando tag <code>app</code>.</li>
-<li>Ajuste firewall para permitir SSH somente do bastion (<code>--source-tags=bastion</code>).</li>
-</ol>
-<h3 id="35-observabilidade-e-soc">3.5 Observabilidade e SOC</h3>
+<h1 id="deploy-completo-backend-frontend-no-google-cloud-platform">Deploy completo (backend + frontend) no Google Cloud Platform</h1>
+<p>Este guia mostra como colocar no ar um backend containerizado e um frontend estático no GCP usando ferramentas gerenciadas. Tudo é feito pela <strong>console web</strong> para facilitar a visualização.</p>
+<h2 id="1-arquitetura-de-referencia">1. Arquitetura de referência</h2>
 <table>
 <thead>
 <tr>
 <th>Componente</th>
-<th>Configuração</th>
+<th>Serviço GCP</th>
+<th>Função</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>VPC Flow Logs</strong></td>
-<td>Ative nas sub-redes e envie para Cloud Logging (permite pivô por IP/porta).</td>
+<td>Backend API</td>
+<td>Cloud Run</td>
+<td>Container HTTP escalável, público via HTTPS.</td>
 </tr>
 <tr>
-<td><strong>Cloud Logging Sink</strong></td>
-<td>Encaminhe logs para BigQuery ou Pub/Sub → SIEM externo.</td>
+<td>Banco (opcional)</td>
+<td>Cloud SQL ou Firestore</td>
+<td>Persistência gerenciada.</td>
 </tr>
 <tr>
-<td><strong>Cloud Monitoring Alert</strong></td>
-<td>Crie política para tráfego anômalo (ex: &gt;100 conexões TCP/min).</td>
+<td>Frontend SPA</td>
+<td>Cloud Storage + Cloud CDN</td>
+<td>Hospedagem de arquivos estáticos com cache global.</td>
+</tr>
+<tr>
+<td>Observabilidade</td>
+<td>Cloud Logging &amp; Cloud Monitoring</td>
+<td>Métricas, logs e alertas.</td>
+</tr>
+<tr>
+<td>Segurança</td>
+<td>Identity-Aware Proxy / Cloud Armor (opcionais)</td>
+<td>Controle de acesso e WAF.</td>
 </tr>
 </tbody>
 </table>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Ativar Flow Logs na sub-rede privada</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">gcloud</span> <span class="n">compute</span> <span class="n">networks</span> <span class="n">subnets</span> <span class="n">update</span> <span class="n">app-subnet</span> <span class="p">`</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="p">-</span><span class="n">-region</span><span class="p">=</span><span class="n">us-central1</span> <span class="p">`</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="p">-</span><span class="n">-enable-flow-logs</span>
-</span></code></pre></div>
-<h2 id="4-extensoes-rapidas">4. Extensões rápidas</h2>
+<h2 id="2-pre-requisitos-rapidos">2. Pré-requisitos rápidos</h2>
 <ul>
-<li><strong>VPN site-to-site</strong>: adicione Cloud VPN conectado ao firewall físico on-premise.</li>
-<li><strong>Cloud Armor</strong>: proteja o front-end HTTP com WAF gerenciado.</li>
-<li><strong>Cloud IDS</strong>: inspecione tráfego leste-oeste. Combine alertas com MITRE ATT&amp;CK.</li>
+<li>Projeto configurado e faturamento ativo.</li>
+<li>Código do backend containerizado (Dockerfile) e build do frontend (ex.: <code>npm run build</code>).</li>
+<li><code>gcloud</code> opcionalmente para builds, mas o foco aqui é no console.</li>
 </ul>
-<h2 id="5-checklist-final">5. Checklist final</h2>
-<ul>
-<li>[ ] VPC custom com CIDR planejado.</li>
-<li>[ ] Sub-redes com Flow Logs habilitados.</li>
-<li>[ ] Firewalls aplicando princípio do menor privilégio.</li>
-<li>[ ] Cloud NAT + Router garantindo saída controlada.</li>
-<li>[ ] Logs exportados para o SIEM do time Blue Team.</li>
+<h2 id="3-backend-no-cloud-run-via-console">3. Backend no Cloud Run (via console)</h2>
+<ol>
+<li><strong>Container Registry</strong>: publique sua imagem (Cloud Build ou Artifact Registry). Depois:<ul>
+<li>Console → <em>Artifact Registry</em> → <em>Repositórios</em> → <em>Criar</em> (formato Docker, região mais próxima).</li>
+<li>Suba a imagem (use <code>gcloud builds submit</code> ou pipeline CI).</li>
 </ul>
+</li>
+<li><strong>Criar serviço Cloud Run</strong>:<ul>
+<li>Console → <em>Cloud Run</em> → <em>Criar serviço</em>.</li>
+<li>Escolha o repositório/imagem.</li>
+<li>Plataforma: <em>Gerenciado</em>, região: por exemplo <code>us-central1</code>.</li>
+<li>Defina o serviço como <em>Não autenticado</em> (se a API for pública) ou mantenha autenticado e use IAP.</li>
+<li>Ajuste recursos (CPU/memória) e variáveis de ambiente (aba <em>Variáveis</em>).</li>
+<li>Conclua; a URL HTTPS será mostrada.</li>
+</ul>
+</li>
+</ol>
+<h3 id="firewall-para-backend-console">Firewall para backend (Console)</h3>
+<p>Mesmo no Cloud Run, você pode limitar IPs através de <strong>VPC Service Controls</strong> ou, se usar Compute Engine / GKE, configure firewall assim:</p>
+<ol>
+<li>Console → <em>VPC Network</em> → <em>Firewall rules</em> → <em>Create firewall rule</em>.</li>
+<li>Nome: <code>allow-backend-http</code>.</li>
+<li>Rede: <code>default</code> ou a VPC específica.</li>
+<li>Prioridade: 1000.</li>
+<li>Direction: <em>Ingress</em>.</li>
+<li>Targets: <em>Specified service account</em> ou <em>Tags</em> (ex.: <code>backend</code>).</li>
+<li>Source filter: <code>IP ranges</code> → <code>0.0.0.0/0</code> (ou restrinja a IPs específicos).</li>
+<li>Protocols/ports: marque <code>Specified protocols</code> → <code>tcp:80,tcp:443</code>.</li>
+<li>Criar. A interface mostrará a regra aplicada imediatamente.</li>
+</ol>
 <blockquote>
-<p>Termine replicando o mesmo desenho em AWS (VPC + Subnets + NAT Gateway) e Azure (VNet + Subnets + NAT Gateway). A lógica é idêntica; só mudam os nomes.</p>
+<p>Se usar Cloud Run, combine com Cloud Armor para listas de IP/Geo; o passo acima é mais comum em Compute Engine/GKE.</p>
 </blockquote>
+<h2 id="4-frontend-estatico-storage-cdn">4. Frontend estático (Storage + CDN)</h2>
+<ol>
+<li>Console → <em>Cloud Storage</em> → <em>Buckets</em> → <em>Create</em>.<ul>
+<li>Nome global único (ex.: <code>inspersec-frontend</code>).</li>
+<li>Região multi ou dual conforme necessidade.</li>
+<li>Desmarque <em>Uniform bucket-level access</em> se quiser ACLs, mas recomendamos manter marcado.</li>
+</ul>
+</li>
+<li>Após criar, clique no bucket → aba <strong>Permissions</strong> → adicione <code>allUsers</code> com papel <em>Storage Object Viewer</em> para torná-lo público (ou use Cloud CDN + Load Balancer para HTTPS próprio).</li>
+<li>Aba <strong>Configuration</strong> → <em>Static website hosting</em> → habilite e defina <code>index.html</code> e <code>404.html</code>.</li>
+<li>Faça upload do build (<code>gsutil rsync</code> ou arraste arquivos na UI).</li>
+<li>(Opcional) <strong>Cloud CDN</strong>:<ul>
+<li>Console → <em>Network services</em> → <em>Load balancing</em> → <em>Create load balancer</em> → HTTP(S).</li>
+<li>Backend: bucket GCS; Frontend: HTTPS com certificado gerenciado.</li>
+<li>Ative Cloud CDN para cache global e obtenha URL amigável.</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-deploy-pipeline-sugerido">5. Deploy pipeline sugerido</h2>
+<ol>
+<li>CI executa testes e builda imagem Docker + artefatos frontend.</li>
+<li>Publica imagem no Artifact Registry e artefatos no Cloud Storage (ou Cloud Build Deploy).</li>
+<li>Gatilho do Cloud Deploy ou Cloud Build aplica nova revisão do Cloud Run e sincroniza bucket.</li>
+<li>Observabilidade: configure alertas (p95 latência, 5xx) no Cloud Monitoring.</li>
+</ol>
+<h2 id="6-checklist-de-seguranca">6. Checklist de segurança</h2>
+<ul>
+<li>[ ] Habilitar <strong>HTTPS</strong> obrigatório (Cloud Run já fornece; para bucket use Load Balancer + certificado).</li>
+<li>[ ] Revisar firewall rules no console (somente portas necessárias, origem restrita se possível).</li>
+<li>[ ] Registrar logs em Cloud Logging e exportar para o SIEM (Pub/Sub → Splunk/Chronicle).</li>
+<li>[ ] Ativar Cloud Armor / WAF para endpoints públicos sensíveis.</li>
+<li>[ ] Usar secret manager para variáveis sensíveis do backend.</li>
+</ul>
+<h2 id="7-referencias-rapidas">7. Referências rápidas</h2>
+<ul>
+<li><a href="https://cloud.google.com/run/docs">Documentação Cloud Run</a></li>
+<li><a href="https://cloud.google.com/storage/docs/hosting-static-website">Hosting estático no Cloud Storage</a></li>
+<li><a href="https://cloud.google.com/vpc/docs/using-firewalls">Firewall VPC via console</a></li>
+<li><a href="https://cloud.google.com/cdn/docs/setting-up-cdn-with-bucket">Cloud CDN com bucket</a></li>
+</ul>
+<p>Pronto! Com esses passos você consegue expor backend e frontend no GCP usando apenas a interface visual, mantendo boas práticas de segurança e observabilidade.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -2741,10 +2786,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
