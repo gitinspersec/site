@@ -65,7 +65,10 @@ nav:
       - Aula 5:
         - Cloud Networking: aulas/blueTeam/aula5/aula5.md
         - Containers e Segurança: aulas/blueTeam/aula5/containers.md
-        - Laboratório GCP: aulas/blueTeam/aula5/gcp.md
+        - GCP:
+            - VPC no GCP: aulas/blueTeam/aula5/gcp/vpc_gcp.md
+            - Deploy no GCP - Cloud Run + Storage: aulas/blueTeam/aula5/gcp/cloudrun_bucket.md
+            - Deploy no GCP em VM: aulas/blueTeam/aula5/gcp/vm.md
     - Game Hacking:
       - Introdução: aulas/GameHacking/introducao.md
     - Virus:
