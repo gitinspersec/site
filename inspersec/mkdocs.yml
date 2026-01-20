@@ -70,6 +70,13 @@ nav:
             - VPC no GCP: aulas/blueTeam/aula5/gcp/vpc_gcp.md
             - Deploy no GCP - Cloud Run + Storage: aulas/blueTeam/aula5/gcp/cloudrun_bucket.md
             - Deploy no GCP em VM: aulas/blueTeam/aula5/gcp/vm.md
+      - Aula 6:
+        - Engenharia de Detecção: aulas/blueTeam/aula6/engenharia_de_deteccao.md
+        - Gestão de Vulnerabilidades e Exposição: aulas/blueTeam/aula6/gestao_de_vulnerabilidades_e_exposicao.md
+        - Inteligência de Ameaça: aulas/blueTeam/aula6/inteligencia_de_ameaca.md
+        - Inteligência de Segurança: aulas/blueTeam/aula6/inteligencia_de_seguranca.md
+        - Próximos Passos em Cibersegurança: aulas/blueTeam/aula6/proximos_passos_ciberseguranca.md
+        - Resposta a Incidentes: aulas/blueTeam/aula6/resposta_a_incidentes.md
     - Game Hacking:
       - Introdução: aulas/GameHacking/introducao.md
     - Virus:
