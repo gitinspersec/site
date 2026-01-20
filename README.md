@@ -12,6 +12,16 @@ O conteúdo publicado fica em `inspersec/docs`. Exemplos:
 
 O arquivo de configuração do MkDocs está em `inspersec/mkdocs.yml`.
 
+## Como instalar MkDocs
+
+Para instalar o MkDocs e o tema Material (usado neste projeto), execute o comando:
+
+```bash
+pip install mkdocs mkdocs-material
+```
+
+Certifique-se de ter o Python e o pip instalados no seu sistema.
+
 ## Como executar
 
 Para executar o site localmente, navegue até a pasta `inspersec` e execute o comando:
