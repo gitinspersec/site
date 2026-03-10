@@ -104,6 +104,98 @@ O processo de estabelecimento de conexão segura:
 
 ---
 
+## Utilizando o `curl`
+
+O **curl** é uma ferramenta de linha de comando para enviar requisições HTTP diretamente do terminal. É muito utilizado em pentesting, automação e debugging de APIs.
+
+### Sintaxe Básica
+
+```bash
+curl [opções] <URL>
+```
+
+### Opções Mais Utilizadas
+
+| Opção         | Descrição                                                |
+|---------------|----------------------------------------------------------|
+| `-v`          | Modo verbose — mostra headers de requisição e resposta   |
+| `-X <MÉTODO>` | Define o método HTTP (POST, PUT, DELETE, etc.)           |
+| `-H`          | Adiciona um header customizado                           |
+| `-d`          | Envia dados no body da requisição                        |
+| `-I`          | Retorna apenas os headers da resposta (HEAD)             |
+| `-L`          | Segue redirecionamentos (301, 302)                       |
+| `-b`          | Envia cookies junto com a requisição                     |
+| `-k`          | Ignora erros de certificado SSL (útil em labs)           |
+| `-o <arquivo>`| Salva a resposta em um arquivo                           |
+| `-s`          | Modo silencioso (sem barra de progresso)                 |
+
+### Exemplos
+
+#### GET simples (com verbose)
+
+```bash
+curl -v https://httpbin.org/get
+```
+
+O flag `-v` mostra o handshake TLS, os headers enviados e os headers de resposta — muito útil para análise.
+
+#### POST com JSON
+
+```bash
+curl -X POST https://httpbin.org/post \
+  -H "Content-Type: application/json" \
+  -d '{"usuario": "admin", "senha": "123456"}'
+```
+
+#### POST com dados de formulário
+
+```bash
+curl -X POST https://httpbin.org/post \
+  -d "username=admin&password=s3nh4"
+```
+
+#### Ver apenas os headers da resposta
+
+```bash
+curl -I https://httpbin.org/get
+```
+
+Útil para identificar o servidor (`Server`), tecnologias (`X-Powered-By`) e configurações de segurança.
+
+#### Seguir redirecionamentos
+
+```bash
+curl -L https://httpbin.org/redirect/3
+```
+
+#### Enviar cookies manualmente
+
+```bash
+curl -b "session=abc123; token=xyz" https://httpbin.org/cookies
+```
+
+#### Ignorar verificação de certificado SSL
+
+```bash
+curl -k https://alvo-lab.local/api/dados
+```
+
+> **Atenção**: o flag `-k` ignora erros de certificado. Use apenas em ambientes controlados (labs, CTFs).
+
+#### Simular um User-Agent diferente
+
+```bash
+curl -H "User-Agent: Mozilla/5.0 (Windows NT 10.0)" https://httpbin.org/user-agent
+```
+
+#### Salvar resposta em arquivo
+
+```bash
+curl -o resposta.html https://exemplo.com
+```
+
+---
+
 ## Relação com Segurança Ofensiva
 
 Entender HTTP/HTTPS é fundamental para praticamente todas as técnicas de Red Team:
