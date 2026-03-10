@@ -52,9 +52,9 @@ nav:
         - XSS: aulas/redTeam/aula4/xss.md
         - WordList: aulas/redTeam/aula4/wordlist.md
         - Hash: aulas/redTeam/aula4/hashs.md
-      - Aula Bônus:
-        - Requisições HTTP e HTTPS: aulas/redTeam/aulabonus/http_https.md
-        - Protocolos e TCP: aulas/redTeam/aulabonus/protocolos_tcp.md
+      - Aulas Extras:
+        - Requisições HTTP e HTTPS: aulas/redTeam/aulasextra/http_https.md
+        - Protocolos e TCP: aulas/redTeam/aulasextra/protocolos_tcp.md
     - Blue Team:
       - Aula 1:
         - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
