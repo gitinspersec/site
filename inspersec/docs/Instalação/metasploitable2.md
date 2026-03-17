@@ -41,15 +41,6 @@ Com a sua VM `Metasploitable2` selecionada na tela inicial do VirtualBox, clique
 1. Navegue para a sub-categoria **Placa-mãe**.
     - Valide que a **Memória Base** está como configurada: `1024 MB`.
     - Na "Ordem de Boot", verifique se o **Disco Rígido** está presente.
-2. Na sub-categoria **Aceleração**, garanta que as seguintes predefinições estejam ativas (para melhor desempenho e estabilidade do Linux):
-    - Interface de Paravirtualização: **KVM**
-    - Habilitar **Paginação Aninhada**
-    - Habilitar **PAE/NX**
-
-### Categoria "Tela"
-- Na sub-categoria **Tela**, configure:
-    - **Memória de Vídeo:** `16 MB`.
-    - **Controladora Gráfica:** `VMSVGA`.
 
 ### Categoria "Rede" (Muito Importante!)
 Como o Metasploitable 2 é uma máquina propositalmente exposta a vários tipos de falhas, é essencial que não configuremos sua rede para ter acesso aberto ou NAT comum. Para atacar adequadamente esta VM junto com a sua VM de ataque (como um Kali Linux).
