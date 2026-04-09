@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../vpc_gcp/">
+        <link rel="prev" href="../../aula6/resposta_a_incidentes/">
       
       
-        <link rel="next" href="../vm/">
+        <link rel="next" href="../../../GameHacking/introducao/">
       
       
         
       
       
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Guia de Deploy no GCP - inspersec</title>
+        <title>System Design (Introdução Rápida) - inspersec</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploy-completo-backend-frontend-no-google-cloud-platform" class="md-skip">
+        <a href="#aula-extra-system-design-introducao-rapida" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Guia de Deploy no GCP
+              System Design (Introdução Rápida)
             
           </span>
         </div>
@@ -214,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
         
   
   
@@ -362,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
         
   
   
@@ -390,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
         
   
   
@@ -418,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/metasploitable2/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/metasploitable2/" class="md-nav__link">
         
   
   
@@ -596,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula1/basicLinux/" class="md-nav__link">
+      <a href="../../../redTeam/aula1/basicLinux/" class="md-nav__link">
         
   
   
@@ -624,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula1/nmap/" class="md-nav__link">
+      <a href="../../../redTeam/aula1/nmap/" class="md-nav__link">
         
   
   
@@ -707,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula2/burpSuite/" class="md-nav__link">
+      <a href="../../../redTeam/aula2/burpSuite/" class="md-nav__link">
         
   
   
@@ -735,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula2/criptografia/" class="md-nav__link">
+      <a href="../../../redTeam/aula2/criptografia/" class="md-nav__link">
         
   
   
@@ -865,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula3/engenharia_social/sobre/" class="md-nav__link">
+      <a href="../../../redTeam/aula3/engenharia_social/sobre/" class="md-nav__link">
         
   
   
@@ -893,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula3/engenharia_social/gophish/" class="md-nav__link">
+      <a href="../../../redTeam/aula3/engenharia_social/gophish/" class="md-nav__link">
         
   
   
@@ -921,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula3/engenharia_social/setoolkit/" class="md-nav__link">
+      <a href="../../../redTeam/aula3/engenharia_social/setoolkit/" class="md-nav__link">
         
   
   
@@ -949,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula3/engenharia_social/sherlock/" class="md-nav__link">
+      <a href="../../../redTeam/aula3/engenharia_social/sherlock/" class="md-nav__link">
         
   
   
@@ -977,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula3/engenharia_social/zphisher/" class="md-nav__link">
+      <a href="../../../redTeam/aula3/engenharia_social/zphisher/" class="md-nav__link">
         
   
   
@@ -1005,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula3/engenharia_social/prompt_injection/" class="md-nav__link">
+      <a href="../../../redTeam/aula3/engenharia_social/prompt_injection/" class="md-nav__link">
         
   
   
@@ -1096,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula4/introducao/" class="md-nav__link">
+      <a href="../../../redTeam/aula4/introducao/" class="md-nav__link">
         
   
   
@@ -1124,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula4/gobuster/" class="md-nav__link">
+      <a href="../../../redTeam/aula4/gobuster/" class="md-nav__link">
         
   
   
@@ -1152,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula4/john/" class="md-nav__link">
+      <a href="../../../redTeam/aula4/john/" class="md-nav__link">
         
   
   
@@ -1180,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula4/xss/" class="md-nav__link">
+      <a href="../../../redTeam/aula4/xss/" class="md-nav__link">
         
   
   
@@ -1208,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula4/wordlist/" class="md-nav__link">
+      <a href="../../../redTeam/aula4/wordlist/" class="md-nav__link">
         
   
   
@@ -1236,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aula4/hashs/" class="md-nav__link">
+      <a href="../../../redTeam/aula4/hashs/" class="md-nav__link">
         
   
   
@@ -1319,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aulasextra/http_https/" class="md-nav__link">
+      <a href="../../../redTeam/aulasextra/http_https/" class="md-nav__link">
         
   
   
@@ -1347,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../redTeam/aulasextra/protocolos_tcp/" class="md-nav__link">
+      <a href="../../../redTeam/aulasextra/protocolos_tcp/" class="md-nav__link">
         
   
   
@@ -1487,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula1/fundamentos/" class="md-nav__link">
+      <a href="../../aula1/fundamentos/" class="md-nav__link">
         
   
   
@@ -1515,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula1/intro/" class="md-nav__link">
+      <a href="../../aula1/intro/" class="md-nav__link">
         
   
   
@@ -1543,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula1/wireshark/" class="md-nav__link">
+      <a href="../../aula1/wireshark/" class="md-nav__link">
         
   
   
@@ -1571,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula1/blueteam-devs/" class="md-nav__link">
+      <a href="../../aula1/blueteam-devs/" class="md-nav__link">
         
   
   
@@ -1654,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula2/redes1/" class="md-nav__link">
+      <a href="../../aula2/redes1/" class="md-nav__link">
         
   
   
@@ -1737,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula3/resdes2/" class="md-nav__link">
+      <a href="../../aula3/resdes2/" class="md-nav__link">
         
   
   
@@ -1820,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula4/criptografia_avancada/" class="md-nav__link">
+      <a href="../../aula4/criptografia_avancada/" class="md-nav__link">
         
   
   
@@ -1853,20 +1853,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
         
           
           <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
@@ -1887,7 +1885,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1905,7 +1903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../aula5/" class="md-nav__link">
+      <a href="../../aula5/aula5/" class="md-nav__link">
         
   
   
@@ -1933,7 +1931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/" class="md-nav__link">
+      <a href="../../aula5/containers/" class="md-nav__link">
         
   
   
@@ -1958,20 +1956,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5_3" >
         
           
           <label class="md-nav__link" for="__nav_3_2_5_3" id="__nav_3_2_5_3_label" tabindex="0">
@@ -1992,7 +1988,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_5_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2010,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpc_gcp/" class="md-nav__link">
+      <a href="../../aula5/gcp/vpc_gcp/" class="md-nav__link">
         
   
   
@@ -2035,37 +2031,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploy no GCP - Cloud Run + Storage
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../aula5/gcp/cloudrun_bucket/" class="md-nav__link">
         
   
   
@@ -2081,120 +2050,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-arquitetura-de-referencia" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Arquitetura de referência
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-pre-requisitos-rapidos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Pré-requisitos rápidos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-backend-no-cloud-run-via-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Backend no Cloud Run (via console)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Backend no Cloud Run (via console)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#firewall-para-backend-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firewall para backend (Console)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-frontend-estatico-storage-cdn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Frontend estático (Storage + CDN)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-deploy-pipeline-sugerido" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Deploy pipeline sugerido
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-checklist-de-seguranca" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Checklist de segurança
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-referencias-rapidas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Referências rápidas
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2207,7 +2062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vm/" class="md-nav__link">
+      <a href="../../aula5/gcp/vm/" class="md-nav__link">
         
   
   
@@ -2298,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula6/engenharia_de_deteccao/" class="md-nav__link">
+      <a href="../../aula6/engenharia_de_deteccao/" class="md-nav__link">
         
   
   
@@ -2326,7 +2181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula6/gestao_de_vulnerabilidades_e_exposicao/" class="md-nav__link">
+      <a href="../../aula6/gestao_de_vulnerabilidades_e_exposicao/" class="md-nav__link">
         
   
   
@@ -2354,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula6/inteligencia_de_ameaca/" class="md-nav__link">
+      <a href="../../aula6/inteligencia_de_ameaca/" class="md-nav__link">
         
   
   
@@ -2382,7 +2237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula6/inteligencia_de_seguranca/" class="md-nav__link">
+      <a href="../../aula6/inteligencia_de_seguranca/" class="md-nav__link">
         
   
   
@@ -2410,7 +2265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula6/proximos_passos_ciberseguranca/" class="md-nav__link">
+      <a href="../../aula6/proximos_passos_ciberseguranca/" class="md-nav__link">
         
   
   
@@ -2438,7 +2293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula6/resposta_a_incidentes/" class="md-nav__link">
+      <a href="../../aula6/resposta_a_incidentes/" class="md-nav__link">
         
   
   
@@ -2471,18 +2326,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_7" id="__nav_3_2_7_label" tabindex="0">
@@ -2503,7 +2360,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2518,10 +2375,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../aulasextra/system_design_intro/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design (Introdução Rápida)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2537,6 +2421,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-voce-precisa-dominar-primeiro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que voce precisa dominar primeiro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trilha-de-estudos-18-case-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trilha de estudos (18 case studies)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-estudar-essa-lista-sem-se-perder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como estudar essa lista sem se perder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recurso-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recurso extra
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2612,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GameHacking/introducao/" class="md-nav__link">
+      <a href="../../../GameHacking/introducao/" class="md-nav__link">
         
   
   
@@ -2695,7 +2643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Virus/Aula1/aula1/" class="md-nav__link">
+      <a href="../../../Virus/Aula1/aula1/" class="md-nav__link">
         
   
   
@@ -2770,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Virus/Rat/discordbot/" class="md-nav__link">
+      <a href="../../../Virus/Rat/discordbot/" class="md-nav__link">
         
   
   
@@ -2798,7 +2746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Virus/Rat/rat/" class="md-nav__link">
+      <a href="../../../Virus/Rat/rat/" class="md-nav__link">
         
   
   
@@ -2943,7 +2891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../entregas/projetos/projeto-seguranca-ofensiva/" class="md-nav__link">
+      <a href="../../../../entregas/projetos/projeto-seguranca-ofensiva/" class="md-nav__link">
         
   
   
@@ -3006,10 +2954,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-arquitetura-de-referencia" class="md-nav__link">
+  <a href="#o-que-voce-precisa-dominar-primeiro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Arquitetura de referência
+        O que voce precisa dominar primeiro
       
     </span>
   </a>
@@ -3017,10 +2965,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pre-requisitos-rapidos" class="md-nav__link">
+  <a href="#trilha-de-estudos-18-case-studies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pré-requisitos rápidos
+        Trilha de estudos (18 case studies)
       
     </span>
   </a>
@@ -3028,38 +2976,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-backend-no-cloud-run-via-console" class="md-nav__link">
+  <a href="#como-estudar-essa-lista-sem-se-perder" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Backend no Cloud Run (via console)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Backend no Cloud Run (via console)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#firewall-para-backend-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firewall para backend (Console)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-frontend-estatico-storage-cdn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Frontend estático (Storage + CDN)
+        Como estudar essa lista sem se perder
       
     </span>
   </a>
@@ -3067,32 +2987,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-deploy-pipeline-sugerido" class="md-nav__link">
+  <a href="#recurso-extra" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Deploy pipeline sugerido
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-checklist-de-seguranca" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Checklist de segurança
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-referencias-rapidas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Referências rápidas
+        Recurso extra
       
     </span>
   </a>
@@ -3116,134 +3014,54 @@
 
 
 
-<h1 id="deploy-completo-backend-frontend-no-google-cloud-platform">Deploy completo (backend + frontend) no Google Cloud Platform</h1>
-<p>Este guia mostra como colocar no ar um backend containerizado e um frontend estático no GCP usando ferramentas gerenciadas. Tudo é feito pela <strong>console web</strong> para facilitar a visualização.</p>
-<h2 id="1-arquitetura-de-referencia">1. Arquitetura de referência</h2>
-<table>
-<thead>
-<tr>
-<th>Componente</th>
-<th>Serviço GCP</th>
-<th>Função</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Backend API</td>
-<td>Cloud Run</td>
-<td>Container HTTP escalável, público via HTTPS.</td>
-</tr>
-<tr>
-<td>Banco (opcional)</td>
-<td>Cloud SQL ou Firestore</td>
-<td>Persistência gerenciada.</td>
-</tr>
-<tr>
-<td>Frontend SPA</td>
-<td>Cloud Storage + Cloud CDN</td>
-<td>Hospedagem de arquivos estáticos com cache global.</td>
-</tr>
-<tr>
-<td>Observabilidade</td>
-<td>Cloud Logging &amp; Cloud Monitoring</td>
-<td>Métricas, logs e alertas.</td>
-</tr>
-<tr>
-<td>Segurança</td>
-<td>Identity-Aware Proxy / Cloud Armor (opcionais)</td>
-<td>Controle de acesso e WAF.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-pre-requisitos-rapidos">2. Pré-requisitos rápidos</h2>
+<h1 id="aula-extra-system-design-introducao-rapida">Aula Extra: System Design (introducao rapida)</h1>
+<p>System design e a habilidade de desenhar sistemas que continuam funcionando quando a carga cresce, quando servicos falham e quando a arquitetura precisa evoluir sem parar o negocio.</p>
+<h2 id="o-que-voce-precisa-dominar-primeiro">O que voce precisa dominar primeiro</h2>
+<ol>
+<li>Escalabilidade horizontal e vertical.</li>
+<li>Cache, filas, banco relacional e banco NoSQL.</li>
+<li>Consistencia, disponibilidade e trade-offs.</li>
+<li>Observabilidade: logs, metricas e tracing.</li>
+<li>Resiliencia: retry, timeout, circuit breaker e idempotencia.</li>
+</ol>
+<h2 id="trilha-de-estudos-18-case-studies">Trilha de estudos (18 case studies)</h2>
+<ol>
+<li>How Stock Exchange Works: <a href="https://lnkd.in/eNf2QxVZ">https://lnkd.in/eNf2QxVZ</a></li>
+<li>How WhatsApp Works: <a href="https://lnkd.in/eU2fswMi">https://lnkd.in/eU2fswMi</a></li>
+<li>How Spotify Works: <a href="https://lnkd.in/eGbWVeNW">https://lnkd.in/eGbWVeNW</a></li>
+<li>How Reddit Works: <a href="https://lnkd.in/egmm_P7a">https://lnkd.in/egmm_P7a</a></li>
+<li>How Bluesky Works: <a href="https://lnkd.in/eEhB8V_k">https://lnkd.in/eEhB8V_k</a></li>
+<li>How ChatGPT Works: <a href="https://lnkd.in/eSd6fS7n">https://lnkd.in/eSd6fS7n</a></li>
+<li>How Google Docs Works: <a href="https://lnkd.in/ehPNA7Az">https://lnkd.in/ehPNA7Az</a></li>
+<li>How Kafka Works: <a href="https://lnkd.in/eTtVAjTg">https://lnkd.in/eTtVAjTg</a></li>
+<li>How Tinder Works: <a href="https://lnkd.in/en65fv-W">https://lnkd.in/en65fv-W</a></li>
+<li>How Slack Works: <a href="https://lnkd.in/eATMDjrK">https://lnkd.in/eATMDjrK</a></li>
+<li>How Twitter Timeline Works: <a href="https://lnkd.in/eniXMPfU">https://lnkd.in/eniXMPfU</a></li>
+<li>How Amazon S3 Works: <a href="https://lnkd.in/e2p7qXri">https://lnkd.in/e2p7qXri</a></li>
+<li>How URL Shortener Works: <a href="https://lnkd.in/evFTZVQq">https://lnkd.in/evFTZVQq</a></li>
+<li>How Meta Handles 11.5M Serverless Function Calls per Second: <a href="https://lnkd.in/eNyYKCQD">https://lnkd.in/eNyYKCQD</a></li>
+<li>How Uber Finds Nearby Drivers at 1 Million Requests per Second: <a href="https://lnkd.in/eeqH9Hjh">https://lnkd.in/eeqH9Hjh</a></li>
+<li>How Stripe Prevents Double Payment Using Idempotent API: <a href="https://lnkd.in/erMkqwq4">https://lnkd.in/erMkqwq4</a></li>
+<li>How YouTube Was Able to Support 2.49 Billion Users With MySQL: <a href="https://lnkd.in/efmJw4Dx">https://lnkd.in/efmJw4Dx</a></li>
+<li>How to Scale an App to 10 Million Users on AWS: <a href="https://lnkd.in/eU736g9Q">https://lnkd.in/eU736g9Q</a></li>
+</ol>
+<h2 id="como-estudar-essa-lista-sem-se-perder">Como estudar essa lista sem se perder</h2>
+<ol>
+<li>Escolha 1 caso por dia.</li>
+<li>Resuma em 5 linhas: problema, gargalo, decisao, trade-off e resultado.</li>
+<li>Compare com um sistema que voce ja usa ou desenvolve.</li>
+<li>Revise os padroes que mais se repetem (cache, fila, particionamento, replicacao, idempotencia).</li>
+</ol>
+<h2 id="recurso-extra">Recurso extra</h2>
 <ul>
-<li>Projeto configurado e faturamento ativo.</li>
-<li>Código do backend containerizado (Dockerfile) e build do frontend (ex.: <code>npm run build</code>).</li>
-<li><code>gcloud</code> opcionalmente para builds, mas o foco aqui é no console.</li>
+<li>Newsletter / Playbook: <a href="https://lnkd.in/ehTrcyak">https://lnkd.in/ehTrcyak</a></li>
 </ul>
-<h2 id="3-backend-no-cloud-run-via-console">3. Backend no Cloud Run (via console)</h2>
-<ol>
-<li><strong>Container Registry</strong>: publique sua imagem (Cloud Build ou Artifact Registry). Depois:<ul>
-<li>Console → <em>Artifact Registry</em> → <em>Repositórios</em> → <em>Criar</em> (formato Docker, região mais próxima).</li>
-<li>Suba a imagem (use <code>gcloud builds submit</code> ou pipeline CI).</li>
-</ul>
-</li>
-<li><strong>Criar serviço Cloud Run</strong>:<ul>
-<li>Console → <em>Cloud Run</em> → <em>Criar serviço</em>.</li>
-<li>Escolha o repositório/imagem.</li>
-<li>Plataforma: <em>Gerenciado</em>, região: por exemplo <code>us-central1</code>.</li>
-<li>Defina o serviço como <em>Não autenticado</em> (se a API for pública) ou mantenha autenticado e use IAP.</li>
-<li>Ajuste recursos (CPU/memória) e variáveis de ambiente (aba <em>Variáveis</em>).</li>
-<li>Conclua; a URL HTTPS será mostrada.</li>
-</ul>
-</li>
-</ol>
-<h3 id="firewall-para-backend-console">Firewall para backend (Console)</h3>
-<p>Mesmo no Cloud Run, você pode limitar IPs através de <strong>VPC Service Controls</strong> ou, se usar Compute Engine / GKE, configure firewall assim:</p>
-<ol>
-<li>Console → <em>VPC Network</em> → <em>Firewall rules</em> → <em>Create firewall rule</em>.</li>
-<li>Nome: <code>allow-backend-http</code>.</li>
-<li>Rede: <code>default</code> ou a VPC específica.</li>
-<li>Prioridade: 1000.</li>
-<li>Direction: <em>Ingress</em>.</li>
-<li>Targets: <em>Specified service account</em> ou <em>Tags</em> (ex.: <code>backend</code>).</li>
-<li>Source filter: <code>IP ranges</code> → <code>0.0.0.0/0</code> (ou restrinja a IPs específicos).</li>
-<li>Protocols/ports: marque <code>Specified protocols</code> → <code>tcp:80,tcp:443</code>.</li>
-<li>Criar. A interface mostrará a regra aplicada imediatamente.</li>
-</ol>
-<blockquote>
-<p>Se usar Cloud Run, combine com Cloud Armor para listas de IP/Geo; o passo acima é mais comum em Compute Engine/GKE.</p>
-</blockquote>
-<h2 id="4-frontend-estatico-storage-cdn">4. Frontend estático (Storage + CDN)</h2>
-<ol>
-<li>Console → <em>Cloud Storage</em> → <em>Buckets</em> → <em>Create</em>.<ul>
-<li>Nome global único (ex.: <code>inspersec-frontend</code>).</li>
-<li>Região multi ou dual conforme necessidade.</li>
-<li>Desmarque <em>Uniform bucket-level access</em> se quiser ACLs, mas recomendamos manter marcado.</li>
-</ul>
-</li>
-<li>Após criar, clique no bucket → aba <strong>Permissions</strong> → adicione <code>allUsers</code> com papel <em>Storage Object Viewer</em> para torná-lo público (ou use Cloud CDN + Load Balancer para HTTPS próprio).</li>
-<li>Aba <strong>Configuration</strong> → <em>Static website hosting</em> → habilite e defina <code>index.html</code> e <code>404.html</code>.</li>
-<li>Faça upload do build (<code>gsutil rsync</code> ou arraste arquivos na UI).</li>
-<li>(Opcional) <strong>Cloud CDN</strong>:<ul>
-<li>Console → <em>Network services</em> → <em>Load balancing</em> → <em>Create load balancer</em> → HTTP(S).</li>
-<li>Backend: bucket GCS; Frontend: HTTPS com certificado gerenciado.</li>
-<li>Ative Cloud CDN para cache global e obtenha URL amigável.</li>
-</ul>
-</li>
-</ol>
-<h2 id="5-deploy-pipeline-sugerido">5. Deploy pipeline sugerido</h2>
-<ol>
-<li>CI executa testes e builda imagem Docker + artefatos frontend.</li>
-<li>Publica imagem no Artifact Registry e artefatos no Cloud Storage (ou Cloud Build Deploy).</li>
-<li>Gatilho do Cloud Deploy ou Cloud Build aplica nova revisão do Cloud Run e sincroniza bucket.</li>
-<li>Observabilidade: configure alertas (p95 latência, 5xx) no Cloud Monitoring.</li>
-</ol>
-<h2 id="6-checklist-de-seguranca">6. Checklist de segurança</h2>
-<ul>
-<li>[ ] Habilitar <strong>HTTPS</strong> obrigatório (Cloud Run já fornece; para bucket use Load Balancer + certificado).</li>
-<li>[ ] Revisar firewall rules no console (somente portas necessárias, origem restrita se possível).</li>
-<li>[ ] Registrar logs em Cloud Logging e exportar para o SIEM (Pub/Sub → Splunk/Chronicle).</li>
-<li>[ ] Ativar Cloud Armor / WAF para endpoints públicos sensíveis.</li>
-<li>[ ] Usar secret manager para variáveis sensíveis do backend.</li>
-</ul>
-<h2 id="7-referencias-rapidas">7. Referências rápidas</h2>
-<ul>
-<li><a href="https://cloud.google.com/run/docs">Documentação Cloud Run</a></li>
-<li><a href="https://cloud.google.com/storage/docs/hosting-static-website">Hosting estático no Cloud Storage</a></li>
-<li><a href="https://cloud.google.com/vpc/docs/using-firewalls">Firewall VPC via console</a></li>
-<li><a href="https://cloud.google.com/cdn/docs/setting-up-cdn-with-bucket">Cloud CDN com bucket</a></li>
-</ul>
-<p>Pronto! Com esses passos você consegue expor backend e frontend no GCP usando apenas a interface visual, mantendo boas práticas de segurança e observabilidade.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -3287,10 +3105,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
