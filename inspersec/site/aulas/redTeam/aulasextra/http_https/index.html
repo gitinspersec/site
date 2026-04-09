@@ -9,28 +9,28 @@
       
       
       
-        <link rel="prev" href="../sherlock/">
+        <link rel="prev" href="../../aula4/hashs/">
       
       
-        <link rel="next" href="../prompt_injection/">
+        <link rel="next" href="../protocolos_tcp/">
       
       
         
       
       
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Zphisher - inspersec</title>
+        <title>Requisições HTTP e HTTPS - inspersec</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#zphisher-ferramenta-de-phishing-para-fins-eticos" class="md-skip">
+        <a href="#requisicoes-http-e-https" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-header__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Zphisher
+              Requisições HTTP e HTTPS
             
           </span>
         </div>
@@ -214,7 +214,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
+    <a href="../../../.." title="inspersec" class="md-nav__button md-logo" aria-label="inspersec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -306,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/horasComplementar/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/kaliWindows/" class="md-nav__link">
         
   
   
@@ -362,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vpnHaaukins/" class="md-nav__link">
         
   
   
@@ -390,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/vmWindows/" class="md-nav__link">
         
   
   
@@ -418,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../Instala%C3%A7%C3%A3o/metasploitable2/" class="md-nav__link">
+      <a href="../../../../Instala%C3%A7%C3%A3o/metasploitable2/" class="md-nav__link">
         
   
   
@@ -598,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula1/basicLinux/" class="md-nav__link">
+      <a href="../../aula1/basicLinux/" class="md-nav__link">
         
   
   
@@ -626,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula1/nmap/" class="md-nav__link">
+      <a href="../../aula1/nmap/" class="md-nav__link">
         
   
   
@@ -709,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula2/burpSuite/" class="md-nav__link">
+      <a href="../../aula2/burpSuite/" class="md-nav__link">
         
   
   
@@ -737,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula2/criptografia/" class="md-nav__link">
+      <a href="../../aula2/criptografia/" class="md-nav__link">
         
   
   
@@ -770,20 +770,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
           <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
@@ -804,7 +802,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -819,20 +817,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1_3_1" id="__nav_3_1_3_1_label" tabindex="0">
@@ -853,7 +849,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1_3_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -871,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sobre/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/sobre/" class="md-nav__link">
         
   
   
@@ -899,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gophish/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/gophish/" class="md-nav__link">
         
   
   
@@ -927,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setoolkit/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/setoolkit/" class="md-nav__link">
         
   
   
@@ -955,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sherlock/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/sherlock/" class="md-nav__link">
         
   
   
@@ -980,37 +976,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Zphisher
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../aula3/engenharia_social/zphisher/" class="md-nav__link">
         
   
   
@@ -1026,292 +995,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introducao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introdução
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#objetivos-da-aula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Objetivos da Aula
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#o-que-e-o-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        O que é o Zphisher?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalando-o-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instalando o Zphisher
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalando o Zphisher">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-instalar-o-git" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Instalar o Git
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-clonar-o-repositorio-do-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Clonar o Repositório do Zphisher
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-navegar-ate-o-diretorio-clonado" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Navegar até o Diretório Clonado
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-conceder-permissao-de-execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Conceder Permissão de Execução
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-executar-o-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Executar o Zphisher
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usando-o-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usando o Zphisher
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usando o Zphisher">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#escolher-a-plataforma-de-phishing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Escolher a Plataforma de Phishing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#escolher-o-tipo-de-ataque" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Escolher o Tipo de Ataque
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gerar-o-link-de-phishing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gerar o Link de Phishing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-credenciais-capturadas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ver Credenciais Capturadas
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observacoes-importantes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Observações Importantes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Observações Importantes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pentesting-etico" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pentesting Ético
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#seguranca-pessoal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Segurança Pessoal
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemplos de Uso
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exemplos de Uso">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-criando-uma-pagina-de-phishing-para-o-facebook-com-ngrok" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Criando uma Página de Phishing para o Facebook com Ngrok
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-utilizando-serveo-para-hospedar-uma-pagina-falsa-do-instagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Utilizando Serveo para Hospedar uma Página Falsa do Instagram
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#boas-praticas-no-uso-do-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Boas Práticas no Uso do Zphisher
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conclusão
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1324,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompt_injection/" class="md-nav__link">
+      <a href="../../aula3/engenharia_social/prompt_injection/" class="md-nav__link">
         
   
   
@@ -1415,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula4/introducao/" class="md-nav__link">
+      <a href="../../aula4/introducao/" class="md-nav__link">
         
   
   
@@ -1443,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula4/gobuster/" class="md-nav__link">
+      <a href="../../aula4/gobuster/" class="md-nav__link">
         
   
   
@@ -1471,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula4/john/" class="md-nav__link">
+      <a href="../../aula4/john/" class="md-nav__link">
         
   
   
@@ -1499,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula4/xss/" class="md-nav__link">
+      <a href="../../aula4/xss/" class="md-nav__link">
         
   
   
@@ -1527,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula4/wordlist/" class="md-nav__link">
+      <a href="../../aula4/wordlist/" class="md-nav__link">
         
   
   
@@ -1555,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aula4/hashs/" class="md-nav__link">
+      <a href="../../aula4/hashs/" class="md-nav__link">
         
   
   
@@ -1588,18 +1271,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1_5" id="__nav_3_1_5_label" tabindex="0">
@@ -1620,7 +1305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1635,10 +1320,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../aulasextra/http_https/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisições HTTP e HTTPS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1654,6 +1366,303 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é HTTP?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-uma-requisicao-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de uma Requisição HTTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estrutura de uma Requisição HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-http-verbos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métodos HTTP (Verbos)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-codes-codigos-de-resposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Codes (Códigos de Resposta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-uma-resposta-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de uma Resposta HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é HTTPS?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é HTTPS?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-https-importa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que HTTPS importa?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-funciona-o-tls-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como funciona o TLS Handshake
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilizando-o-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilizando o curl
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilizando o curl">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxe-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxe Básica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcoes-mais-utilizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opções Mais Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-simples-com-verbose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET simples (com verbose)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-com-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST com JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-com-dados-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST com dados de formulário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-apenas-os-headers-da-resposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ver apenas os headers da resposta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguir-redirecionamentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguir redirecionamentos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-cookies-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enviar cookies manualmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignorar-verificacao-de-certificado-ssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignorar verificação de certificado SSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simular-um-user-agent-diferente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simular um User-Agent diferente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salvar-resposta-em-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salvar resposta em arquivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacao-com-seguranca-ofensiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relação com Segurança Ofensiva
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1666,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../aulasextra/protocolos_tcp/" class="md-nav__link">
+      <a href="../protocolos_tcp/" class="md-nav__link">
         
   
   
@@ -1804,7 +1813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula1/fundamentos/" class="md-nav__link">
+      <a href="../../../blueTeam/aula1/fundamentos/" class="md-nav__link">
         
   
   
@@ -1832,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula1/intro/" class="md-nav__link">
+      <a href="../../../blueTeam/aula1/intro/" class="md-nav__link">
         
   
   
@@ -1860,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula1/wireshark/" class="md-nav__link">
+      <a href="../../../blueTeam/aula1/wireshark/" class="md-nav__link">
         
   
   
@@ -1888,7 +1897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula1/blueteam-devs/" class="md-nav__link">
+      <a href="../../../blueTeam/aula1/blueteam-devs/" class="md-nav__link">
         
   
   
@@ -1971,7 +1980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula2/redes1/" class="md-nav__link">
+      <a href="../../../blueTeam/aula2/redes1/" class="md-nav__link">
         
   
   
@@ -2054,7 +2063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula3/resdes2/" class="md-nav__link">
+      <a href="../../../blueTeam/aula3/resdes2/" class="md-nav__link">
         
   
   
@@ -2137,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula4/criptografia_avancada/" class="md-nav__link">
+      <a href="../../../blueTeam/aula4/criptografia_avancada/" class="md-nav__link">
         
   
   
@@ -2220,7 +2229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula5/aula5/" class="md-nav__link">
+      <a href="../../../blueTeam/aula5/aula5/" class="md-nav__link">
         
   
   
@@ -2248,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula5/containers/" class="md-nav__link">
+      <a href="../../../blueTeam/aula5/containers/" class="md-nav__link">
         
   
   
@@ -2323,7 +2332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula5/gcp/vpc_gcp/" class="md-nav__link">
+      <a href="../../../blueTeam/aula5/gcp/vpc_gcp/" class="md-nav__link">
         
   
   
@@ -2351,7 +2360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula5/gcp/cloudrun_bucket/" class="md-nav__link">
+      <a href="../../../blueTeam/aula5/gcp/cloudrun_bucket/" class="md-nav__link">
         
   
   
@@ -2379,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula5/gcp/vm/" class="md-nav__link">
+      <a href="../../../blueTeam/aula5/gcp/vm/" class="md-nav__link">
         
   
   
@@ -2470,7 +2479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula6/engenharia_de_deteccao/" class="md-nav__link">
+      <a href="../../../blueTeam/aula6/engenharia_de_deteccao/" class="md-nav__link">
         
   
   
@@ -2498,7 +2507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula6/gestao_de_vulnerabilidades_e_exposicao/" class="md-nav__link">
+      <a href="../../../blueTeam/aula6/gestao_de_vulnerabilidades_e_exposicao/" class="md-nav__link">
         
   
   
@@ -2526,7 +2535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula6/inteligencia_de_ameaca/" class="md-nav__link">
+      <a href="../../../blueTeam/aula6/inteligencia_de_ameaca/" class="md-nav__link">
         
   
   
@@ -2554,7 +2563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula6/inteligencia_de_seguranca/" class="md-nav__link">
+      <a href="../../../blueTeam/aula6/inteligencia_de_seguranca/" class="md-nav__link">
         
   
   
@@ -2582,7 +2591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula6/proximos_passos_ciberseguranca/" class="md-nav__link">
+      <a href="../../../blueTeam/aula6/proximos_passos_ciberseguranca/" class="md-nav__link">
         
   
   
@@ -2610,7 +2619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aula6/resposta_a_incidentes/" class="md-nav__link">
+      <a href="../../../blueTeam/aula6/resposta_a_incidentes/" class="md-nav__link">
         
   
   
@@ -2693,7 +2702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blueTeam/aulasextra/system_design_intro/" class="md-nav__link">
+      <a href="../../../blueTeam/aulasextra/system_design_intro/" class="md-nav__link">
         
   
   
@@ -2784,7 +2793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../GameHacking/introducao/" class="md-nav__link">
+      <a href="../../../GameHacking/introducao/" class="md-nav__link">
         
   
   
@@ -2867,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Virus/Aula1/aula1/" class="md-nav__link">
+      <a href="../../../Virus/Aula1/aula1/" class="md-nav__link">
         
   
   
@@ -2942,7 +2951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Virus/Rat/discordbot/" class="md-nav__link">
+      <a href="../../../Virus/Rat/discordbot/" class="md-nav__link">
         
   
   
@@ -2970,7 +2979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Virus/Rat/rat/" class="md-nav__link">
+      <a href="../../../Virus/Rat/rat/" class="md-nav__link">
         
   
   
@@ -3115,7 +3124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../entregas/projetos/projeto-seguranca-ofensiva/" class="md-nav__link">
+      <a href="../../../../entregas/projetos/projeto-seguranca-ofensiva/" class="md-nav__link">
         
   
   
@@ -3178,10 +3187,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introducao" class="md-nav__link">
+  <a href="#o-que-e-http" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introdução
+        O que é HTTP?
       
     </span>
   </a>
@@ -3189,88 +3198,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#objetivos-da-aula" class="md-nav__link">
+  <a href="#estrutura-de-uma-requisicao-http" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objetivos da Aula
+        Estrutura de uma Requisição HTTP
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#o-que-e-o-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        O que é o Zphisher?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalando-o-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Instalando o Zphisher
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalando o Zphisher">
+    <nav class="md-nav" aria-label="Estrutura de uma Requisição HTTP">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-instalar-o-git" class="md-nav__link">
+  <a href="#componentes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Instalar o Git
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-clonar-o-repositorio-do-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Clonar o Repositório do Zphisher
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-navegar-ate-o-diretorio-clonado" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Navegar até o Diretório Clonado
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-conceder-permissao-de-execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Conceder Permissão de Execução
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-executar-o-zphisher" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Executar o Zphisher
+        Componentes
       
     </span>
   </a>
@@ -3283,22 +3226,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usando-o-zphisher" class="md-nav__link">
+  <a href="#metodos-http-verbos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usando o Zphisher
+        Métodos HTTP (Verbos)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Usando o Zphisher">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-codes-codigos-de-resposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Codes (Códigos de Resposta)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-uma-resposta-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura de uma Resposta HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é HTTPS?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="O que é HTTPS?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#escolher-a-plataforma-de-phishing" class="md-nav__link">
+  <a href="#por-que-https-importa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Escolher a Plataforma de Phishing
+        Por que HTTPS importa?
       
     </span>
   </a>
@@ -3306,32 +3282,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#escolher-o-tipo-de-ataque" class="md-nav__link">
+  <a href="#como-funciona-o-tls-handshake" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Escolher o Tipo de Ataque
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gerar-o-link-de-phishing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gerar o Link de Phishing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ver-credenciais-capturadas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ver Credenciais Capturadas
+        Como funciona o TLS Handshake
       
     </span>
   </a>
@@ -3344,22 +3298,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#observacoes-importantes" class="md-nav__link">
+  <a href="#utilizando-o-curl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observações Importantes
+        Utilizando o curl
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Observações Importantes">
+    <nav class="md-nav" aria-label="Utilizando o curl">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pentesting-etico" class="md-nav__link">
+  <a href="#sintaxe-basica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pentesting Ético
+        Sintaxe Básica
       
     </span>
   </a>
@@ -3367,10 +3321,121 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#seguranca-pessoal" class="md-nav__link">
+  <a href="#opcoes-mais-utilizadas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Segurança Pessoal
+        Opções Mais Utilizadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-simples-com-verbose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET simples (com verbose)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-com-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST com JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-com-dados-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST com dados de formulário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ver-apenas-os-headers-da-resposta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ver apenas os headers da resposta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguir-redirecionamentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguir redirecionamentos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-cookies-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enviar cookies manualmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignorar-verificacao-de-certificado-ssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignorar verificação de certificado SSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simular-um-user-agent-diferente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simular um User-Agent diferente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salvar-resposta-em-arquivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salvar resposta em arquivo
       
     </span>
   </a>
@@ -3381,40 +3446,6 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemplos de Uso
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exemplos de Uso">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-criando-uma-pagina-de-phishing-para-o-facebook-com-ngrok" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Criando uma Página de Phishing para o Facebook com Ngrok
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-utilizando-serveo-para-hospedar-uma-pagina-falsa-do-instagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Utilizando Serveo para Hospedar uma Página Falsa do Instagram
-      
-    </span>
-  </a>
-  
-</li>
         
       </ul>
     </nav>
@@ -3422,21 +3453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#boas-praticas-no-uso-do-zphisher" class="md-nav__link">
+  <a href="#relacao-com-seguranca-ofensiva" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Boas Práticas no Uso do Zphisher
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conclusão
+        Relação com Segurança Ofensiva
       
     </span>
   </a>
@@ -3460,129 +3480,299 @@
 
 
 
-<h1 id="zphisher-ferramenta-de-phishing-para-fins-eticos">Zphisher - Ferramenta de Phishing para Fins Éticos</h1>
-<h2 id="introducao">Introdução</h2>
-<p>O <strong>Zphisher</strong> é uma ferramenta de phishing de código aberto que facilita a criação de páginas de login falsas para capturar credenciais de usuários. Embora essa ferramenta seja amplamente utilizada, é importante ressaltar que o uso de ferramentas de phishing é <strong>ilegal e antiético</strong> se feito sem autorização. O uso dessas ferramentas é permitido apenas em um <strong>ambiente controlado</strong>, com <strong>permissão explícita</strong> e para fins <strong>educacionais</strong> ou de <strong>testes de segurança</strong>, como no contexto de <strong>pentesting</strong> (teste de penetração).</p>
-<p>Nesta aula, abordaremos como instalar e configurar o Zphisher para fins éticos e educacionais, garantindo que seja utilizado de maneira segura e responsável.</p>
+<h1 id="requisicoes-http-e-https">Requisições HTTP e HTTPS</h1>
+<h2 id="o-que-e-http">O que é HTTP?</h2>
+<p>O <strong>HTTP</strong> (HyperText Transfer Protocol) é o protocolo de comunicação utilizado para transferir dados na web. Toda vez que você acessa um site, seu navegador envia uma <strong>requisição HTTP</strong> ao servidor, que responde com o conteúdo solicitado (HTML, imagens, JSON, etc.).</p>
+<p>O HTTP funciona no modelo <strong>cliente-servidor</strong>:</p>
+<ol>
+<li>O <strong>cliente</strong> (navegador, <code>curl</code>, script Python) envia uma requisição</li>
+<li>O <strong>servidor</strong> processa e retorna uma resposta</li>
+</ol>
 <hr />
-<h2 id="objetivos-da-aula">Objetivos da Aula</h2>
-<ul>
-<li>Entender o que é o Zphisher e como ele funciona.</li>
-<li>Aprender a instalar e configurar o Zphisher.</li>
-<li>Conhecer os diferentes tipos de ataques que podem ser simulados com a ferramenta.</li>
-<li>Compreender a importância da ética e das permissões ao utilizar ferramentas de phishing.</li>
-</ul>
+<h2 id="estrutura-de-uma-requisicao-http">Estrutura de uma Requisição HTTP</h2>
+<p>Uma requisição HTTP é composta por:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MÉTODO /caminho HTTP/1.1
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Host: exemplo.com
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>User-Agent: Mozilla/5.0
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Accept: text/html
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Content-Type: application/json
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>{ &quot;dados&quot;: &quot;do corpo da requisição&quot; }
+</span></code></pre></div>
+<h3 id="componentes">Componentes</h3>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Método</strong></td>
+<td>Ação desejada (GET, POST, PUT, DELETE, etc.)</td>
+</tr>
+<tr>
+<td><strong>Caminho</strong></td>
+<td>Recurso no servidor (<code>/api/users</code>, <code>/login</code>, <code>/index.html</code>)</td>
+</tr>
+<tr>
+<td><strong>Headers</strong></td>
+<td>Metadados da requisição (tipo de conteúdo, autenticação, etc.)</td>
+</tr>
+<tr>
+<td><strong>Body</strong></td>
+<td>Corpo da requisição (presente em POST, PUT — dados enviados)</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="o-que-e-o-zphisher">O que é o Zphisher?</h2>
-<p><strong>Zphisher</strong> é uma ferramenta que permite criar páginas de login falsas para simular ataques de phishing. Com ela, é possível emular páginas de login de plataformas conhecidas, como <strong>Facebook</strong>, <strong>Instagram</strong>, <strong>Google</strong>, entre outras. O objetivo é educar os usuários e treinar equipes para identificar tentativas de phishing, tornando-os mais preparados para lidar com ameaças reais.</p>
-<p>O Zphisher também é utilizado por profissionais de segurança em <strong>testes de penetração</strong>, ajudando a identificar vulnerabilidades humanas e avaliar a conscientização dos usuários.</p>
+<h2 id="metodos-http-verbos">Métodos HTTP (Verbos)</h2>
+<p>Os principais métodos HTTP e seus usos:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descrição</th>
+<th>Exemplo de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td>Buscar/ler dados</td>
+<td>Acessar uma página, listar itens</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td>Enviar/criar dados</td>
+<td>Formulário de login, criar conta</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td>Atualizar dados (substitui o recurso)</td>
+<td>Atualizar perfil do usuário</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td>Remover dados</td>
+<td>Deletar uma postagem</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td>Atualizar dados parcialmente</td>
+<td>Alterar apenas o e-mail do usuário</td>
+</tr>
+<tr>
+<td><code>HEAD</code></td>
+<td>Igual ao GET, mas retorna apenas os headers</td>
+<td>Verificar se recurso existe</td>
+</tr>
+<tr>
+<td><code>OPTIONS</code></td>
+<td>Verifica métodos permitidos pelo servidor</td>
+<td>Pré-flight de requisições CORS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="status-codes-codigos-de-resposta">Status Codes (Códigos de Resposta)</h2>
+<p>O servidor responde com um código numérico indicando o resultado:</p>
+<table>
+<thead>
+<tr>
+<th>Faixa</th>
+<th>Categoria</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1xx</code></td>
+<td>Informacional</td>
+<td><code>100 Continue</code></td>
+</tr>
+<tr>
+<td><code>2xx</code></td>
+<td>Sucesso</td>
+<td><code>200 OK</code>, <code>201 Created</code>, <code>204 No Content</code></td>
+</tr>
+<tr>
+<td><code>3xx</code></td>
+<td>Redirecionamento</td>
+<td><code>301 Moved Permanently</code>, <code>302 Found</code></td>
+</tr>
+<tr>
+<td><code>4xx</code></td>
+<td>Erro do Cliente</td>
+<td><code>400 Bad Request</code>, <code>401 Unauthorized</code>, <code>403 Forbidden</code>, <code>404 Not Found</code></td>
+</tr>
+<tr>
+<td><code>5xx</code></td>
+<td>Erro do Servidor</td>
+<td><code>500 Internal Server Error</code>, <code>502 Bad Gateway</code></td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p><strong>Nota Importante</strong>: Ferramentas de phishing só devem ser utilizadas com a autorização explícita do proprietário do sistema ou do ambiente a ser testado. O uso indevido pode resultar em sérias consequências legais.</p>
+<p><strong>Dica de Red Team</strong>: Em pentesting, status codes como <code>401</code>, <code>403</code> e <code>500</code> podem revelar informações valiosas sobre a aplicação e suas proteções.</p>
 </blockquote>
 <hr />
-<h2 id="instalando-o-zphisher">Instalando o Zphisher</h2>
-<p>Vamos aos passos para instalar o Zphisher em um sistema Linux.</p>
-<h3 id="1-instalar-o-git">1. Instalar o Git</h3>
-<p>Primeiro, é necessário ter o <strong>Git</strong> instalado no seu sistema. O Git é utilizado para clonar o repositório oficial do Zphisher. Se você estiver usando <strong>Linux</strong>, pode instalar o Git com o seguinte comando:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+<h2 id="estrutura-de-uma-resposta-http">Estrutura de uma Resposta HTTP</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HTTP/1.1 200 OK
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Content-Type: text/html; charset=UTF-8
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Set-Cookie: session=abc123; HttpOnly
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Content-Length: 1234
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>&lt;html&gt;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  &lt;body&gt;Conteúdo da página&lt;/body&gt;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>&lt;/html&gt;
 </span></code></pre></div>
-<h3 id="2-clonar-o-repositorio-do-zphisher">2. Clonar o Repositório do Zphisher</h3>
-<p>Com o Git instalado, clone o repositório do Zphisher executando o comando abaixo:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/htr-tech/zphisher.git
-</span></code></pre></div>
-<h3 id="3-navegar-ate-o-diretorio-clonado">3. Navegar até o Diretório Clonado</h3>
-<p>Depois de clonar o repositório, navegue até o diretório do Zphisher:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>zphisher
-</span></code></pre></div>
-<h3 id="4-conceder-permissao-de-execucao">4. Conceder Permissão de Execução</h3>
-<p>Antes de executar o script, é necessário conceder permissão de execução ao arquivo principal do Zphisher:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>zphisher.sh
-</span></code></pre></div>
-<h3 id="5-executar-o-zphisher">5. Executar o Zphisher</h3>
-<p>Agora você está pronto para executar o Zphisher:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./zphisher.sh
-</span></code></pre></div>
-<hr />
-<h2 id="usando-o-zphisher">Usando o Zphisher</h2>
-<h3 id="escolher-a-plataforma-de-phishing">Escolher a Plataforma de Phishing</h3>
-<p>Quando você iniciar o Zphisher, ele apresentará um menu com uma lista de plataformas para as quais você pode criar páginas de login falsas, como <strong>Facebook</strong>, <strong>Instagram</strong>, <strong>Google</strong>, <strong>PayPal</strong>, entre outras.</p>
-<p>Escolha a plataforma que deseja emular digitando o número correspondente e pressionando <strong>Enter</strong>.</p>
-<h3 id="escolher-o-tipo-de-ataque">Escolher o Tipo de Ataque</h3>
-<p>Depois de selecionar a plataforma, o Zphisher oferece diferentes métodos de hospedagem para a página falsa, incluindo:</p>
+<h2 id="o-que-e-https">O que é HTTPS?</h2>
+<p>O <strong>HTTPS</strong> (HTTP Secure) é a versão segura do HTTP. Ele utiliza <strong>TLS</strong> (Transport Layer Security) para criptografar a comunicação entre cliente e servidor.</p>
+<h3 id="por-que-https-importa">Por que HTTPS importa?</h3>
 <ul>
-<li><strong>Ngrok</strong>: Uma ferramenta que permite expor servidores locais para a internet.</li>
-<li><strong>Serveo</strong>: Um serviço de túnel para acesso pela internet.</li>
-<li><strong>Localhost</strong>: A página fica acessível apenas dentro da sua rede local.</li>
+<li><strong>Sem HTTPS (HTTP puro):</strong> os dados trafegam em texto claro — qualquer pessoa na mesma rede pode interceptar senhas, cookies e dados sensíveis.</li>
+<li><strong>Com HTTPS:</strong> os dados são criptografados de ponta a ponta.</li>
 </ul>
-<p>Escolha o método de hospedagem que deseja utilizar.</p>
-<h3 id="gerar-o-link-de-phishing">Gerar o Link de Phishing</h3>
-<p>Dependendo da sua escolha de método de hospedagem, o Zphisher gerará um link que poderá ser enviado para as "vítimas" em um <strong>contexto controlado de testes</strong>. É importante lembrar que esses links só devem ser usados em situações éticas, com permissão e para fins educacionais.</p>
-<h3 id="ver-credenciais-capturadas">Ver Credenciais Capturadas</h3>
-<p>Sempre que alguém tentar fazer login através da página falsa, as credenciais inseridas serão capturadas e exibidas diretamente no terminal do Zphisher. Isso permite verificar quais informações foram coletadas, possibilitando uma análise dos riscos associados ao phishing.</p>
-<hr />
-<h2 id="observacoes-importantes">Observações Importantes</h2>
-<h3 id="pentesting-etico">Pentesting Ético</h3>
-<ul>
-<li><strong>Autorização</strong>: Sempre obtenha autorização por escrito antes de executar qualquer tipo de teste de segurança, incluindo ataques simulados de phishing.</li>
-<li><strong>Ambiente Controlado</strong>: Realize os testes em um ambiente controlado, onde todos os envolvidos estão cientes dos riscos e dos objetivos do teste.</li>
-<li><strong>Finalidade Educacional</strong>: Use o Zphisher para educar e conscientizar usuários sobre os perigos do phishing, ajudando-os a identificar e evitar ameaças reais.</li>
-</ul>
-<h3 id="seguranca-pessoal">Segurança Pessoal</h3>
-<ul>
-<li><strong>Não Utilize para Prejudicar</strong>: Nunca utilize o Zphisher ou qualquer outra ferramenta de phishing para prejudicar outras pessoas. Isso é ilegal e antiético.</li>
-<li><strong>Responsabilidade Legal</strong>: Ferramentas de phishing, como o Zphisher, são poderosas e podem causar danos significativos se utilizadas de maneira incorreta. O uso indevido pode resultar em <strong>consequências legais graves</strong>.</li>
-</ul>
-<hr />
-<h2 id="exemplos-de-uso">Exemplos de Uso</h2>
-<h3 id="1-criando-uma-pagina-de-phishing-para-o-facebook-com-ngrok">1. Criando uma Página de Phishing para o Facebook com Ngrok</h3>
-<p>Neste exemplo, vamos simular a criação de uma página de phishing do <strong>Facebook</strong> utilizando o <strong>Ngrok</strong> para disponibilizar o link na internet.</p>
+<h3 id="como-funciona-o-tls-handshake">Como funciona o TLS Handshake</h3>
+<p>O processo de estabelecimento de conexão segura:</p>
 <ol>
-<li>
-<p><strong>Iniciar o Zphisher</strong>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./zphisher.sh
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>Selecionar o Facebook</strong> no menu de plataformas.</p>
-</li>
-<li>
-<p><strong>Escolher o Ngrok</strong> como método de hospedagem.</p>
-</li>
-<li>
-<p>O Zphisher gerará um link <strong>Ngrok</strong> que pode ser utilizado em um contexto de teste controlado.</p>
-</li>
-<li>
-<p>Enviar o link para os participantes do teste e observar as credenciais sendo capturadas no terminal.</p>
-</li>
+<li><strong>Client Hello</strong> — Cliente envia versões TLS suportadas e cipher suites</li>
+<li><strong>Server Hello</strong> — Servidor escolhe a cipher suite e envia seu certificado digital</li>
+<li><strong>Verificação</strong> — Cliente valida o certificado (cadeia de confiança, validade, domínio)</li>
+<li><strong>Troca de chaves</strong> — Ambos geram uma chave de sessão simétrica</li>
+<li><strong>Conexão segura</strong> — Toda comunicação passa a ser criptografada</li>
 </ol>
-<h3 id="2-utilizando-serveo-para-hospedar-uma-pagina-falsa-do-instagram">2. Utilizando Serveo para Hospedar uma Página Falsa do Instagram</h3>
-<ol>
-<li>
-<p><strong>Iniciar o Zphisher</strong>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./zphisher.sh
-</span></code></pre></div></p>
-</li>
-<li>
-<p><strong>Selecionar o Instagram</strong> no menu.</p>
-</li>
-<li>
-<p>Escolher <strong>Serveo</strong> como método de hospedagem.</p>
-</li>
-<li>
-<p>O link gerado pelo Serveo será exibido e poderá ser compartilhado em um ambiente de teste.</p>
-</li>
-</ol>
+<blockquote>
+<p>Em Red Team, é possível realizar ataques <strong>Man-in-the-Middle (MitM)</strong> quando o cliente não valida corretamente os certificados ou quando o atacante consegue instalar um certificado falso no dispositivo da vítima.</p>
+</blockquote>
 <hr />
-<h2 id="boas-praticas-no-uso-do-zphisher">Boas Práticas no Uso do Zphisher</h2>
-<ul>
-<li><strong>Educação e Conscientização</strong>: Utilize o Zphisher como uma ferramenta educativa para treinar funcionários e equipes sobre como identificar e evitar ataques de phishing.</li>
-<li><strong>Relatórios de Resultados</strong>: Após realizar um teste, compartilhe os resultados com os envolvidos, destacando os pontos que precisam de melhorias e fornecendo dicas para aumentar a segurança.</li>
-<li><strong>Contexto Realista</strong>: Crie cenários de phishing que sejam realistas, mas evite temas sensíveis que possam causar pânico ou desconforto nos participantes.</li>
-</ul>
+<h2 id="utilizando-o-curl">Utilizando o <code>curl</code></h2>
+<p>O <strong>curl</strong> é uma ferramenta de linha de comando para enviar requisições HTTP diretamente do terminal. É muito utilizado em pentesting, automação e debugging de APIs.</p>
+<h3 id="sintaxe-basica">Sintaxe Básica</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span><span class="o">[</span>opções<span class="o">]</span><span class="w"> </span>&lt;URL&gt;
+</span></code></pre></div>
+<h3 id="opcoes-mais-utilizadas">Opções Mais Utilizadas</h3>
+<table>
+<thead>
+<tr>
+<th>Opção</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-v</code></td>
+<td>Modo verbose — mostra headers de requisição e resposta</td>
+</tr>
+<tr>
+<td><code>-X &lt;MÉTODO&gt;</code></td>
+<td>Define o método HTTP (POST, PUT, DELETE, etc.)</td>
+</tr>
+<tr>
+<td><code>-H</code></td>
+<td>Adiciona um header customizado</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>Envia dados no body da requisição</td>
+</tr>
+<tr>
+<td><code>-I</code></td>
+<td>Retorna apenas os headers da resposta (HEAD)</td>
+</tr>
+<tr>
+<td><code>-L</code></td>
+<td>Segue redirecionamentos (301, 302)</td>
+</tr>
+<tr>
+<td><code>-b</code></td>
+<td>Envia cookies junto com a requisição</td>
+</tr>
+<tr>
+<td><code>-k</code></td>
+<td>Ignora erros de certificado SSL (útil em labs)</td>
+</tr>
+<tr>
+<td><code>-o &lt;arquivo&gt;</code></td>
+<td>Salva a resposta em um arquivo</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td>Modo silencioso (sem barra de progresso)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemplos">Exemplos</h3>
+<h4 id="get-simples-com-verbose">GET simples (com verbose)</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://httpbin.org/get
+</span></code></pre></div>
+<p>O flag <code>-v</code> mostra o handshake TLS, os headers enviados e os headers de resposta — muito útil para análise.</p>
+<h4 id="post-com-json">POST com JSON</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://httpbin.org/post<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;usuario&quot;: &quot;admin&quot;, &quot;senha&quot;: &quot;123456&quot;}&#39;</span>
+</span></code></pre></div>
+<h4 id="post-com-dados-de-formulario">POST com dados de formulário</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://httpbin.org/post<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;username=admin&amp;password=s3nh4&quot;</span>
+</span></code></pre></div>
+<h4 id="ver-apenas-os-headers-da-resposta">Ver apenas os headers da resposta</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>-I<span class="w"> </span>https://httpbin.org/get
+</span></code></pre></div>
+<p>Útil para identificar o servidor (<code>Server</code>), tecnologias (<code>X-Powered-By</code>) e configurações de segurança.</p>
+<h4 id="seguir-redirecionamentos">Seguir redirecionamentos</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://httpbin.org/redirect/3
+</span></code></pre></div>
+<h4 id="enviar-cookies-manualmente">Enviar cookies manualmente</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;session=abc123; token=xyz&quot;</span><span class="w"> </span>https://httpbin.org/cookies
+</span></code></pre></div>
+<h4 id="ignorar-verificacao-de-certificado-ssl">Ignorar verificação de certificado SSL</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl<span class="w"> </span>-k<span class="w"> </span>https://alvo-lab.local/api/dados
+</span></code></pre></div>
+<blockquote>
+<p><strong>Atenção</strong>: o flag <code>-k</code> ignora erros de certificado. Use apenas em ambientes controlados (labs, CTFs).</p>
+</blockquote>
+<h4 id="simular-um-user-agent-diferente">Simular um User-Agent diferente</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;User-Agent: Mozilla/5.0 (Windows NT 10.0)&quot;</span><span class="w"> </span>https://httpbin.org/user-agent
+</span></code></pre></div>
+<h4 id="salvar-resposta-em-arquivo">Salvar resposta em arquivo</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl<span class="w"> </span>-o<span class="w"> </span>resposta.html<span class="w"> </span>https://exemplo.com
+</span></code></pre></div>
 <hr />
-<h2 id="conclusao">Conclusão</h2>
-<p>O <strong>Zphisher</strong> é uma ferramenta poderosa que pode ser utilizada para fortalecer a segurança cibernética através da simulação de ataques de phishing. Quando usada de forma ética e controlada, ela ajuda a educar e conscientizar os usuários sobre os riscos associados ao phishing, permitindo que as organizações melhorem suas defesas contra ameaças reais.</p>
-<p>Lembre-se sempre de utilizar o Zphisher de maneira <strong>responsável</strong> e <strong>legal</strong>, respeitando as leis, políticas internas e a privacidade dos indivíduos envolvidos.</p>
+<h2 id="relacao-com-seguranca-ofensiva">Relação com Segurança Ofensiva</h2>
+<p>Entender HTTP/HTTPS é fundamental para praticamente todas as técnicas de Red Team:</p>
+<table>
+<thead>
+<tr>
+<th>Técnica</th>
+<th>Como HTTP se aplica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SQL Injection</strong></td>
+<td>Injeção via parâmetros GET/POST</td>
+</tr>
+<tr>
+<td><strong>XSS</strong></td>
+<td>Payload inserido em parâmetros refletidos na resposta</td>
+</tr>
+<tr>
+<td><strong>CSRF</strong></td>
+<td>Forjar requisições autenticadas usando cookies da vítima</td>
+</tr>
+<tr>
+<td><strong>Directory Bruteforce</strong></td>
+<td>Enviar milhares de requisições GET testando caminhos</td>
+</tr>
+<tr>
+<td><strong>API Exploitation</strong></td>
+<td>Manipular verbos HTTP, headers e body para abusar de APIs</td>
+</tr>
+</tbody>
+</table>
 <hr />
 
 
@@ -3633,10 +3823,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.code.copy"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

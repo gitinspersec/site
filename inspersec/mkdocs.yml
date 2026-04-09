@@ -61,6 +61,7 @@ nav:
         - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
         - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
         - Wireshark: aulas/blueTeam/aula1/wireshark.md
+        - Blue Team para Devs: aulas/blueTeam/aula1/blueteam-devs.md
       - Aula 2:
         - Redes Parte 1: aulas/blueTeam/aula2/redes1.md
       - Aula 3:
@@ -81,6 +82,8 @@ nav:
         - Inteligência de Segurança: aulas/blueTeam/aula6/inteligencia_de_seguranca.md
         - Próximos Passos em Cibersegurança: aulas/blueTeam/aula6/proximos_passos_ciberseguranca.md
         - Resposta a Incidentes: aulas/blueTeam/aula6/resposta_a_incidentes.md
+      - Aulas Extras:
+        - System Design (Introdução Rápida): aulas/blueTeam/aulasextra/system_design_intro.md
     - Game Hacking:
       - Introdução: aulas/GameHacking/introducao.md
     - Virus:
