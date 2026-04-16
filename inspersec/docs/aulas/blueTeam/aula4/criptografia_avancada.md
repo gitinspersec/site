@@ -45,25 +45,6 @@ openssl enc -aes-256-cbc -salt -in arquivo.txt -out arquivo.enc -k "minha_chave_
 openssl enc -d -aes-256-cbc -in arquivo.enc -out arquivo_dec.txt -k "minha_chave_secreta"
 ```
 
-#### Exemplo em Python (com cryptography library)
-
-```python
-from cryptography.fernet import Fernet
-
-# Gerar chave
-chave = Fernet.generate_key()
-cipher = Fernet(chave)
-
-# Encriptar
-dados = b"Dados secretos"
-encriptado = cipher.encrypt(dados)
-print(encriptado)
-
-# Decriptar
-decriptado = cipher.decrypt(encriptado)
-print(decriptado.decode())
-```
-
 ---
 
 ### 1.3. Criptografia Assimétrica
@@ -71,9 +52,9 @@ print(decriptado.decode())
 A criptografia assimétrica usa pares de chaves: uma pública (para encriptar/verificar) e uma privada (para decriptar/assinar). Resolve o problema de distribuição de chaves da simétrica, mas é mais lenta.
 
 #### Algoritmos Principais
-- **RSA**: Baseado em fatoração de números primos grandes. Usado para encriptação e assinaturas digitais. Chaves típicas: 2048-4096 bits.
+- **RSA**: Baseado em fatoração de números primos grandes. Usado para encriptação e assinaturas digitais. Chaves típicas: 2048-4096 bits. Segurança baseada na dificuldade de fatorar n = p*q. Encriptação: C = M^e mod n; Decriptação: M = C^d mod n, onde e e d são expoentes calculados com φ(n) = (p-1)*(q-1).
 - **ECC (Elliptic Curve Cryptography)**: Mais eficiente que RSA para o mesmo nível de segurança. Curvas como secp256r1 ou ed25519.
-- **ed25519**: Uma variante de ECC otimizada para assinaturas digitais, usada em SSH, Git, e blockchains como Solana.
+- **ed25519**: Uma variante de ECC otimizada para assinaturas digitais, usada em SSH, Git, e blockchains como Solana. Baseada na curva Ed25519 (Twisted Edwards), oferece assinaturas determinísticas de 64 bytes, resistentes a ataques de canal lateral e sem necessidade de geração de números aleatórios para assinaturas. Chaves de 256 bits, mais eficiente que RSA para o mesmo nível de segurança.
 
 #### Exemplo: Geração de Chaves RSA com OpenSSL
 
@@ -112,6 +93,45 @@ except:
 ```
 
 **Vantagens de ed25519 sobre RSA**: Menor tamanho de chave (32 bytes vs. 2048+ bits), mais rápido, resistente a ataques de canal lateral.
+
+### Como Funcionam as Chaves Assimétricas
+
+As chaves assimétricas resolvem o problema de distribuição de chaves da criptografia simétrica. Cada entidade tem um par: chave pública (compartilhada) e privada (secreta).
+
+- **Encriptação**: Usar chave pública do destinatário para encriptar; apenas ele pode decriptar com a privada.
+- **Assinaturas Digitais**: Assinar com chave privada; verificar com pública.
+- **Troca de Chaves**: Protocolos como Diffie-Hellman usam assimétrico para estabelecer chaves simétricas seguras.
+
+**Fluxo de Assinatura Digital**:
+
+1. Alice gera um par de chaves (privada e pública).
+2. Alice envia a chave pública para Bob.
+3. Alice assina a mensagem com sua chave privada.
+4. Alice envia a mensagem e a assinatura para Bob.
+5. Bob verifica a assinatura usando a chave pública de Alice.
+6. Se válida, Bob confia na mensagem.
+
+### Como Usar na Prática
+
+- **Geração**: `openssl genpkey -algorithm RSA -out key.pem` ou bibliotecas Python.
+- **Encriptação**: Use chave pública para proteger dados.
+- **Assinaturas**: Para verificar integridade (e.g., software downloads).
+- **Certificados**: X.509 para TLS, emitidos por CAs.
+
+#### Exemplo: Login SSH com ed25519
+
+```bash
+# Gerar par de chaves ed25519
+ssh-keygen -t ed25519 -C "seu_email@exemplo.com"
+
+# Copiar chave pública para servidor
+ssh-copy-id -i ~/.ssh/id_ed25519.pub user@servidor
+
+# Logar (sem senha, autenticado pela chave)
+ssh user@servidor
+```
+
+**Vantagem**: Mais seguro e conveniente que senhas.
 
 ---
 

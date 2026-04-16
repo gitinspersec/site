@@ -157,5 +157,4 @@ Dado P e Q = k*P, encontrar k é difícil (base da segurança).
 
 ## Resumo
 
-Da simplicidade das cifras clássicas à complexidade de RSA e ECC, a matemática torna a criptografia segura. Pratique com pequenos exemplos para entender os conceitos.</content>
-<parameter name="filePath">d:\Insper\InsperSec\site\inspersec\docs\aulas\blueTeam\aula4\criptografia_fundamentos_matematicos.md
+Da simplicidade das cifras clássicas à complexidade de RSA e ECC, a matemática torna a criptografia segura. Pratique com pequenos exemplos para entender os conceitos.

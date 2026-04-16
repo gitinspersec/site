@@ -2016,13 +2016,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-ferramentas-avancadas" class="md-nav__link">
+  <a href="#4-analise-de-trafego-criptografado-com-wireshark" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Ferramentas Avançadas
+        4. Análise de Tráfego Criptografado com Wireshark
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Análise de Tráfego Criptografado com Wireshark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-capturar-handshake-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Capturar Handshake TLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-decriptar-tls-se-tiver-chave-privada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Decriptar TLS (se tiver chave privada)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-obtendo-certificado-ssl-de-um-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Obtendo Certificado SSL de um Site
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Obtendo Certificado SSL de um Site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usando-openssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usando OpenSSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usando Navegador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3172,13 +3250,91 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-ferramentas-avancadas" class="md-nav__link">
+  <a href="#4-analise-de-trafego-criptografado-com-wireshark" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Ferramentas Avançadas
+        4. Análise de Tráfego Criptografado com Wireshark
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="4. Análise de Tráfego Criptografado com Wireshark">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-capturar-handshake-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Capturar Handshake TLS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-decriptar-tls-se-tiver-chave-privada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Decriptar TLS (se tiver chave privada)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-obtendo-certificado-ssl-de-um-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Obtendo Certificado SSL de um Site
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Obtendo Certificado SSL de um Site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usando-openssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usando OpenSSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usando Navegador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3285,17 +3441,43 @@
 </span></code></pre></div>
 <p><strong>Utilidade</strong>: Prática em quebra de hashes fracos para entender vulnerabilidades em CTFs de segurança.</p>
 <hr />
-<h2 id="4-ferramentas-avancadas">4. Ferramentas Avançadas</h2>
+<h2 id="4-analise-de-trafego-criptografado-com-wireshark">4. Análise de Tráfego Criptografado com Wireshark</h2>
+<p>Wireshark é essencial para inspecionar protocolos criptografados como TLS.</p>
+<h3 id="exemplo-capturar-handshake-tls">Exemplo: Capturar Handshake TLS</h3>
+<ol>
+<li>Abra Wireshark e selecione interface de rede.</li>
+<li>Filtre por <code>tls.handshake</code> para ver negociações.</li>
+<li>Acesse um site HTTPS; veja Client Hello, Server Hello, troca de certificados.</li>
+</ol>
+<h3 id="exemplo-decriptar-tls-se-tiver-chave-privada">Exemplo: Decriptar TLS (se tiver chave privada)</h3>
 <ul>
-<li><strong>hashcat</strong>: Cracking de hashes para testes de segurança.</li>
-<li><strong>Wireshark</strong>: Analisar tráfego criptografado (TLS handshakes).</li>
-<li><strong>OpenSSL</strong>: Testes de certificados e conexões seguras.</li>
-<li><strong>jwt.io</strong>: Decodificar e validar JWTs online.</li>
+<li>Configure Wireshark: Edit &gt; Preferences &gt; Protocols &gt; TLS &gt; (Pre)-Master-Secret log filename.</li>
+<li>Use <code>SSLKEYLOGFILE</code> no navegador para log de chaves.</li>
+<li>Filtre por <code>http</code> para ver tráfego decriptado.</li>
 </ul>
+<p><strong>Utilidade</strong>: Depurar conexões seguras, detectar ataques como downgrade.</p>
+<hr />
+<h2 id="5-obtendo-certificado-ssl-de-um-site">5. Obtendo Certificado SSL de um Site</h2>
+<p>Certificados SSL garantem identidade e encriptação em HTTPS.</p>
+<h3 id="usando-openssl">Usando OpenSSL</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Obter certificado do site</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span>example.com:443<span class="w"> </span>-servername<span class="w"> </span>example.com<span class="w"> </span>&lt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>x509<span class="w"> </span>-text<span class="w"> </span>-noout
+</span></code></pre></div>
+<h3 id="usando-navegador">Usando Navegador</h3>
+<ol>
+<li>Clique no cadeado na barra de endereço.</li>
+<li>Selecione "Certificado" ou "Ver certificado".</li>
+<li>Veja detalhes: emissor, válido até, algoritmo.</li>
+</ol>
+<h3 id="verificacao">Verificação</h3>
+<ul>
+<li>Use <code>openssl verify</code> para checar cadeia de confiança.</li>
+<li>Sites como SSL Labs (ssllabs.com) para análise completa.</li>
+</ul>
+<p><strong>Utilidade</strong>: Verificar segurança de sites, detectar certificados expirados ou fraudulentos.</p>
 <hr />
 <h2 id="resumo">Resumo</h2>
-<p>Foque em utilidades práticas como autenticação (JWT/OAuth) e desafios (CTF). Evite hashes quebrados em produção e sempre use bibliotecas atualizadas.</content>
-<parameter name="filePath">d:\Insper\InsperSec\site\inspersec\docs\aulas\blueTeam\aula4\criptografia_aplicada.md</p>
+<p>Foque em utilidades práticas como autenticação (JWT/OAuth) e desafios (CTF). Evite hashes quebrados em produção e sempre use bibliotecas atualizadas.</p>
 
 
 

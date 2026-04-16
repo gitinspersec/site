@@ -95,16 +95,52 @@ hashcat -m 0 -a 0 5d41402abc4b2a76b9719d911017c592 /path/to/rockyou.txt
 
 ---
 
-## 4. Ferramentas Avançadas
+## 4. Análise de Tráfego Criptografado com Wireshark
 
-- **hashcat**: Cracking de hashes para testes de segurança.
-- **Wireshark**: Analisar tráfego criptografado (TLS handshakes).
-- **OpenSSL**: Testes de certificados e conexões seguras.
-- **jwt.io**: Decodificar e validar JWTs online.
+Wireshark é essencial para inspecionar protocolos criptografados como TLS.
+
+### Exemplo: Capturar Handshake TLS
+
+1. Abra Wireshark e selecione interface de rede.
+2. Filtre por `tls.handshake` para ver negociações.
+3. Acesse um site HTTPS; veja Client Hello, Server Hello, troca de certificados.
+
+### Exemplo: Decriptar TLS (se tiver chave privada)
+
+- Configure Wireshark: Edit > Preferences > Protocols > TLS > (Pre)-Master-Secret log filename.
+- Use `SSLKEYLOGFILE` no navegador para log de chaves.
+- Filtre por `http` para ver tráfego decriptado.
+
+**Utilidade**: Depurar conexões seguras, detectar ataques como downgrade.
+
+---
+
+## 5. Obtendo Certificado SSL de um Site
+
+Certificados SSL garantem identidade e encriptação em HTTPS.
+
+### Usando OpenSSL
+
+```bash
+# Obter certificado do site
+openssl s_client -connect example.com:443 -servername example.com < /dev/null | openssl x509 -text -noout
+```
+
+### Usando Navegador
+
+1. Clique no cadeado na barra de endereço.
+2. Selecione "Certificado" ou "Ver certificado".
+3. Veja detalhes: emissor, válido até, algoritmo.
+
+### Verificação
+
+- Use `openssl verify` para checar cadeia de confiança.
+- Sites como SSL Labs (ssllabs.com) para análise completa.
+
+**Utilidade**: Verificar segurança de sites, detectar certificados expirados ou fraudulentos.
 
 ---
 
 ## Resumo
 
-Foque em utilidades práticas como autenticação (JWT/OAuth) e desafios (CTF). Evite hashes quebrados em produção e sempre use bibliotecas atualizadas.</content>
-<parameter name="filePath">d:\Insper\InsperSec\site\inspersec\docs\aulas\blueTeam\aula4\criptografia_aplicada.md
+Foque em utilidades práticas como autenticação (JWT/OAuth) e desafios (CTF). Evite hashes quebrados em produção e sempre use bibliotecas atualizadas.
