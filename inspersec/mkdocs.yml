@@ -67,6 +67,8 @@ nav:
         - Redes Parte 2: aulas/blueTeam/aula3/resdes2.md
       - Aula 4:
         - Criptografia Avançada: aulas/blueTeam/aula4/criptografia_avancada.md
+        - Fundamentos Matemáticos da Criptografia: aulas/blueTeam/aula4/criptografia_fundamentos_matematicos.md
+        - Aplicações Práticas da Criptografia: aulas/blueTeam/aula4/criptografia_aplicada.md
       - Aula 5:
         - Cloud Networking: aulas/blueTeam/aula5/aula5.md
         - Containers e Segurança: aulas/blueTeam/aula5/containers.md

@@ -12,7 +12,7 @@
         <link rel="prev" href="../../aula3/resdes2/">
       
       
-        <link rel="next" href="../../aula5/aula5/">
+        <link rel="next" href="../criptografia_fundamentos_matematicos/">
       
       
         
@@ -1876,6 +1876,117 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#12-criptografia-simetrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Criptografia Simétrica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Criptografia Simétrica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algoritmos Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-operacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modos de Operação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-com-openssl-aes-256-cbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo com OpenSSL (AES-256-CBC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python-com-cryptography-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo em Python (com cryptography library)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-criptografia-assimetrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Criptografia Assimétrica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Criptografia Assimétrica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos-principais_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algoritmos Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-geracao-de-chaves-rsa-com-openssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Geração de Chaves RSA com OpenSSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-assinatura-digital-com-ed25519-python-com-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Assinatura Digital com ed25519 (Python com cryptography)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2088,10 +2199,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-boas-praticas" class="md-nav__link">
+  <a href="#6-jwt-json-web-tokens-tokens-para-autenticacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Boas Práticas
+        6. JWT (JSON Web Tokens): Tokens para Autenticação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. JWT (JSON Web Tokens): Tokens para Autenticação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-estrutura-do-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Estrutura do JWT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-algoritmos-de-assinatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Algoritmos de Assinatura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-exemplo-em-python-pyjwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Exemplo em Python (PyJWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-seguranca-e-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Segurança e Boas Práticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boas Práticas
       
     </span>
   </a>
@@ -2099,10 +2271,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-ferramentas" class="md-nav__link">
+  <a href="#8-ferramentas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Ferramentas
+        8. Ferramentas
       
     </span>
   </a>
@@ -2110,10 +2282,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-resumo" class="md-nav__link">
+  <a href="#9-resumo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Resumo:
+        9. Resumo:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ctf-cryptohack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. CTF - CryptoHack
       
     </span>
   </a>
@@ -2124,6 +2307,62 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criptografia_fundamentos_matematicos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos Matemáticos da Criptografia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criptografia_aplicada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aplicações Práticas da Criptografia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3171,6 +3410,117 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#12-criptografia-simetrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Criptografia Simétrica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Criptografia Simétrica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algoritmos Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-operacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modos de Operação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-com-openssl-aes-256-cbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo com OpenSSL (AES-256-CBC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-em-python-com-cryptography-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo em Python (com cryptography library)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-criptografia-assimetrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Criptografia Assimétrica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Criptografia Assimétrica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algoritmos-principais_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algoritmos Principais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-geracao-de-chaves-rsa-com-openssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Geração de Chaves RSA com OpenSSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-assinatura-digital-com-ed25519-python-com-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemplo: Assinatura Digital com ed25519 (Python com cryptography)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3383,10 +3733,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-boas-praticas" class="md-nav__link">
+  <a href="#6-jwt-json-web-tokens-tokens-para-autenticacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Boas Práticas
+        6. JWT (JSON Web Tokens): Tokens para Autenticação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. JWT (JSON Web Tokens): Tokens para Autenticação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-estrutura-do-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Estrutura do JWT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-algoritmos-de-assinatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Algoritmos de Assinatura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-exemplo-em-python-pyjwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Exemplo em Python (PyJWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-seguranca-e-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Segurança e Boas Práticas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boas Práticas
       
     </span>
   </a>
@@ -3394,10 +3805,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-ferramentas" class="md-nav__link">
+  <a href="#8-ferramentas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Ferramentas
+        8. Ferramentas
       
     </span>
   </a>
@@ -3405,10 +3816,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-resumo" class="md-nav__link">
+  <a href="#9-resumo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Resumo:
+        9. Resumo:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-ctf-cryptohack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. CTF - CryptoHack
       
     </span>
   </a>
@@ -3454,6 +3876,83 @@
 <p><strong>Hash Criptográfico:</strong> Função unidirecional que transforma dados em um valor fixo, irreversível.</p>
 </li>
 </ol>
+<hr />
+<h3 id="12-criptografia-simetrica">1.2. Criptografia Simétrica</h3>
+<p>A criptografia simétrica utiliza a mesma chave para encriptar e decriptar dados. É eficiente para grandes volumes de dados, mas o desafio principal é a distribuição segura da chave compartilhada.</p>
+<h4 id="algoritmos-principais">Algoritmos Principais</h4>
+<ul>
+<li><strong>AES (Advanced Encryption Standard)</strong>: Padrão atual, com tamanhos de chave de 128, 192 ou 256 bits. Seguro e amplamente usado.</li>
+<li><strong>DES/3DES</strong>: Obsoleto devido à chave pequena (56 bits) e vulnerabilidades.</li>
+</ul>
+<h4 id="modos-de-operacao">Modos de Operação</h4>
+<ul>
+<li><strong>ECB (Electronic Codebook)</strong>: Simples, mas inseguro para padrões repetitivos.</li>
+<li><strong>CBC (Cipher Block Chaining)</strong>: Usa vetor de inicialização (IV) para maior segurança.</li>
+<li><strong>GCM (Galois/Counter Mode)</strong>: Fornece confidencialidade e integridade autenticada.</li>
+</ul>
+<h4 id="exemplo-com-openssl-aes-256-cbc">Exemplo com OpenSSL (AES-256-CBC)</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Encriptar um arquivo</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>openssl<span class="w"> </span>enc<span class="w"> </span>-aes-256-cbc<span class="w"> </span>-salt<span class="w"> </span>-in<span class="w"> </span>arquivo.txt<span class="w"> </span>-out<span class="w"> </span>arquivo.enc<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;minha_chave_secreta&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Decriptar</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>openssl<span class="w"> </span>enc<span class="w"> </span>-d<span class="w"> </span>-aes-256-cbc<span class="w"> </span>-in<span class="w"> </span>arquivo.enc<span class="w"> </span>-out<span class="w"> </span>arquivo_dec.txt<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;minha_chave_secreta&quot;</span>
+</span></code></pre></div>
+<h4 id="exemplo-em-python-com-cryptography-library">Exemplo em Python (com cryptography library)</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">cryptography.fernet</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fernet</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Gerar chave</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">chave</span> <span class="o">=</span> <span class="n">Fernet</span><span class="o">.</span><span class="n">generate_key</span><span class="p">()</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">cipher</span> <span class="o">=</span> <span class="n">Fernet</span><span class="p">(</span><span class="n">chave</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Encriptar</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">dados</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;Dados secretos&quot;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">encriptado</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">dados</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">encriptado</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># Decriptar</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">decriptado</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">encriptado</span><span class="p">)</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">decriptado</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</span></code></pre></div>
+<hr />
+<h3 id="13-criptografia-assimetrica">1.3. Criptografia Assimétrica</h3>
+<p>A criptografia assimétrica usa pares de chaves: uma pública (para encriptar/verificar) e uma privada (para decriptar/assinar). Resolve o problema de distribuição de chaves da simétrica, mas é mais lenta.</p>
+<h4 id="algoritmos-principais_1">Algoritmos Principais</h4>
+<ul>
+<li><strong>RSA</strong>: Baseado em fatoração de números primos grandes. Usado para encriptação e assinaturas digitais. Chaves típicas: 2048-4096 bits.</li>
+<li><strong>ECC (Elliptic Curve Cryptography)</strong>: Mais eficiente que RSA para o mesmo nível de segurança. Curvas como secp256r1 ou ed25519.</li>
+<li><strong>ed25519</strong>: Uma variante de ECC otimizada para assinaturas digitais, usada em SSH, Git, e blockchains como Solana.</li>
+</ul>
+<h4 id="exemplo-geracao-de-chaves-rsa-com-openssl">Exemplo: Geração de Chaves RSA com OpenSSL</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Gerar par de chaves</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>openssl<span class="w"> </span>genpkey<span class="w"> </span>-algorithm<span class="w"> </span>RSA<span class="w"> </span>-out<span class="w"> </span>private_key.pem<span class="w"> </span>-aes256<span class="w"> </span>-pass<span class="w"> </span>pass:minha_senha
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>openssl<span class="w"> </span>rsa<span class="w"> </span>-pubout<span class="w"> </span>-in<span class="w"> </span>private_key.pem<span class="w"> </span>-out<span class="w"> </span>public_key.pem<span class="w"> </span>-passin<span class="w"> </span>pass:minha_senha
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Encriptar com chave pública</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Mensagem secreta&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>rsautl<span class="w"> </span>-encrypt<span class="w"> </span>-pubin<span class="w"> </span>-inkey<span class="w"> </span>public_key.pem<span class="w"> </span>-out<span class="w"> </span>mensagem.enc
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Decriptar com chave privada</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>openssl<span class="w"> </span>rsautl<span class="w"> </span>-decrypt<span class="w"> </span>-inkey<span class="w"> </span>private_key.pem<span class="w"> </span>-in<span class="w"> </span>mensagem.enc<span class="w"> </span>-passin<span class="w"> </span>pass:minha_senha
+</span></code></pre></div>
+<h4 id="exemplo-assinatura-digital-com-ed25519-python-com-cryptography">Exemplo: Assinatura Digital com ed25519 (Python com cryptography)</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">cryptography.hazmat.primitives.asymmetric</span><span class="w"> </span><span class="kn">import</span> <span class="n">ed25519</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">cryptography.hazmat.primitives</span><span class="w"> </span><span class="kn">import</span> <span class="n">serialization</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Gerar chaves</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">private_key</span> <span class="o">=</span> <span class="n">ed25519</span><span class="o">.</span><span class="n">Ed25519PrivateKey</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">public_key</span> <span class="o">=</span> <span class="n">private_key</span><span class="o">.</span><span class="n">public_key</span><span class="p">()</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Assinar</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">mensagem</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;Mensagem para assinar&quot;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">assinatura</span> <span class="o">=</span> <span class="n">private_key</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">mensagem</span><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># Verificar</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">public_key</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">assinatura</span><span class="p">,</span> <span class="n">mensagem</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Assinatura válida&quot;</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="k">except</span><span class="p">:</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Assinatura inválida&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong>Vantagens de ed25519 sobre RSA</strong>: Menor tamanho de chave (32 bytes vs. 2048+ bits), mais rápido, resistente a ataques de canal lateral.</p>
 <hr />
 <h2 id="2-hash-integridade-e-autenticacao">2. Hash: Integridade e Autenticação</h2>
 <p>Funções de hash são amplamente utilizadas para <strong>integridade de dados, assinaturas digitais e armazenamento seguro de senhas</strong>.
@@ -3511,13 +4010,13 @@ Elas produzem uma sequência de tamanho fixo que representa a entrada original. 
 <hr />
 <h3 id="22-exemplos-de-hashes-com-openssl">2.2. Exemplos de Hashes com OpenSSL</h3>
 <h4 id="sha-256">SHA-256</h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;seguranca&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>dgst<span class="w"> </span>-sha256
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;seguranca&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>dgst<span class="w"> </span>-sha256
 </span></code></pre></div>
 <h4 id="sha-512">SHA-512</h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;criptografia&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>dgst<span class="w"> </span>-sha512
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;criptografia&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>dgst<span class="w"> </span>-sha512
 </span></code></pre></div>
 <h4 id="md5-exemplo-de-hash-quebrado">MD5 (exemplo de hash quebrado)</h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;123456&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>dgst<span class="w"> </span>-md5
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;123456&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>openssl<span class="w"> </span>dgst<span class="w"> </span>-md5
 </span></code></pre></div>
 <p><strong>Observação:</strong>
 MD5 permite encontrar duas mensagens diferentes que produzem o mesmo hash, tornando-o inútil e inseguro para integridade e autenticação. Assim, é recomendado utilizar <strong>SHA-256</strong>, <strong>SHA-512</strong> ou <strong>algoritmos de derivação de chaves para senhas</strong> (bcrypt, scrypt, Argon2) para garantir segurança adequada.</p>
@@ -3562,21 +4061,21 @@ Eles ainda aparecem em sistemas antigos e desatualizados, mas o ideal é sempre 
 </table>
 <hr />
 <h3 id="41-exemplo-em-python-bcrypt">4.1. Exemplo em Python (bcrypt)</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">bcrypt</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">senha</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;senha123&quot;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">hash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">senha</span><span class="p">,</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">())</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">bcrypt</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">senha</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;senha123&quot;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">hash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">senha</span><span class="p">,</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">())</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="42-exemplo-em-python-argon2">4.2. Exemplo em Python (Argon2)</h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">argon2</span><span class="w"> </span><span class="kn">import</span> <span class="n">PasswordHasher</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">ph</span> <span class="o">=</span> <span class="n">PasswordHasher</span><span class="p">()</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">hash</span> <span class="o">=</span> <span class="n">ph</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;senha123&quot;</span><span class="p">)</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">argon2</span><span class="w"> </span><span class="kn">import</span> <span class="n">PasswordHasher</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">ph</span> <span class="o">=</span> <span class="n">PasswordHasher</span><span class="p">()</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nb">hash</span> <span class="o">=</span> <span class="n">ph</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;senha123&quot;</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
 </span></code></pre></div>
 <p><strong>Verificação:</strong></p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">ph</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="s2">&quot;senha123&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">ph</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="s2">&quot;senha123&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
 <h3 id="43-comparativo-tecnico">4.3. Comparativo Técnico</h3>
@@ -3688,23 +4187,87 @@ Eles ainda aparecem em sistemas antigos e desatualizados, mas o ideal é sempre 
 <li>O token é usado para acessar recursos protegidos.</li>
 </ol>
 <h4 id="exemplo-http">Exemplo (HTTP)</h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Solicitação de token</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://auth.exemplo.com/token<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=authorization_code&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;code=abc123&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;redirect_uri=https://app.exemplo.com/callback&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;client_id:client_secret&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Solicitação de token</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://auth.exemplo.com/token<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=authorization_code&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;code=abc123&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;redirect_uri=https://app.exemplo.com/callback&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span>-u<span class="w"> </span><span class="s2">&quot;client_id:client_secret&quot;</span>
 </span></code></pre></div>
 <p>Resposta:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIs...&quot;</span><span class="p">,</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">&quot;expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;read_profile&quot;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIs...&quot;</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer&quot;</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">&quot;expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3600</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;read_profile&quot;</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
-<h2 id="6-boas-praticas">6. Boas Práticas</h2>
+<h2 id="6-jwt-json-web-tokens-tokens-para-autenticacao">6. JWT (JSON Web Tokens): Tokens para Autenticação</h2>
+<p>JWT é um padrão aberto (RFC 7519) para representar claims de forma segura entre partes. É amplamente usado em OAuth 2.0 para access tokens, mas também em sessões stateless e APIs.</p>
+<h3 id="61-estrutura-do-jwt">6.1. Estrutura do JWT</h3>
+<p>Um JWT é composto de três partes separadas por pontos (<code>.</code>):</p>
+<ol>
+<li>
+<p><strong>Header</strong>: Metadados como algoritmo de assinatura.
+   <div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HS256&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Payload</strong>: Claims (dados) como user ID, expiração.
+   <div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;João Silva&quot;</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1516239022</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1516242622</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Signature</strong>: Assinatura para verificar integridade.</p>
+</li>
+</ol>
+<p>O token completo: <code>header.payload.signature</code> (base64url encoded).</p>
+<h3 id="62-algoritmos-de-assinatura">6.2. Algoritmos de Assinatura</h3>
+<ul>
+<li><strong>HS256 (HMAC SHA-256)</strong>: Simétrico, usa chave secreta compartilhada.</li>
+<li><strong>RS256 (RSA SHA-256)</strong>: Assimétrico, usa chave privada para assinar, pública para verificar.</li>
+<li><strong>ES256 (ECDSA)</strong>: Baseado em curvas elípticas, como ed25519.</li>
+</ul>
+<p><strong>Atenção</strong>: Evite "none" algorithm (sem assinatura) para evitar ataques.</p>
+<h3 id="63-exemplo-em-python-pyjwt">6.3. Exemplo em Python (PyJWT)</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">jwt</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Chave secreta</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">secret</span> <span class="o">=</span> <span class="s2">&quot;minha_chave_secreta&quot;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># Criar payload</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="s2">&quot;exp&quot;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="p">}</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="c1"># Assinar (HS256)</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="n">token</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s2">&quot;HS256&quot;</span><span class="p">)</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="c1"># Verificar</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="n">decoded</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;HS256&quot;</span><span class="p">])</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">decoded</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="64-seguranca-e-boas-praticas">6.4. Segurança e Boas Práticas</h3>
+<ul>
+<li>Use HTTPS sempre.</li>
+<li>Defina expiração curta.</li>
+<li>Valide issuer e audience.</li>
+<li>Evite armazenar dados sensíveis no payload (JWT não é encriptado, apenas assinado).</li>
+</ul>
+<hr />
+<h2 id="7-boas-praticas">7. Boas Práticas</h2>
 <table>
 <thead>
 <tr>
@@ -3740,7 +4303,7 @@ Eles ainda aparecem em sistemas antigos e desatualizados, mas o ideal é sempre 
 </tbody>
 </table>
 <hr />
-<h2 id="7-ferramentas">7. Ferramentas</h2>
+<h2 id="8-ferramentas">8. Ferramentas</h2>
 <table>
 <thead>
 <tr>
@@ -3772,7 +4335,7 @@ Eles ainda aparecem em sistemas antigos e desatualizados, mas o ideal é sempre 
 </tbody>
 </table>
 <hr />
-<h2 id="8-resumo">8. <strong>Resumo:</strong></h2>
+<h2 id="9-resumo">9. <strong>Resumo:</strong></h2>
 <blockquote>
 <ul>
 <li>Use SHA-2 (SHA-256/512) para integridade.</li>
@@ -3780,8 +4343,14 @@ Eles ainda aparecem em sistemas antigos e desatualizados, mas o ideal é sempre 
 <li>Evite MD5 e SHA-1.</li>
 <li>Use OAuth 2.0 com fluxos seguros e tokens curtos.</li>
 <li>Monitore, atualize e audite regularmente.</li>
+<li>Para fundamentos matemáticos, veja <a href="../criptografia_fundamentos_matematicos/">Fundamentos Matemáticos</a>.</li>
+<li>Para aplicações práticas, veja <a href="../criptografia_aplicada/">Aplicações Práticas</a>.</li>
 </ul>
 </blockquote>
+<hr />
+<h2 id="10-ctf-cryptohack">10. CTF - CryptoHack</h2>
+<p>Para praticar os conceitos aprendidos nesta aula, recomendamos o site <a href="https://cryptohack.org/">CryptoHack</a>, uma plataforma de CTF (Capture The Flag) focada em desafios de criptografia. Lá você encontrará exercícios interativos que ajudam a consolidar o conhecimento em hashes, criptografia simétrica e assimétrica, OAuth e muito mais.</p>
+<p>Acesse: <a href="https://cryptohack.org/">https://cryptohack.org/</a></p>
 
 
 
