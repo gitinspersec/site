@@ -22,6 +22,99 @@ A criptografia moderna é baseada em **matemática aplicada** e tem três objeti
 
 ---
 
+### 1.2. Criptografia Simétrica
+
+A criptografia simétrica utiliza a mesma chave para encriptar e decriptar dados. É eficiente para grandes volumes de dados, mas o desafio principal é a distribuição segura da chave compartilhada.
+
+#### Algoritmos Principais
+- **AES (Advanced Encryption Standard)**: Padrão atual, com tamanhos de chave de 128, 192 ou 256 bits. Seguro e amplamente usado.
+- **DES/3DES**: Obsoleto devido à chave pequena (56 bits) e vulnerabilidades.
+
+#### Modos de Operação
+- **ECB (Electronic Codebook)**: Simples, mas inseguro para padrões repetitivos.
+- **CBC (Cipher Block Chaining)**: Usa vetor de inicialização (IV) para maior segurança.
+- **GCM (Galois/Counter Mode)**: Fornece confidencialidade e integridade autenticada.
+
+#### Exemplo com OpenSSL (AES-256-CBC)
+
+```bash
+# Encriptar um arquivo
+openssl enc -aes-256-cbc -salt -in arquivo.txt -out arquivo.enc -k "minha_chave_secreta"
+
+# Decriptar
+openssl enc -d -aes-256-cbc -in arquivo.enc -out arquivo_dec.txt -k "minha_chave_secreta"
+```
+
+#### Exemplo em Python (com cryptography library)
+
+```python
+from cryptography.fernet import Fernet
+
+# Gerar chave
+chave = Fernet.generate_key()
+cipher = Fernet(chave)
+
+# Encriptar
+dados = b"Dados secretos"
+encriptado = cipher.encrypt(dados)
+print(encriptado)
+
+# Decriptar
+decriptado = cipher.decrypt(encriptado)
+print(decriptado.decode())
+```
+
+---
+
+### 1.3. Criptografia Assimétrica
+
+A criptografia assimétrica usa pares de chaves: uma pública (para encriptar/verificar) e uma privada (para decriptar/assinar). Resolve o problema de distribuição de chaves da simétrica, mas é mais lenta.
+
+#### Algoritmos Principais
+- **RSA**: Baseado em fatoração de números primos grandes. Usado para encriptação e assinaturas digitais. Chaves típicas: 2048-4096 bits.
+- **ECC (Elliptic Curve Cryptography)**: Mais eficiente que RSA para o mesmo nível de segurança. Curvas como secp256r1 ou ed25519.
+- **ed25519**: Uma variante de ECC otimizada para assinaturas digitais, usada em SSH, Git, e blockchains como Solana.
+
+#### Exemplo: Geração de Chaves RSA com OpenSSL
+
+```bash
+# Gerar par de chaves
+openssl genpkey -algorithm RSA -out private_key.pem -aes256 -pass pass:minha_senha
+openssl rsa -pubout -in private_key.pem -out public_key.pem -passin pass:minha_senha
+
+# Encriptar com chave pública
+echo "Mensagem secreta" | openssl rsautl -encrypt -pubin -inkey public_key.pem -out mensagem.enc
+
+# Decriptar com chave privada
+openssl rsautl -decrypt -inkey private_key.pem -in mensagem.enc -passin pass:minha_senha
+```
+
+#### Exemplo: Assinatura Digital com ed25519 (Python com cryptography)
+
+```python
+from cryptography.hazmat.primitives.asymmetric import ed25519
+from cryptography.hazmat.primitives import serialization
+
+# Gerar chaves
+private_key = ed25519.Ed25519PrivateKey.generate()
+public_key = private_key.public_key()
+
+# Assinar
+mensagem = b"Mensagem para assinar"
+assinatura = private_key.sign(mensagem)
+
+# Verificar
+try:
+    public_key.verify(assinatura, mensagem)
+    print("Assinatura válida")
+except:
+    print("Assinatura inválida")
+```
+
+**Vantagens de ed25519 sobre RSA**: Menor tamanho de chave (32 bytes vs. 2048+ bits), mais rápido, resistente a ataques de canal lateral.
+
+---
+
 ## 2. Hash: Integridade e Autenticação
 
 Funções de hash são amplamente utilizadas para **integridade de dados, assinaturas digitais e armazenamento seguro de senhas**.
@@ -189,7 +282,78 @@ Resposta:
 
 ---
 
-## 6. Boas Práticas
+## 6. JWT (JSON Web Tokens): Tokens para Autenticação
+
+JWT é um padrão aberto (RFC 7519) para representar claims de forma segura entre partes. É amplamente usado em OAuth 2.0 para access tokens, mas também em sessões stateless e APIs.
+
+### 6.1. Estrutura do JWT
+
+Um JWT é composto de três partes separadas por pontos (`.`):
+
+1. **Header**: Metadados como algoritmo de assinatura.
+   ```json
+   {
+     "alg": "HS256",
+     "typ": "JWT"
+   }
+   ```
+
+2. **Payload**: Claims (dados) como user ID, expiração.
+   ```json
+   {
+     "sub": "1234567890",
+     "name": "João Silva",
+     "iat": 1516239022,
+     "exp": 1516242622
+   }
+   ```
+
+3. **Signature**: Assinatura para verificar integridade.
+
+O token completo: `header.payload.signature` (base64url encoded).
+
+### 6.2. Algoritmos de Assinatura
+
+- **HS256 (HMAC SHA-256)**: Simétrico, usa chave secreta compartilhada.
+- **RS256 (RSA SHA-256)**: Assimétrico, usa chave privada para assinar, pública para verificar.
+- **ES256 (ECDSA)**: Baseado em curvas elípticas, como ed25519.
+
+**Atenção**: Evite "none" algorithm (sem assinatura) para evitar ataques.
+
+### 6.3. Exemplo em Python (PyJWT)
+
+```python
+import jwt
+import datetime
+
+# Chave secreta
+secret = "minha_chave_secreta"
+
+# Criar payload
+payload = {
+    "user_id": 123,
+    "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+}
+
+# Assinar (HS256)
+token = jwt.encode(payload, secret, algorithm="HS256")
+print(token)
+
+# Verificar
+decoded = jwt.decode(token, secret, algorithms=["HS256"])
+print(decoded)
+```
+
+### 6.4. Segurança e Boas Práticas
+
+- Use HTTPS sempre.
+- Defina expiração curta.
+- Valide issuer e audience.
+- Evite armazenar dados sensíveis no payload (JWT não é encriptado, apenas assinado).
+
+---
+
+## 7. Boas Práticas
 
 | Prática                            | Descrição                                        |
 | :--------------------------------- | :----------------------------------------------- |
@@ -202,7 +366,7 @@ Resposta:
 
 ---
 
-## 7. Ferramentas
+## 8. Ferramentas
 
 | Ferramenta     | Uso                                       |
 | :------------- | :---------------------------------------- |
@@ -214,10 +378,20 @@ Resposta:
 
 ---
 
-## 8. **Resumo:**
+## 9. **Resumo:**
 >
 > * Use SHA-2 (SHA-256/512) para integridade.
 > * Use Argon2 para senhas.
 > * Evite MD5 e SHA-1.
 > * Use OAuth 2.0 com fluxos seguros e tokens curtos.
 > * Monitore, atualize e audite regularmente.
+> * Para fundamentos matemáticos, veja [Fundamentos Matemáticos](criptografia_fundamentos_matematicos.md).
+> * Para aplicações práticas, veja [Aplicações Práticas](criptografia_aplicada.md).
+
+---
+
+## 10. CTF - CryptoHack
+
+Para praticar os conceitos aprendidos nesta aula, recomendamos o site [CryptoHack](https://cryptohack.org/), uma plataforma de CTF (Capture The Flag) focada em desafios de criptografia. Lá você encontrará exercícios interativos que ajudam a consolidar o conhecimento em hashes, criptografia simétrica e assimétrica, OAuth e muito mais.
+
+Acesse: [https://cryptohack.org/](https://cryptohack.org/)
