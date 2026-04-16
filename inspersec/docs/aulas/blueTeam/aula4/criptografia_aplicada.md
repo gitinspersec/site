@@ -106,5 +106,4 @@ hashcat -m 0 -a 0 5d41402abc4b2a76b9719d911017c592 /path/to/rockyou.txt
 
 ## Resumo
 
-Foque em utilidades práticas como autenticação (JWT/OAuth) e desafios (CTF). Evite hashes quebrados em produção e sempre use bibliotecas atualizadas.</content>
-<parameter name="filePath">d:\Insper\InsperSec\site\inspersec\docs\aulas\blueTeam\aula4\criptografia_aplicada.md
+Foque em utilidades práticas como autenticação (JWT/OAuth) e desafios (CTF). Evite hashes quebrados em produção e sempre use bibliotecas atualizadas.
