@@ -4,6 +4,10 @@ Bem-vindos à aula de **Engenharia Social**! Hoje, vamos explorar os fundamentos
 
 ---
 
+## Slides
+
+[Slides da aula](https://www.canva.com/design/DAG1TC2O-V0/vi-kmkUH3EheLtx--0QWQQ/view?utm_content=DAG1TC2O-V0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h69f256ab77#1)
+
 ## O que é Engenharia Social?
 
 A engenharia social é a manipulação psicológica de pessoas para que realizem ações ou divulguem informações confidenciais. Em vez de explorar vulnerabilidades técnicas, os engenheiros sociais exploram a natureza humana.

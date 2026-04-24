@@ -185,6 +185,15 @@ Este projeto será avaliado pela **qualidade do raciocínio documentado**, não 
 - Os prints existem mas não há explicação do intuito e do resultado
 - O grupo executou comandos sem entender o que estava fazendo
 
-> 💡 O objetivo desse projeto é expor os membros a um ambiente similar ao real. Em segurança ofensiva, **saber buscar, saber errar e saber documentar** são habilidades tão importantes quanto saber explorar.
 
-> ⚠️ O projeto deve ser concluído até 29/04 antes das 23:59, o grupo deverá realizar entregáveis parciais nos dias 15/04 e 22/04 comentando o andamento do projeto.
+> ⚠️ O projeto deve ser concluído até 06/05 antes das 23:59.
+
+**Como enviar:**
+- Entrar no site https://www.jrtalents.com.br/talent
+<br>
+- Criar uma conta
+<br>
+- Entrar no desafio Projeto Red Team
+<br>
+- Anexar o pdf com a entrega do projeto
+<br>
