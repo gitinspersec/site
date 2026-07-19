@@ -114,5 +114,7 @@ john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
 
 A próxima aula é de ferramentas (Burp, Gobuster) e assume que você entende como a web conversa. Leia:
 
-- [Requisições HTTP e HTTPS](../../redTeam/aulasextra/http_https.md)
-- [Protocolos e TCP — IP, portas e serviços](../../redTeam/aulasextra/protocolos_tcp.md)
+- [Requisições HTTP e HTTPS](../extras/http_https.md)
+- [Protocolos, IP e Portas](../extras/protocolos_tcp.md)
+
+**Opcional (pra quem curtir):** [Criptomoedas e Segurança](../extras/criptomoedas.md) — a cripto da Aula 2 aplicada a dinheiro.

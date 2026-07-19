@@ -38,6 +38,10 @@ nav:
       - Aula 2:
         - Codificação, Criptografia e Hashing: aulas/redTeamV2/aula2/codificacao-cripto-hashing.md
         - Autenticação: aulas/redTeamV2/aula2/autenticacao.md
+      - Extras:
+        - Requisições HTTP e HTTPS: aulas/redTeamV2/extras/http_https.md
+        - Protocolos, IP e Portas: aulas/redTeamV2/extras/protocolos_tcp.md
+        - Criptomoedas e Segurança: aulas/redTeamV2/extras/criptomoedas.md
     - Red Team:
       - Aula 1:
         - Linux Básico: aulas/redTeam/aula1/basicLinux.md
