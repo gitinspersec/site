@@ -37,6 +37,7 @@ nav:
         - Linux Básico: aulas/redTeamV2/aula1/linux.md
       - Aula 2:
         - Codificação, Criptografia e Hashing: aulas/redTeamV2/aula2/codificacao-cripto-hashing.md
+        - Autenticação: aulas/redTeamV2/aula2/autenticacao.md
     - Red Team:
       - Aula 1:
         - Linux Básico: aulas/redTeam/aula1/basicLinux.md

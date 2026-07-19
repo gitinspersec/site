@@ -124,4 +124,4 @@ Por isso uma senha bem guardada é sempre **hash + salt**, com algoritmos feitos
 
 ## Próximos passos
 
-A próxima página, **Autenticação**, mostra como os sistemas usam tudo isso pra saber quem é você — senhas, tokens JWT, cookies e sessão.
+A próxima página, [**Autenticação**](autenticacao.md), mostra como os sistemas usam tudo isso pra saber quem é você — senhas, tokens JWT, cookies e sessão.
