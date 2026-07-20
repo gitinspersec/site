@@ -72,7 +72,15 @@ As principais flags do TCP:
 
 ## Onde isso vira ataque
 
-O **Nmap** usa o handshake pra descobrir portas abertas. O SYN scan (`-sS`) manda um `SYN` e olha a resposta:
+Mapear as portas abertas de um alvo é o primeiro passo de todo ataque, e a ferramenta pra isso é o **Nmap**. Um scan básico:
+
+```bash
+nmap -sV scanme.nmap.org
+```
+
+O `scanme.nmap.org` é um host que a própria Nmap mantém pra você treinar (pode escanear à vontade). O `-sV` acha as portas abertas e ainda descobre **qual serviço e versão** roda em cada uma — a primeira coisa que um atacante quer saber.
+
+Por baixo, o SYN scan (`-sS`, o mais usado) usa o handshake que você acabou de ver: manda um `SYN` e olha a resposta:
 
 - veio `SYN+ACK` → porta **aberta**
 - veio `RST` → porta **fechada**
