@@ -43,6 +43,7 @@ nav:
         - Interceptação com Burp Suite: aulas/redTeamV2/aula3/burp.md
         - Força bruta - Hydra e Hashcat: aulas/redTeamV2/aula3/forca-bruta.md
       - Extras:
+        - Linux - Shells e Processos: aulas/redTeamV2/extras/linux-shells-processos.md
         - Requisições HTTP e HTTPS: aulas/redTeamV2/extras/http_https.md
         - Protocolos, IP e Portas: aulas/redTeamV2/extras/protocolos_tcp.md
         - Criptomoedas e Segurança: aulas/redTeamV2/extras/criptomoedas.md

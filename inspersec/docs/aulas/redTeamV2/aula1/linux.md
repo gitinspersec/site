@@ -1,6 +1,6 @@
 # Linux Básico
 
-*⏱️ Tempo de leitura: ~8 min*
+*⏱️ Tempo de leitura: ~10 min*
 
 > As ferramentas que você vai usar no curso rodam em Linux. Esta página cobre o suficiente pra você se virar no terminal.
 
@@ -66,10 +66,23 @@ Esses comandos aparecem o tempo todo em desafios de segurança:
 | Comando | O que faz |
 |---------|-----------|
 | `grep texto arquivo` | Mostra só as linhas que contêm um texto |
-| `find . -name "*.txt"` | Procura arquivos por nome a partir da pasta atual |
 | `file arquivo` | Diz que tipo de arquivo é |
 | `wc -l arquivo` | Conta as linhas |
 | `sort` / `uniq` | Ordena / remove linhas repetidas |
+
+## Encontrar arquivos com `find`
+
+O `find` procura arquivos a partir de uma pasta, com filtros que se combinam:
+
+| Comando | Filtra por |
+|---------|-----------|
+| `find . -name "*.txt"` | **nome** (aceita curinga `*`) |
+| `find . -type f` / `find . -type d` | **tipo**: arquivo (`f`) ou pasta (`d`) |
+| `find . -size +1M` | **tamanho** (aqui, maiores que 1 MB) |
+| `find . -mtime -1` | **data**: modificados nas últimas 24h |
+| `find / -perm -4000 2>/dev/null` | **permissão**: binários SUID (`2>/dev/null` esconde os erros de acesso) |
+
+> 💡 Vários níveis do Bandit se resolvem com `find` por tipo, tamanho ou permissão — o último exemplo (SUID) é o primeiro lugar que se olha numa escalada de privilégio (Aula 6).
 
 ## Juntando comandos: pipes e redirecionamento
 
@@ -114,12 +127,40 @@ No exemplo `-rwxr-xr--`:
 - **Grupo — `r-x`**: imagine que você e seus colegas de projeto estão num grupo chamado "infosec". Quem está no grupo pode ler e executar, mas o `-` no meio mostra que **não** pode escrever (alterar o arquivo).
 - **Outros — `r--`**: qualquer outro usuário do sistema. Só consegue ler. Não altera e não executa.
 
+### Os números por trás do `rwx`
+
+Cada permissão vale um número: `r`=4, `w`=2, `x`=1. Some dentro de cada bloco:
+
+```
+rwx = 4+2+1 = 7      r-x = 4+0+1 = 5      r-- = 4+0+0 = 4
+```
+
+Então aquele `-rwxr-xr--` da seção anterior é o **754** (dono 7, grupo 5, outros 4).
+
+Combinações que você vê o tempo todo:
+
+| Número | Vira | Uso típico |
+|--------|------|-----------|
+| `755` | `rwxr-xr-x` | scripts e pastas (dono edita, resto só usa) |
+| `644` | `rw-r--r--` | arquivos comuns (dono edita, resto só lê) |
+| `600` | `rw-------` | arquivos privados, como chaves SSH |
+
+O `ls -l` mostra a permissão em letras; pra ver o número direto, use o `stat`:
+
+```bash
+stat -c '%a %n' arquivo      # ex.: 644 arquivo
+stat -c '%A %a %n' *         # letras e número lado a lado
+```
+
 ### Mudando permissões e virando root
 
-- `chmod +x arquivo` — dá permissão de execução (`x`)
+- `chmod 600 arquivo` — define a permissão pelo número (dono lê/escreve, mais ninguém)
+- `chmod +x arquivo` — atalho simbólico só pra ligar o `x`
 - `sudo comando` — roda o comando como **root**, o administrador que pode tudo
 
 Tarefas que mexem no sistema (instalar programas, editar arquivos protegidos) exigem `sudo`.
+
+> 💡 O Bandit vai te dar uma chave SSH em alguns níveis. Se a permissão dela estiver aberta demais, o SSH recusa a chave — `chmod 600 chave` resolve.
 
 ## Instalar programas
 
@@ -139,6 +180,13 @@ nano arquivo.txt
 ```
 
 Você edita direto na tela. `Ctrl+O` salva e `Ctrl+X` sai. (Existe também o `vim`, mais poderoso e mais difícil — fica pra depois.)
+
+## Pra ir além
+
+- Quer mais terminal? O extra **[Shells e Processos](../extras/linux-shells-processos.md)** cobre como trocar de shell e controlar processos (rodar em segundo plano, matar travados).
+- [Documentação oficial do Debian](https://www.debian.org/doc/) — a base do Kali/Ubuntu.
+- [GeeksforGeeks — Linux](https://www.geeksforgeeks.org/linux-tutorial/) — comandos com exemplos.
+- Livro *Linux para Leigos* — introdução tranquila pra quem está começando do zero.
 
 ## Para casa
 
