@@ -6,7 +6,7 @@
 
 ## Pré-requisitos
 
-- Ter feito as Aulas 1 e 2 e lido os extras de [HTTP e HTTPS](../extras/http_https.md) e [Protocolos, IP e Portas](../extras/protocolos_tcp.md)
+- Ter feito as Aulas 1, 2 e 3 (a Aula 3 — Redes — cobre portas, Nmap e HTTP, que você usa aqui)
 - Um Linux com Docker instalado (o Kali já vem com as ferramentas de pentest, mas qualquer um serve)
 
 ## Como se pensa um ataque

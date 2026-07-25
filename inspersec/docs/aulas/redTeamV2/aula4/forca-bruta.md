@@ -82,6 +82,8 @@ Você dumpou os três hashes acima do DVWA. Quebre-os e recupere as senhas — i
 ??? success "✅ Solução"
     O hashcat quebra os três: **password** (admin), **abc123** (gordonb) e **letmein** (pablo). Teste `admin` / `password` no módulo Brute Force (`/vulnerabilities/brute/`) — aparece *"Welcome to the password protected area admin"*. Você entrou como admin com a senha que **quebrou**, não adivinhou. E ainda saiu com contas que jamais chutaria: é o preço de guardar hash sem salt — um dump de banco vira acesso total.
 
-## Fim da Aula 3
+## Fim da Aula 4
 
 Você mapeou (Nmap + Gobuster), interceptou (Burp) e quebrou credenciais de dois jeitos — **offline** com Hashcat e **ao vivo** com Hydra.
+
+A próxima aula sai da técnica pura e entra no elo mais fraco de qualquer sistema: as pessoas. A **[Aula 5](../aula5/engenharia-social.md)** é sobre ética, engenharia social e phishing.

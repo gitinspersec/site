@@ -39,7 +39,7 @@ Quem tem a chave privada controla o dinheiro. Daí a frase **"not your keys, not
 
 Cripto junta duas coisas que atraem atacante: dinheiro e irreversibilidade (transação confirmada não volta atrás). O resultado:
 
-- **Ransomware** cobra o resgate em cripto — é o meio de pagamento do cibercrime (você vê ransomware na Aula 4).
+- **Ransomware** cobra o resgate em cripto — é o meio de pagamento do cibercrime (você vê ransomware na Aula 6).
 - **Roubo de carteira**: phishing pedindo a *seed phrase*, apps de carteira falsos e malware que **troca o endereço copiado no clipboard** pelo do atacante na hora de você colar.
 - **Golpes**: rug pull, tokens falsos e o "pig butchering" — engenharia social pura (Aula 5).
 - **Exchanges** centralizadas viram alvo porque guardam as chaves de milhares de pessoas num lugar só.
