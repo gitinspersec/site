@@ -2,11 +2,11 @@
 
 *⏱️ Tempo de leitura: ~6 min*
 
-> Material de preparo pra Aula 3. Toda ferramenta web (Burp, Gobuster) mexe com requisições HTTP — vale entender como elas funcionam antes.
+> Segunda parte da aula de Redes. Toda ferramenta web (Burp, Gobuster) mexe com requisições HTTP — entender como elas funcionam é a base pra atacar a web.
 
 ## Pré-requisitos
 
-- Ter feito a [Aula 1](../aula1/fundamentos.md) e lido a [Aula 2](../aula2/autenticacao.md) (a parte de sessão e cookies ajuda aqui)
+- Ter feito as Aulas 1 e 2 e a [página anterior](protocolos_tcp.md) desta aula (a parte de sessão e cookies da Aula 2 ajuda aqui)
 
 ## O que é HTTP
 
@@ -70,7 +70,7 @@ No início da conexão acontece o **TLS handshake**:
 
 Repare que é a Aula 2 de novo: **assimétrica** pra combinar a chave, **simétrica** pra transmitir os dados.
 
-> ⚠️ Quando o cliente não valida o certificado direito, dá pra fazer um ataque **Man-in-the-Middle** (interceptar no meio da conversa). É assim que o **Burp** vai ler o seu tráfego HTTPS na Aula 3 — ele se coloca no meio com um certificado próprio.
+> ⚠️ Quando o cliente não valida o certificado direito, dá pra fazer um ataque **Man-in-the-Middle** (interceptar no meio da conversa). É assim que o **Burp** vai ler o seu tráfego HTTPS na Aula 4 — ele se coloca no meio com um certificado próprio.
 
 ## curl: requisições pelo terminal
 
@@ -101,4 +101,32 @@ Quase todo ataque web é uma requisição HTTP manipulada:
 | Directory brute force | milhares de GET testando caminhos (Gobuster) |
 | Roubo de sessão | o cookie que vai nos headers |
 
-Na Aula 3 você faz isso na prática com Burp e Gobuster.
+## Para casa
+
+Duas tarefas curtas. As duas rodam de qualquer terminal Linux (o Kali da Aula 1 serve).
+
+### Tarefa 1 — Escaneie um alvo de verdade (Nmap)
+
+O `scanme.nmap.org` é um host que a própria Nmap mantém pra treino — pode escanear à vontade. Descubra quais portas estão abertas e que serviço roda em cada uma:
+
+```bash
+nmap -sV scanme.nmap.org
+```
+
+Anote as portas abertas e os serviços. Compare com a tabela de portas padrão da primeira página: qual porta é o SSH? E o HTTP?
+
+### Tarefa 2 — Leia uma resposta HTTP na mão
+
+Use o `curl` pra ver a requisição e a resposta de um site, com headers e tudo:
+
+```bash
+curl -v https://httpbin.org/get
+```
+
+Na saída, identifique: o **método**, o **status code** e pelo menos um **header** da resposta.
+
+> 💡 Se o `nmap` não estiver instalado, rode `sudo apt install nmap`.
+
+## Próximos passos
+
+Agora você sabe como um alvo é endereçado (IP + porta) e como a web conversa (HTTP e HTTPS). Na **[Aula 4](../aula4/reconhecimento.md)** você usa isso na prática: escanear, enumerar e interceptar um alvo controlado com Nmap, Gobuster e Burp.

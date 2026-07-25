@@ -79,7 +79,7 @@ signature  →  HMAC(dados, segredo)  o hash que prova que nada foi mexido
 
 ## Para casa
 
-Duas tarefas: a primeira é prática, a segunda prepara a próxima aula.
+A tarefa abaixo é prática — ela junta a codificação, a criptografia e o hashing das duas páginas desta aula.
 
 ### Tarefa 1 — Decodifique e quebre
 
@@ -110,11 +110,8 @@ Depois, salve os três hashes num arquivo `hashes.txt` e rode:
 john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
 ```
 
-### Tarefa 2 — Leitura pra Aula 3
+## Próximos passos
 
-A próxima aula é de ferramentas (Burp, Gobuster) e assume que você entende como a web conversa. Leia:
+A próxima aula é de **Redes**: IP, portas, protocolos e como a web conversa (HTTP e HTTPS). É a base pra escanear e atacar alvos nas aulas seguintes.
 
-- [Requisições HTTP e HTTPS](../extras/http_https.md)
-- [Protocolos, IP e Portas](../extras/protocolos_tcp.md)
-
-**Opcional (pra quem curtir):** [Criptomoedas e Segurança](../extras/criptomoedas.md) — a cripto da Aula 2 aplicada a dinheiro.
+**Opcional (pra quem curtir):** [Criptomoedas e Segurança](../extras/criptomoedas.md) — a criptografia desta aula aplicada a dinheiro.

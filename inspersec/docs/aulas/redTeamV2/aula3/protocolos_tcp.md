@@ -2,11 +2,11 @@
 
 *⏱️ Tempo de leitura: ~5 min*
 
-> Material de preparo pra Aula 3. Antes de escanear e atacar um alvo, você precisa saber o que é um IP, o que é uma porta e como os dados trafegam.
+> Primeira parte da aula de Redes. Antes de escanear e atacar um alvo, você precisa saber o que é um IP, o que é uma porta e como os dados trafegam.
 
 ## Pré-requisitos
 
-- Ter feito a [Aula 1](../aula1/fundamentos.md)
+- Ter feito as Aulas 1 e 2
 
 ## Como os dados trafegam: camadas
 
@@ -86,4 +86,8 @@ Por baixo, o SYN scan (`-sS`, o mais usado) usa o handshake que você acabou de 
 - veio `RST` → porta **fechada**
 - não veio nada → porta **filtrada** (provavelmente um firewall)
 
-Ele nem completa o handshake (manda `RST` no lugar do `ACK` final), por isso é chamado de "half-open" — mais discreto. Na Aula 3 você usa isso na prática pra mapear um alvo.
+Ele nem completa o handshake (manda `RST` no lugar do `ACK` final), por isso é chamado de "half-open" — mais discreto. Na Aula 4 você usa isso na prática pra mapear um alvo.
+
+## Próximos passos
+
+Você já sabe como um alvo é endereçado (IP + porta) e como o TCP entrega os dados. A [próxima página](http_https.md) é sobre **HTTP e HTTPS** — o protocolo que roda por cima de tudo isso e onde mora quase todo ataque web.

@@ -77,7 +77,7 @@ A maioria dos ataques cai em poucas categorias — e cada uma vira uma aula dest
 
 - **Autenticação fraca** — senhas ruins, hash quebrável → *Aula 2*
 - **Criptografia mal usada** — dado sensível mal protegido → *Aula 2*
-- **Configuração errada** — portas abertas, permissões largas → *Aula 3*
+- **Configuração errada** — portas e serviços expostos, permissões largas → *Aulas 3 e 4*
 - **Fator humano** — phishing, engenharia social → *Aula 5*
 - **Software vulnerável** — versões antigas com falhas conhecidas (CVE) → *Aula 6*
 - **Injeção** — SQL, XSS: fazer o sistema executar o que você mandou → *Aulas 6 e 7*

@@ -65,7 +65,7 @@ Quando um comando está rodando e travando o terminal:
 
 > 💡 O `top` já vem instalado. O `htop` (mais bonito) você instala com `sudo apt install htop`.
 
-> 💡 Na Aula 3, o `docker run --rm -it ...` **trava o terminal** enquanto o alvo roda. É primeiro plano: dá pra parar com `Ctrl+C`, abrir um segundo terminal pra trabalhar, ou rodar com `&` pra deixar em segundo plano.
+> 💡 Na Aula 4, o `docker run --rm -it ...` **trava o terminal** enquanto o alvo roda. É primeiro plano: dá pra parar com `Ctrl+C`, abrir um segundo terminal pra trabalhar, ou rodar com `&` pra deixar em segundo plano.
 
 ## Bônus: shell scripting
 
