@@ -47,6 +47,11 @@ nav:
         - Força bruta - Hydra e Hashcat: aulas/redTeamV2/aula4/forca-bruta.md
       - Aula 5:
         - Ética e Engenharia Social: aulas/redTeamV2/aula5/engenharia-social.md
+      - Aula 6:
+        - OWASP: aulas/redTeamV2/aula6/owasp.md
+        - SQL Injection: aulas/redTeamV2/aula6/sql-injection.md
+        - XSS: aulas/redTeamV2/aula6/xss.md
+        - Malware: aulas/redTeamV2/aula6/malware.md
       - Extras:
         - Linux - Shells e Processos: aulas/redTeamV2/extras/linux-shells-processos.md
         - Criptomoedas e Segurança: aulas/redTeamV2/extras/criptomoedas.md
