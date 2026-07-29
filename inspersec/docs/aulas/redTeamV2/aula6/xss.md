@@ -78,4 +78,4 @@ O campo de busca do Juice Shop joga o que você digita direto na página, sem tr
 
 ## Próximos passos
 
-Você explorou o banco (SQLi) e o navegador (XSS). A última página da aula é sobre o que o atacante deixa pra trás depois de entrar: **[Malware e Ameaças](malware.md)**.
+Você explorou o banco (SQLi) e o navegador (XSS). A última página da aula é sobre o que o atacante deixa pra trás depois de entrar: **[Malware e Ameaças](../aula7/malware.md)**.
