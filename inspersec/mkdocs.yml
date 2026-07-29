@@ -31,6 +31,32 @@ nav:
     - Criando uma Máquina Virtual (VM): Instalação/vmWindows.md
     - Instalando o Metasploitable 2: Instalação/metasploitable2.md
   - Aulas:
+    - Red Team (v2):
+      - Aula 1:
+        - Fundamentos: aulas/redTeamV2/aula1/fundamentos.md
+        - Linux Básico: aulas/redTeamV2/aula1/linux.md
+      - Aula 2:
+        - Codificação, Criptografia e Hashing: aulas/redTeamV2/aula2/codificacao-cripto-hashing.md
+        - Autenticação: aulas/redTeamV2/aula2/autenticacao.md
+      - Aula 3:
+        - Protocolos, IP e Portas: aulas/redTeamV2/aula3/protocolos_tcp.md
+        - Requisições HTTP e HTTPS: aulas/redTeamV2/aula3/http_https.md
+      - Aula 4:
+        - Reconhecimento e Enumeração: aulas/redTeamV2/aula4/reconhecimento.md
+        - Interceptação com Burp Suite: aulas/redTeamV2/aula4/burp.md
+        - Força bruta - Hydra e Hashcat: aulas/redTeamV2/aula4/forca-bruta.md
+      - Aula 5:
+        - Ética e Engenharia Social: aulas/redTeamV2/aula5/engenharia-social.md
+      - Aula 6:
+        - OWASP: aulas/redTeamV2/aula6/owasp.md
+        - SQL Injection: aulas/redTeamV2/aula6/sql-injection.md
+        - XSS: aulas/redTeamV2/aula6/xss.md
+      - Aula 7:
+        - Malware: aulas/redTeamV2/aula7/malware.md
+        - Avançado: aulas/redTeamV2/aula7/avancado.md
+      - Extras:
+        - Linux - Shells e Processos: aulas/redTeamV2/extras/linux-shells-processos.md
+        - Criptomoedas e Segurança: aulas/redTeamV2/extras/criptomoedas.md
     - Red Team:
       - Aula 1:
         - Linux Básico: aulas/redTeam/aula1/basicLinux.md
@@ -105,4 +131,6 @@ markdown_extensions:
   - pymdownx.inlinehilite  # Realce de sintaxe para código inline
   - pymdownx.snippets      # Permite embutir conteúdo de outros arquivos
   - pymdownx.superfences    # Suporte avançado para blocos de código e aninhamento
+  - admonition              # Caixas de destaque (nota, dica, aviso)
+  - pymdownx.details        # Deixa as caixas recolhíveis (??? colapsável) — usado nas dicas dos desafios
 
