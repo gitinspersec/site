@@ -150,108 +150,30 @@ Na vida real, quando você abre um navegador e acessa um site através de HTTPS,
 
 # Encapsulation
 
-Ja finalizando 
+Já finalizando, é importante mencionar o conceito de **encapsulação**, que, no contexto de redes, se refere ao processo de adicionar headers específicos de cada camada à informação, permitindo, assim, que cada camada foque apenas nas suas próprias responsabilidades.
 
-A **Encapsulation (Encapsulação)** é o processo onde cada camada adiciona suas próprias informações aos dados recebidos da camada superior antes de enviá-los para a camada inferior.
+Para entender melhor esse processo, imagine que você está enviando uma informação pela internet. Inicialmente, temos apenas os dados gerados pela aplicação, como uma mensagem ou uma requisição HTTP.
 
-Essas informações normalmente são adicionadas através de **headers (cabeçalhos)** e, em alguns casos, **trailers**, que possuem informações necessárias para que cada protocolo consiga realizar sua função.
+Conforme essa informação vai descendo pelas camadas, cada uma adiciona os dados necessários para realizar a sua função.
 
-Esse conceito é importante porque permite que cada camada se preocupe apenas com sua própria responsabilidade durante a comunicação.
+Na **Transport Layer**, por exemplo, protocolos como TCP ou UDP adicionam seus próprios headers. Caso seja utilizado TCP, o resultado é chamado de **TCP Segment**; caso seja utilizado UDP, temos um **UDP Datagram**.
 
-Podemos entender a encapsulação acompanhando uma informação enquanto ela passa pelas diferentes camadas:
+Em seguida, essa informação chega à **Network Layer**, onde o protocolo IP adiciona seu próprio header, contendo informações como o endereço IP de origem e o endereço IP de destino. A partir desse momento, temos um **IP Packet**, que pode ser encaminhado entre diferentes redes.
 
-### Application Data
+Depois, o Packet chega à **Data Link Layer**, onde protocolos como Ethernet adicionam suas próprias informações, formando um **Frame**. Nessa camada, além de um header, também pode ser adicionado um **trailer**.
 
-Tudo começa na **Application Layer**, onde temos os dados que uma aplicação deseja enviar.
+Por fim, chegamos à **Physical Layer**, onde toda essa informação é transmitida através do meio físico da rede na forma de bits.
 
-Por exemplo, quando enviamos uma mensagem, realizamos uma pesquisa em um site ou fazemos uma requisição HTTP, inicialmente temos apenas os dados produzidos pela aplicação.
+De forma simplificada, podemos visualizar o processo da seguinte maneira:
 
-Esses dados são então enviados para a camada abaixo.
+**Application Data → TCP Segment / UDP Datagram → IP Packet → Frame → Bits**
 
-### TCP Segment / UDP Datagram
+Perceba que, conforme os dados descem pelas camadas, cada uma adiciona as informações necessárias para cumprir sua responsabilidade. É justamente esse processo que chamamos de **Encapsulation**.
 
-Quando os dados chegam na **Transport Layer**, protocolos como TCP ou UDP adicionam seus próprios headers.
+Quando a informação chega ao dispositivo de destino, acontece o processo contrário, chamado de **Decapsulation (Desencapsulação)**. Nesse caso, cada camada processa e remove as informações correspondentes ao seu protocolo até que os dados originais cheguem à aplicação.
 
-Caso seja utilizado **TCP**, os dados passam a formar um **TCP Segment**.
-
-Caso seja utilizado **UDP**, eles passam a formar um **UDP Datagram**.
-
-Esses headers possuem informações necessárias para o funcionamento do protocolo, como as portas de origem e destino.
-
-Depois disso, o Segment ou Datagram é enviado para a Network Layer.
-
-### IP Packet
-
-Na **Network Layer**, o protocolo IP adiciona seu próprio header aos dados recebidos da Transport Layer.
-
-Esse header possui informações como:
-
-* endereço IP de origem;
-* endereço IP de destino.
-
-Após a adição desse header, temos um **IP Packet**, que pode ser encaminhado entre diferentes redes através de roteadores.
-
-O Packet é então enviado para a camada abaixo.
-
-### Data Link Frame
-
-Quando o IP Packet chega na **Data Link Layer**, protocolos como Ethernet ou Wi-Fi adicionam suas próprias informações.
-
-Nessa etapa podem ser adicionados tanto um **header** quanto um **trailer**, formando o que chamamos de **Frame**.
-
-Esse Frame contém as informações necessárias para realizar a comunicação através do enlace atual.
-
-Por fim, o Frame pode ser transmitido pela **Physical Layer** através do meio físico utilizado pela rede.
-
-De forma simplificada, podemos visualizar o processo como:
-
-**Application Data → TCP Segment / UDP Datagram → IP Packet → Ethernet/Wi-Fi Frame → Bits**
-
-Ou seja, conforme os dados descem pelas camadas, cada protocolo adiciona as informações necessárias para realizar sua função.
-
-## Decapsulation
-
-Quando os dados chegam ao dispositivo de destino, ocorre o processo contrário, chamado **Decapsulation (Desencapsulação)**.
-
-Nesse processo, os dados começam nas camadas inferiores e vão subindo até chegar novamente na aplicação.
-
-Cada camada analisa e remove as informações relacionadas ao seu protocolo antes de entregar os dados para a camada superior.
-
-Podemos representar esse processo como:
+Podemos visualizar esse processo como:
 
 **Bits → Frame → IP Packet → TCP Segment / UDP Datagram → Application Data**
 
-Por exemplo, a Data Link Layer processa as informações do Frame e entrega o IP Packet para a Network Layer.
-
-A Network Layer processa o header IP e entrega o Segment ou Datagram para a Transport Layer.
-
-A Transport Layer processa suas próprias informações e finalmente entrega os dados para a aplicação correta.
-
-## Exemplo de Encapsulation na prática
-
-Podemos imaginar o processo que acontece quando realizamos uma pesquisa em um site.
-
-Primeiro, escrevemos nossa pesquisa no navegador e pressionamos Enter.
-
-O navegador prepara uma requisição **HTTP/HTTPS** contendo os dados necessários e envia essa informação para a Transport Layer.
-
-Na Transport Layer, o **TCP** estabelece uma conexão com o servidor e adiciona seu próprio header aos dados, formando um TCP Segment.
-
-Esse Segment é enviado para a Network Layer.
-
-Na Network Layer, o protocolo **IP** adiciona informações como o endereço IP de origem e o endereço IP de destino, formando um IP Packet.
-
-Esse Packet é enviado para a Data Link Layer.
-
-Na Data Link Layer, tecnologias como **Ethernet ou Wi-Fi** adicionam o header e trailer necessários, formando um Frame.
-
-O Frame pode então ser transmitido fisicamente pela rede.
-
-Quando esse Frame chega a um roteador, o roteador processa as informações da Data Link Layer e analisa o endereço IP de destino para decidir para onde o Packet deve ser encaminhado.
-
-Durante o caminho até o servidor, diferentes roteadores podem repetir esse processo, encaminhando o IP Packet através de diferentes enlaces.
-
-Quando os dados finalmente chegam ao dispositivo de destino, ocorre a **Decapsulation**, onde as informações adicionadas pelas diferentes camadas são processadas e removidas até que os dados originais sejam entregues para a aplicação.
-
-Portanto, durante uma comunicação, os dados não são simplesmente enviados diretamente de uma aplicação para outra. Eles passam por diferentes camadas, e cada uma adiciona ou processa as informações necessárias para que os dados consigam chegar corretamente ao seu destino.
-
+Então, de forma simples, durante a **Encapsulation** os dados vão sendo "empacotados" enquanto descem pelas camadas e, durante a **Decapsulation**, vão sendo "desempacotados" enquanto sobem pelas camadas no dispositivo de destino.
