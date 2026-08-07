@@ -31,7 +31,7 @@ nav:
     - Criando uma Máquina Virtual (VM): Instalação/vmWindows.md
     - Instalando o Metasploitable 2: Instalação/metasploitable2.md
   - Aulas:
-    - Red Team (v2):
+    - Red Team:
       - Aula 1:
         - Fundamentos: aulas/redTeamV2/aula1/fundamentos.md
         - Linux Básico: aulas/redTeamV2/aula1/linux.md
@@ -57,35 +57,10 @@ nav:
       - Extras:
         - Linux - Shells e Processos: aulas/redTeamV2/extras/linux-shells-processos.md
         - Criptomoedas e Segurança: aulas/redTeamV2/extras/criptomoedas.md
-    - Red Team:
-      - Aula 1:
-        - Linux Básico: aulas/redTeam/aula1/basicLinux.md
-        - Nmap: aulas/redTeam/aula1/nmap.md
-      - Aula 2:
-        - Burp Suite: aulas/redTeam/aula2/burpSuite.md
-        - Criptografia: aulas/redTeam/aula2/criptografia.md
-      - Aula 3:
-        - Engenharia Social:
-          - Sobre: aulas/redTeam/aula3/engenharia_social/sobre.md
-          - GoPhish: aulas/redTeam/aula3/engenharia_social/gophish.md
-          - Setoolkit: aulas/redTeam/aula3/engenharia_social/setoolkit.md
-          - Sherlock: aulas/redTeam/aula3/engenharia_social/sherlock.md
-          - Zphisher: aulas/redTeam/aula3/engenharia_social/zphisher.md
-          - Prompt Injection: aulas/redTeam/aula3/engenharia_social/prompt_injection.md
-      - Aula 4:
-        - Introdução: aulas/redTeam/aula4/introducao.md
-        - GoBuster: aulas/redTeam/aula4/gobuster.md
-        - John the Ripper: aulas/redTeam/aula4/john.md
-        - XSS: aulas/redTeam/aula4/xss.md
-        - WordList: aulas/redTeam/aula4/wordlist.md
-        - Hash: aulas/redTeam/aula4/hashs.md
-      - Aulas Extras:
-        - Requisições HTTP e HTTPS: aulas/redTeam/aulasextra/http_https.md
-        - Protocolos e TCP: aulas/redTeam/aulasextra/protocolos_tcp.md
     - Blue Team:
       - Aula 1:
         - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
-        - Introdução ao Blue Team: aulas/blueTeam/aula1/intro.md
+        - Redes de computadores: aulas/blueTeam/aula1/redes.md
         - Wireshark: aulas/blueTeam/aula1/wireshark.md
       - Aula 2:
         - Redes Parte 1: aulas/blueTeam/aula2/redes1.md
@@ -111,13 +86,33 @@ nav:
         - Resposta a Incidentes: aulas/blueTeam/aula6/resposta_a_incidentes.md
       - Aulas Extras:
         - System Design (Introdução Rápida): aulas/blueTeam/aulasextra/system_design_intro.md
-    - Game Hacking:
-      - Introdução: aulas/GameHacking/introducao.md
-    - Virus:
-      - Virus Básico: aulas/Virus/Aula1/aula1.md
-      - RAT:
-        - Criando um Bot: aulas/Virus/Rat/discordbot.md
-        - Criando um RAT: aulas/Virus/Rat/rat.md
+    - Conteúdos antigos:
+      - Red Team:
+      - Aula 1:
+        - Linux Básico: aulas/redTeam/aula1/basicLinux.md
+        - Nmap: aulas/redTeam/aula1/nmap.md
+      - Aula 2:
+        - Burp Suite: aulas/redTeam/aula2/burpSuite.md
+        - Criptografia: aulas/redTeam/aula2/criptografia.md
+      - Aula 3:
+        - Engenharia Social:
+          - Sobre: aulas/redTeam/aula3/engenharia_social/sobre.md
+          - GoPhish: aulas/redTeam/aula3/engenharia_social/gophish.md
+          - Setoolkit: aulas/redTeam/aula3/engenharia_social/setoolkit.md
+          - Sherlock: aulas/redTeam/aula3/engenharia_social/sherlock.md
+          - Zphisher: aulas/redTeam/aula3/engenharia_social/zphisher.md
+          - Prompt Injection: aulas/redTeam/aula3/engenharia_social/prompt_injection.md
+      - Aula 4:
+        - Introdução: aulas/redTeam/aula4/introducao.md
+        - GoBuster: aulas/redTeam/aula4/gobuster.md
+        - John the Ripper: aulas/redTeam/aula4/john.md
+        - XSS: aulas/redTeam/aula4/xss.md
+        - WordList: aulas/redTeam/aula4/wordlist.md
+        - Hash: aulas/redTeam/aula4/hashs.md
+      - Aulas Extras:
+        - Requisições HTTP e HTTPS: aulas/redTeam/aulasextra/http_https.md
+        - Protocolos e TCP: aulas/redTeam/aulasextra/protocolos_tcp.md
+
   - Entregas:
     - Projetos:
       # - Projeto 1: entregas/projetos/projeto1.md
