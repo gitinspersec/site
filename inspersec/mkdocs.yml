@@ -55,8 +55,8 @@ nav:
         - Malware: aulas/redTeam/aula7/malware.md
         - Avançado: aulas/redTeam/aula7/avancado.md
       - Extras:
-        - Linux - Shells e Processos: aulas/redTeam/extras/linux-shells-processos.md
-        - Criptomoedas e Segurança: aulas/redTeam/extras/criptomoedas.md
+        - Linux - Shells e Processos: aulas/redTeam/aulasextras/linux-shells-processos.md
+        - Criptomoedas e Segurança: aulas/redTeam/aulasextras/criptomoedas.md
     - Blue Team:
       - Aula 1:
         - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
@@ -85,7 +85,7 @@ nav:
         - Próximos Passos em Cibersegurança: aulas/blueTeam/aula6/proximos_passos_ciberseguranca.md
         - Resposta a Incidentes: aulas/blueTeam/aula6/resposta_a_incidentes.md
       - Aulas Extras:
-        - System Design (Introdução Rápida): aulas/blueTeam/aulasextra/system_design_intro.md
+        - System Design (Introdução Rápida): aulas/blueTeam/aulasextras/system_design_intro.md
     - Conteúdos antigos:
         - Red Team:
             - Aula 1:
