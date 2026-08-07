@@ -148,7 +148,7 @@ Alguns exemplos são:
 Na vida real, quando você abre um navegador e acessa um site através de HTTPS, está utilizando um protocolo associado à Application Layer.
 
 
-# Encapsulation
+## Encapsulation
 
 Já finalizando, é importante mencionar o conceito de **encapsulação**, que, no contexto de redes, se refere ao processo de adicionar headers específicos de cada camada à informação, permitindo, assim, que cada camada foque apenas nas suas próprias responsabilidades.
 
