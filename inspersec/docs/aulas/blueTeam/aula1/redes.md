@@ -166,6 +166,8 @@ Por fim, chegamos à **Physical Layer**, onde toda essa informação é transmit
 
 De forma simplificada, podemos visualizar o processo da seguinte maneira:
 
+![Modelo OSI](imagens/what-is-the-osi-model.svg)
+
 **Application Data → TCP Segment / UDP Datagram → IP Packet → Frame → Bits**
 
 Perceba que, conforme os dados descem pelas camadas, cada uma adiciona as informações necessárias para cumprir sua responsabilidade. É justamente esse processo que chamamos de **Encapsulation**.
