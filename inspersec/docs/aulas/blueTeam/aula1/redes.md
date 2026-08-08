@@ -150,7 +150,7 @@ Na vida real, quando você abre um navegador e acessa um site através de HTTPS,
 
 ## Encapsulation
 
-Já finalizando, é importante mencionar o conceito de **encapsulação**, que, no contexto de redes, se refere ao processo de adicionar headers específicos de cada camada à informação, permitindo, assim, que cada camada foque apenas nas suas próprias responsabilidades.
+Também é importante mencionar o conceito de **encapsulação**, que, no contexto de redes, se refere ao processo de adicionar headers específicos de cada camada à informação, permitindo, assim, que cada camada foque apenas nas suas próprias responsabilidades.
 
 Para entender melhor esse processo, imagine que você está enviando uma informação pela internet. Inicialmente, temos apenas os dados gerados pela aplicação, como uma mensagem ou uma requisição HTTP.
 
@@ -179,3 +179,64 @@ Podemos visualizar esse processo como:
 **Bits → Frame → IP Packet → TCP Segment / UDP Datagram → Application Data**
 
 Então, de forma simples, durante a **Encapsulation** os dados vão sendo "empacotados" enquanto descem pelas camadas e, durante a **Decapsulation**, vão sendo "desempacotados" enquanto sobem pelas camadas no dispositivo de destino.
+
+
+## Transport Layer Security (TLS)
+
+TLS é um protocolo de criptografia que opera na camada de transporte do modelo OSI, possibilitando a comunicação segura entre um cliente e um servidor através de uma rede não confiável. O protocolo TLS nos protege contra terceiros que tentem modificar ou ler o conteúdo transmitido. Além disso, o TLS tem sido incorporado a inúmeros outros protocolos desde sua criação, dando origem a protocolos e mecanismos seguros como HTTPS e DoT (DNS over TLS).
+
+### Funcionamento do TLS
+
+O TLS utiliza uma combinação de **criptografia assimétrica**, **criptografia simétrica** e **funções de hash** para estabelecer uma conexão segura. Antes da transmissão dos dados da aplicação, cliente e servidor realizam um processo conhecido como **TLS Handshake**.
+
+Durante o handshake, as duas partes negociam os parâmetros criptográficos que serão utilizados na conexão. O servidor também apresenta seu **certificado digital**, permitindo que o cliente verifique sua identidade. Em implementações modernas, como o TLS 1.3, cliente e servidor utilizam mecanismos de troca de chaves para estabelecer um segredo compartilhado, a partir do qual são derivadas as chaves utilizadas para proteger a sessão.
+
+Após o handshake, os dados transmitidos são protegidos utilizando **criptografia simétrica**, que possui um custo computacional menor quando comparada à criptografia assimétrica. Dessa forma, mecanismos assimétricos são utilizados principalmente durante o estabelecimento da conexão, enquanto algoritmos simétricos são utilizados para proteger a maior parte dos dados posteriormente transmitidos.
+
+### Certificados digitais
+
+Um dos principais componentes utilizados pelo TLS é o **certificado digital**. Ele associa uma identidade, normalmente um domínio, a uma chave pública e é assinado digitalmente por uma **Autoridade Certificadora (Certificate Authority — CA)**.
+
+Quando um cliente acessa um servidor utilizando TLS, o servidor envia seu certificado. O cliente verifica, entre outros aspectos, se o certificado é válido, se corresponde ao domínio acessado, se está dentro do período de validade e se sua cadeia de certificação conduz a uma autoridade considerada confiável.
+
+Esse mecanismo reduz a possibilidade de um atacante se passar pelo servidor legítimo durante a comunicação.
+
+### TLS Handshake
+
+De maneira simplificada, o estabelecimento de uma conexão TLS pode ser representado pelas seguintes etapas:
+
+![TLS Handshake](imagens/rtaImage.jpeg)
+
+1. O cliente inicia a conexão e informa os parâmetros criptográficos que suporta. (Client hello)
+2. O servidor responde com os parâmetros selecionados e apresenta informações necessárias para sua autenticação, incluindo seu certificado digital. (Server hello)
+3. O cliente valida o certificado apresentado pelo servidor.
+4. Cliente e servidor realizam uma troca de chaves e calculam um segredo compartilhado.
+5. A partir desse segredo são derivadas as chaves criptográficas utilizadas na sessão.
+6. Após a conclusão do handshake, os dados da aplicação passam a ser transmitidos de maneira criptografada e autenticada.
+
+### Propriedades de segurança
+
+O TLS busca fornecer três propriedades fundamentais para a comunicação:
+
+**Confidencialidade:** impede que terceiros consigam interpretar os dados transmitidos pela conexão.
+
+**Integridade:** permite detectar alterações não autorizadas nos dados durante a transmissão.
+
+**Autenticidade:** permite verificar a identidade da outra extremidade da comunicação, principalmente por meio de certificados digitais.
+
+Sem essas propriedades, um atacante localizado entre cliente e servidor poderia realizar ataques como **Man-in-the-Middle (MITM)**, interceptando ou modificando informações transmitidas.
+
+### TLS e HTTPS
+
+O HTTPS pode ser entendido como o protocolo HTTP operando sobre uma conexão protegida por TLS. Dessa forma, o funcionamento básico da aplicação continua utilizando HTTP, enquanto o TLS fornece proteção criptográfica para a comunicação.
+
+De forma simplificada:
+
+**HTTP → TLS → TCP → IP**
+
+Quando um navegador estabelece uma conexão HTTPS tradicional, primeiro é estabelecida a conexão TCP e, em seguida, ocorre o TLS Handshake. Somente depois da negociação da sessão TLS os dados HTTP são transmitidos de maneira protegida.
+
+Em protocolos mais recentes, como HTTP/3, a organização é diferente, pois o protocolo utiliza **QUIC sobre UDP**, e o TLS 1.3 é integrado ao processo de estabelecimento da conexão.
+
+
+
