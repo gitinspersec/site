@@ -64,6 +64,7 @@ nav:
         - Wireshark: aulas/blueTeam/aula1/wireshark.md
       - Aula 2:
         - Redes Parte 1: aulas/blueTeam/aula2/redes1.md
+        - Logs: aulas/blueTeam/aula2/logs.md
       - Aula 3:
         - Redes Parte 2: aulas/blueTeam/aula3/resdes2.md
       - Aula 4:
