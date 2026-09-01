@@ -183,7 +183,7 @@ Você edita direto na tela. `Ctrl+O` salva e `Ctrl+X` sai. (Existe também o `vi
 
 ## Pra ir além
 
-- Quer mais terminal? O extra **[Shells e Processos](../extras/linux-shells-processos.md)** cobre como trocar de shell e controlar processos (rodar em segundo plano, matar travados).
+- Quer mais terminal? O extra **[Shells e Processos](../aulasextras/linux-shells-processos.md)** cobre como trocar de shell e controlar processos (rodar em segundo plano, matar travados).
 - [Documentação oficial do Debian](https://www.debian.org/doc/) — a base do Kali/Ubuntu.
 - [GeeksforGeeks — Linux](https://www.geeksforgeeks.org/linux-tutorial/) — comandos com exemplos.
 - Livro *Linux para Leigos* — introdução tranquila pra quem está começando do zero.

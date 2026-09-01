@@ -114,4 +114,4 @@ john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt
 
 A próxima aula é de **Redes**: IP, portas, protocolos e como a web conversa (HTTP e HTTPS). É a base pra escanear e atacar alvos nas aulas seguintes.
 
-**Opcional (pra quem curtir):** [Criptomoedas e Segurança](../extras/criptomoedas.md) — a criptografia desta aula aplicada a dinheiro.
+**Opcional (pra quem curtir):** [Criptomoedas e Segurança](../aulasextras/criptomoedas.md) — a criptografia desta aula aplicada a dinheiro.
