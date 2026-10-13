@@ -72,6 +72,7 @@ As portas são identificadas por números que vão de **0 a 65.535** e são divi
  **Portas Conhecidas / Well-Known (0 a 1023):** São reservadas para serviços de rede padrão e globais. Os servidores do mundo inteiro escutam nessas portas por padrão.
 
 *Exemplos:*
+
 * Porta **80**: Tráfego web padrão (HTTP)
 * Porta **443**: Tráfego web seguro (HTTPS)
 * Porta **22**: Acessos remotos via SSH
@@ -83,6 +84,7 @@ As portas são identificadas por números que vão de **0 a 65.535** e são divi
 **Portas Registradas / Registered (1024 a 49151):** São usadas por aplicativos de usuário ou softwares específicos que não são padrões do sistema operacional, mas que precisam de uma porta fixa para funcionar.
 
  *Exemplos:*
+
 * Porta **5432**: Usada pelo banco de dados PostgreSQL
 * Porta **3306**: Usada pelo MySQL
 * Porta **25565**: Usada por servidores de Minecraft
@@ -90,7 +92,7 @@ As portas são identificadas por números que vão de **0 a 65.535** e são divi
 
 
 
-* **Portas Dinâmicas ou Efêmeras (49152 a 65535):** São portas temporárias. Quando o seu computador abre o navegador para acessar um site, o sistema operacional escolhe aleatoriamente uma porta dessa faixa para ser a origem daquela conexão específica. Assim que você fecha a aba, a porta é liberada.
+**Portas Dinâmicas ou Efêmeras (49152 a 65535):** São portas temporárias. Quando o seu computador abre o navegador para acessar um site, o sistema operacional escolhe aleatoriamente uma porta dessa faixa para ser a origem daquela conexão específica. Assim que você fecha a aba, a porta é liberada.
 
 ---
 
