@@ -51,7 +51,7 @@ Como isso funciona, você me pergunta? Simples: as operadoras de internet passar
 
 Essa é a resposta curta. Na realidade, esses sistemas são extremamente complexos e suas arquiteturas incomodam os administradores de rede desde a sua criação, até porque foram feitos para resolver momentaneamente o problema da escassez de endereços públicos.
 
-Qual é a solução para esse problema então? Essa foi a pergunta feita ainda em 1990, quando as pessoas que cuidavam desses sistemas começaram a perceber que eles iriam acabar. Por menos elegante que pareça, a resposta foi apenas criar mais endereços. Foi por isso que criaram o padrão IPv6, com endereços de 128 bits, ou seja, $2^{128}$. Mas isso resolve o problema? Não há chance de estarmos subestimando o número de endereços de novo e errando assim como nossos antecessores? Bom, pode ser, mas para isso teríamos que alcançar 340.282.366.920.938.463.463.374.607.431.768.211.456 endereços de IP público diferentes (ou seja, 340 undecilhões). Para colocar em perspectiva, cada grão de areia do planeta poderia ter vários endereços de IP público e ainda não esgotaríamos o total, então acho que estamos bem haha.
+Qual é a solução para esse problema então? Essa foi a pergunta feita ainda em 1990, quando as pessoas que cuidavam desses sistemas começaram a perceber que eles iriam acabar. Por menos elegante que pareça, a resposta foi apenas criar mais endereços. Foi por isso que criaram o padrão IPv6, com endereços de 128 bits, ou seja, 2¹²⁸. Mas isso resolve o problema? Não há chance de estarmos subestimando o número de endereços de novo e errando assim como nossos antecessores? Bom, pode ser, mas para isso teríamos que alcançar 340.282.366.920.938.463.463.374.607.431.768.211.456 endereços de IP público diferentes (ou seja, 340 undecilhões). Para colocar em perspectiva, cada grão de areia do planeta poderia ter vários endereços de IP público e ainda não esgotaríamos o total, então acho que estamos bem haha.
 
 A única coisa que impede esse sistema de ser aplicado em larga escala hoje em dia é, como sempre, o custo: as empresas que mantêm essa infraestrutura ganham muito dinheiro emprestando e vendendo endereços públicos, além de terem um sistema legado que custaria muito caro para mudar. Então, por enquanto, contente-se em ter que estudar um sistema extremamente complexo e datado.
 
@@ -69,8 +69,9 @@ Portas são um identificador numérico de 16 bits (0 a 65535) gerenciado pela ca
 
 As portas são identificadas por números que vão de **0 a 65.535** e são divididas em três grandes grupos:
 
-* **Portas Conhecidas / Well-Known (0 a 1023):** São reservadas para serviços de rede padrão e globais. Os servidores do mundo inteiro escutam nessas portas por padrão.
-* *Exemplos:*
+ **Portas Conhecidas / Well-Known (0 a 1023):** São reservadas para serviços de rede padrão e globais. Os servidores do mundo inteiro escutam nessas portas por padrão.
+
+*Exemplos:*
 * Porta **80**: Tráfego web padrão (HTTP)
 * Porta **443**: Tráfego web seguro (HTTPS)
 * Porta **22**: Acessos remotos via SSH
@@ -79,8 +80,9 @@ As portas são identificadas por números que vão de **0 a 65.535** e são divi
 
 
 
-* **Portas Registradas / Registered (1024 a 49151):** São usadas por aplicativos de usuário ou softwares específicos que não são padrões do sistema operacional, mas que precisam de uma porta fixa para funcionar.
-* *Exemplos:*
+**Portas Registradas / Registered (1024 a 49151):** São usadas por aplicativos de usuário ou softwares específicos que não são padrões do sistema operacional, mas que precisam de uma porta fixa para funcionar.
+
+ *Exemplos:*
 * Porta **5432**: Usada pelo banco de dados PostgreSQL
 * Porta **3306**: Usada pelo MySQL
 * Porta **25565**: Usada por servidores de Minecraft
