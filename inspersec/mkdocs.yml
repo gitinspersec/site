@@ -71,6 +71,7 @@ nav:
         - Criptografia Avançada: aulas/blueTeam/aula4/criptografia_avancada.md
         - Fundamentos Matemáticos da Criptografia: aulas/blueTeam/aula4/criptografia_fundamentos_matematicos.md
         - Aplicações Práticas da Criptografia: aulas/blueTeam/aula4/criptografia_aplicada.md
+        - Hardening e Gestão de Vulnerabilidades: aulas/blueTeam/aula4/hardening_gestao_gulnerabilidades.md
       - Aula 5:
         - Cloud Networking: aulas/blueTeam/aula5/aula5.md
         - Containers e Segurança: aulas/blueTeam/aula5/containers.md
