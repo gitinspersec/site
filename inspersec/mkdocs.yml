@@ -66,7 +66,14 @@ nav:
         - Redes Parte 1: aulas/blueTeam/aula2/redes1.md
         - Logs: aulas/blueTeam/aula2/logs.md
       - Aula 3:
-        - Redes Parte 2: aulas/blueTeam/aula3/resdes2.md
+        - Introdução ao SIEM: aulas/blueTeam/aula3/aula_SIEM.md
+        - Instalação:
+          - Wazuh Indexer: aulas/blueTeam/aula3/instalacao/01_wazuh_indexer.md
+          - Graylog: aulas/blueTeam/aula3/instalacao/02_graylog.md
+          - Wazuh Manager: aulas/blueTeam/aula3/instalacao/03_wazuh_manager.md
+          - Wazuh Agent: aulas/blueTeam/aula3/instalacao/04_wazuh_agent.md
+          - Graylog Log Routing: aulas/blueTeam/aula3/instalacao/05_graylog_routing.md
+          - Grafana: aulas/blueTeam/aula3/instalacao/06_grafana.md
       - Aula 4:
         - Criptografia Avançada: aulas/blueTeam/aula4/criptografia_avancada.md
         - Fundamentos Matemáticos da Criptografia: aulas/blueTeam/aula4/criptografia_fundamentos_matematicos.md
