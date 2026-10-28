@@ -94,47 +94,108 @@ Por essas razões, a análise em sistema ativo deve ser mínima, precedida pelo 
 
 A investigação de sistemas operacionais baseados em Linux requer a consulta a múltiplos subsistemas que registram autenticações, execução de programas, persistências e modificações em arquivos [4].
 
-#### Logs de Autenticação, Sudo e Sessões SSH
-O subsistema de autenticação e controle de privilégios armazena os registros de tentativas de acesso, transições de privilégios administrativos e fechamento de conexões remotas. 
-A localização varia fundamentalmente entre distribuições Linux:
 
-* **Família Debian / Ubuntu:** os registros residem em `/var/log/auth.log`.
-* **Família Red Hat / CentOS / Rocky Linux / Fedora:** os registros residem em `/var/log/secure`.
+#### Journal do systemd e logs de aplicações
 
-Esses arquivos registram autenticações SSH com senha ou chave pública, recusas de conexão, execuções de comandos delegados via `sudo` e trocas de identidade via `su`. 
+O `systemd-journald` coleta registros do sistema, incluindo mensagens do kernel e de serviços. Também pode receber a saída padrão (`stdout`) e a saída de erro (`stderr`) de aplicações executadas como serviços, conforme sua configuração. Esses registros formam o **journal**, consultado pelo comando **`journalctl`**.
 
-Além dos logs em texto plano, o Linux mantém arquivos de banco de dados binário em `/var/log/`:
-
-* `/var/log/wtmp`: registra todas as sessões de login e logout no sistema, além de reinicializações; é consultado pelo comando `last`.
-* `/var/log/btmp`: armazena tentativas de login que falharam; é consultado pelo comando `lastb` (requer privilégios de superusuário).
-* `/var/log/lastlog`: guarda a data e a origem do último login bem-sucedido de cada usuário cadastrado; é consultado pelo comando `lastlog`.
-
-A listagem a seguir exemplifica o uso do utilitário `lastb` para identificar endereços IP envolvidos em tentativas frustradas de login remoto:
+**Consulta básica e navegação**
 
 ```bash
-# Consultar tentativas de login com falha registradas no btmp
-sudo lastb -a -i -n 15
+# Consultar os registros disponíveis
+sudo journalctl
+
+# Mostrar as últimas 50 entradas
+sudo journalctl -n 50
+
+# Mostrar primeiro as entradas mais recentes
+sudo journalctl -r
+
+# Acompanhar novas entradas em tempo real
+sudo journalctl -f
 ```
 
-* **Finalidade investigativa:** exibir as últimas 15 tentativas de login que falharam, exibindo o endereço IP na última coluna (`-a`) e traduzindo-o em formato numérico (`-i`) para evitar atrasos e possíveis envenenamentos de resolução reversa de DNS (*Domain Name System*). Permite quantificar ataques de força bruta ou enumeração de contas.
-* **Privilégios necessários:** privilégios de `root` (ou via `sudo`), uma vez que `/var/log/btmp` possui permissões estritas de leitura (`0600`) para proteger a confidencialidade de eventuais senhas digitadas acidentalmente no campo de nome de usuário.
-* **Limitações dos resultados:** o arquivo `btmp` é passível de truncamento, deleção acidental ou manipulação intencional caso o atacante já tenha obtido privilégios de superusuário. Adicionalmente, sessões SSH interrompidas antes da fase de negociação de credenciais pelo daemon `sshd` podem não ser registradas no `btmp`.
+Na visualização interativa, use as setas para navegar, `/texto` para pesquisar e `q` para sair. Para encerrar o acompanhamento em tempo real, pressione `Ctrl+C`. A opção `--no-pager` imprime diretamente no terminal.
 
-#### Journal do Systemd e Logs de Aplicações
-Em distribuições contemporâneas gerenciadas pelo systemd, o daemon `systemd-journald` coleta e indexa mensagens de log do kernel, mensagens de inicialização do sistema, mensagens de serviços e saídas de erro padrão (`stderr` / `stdout`) [7].
+**Filtrar por serviço e período**
 
-O utilitário `journalctl` permite consultar o journal binário com filtros avançados de unidade, intervalo de tempo e severidade [7]:
+A opção `-u` seleciona uma unidade do systemd; `--since` e `--until` delimitam o período:
 
 ```bash
-# Consultar eventos do servico sshd em um intervalo temporal especifico
-sudo journalctl -u ssh.service -u sshd.service --since "2026-10-25 00:00:00" --until "2026-10-25 04:00:00" --no-pager
+# Registros do servidor SSH
+sudo journalctl -u ssh.service
+
+# Registros de hoje
+sudo journalctl --since today
+
+# Registros da última hora
+sudo journalctl --since "1 hour ago"
+
+# SSH em um intervalo específico
+sudo journalctl -u ssh.service -u sshd.service \
+  --since "2026-10-25 00:00:00" \
+  --until "2026-10-25 04:00:00" \
+  --no-pager
 ```
 
-* **Finalidade investigativa:** isolar os eventos de um serviço de acesso remoto em uma janela temporal restrita, sem acionar o paginador interativo do terminal (`--no-pager`) [7].
-* **Privilégios necessários:** privilégios de `root` ou associação aos grupos `adm` ou `systemd-journal`. Sem esses privilégios, o usuário comum visualiza apenas os logs gerados pela sua própria sessão.
-* **Limitações dos resultados:** se o systemd estiver configurado com armazenamento volátil (logs mantidos em `/run/log/journal/` em vez de `/var/log/journal/`), o conteúdo do journal é perdido por completo caso o sistema seja reinicializado. Adicionalmente, limites de cota de armazenamento (*RateLimiting*) podem descartar linhas em surtos de atividade.
+Repetir `-u` inclui qualquer uma das unidades indicadas. No último exemplo, aparecem registros de `ssh.service` **ou** `sshd.service`, dentro do período selecionado. As datas usam o fuso local do sistema, salvo indicação explícita de outro fuso.
 
-Nos casos de serviços web, logs de acesso e erro (frequentemente situados em `/var/log/nginx/` ou `/var/log/apache2/`) fornecem a correlação com a camada de aplicação: requisições HTTP POST direcionadas a arquivos incomuns, códigos de resposta HTTP 500 decorrentes de falhas em código explorado ou injeção de parâmetros via URI (*Uniform Resource Identifier*).
+**Filtrar por inicialização, prioridade e conteúdo**
+
+```bash
+# Listar inicializações com registros disponíveis
+sudo journalctl --list-boots
+
+# Registros da inicialização atual
+sudo journalctl -b
+
+# Registros da inicialização anterior
+sudo journalctl -b -1
+
+# Mensagens do kernel da inicialização atual
+sudo journalctl -k -b
+
+# Erros e mensagens de maior gravidade
+sudo journalctl -p err
+
+# Buscar mensagens de falha no SSH
+sudo journalctl -u ssh.service \
+  --grep='Failed|Invalid user|authentication failure'
+```
+
+`-p err` inclui erros e prioridades superiores; `-p warning` inclui também avisos. Entretanto, falhas de autenticação podem ser registradas com prioridade informativa: filtros de severidade podem ocultá-las. A opção `--grep` pesquisa o conteúdo das mensagens por expressão regular.
+
+**Consultar campos dos registros**
+
+Além do texto, cada entrada pode conter campos como identificador do programa, PID e UID:
+
+```bash
+# Mensagens identificadas como sudo
+sudo journalctl SYSLOG_IDENTIFIER=sudo
+
+# Mensagens de processos com UID 1000
+sudo journalctl _UID=1000
+
+# Exibir os campos das últimas cinco entradas
+sudo journalctl -n 5 -o verbose
+```
+
+O campo `_UID` identifica o usuário do processo que originou a mensagem; não necessariamente o usuário mencionado nela ou a conta utilizada numa tentativa de acesso.
+
+**Permissões e limitações**
+
+O acesso ao journal completo normalmente exige `root` ou permissões concedidas por grupos como `systemd-journal` e `adm`. Sem essas permissões, o usuário consulta apenas os registros aos quais tem acesso.
+
+A disponibilidade do histórico depende da configuração:
+
+- **Armazenamento volátil:** registros em `/run/log/journal/` não sobrevivem à reinicialização.
+- **Armazenamento persistente:** registros em `/var/log/journal/` podem sobreviver à reinicialização, conforme a política de retenção.
+- **Limites de espaço e retenção:** podem remover registros antigos.
+- **Limites de frequência:** `RateLimitIntervalSec` e `RateLimitBurst` podem descartar novas mensagens durante surtos de atividade. Isso é diferente de uma cota de armazenamento.
+
+**Logs próprios das aplicações**
+
+Aplicações também podem gravar arquivos separados. Os diretórios `/var/log/nginx/` e `/var/log/apache2/`, mencionados anteriormente, são exemplos cuja utilização depende da configuração do servidor. Ao investigar, consulte tanto o journal do serviço quanto seus logs de acesso e erro. Um código HTTP 500, isoladamente, indica uma falha no processamento da requisição; não comprova exploração.
 
 #### Processos, Relações Hierárquicas e Conexões de Rede
 O pseudo-sistema de arquivos `/proc` é a interface direta fornecida pelo kernel Linux para examinar o estado interno dos processos ativos [9]. Cada processo em execução possui um diretório correspondente identificado pelo seu PID em `/proc/<PID>/`.
