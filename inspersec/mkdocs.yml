@@ -80,12 +80,7 @@ nav:
         - Aplicações Práticas da Criptografia: aulas/blueTeam/aula4/criptografia_aplicada.md
         - Hardening e Gestão de Vulnerabilidades: aulas/blueTeam/aula4/hardening_gestao_gulnerabilidades.md
       - Aula 5:
-        - Cloud Networking: aulas/blueTeam/aula5/aula5.md
-        - Containers e Segurança: aulas/blueTeam/aula5/containers.md
-        - GCP:
-            - VPC no GCP: aulas/blueTeam/aula5/gcp/vpc_gcp.md
-            - Deploy no GCP - Cloud Run + Storage: aulas/blueTeam/aula5/gcp/cloudrun_bucket.md
-            - Deploy no GCP em VM: aulas/blueTeam/aula5/gcp/vm.md
+        - Resposta a Incidentes em Ambientes Linux: aulas/blueTeam/aula5/aula5.md
       - Aula 6:
         - Engenharia de Detecção: aulas/blueTeam/aula6/engenharia_de_deteccao.md
         - Gestão de Vulnerabilidades e Exposição: aulas/blueTeam/aula6/gestao_de_vulnerabilidades_e_exposicao.md
