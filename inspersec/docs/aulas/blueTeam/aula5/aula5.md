@@ -27,6 +27,7 @@ Um **alerta** consiste em um sinal de notificação gerado automaticamente por u
 Um **incidente de segurança**, por sua vez, é uma violação confirmada — ou uma ameaça iminente de violação — das políticas formais de segurança da informação, das políticas de uso aceitável ou dos padrões de operação segura de um sistema [1]. Um incidente pressupõe perda real ou iminente de confidencialidade, integridade ou disponibilidade dos ativos tecnológicos [1].
 
 Para orientar a triagem e o escalonamento operacional, a equipe investigadora deve quantificar três dimensões fundamentais:
+
 * **Escopo:** a extensão e a amplitude do comprometimento na infraestrutura. Define quais nós da rede, nós de processamento (*endpoints*), instâncias em nuvem, contas de usuário e volumes de armazenamento foram expostos ou controlados pelo adversário.
 * **Impacto:** a mensuração do prejuízo decorrente da violação, abrangendo dimensões operacionais (interrupção de serviços críticos), financeiras (custos de resposta e multas regulatórias), reputacionais e de vazamento de propriedade intelectual.
 * **Severidade:** a classificação hierárquica do incidente (geralmente categorizada em baixa, média, alta ou crítica), calculada a partir da combinação entre o impacto estimado e a probabilidade de expansão do escopo frente aos objetivos estratégicos da organização.
@@ -36,6 +37,7 @@ O modelo conceitual de referência para a gestão dessas crises foi substancialm
 A Revisão 3 do NIST SP 800-61 rompe com essa abordagem de manual técnico autônomo e estático [1]. Ela foi formalmente concebida como um perfil comunitário (*Community Profile*) estruturado diretamente sobre o CSF 2.0 (*NIST Cybersecurity Framework* 2.0) [1]. Essa integração reconhece que a resposta a incidentes não opera como um siclo técnico desconectado, mas como uma engrenagem contínua da gestão abrangente de riscos de segurança da informação [1].
 
 Sob a ótica do NIST SP 800-61 Rev. 3, as capacidades operacionais organizam-se pelas seis funções centrais do CSF 2.0 [1]:
+
 * **Governar (*Govern*):** estabelece as políticas, a estrutura de liderança, a definição de papéis e as obrigações regulatórias para a tomada de decisão antes, durante e após um evento crítico [1].
 * **Identificar (*Identify*):** provê o inventário de ativos físicos e lógicos, o mapeamento de dependências de software e a identificação contínua de vulnerabilidades e superfícies de ataque em sistemas Linux [1].
 * **Proteger (*Protect*):** compreende as salvaguardas preventivas que reduzem o impacto e a probabilidade de intrusões, como a gestão de identidades, o controle rigoroso de privilégios de acesso e o isolamento de ambientes com segmentação de rede [1].
@@ -46,7 +48,7 @@ Sob a ótica do NIST SP 800-61 Rev. 3, as capacidades operacionais organizam-se 
 Nesse arranjo, as funções **Detectar**, **Responder** e **Recuperar** formam o núcleo dinâmico do ciclo de vida ativo do incidente, enquanto **Governar**, **Identificar** e **Proteger** criam os pré-requisitos organizacionais e técnicos para que essa resposta ocorra de forma coordenada [1]. A **melhoria contínua** é implementada por meio de um ciclo iterativo de retroalimentação: os dados e lições aprendidas em um incidente geram novas regras de monitoramento em *Detectar*, revisam arquiteturas de acesso em *Proteger*, e atualizam o plano de gerenciamento de risco em *Governar* [1].
 
 
-![](/inspersec/docs/aulas/blueTeam/aula5/rev2_to_rev3.png)
+![](rev2_to_rev3.png)
 
 
 ---
@@ -57,12 +59,14 @@ Nesse arranjo, as funções **Detectar**, **Responder** e **Recuperar** formam o
 A atuação forense no contexto de resposta a incidentes difere da perícia criminal tradicional por priorizar a velocidade de contenção e a restauração do negócio, sem abrir mão da confiabilidade técnica e da rastreabilidade metodológica. O guia metodológico de referência para a condução dessas tarefas é o NIST SP 800-86 (*Guide to Integrating Forensic Techniques into Incident Response*), publicação seminal de 2006 que estabeleceu os fundamentos para a integração de técnicas forenses às rotinas de TI [2]. Embora date de 2006 e não deva ser consultado como documentação de comandos ou ferramentas de software contemporâneas, os princípios metodológicos propostos pelo NIST SP 800-86 permanecem fundamentais para assegurar a validade de qualquer investigação técnica [2].
 
 O processo forense estruturado pelo NIST SP 800-86 desdobra-se em quatro fases essenciais [2]:
+
 1. **Coleta (*Collection*):** consiste em identificar, catalogar, proteger e extrair dados de fontes potenciais de evidência, mantendo a integridade lógica e registrando a cadeia de custódia ininterrupta de cada item adquirido [2].
 2. **Exame (*Examination*):** envolve o processamento sistemático dos dados brutos com ferramentas automatizadas e inspeções manuais para filtrar ruídos, extrair artefatos relevantes e expor dados ocultos ou apagados, sem modificar o suporte de origem [2].
 3. **Análise (*Analysis*):** é a etapa em que o analista correlaciona os artefatos filtrados, contextualiza as descobertas com a arquitetura do sistema e constrói hipóteses para responder quem, quando, como e quais sistemas foram impactados [2].
 4. **Elaboração de Relatório (*Reporting*):** documenta todo o procedimento adotado, descrevendo formalmente as hipóteses levantadas, os fatos constatados, as ferramentas utilizadas (com suas respectivas versões) e as limitações encontradas na análise [2].
 
 A preservação da integridade das evidências digitais apoia-se em quatro pilares metodológicos [2]:
+
 * **Integridade e Funções de Hash Criptográfico:** cada arquivo, partição ou fluxo de memória coletado deve ter seu valor de resumo criptográfico (*hash*) calculado imediatamente após a coleta com algoritmos robustos, como SHA-256 (*Secure Hash Algorithm 256-bit*). Esse valor atua como uma impressão digital matemática: se um único bit for alterado, o hash resultante será completamente diferente, comprovando que a evidência foi preservada em seu estado primitivo [2].
 * **Cadeia de Custódia e Documentação das Ações:** a cadeia de custódia consiste em um registro cronológico formal que descreve quem coletou a evidência, a data e hora exatas, onde o artefato foi armazenado fisicamente e logicamente, e todos os indivíduos que tiveram acesso a ele [2]. Simultaneamente, todos os comandos emitidos pelos analistas durante o exame devem ser anotados em um diário de bordo com seus parâmetros e saídas.
 * **Uso Exclusivo de Cópias de Trabalho (*Working Copies*):** o investigador nunca deve realizar testes, buscas complexas ou execuções diretamente sobre o artefato original ou sobre a imagem forense primária [2]. A prática correta exige a geração de uma imagem bit-a-bit do disco (formato RAW ou formatos encapsulados com metadados como EWF/E01), a validação de seu hash contra a mídia de origem, a criação de uma cópia de trabalho dessa imagem e, finalmente, a montagem da cópia de trabalho em modo estritamente de leitura (*read-only*) para as análises analíticas [2].
@@ -70,11 +74,12 @@ A preservação da integridade das evidências digitais apoia-se em quatro pilar
 
 Um dos dilemas centrais do analista forense consiste na escolha entre a **investigação em sistema ativo** (*live analysis*) e a **análise forense de imagem de disco** (*dead analysis* ou *offline forensics*):
 
-A **análise de imagem (*offline*)** ocorre com a máquina desligada ou após a suspensão completa de uma máquina virtual. Seus pontos fortes são a garantia de imutabilidade dos dados persistidos e a possibilidade de recuperação de arquivos deletados em áreas não alocadas do sistema de arquivos (*unallocated space*). Contudo, essa modalidade é cega para dados voláteis que residiam exclusivamente na memória de acesso aleatório (RAM - *Random Access Memory*).
+A **análise de imagem (*offline*)** ocorre com a máquina desligada ou após a suspensão completa de uma máquina virtual. Seus pontos fortes são a garantia de imutabilidade dos dados persistidos e a possibilidade de recuperação de arquivos deletados em áreas não alocadas do sistema de arquivos (*unallocated space*). Contudo, essa modalidade é cega para dados voláteis que residiam exclusivamente na memória de acesso aleatório (RAM - *Random Access Memory*) obs: não é o álbum do Daft Punk.
 
 A **investigação em sistema ativo (*live*)** é indispensável para coletar informações voláteis críticas: chaves de criptografia em memória, conexões de rede em andamento, processos ativos que não deixaram rastros em disco e arquivos em execução que foram deletados mas permanecem abertos pelo kernel Linux via descritores em `/proc/<PID>/fd/`. 
 
 No entanto, operar em um sistema Linux em execução introduz o **efeito observador**: qualquer comando executado no sistema ativo altera seu estado interno. Ao abrir um terminal ou emitir comandos em um sistema sob investigação, o analista:
+
 * Altera carimbos de data/hora de acesso a arquivos (*atime*) nas bibliotecas dinâmicas e binários chamados.
 * Aloca novas estruturas de descritores de processo no kernel, gerando novos identificadores de processo (PIDs - *Process Identifiers*) e substituindo buffers voláteis.
 * Aloca páginas de memória RAM, podendo sobrescrever fragmentos de código malicioso ou chaves de sessão deixadas pelo adversário.
@@ -92,12 +97,14 @@ A investigação de sistemas operacionais baseados em Linux requer a consulta a 
 #### Logs de Autenticação, Sudo e Sessões SSH
 O subsistema de autenticação e controle de privilégios armazena os registros de tentativas de acesso, transições de privilégios administrativos e fechamento de conexões remotas. 
 A localização varia fundamentalmente entre distribuições Linux:
+
 * **Família Debian / Ubuntu:** os registros residem em `/var/log/auth.log`.
 * **Família Red Hat / CentOS / Rocky Linux / Fedora:** os registros residem em `/var/log/secure`.
 
 Esses arquivos registram autenticações SSH com senha ou chave pública, recusas de conexão, execuções de comandos delegados via `sudo` e trocas de identidade via `su`. 
 
 Além dos logs em texto plano, o Linux mantém arquivos de banco de dados binário em `/var/log/`:
+
 * `/var/log/wtmp`: registra todas as sessões de login e logout no sistema, além de reinicializações; é consultado pelo comando `last`.
 * `/var/log/btmp`: armazena tentativas de login que falharam; é consultado pelo comando `lastb` (requer privilégios de superusuário).
 * `/var/log/lastlog`: guarda a data e a origem do último login bem-sucedido de cada usuário cadastrado; é consultado pelo comando `lastlog`.
@@ -158,6 +165,7 @@ sudo ss -tulpn
 
 #### Contas, Grupos, Permissões e Chaves SSH
 A gestão de identidades no Linux reside primariamente em arquivos de configuração local:
+
 * `/etc/passwd`: mapeia o nome de usuário, UID (*User Identifier*), GID (*Group Identifier*), diretório base (*home*) e o shell padrão. Atacantes podem adicionar contas com UID 0 (privilégio equivalente ao `root`) ou modificar contas de sistema (como `daemon` ou `nobody`) atribuindo-lhes shells interativos como `/bin/bash` em vez de `/usr/sbin/nologin`.
 * `/etc/shadow`: armazena os hashes criptográficos de senha e políticas de expiração. Contas com campos de senha contendo `!` ou `*` estão bloqueadas para autenticação por senha.
 * `/etc/sudoers` e `/etc/sudoers.d/`: controlam quais usuários e grupos possuem permissão de elevar privilégios. Diretivas permissivas como `NOPASSWD: ALL` garantem elevação imediata e representam artefatos primários de pós-exploração.
@@ -178,12 +186,14 @@ sudo find / -perm -4000 -user root -type f -exec ls -la {} + 2>/dev/null
 #### Histórico de Shell e Metadados de Arquivos
 O histórico de comandos digitados por usuários interativos é mantido em arquivos como `~/.bash_history` ou `~/.zsh_history`. Esses arquivos podem expor linhas de comando invocadas pelo adversário, diretórios acessados e senhas digitadas acidentalmente.
 Contudo, o histórico de shell possui severas limitações:
+
 * O histórico é armazenado em memória durante a sessão e gravado no disco apenas no encerramento normal do shell. Caso o terminal seja fechado abruptamente com `kill -9`, os comandos daquela sessão não são gravados.
 * O adversário pode desativar a gravação com o comando `unset HISTFILE` ou `set +o history`.
 * Se a variável de ambiente `HISTCONTROL` contiver `ignorespace`, comandos precedidos por um simples caractere de espaço não são gravados no arquivo de histórico.
 * Arquivos de histórico podem ser editados manualmente ou apagados com `shred` ou `rm`.
 
 A integridade temporal de arquivos em disco apoia-se na análise de metadados. O Linux gerencia quatro carimbos de data/hora principais (frequentemente agrupados pelo acrônimo forense MACB):
+
 * **M (*Modification time* - `mtime`):** data e hora da última modificação efetuada no **conteúdo** do arquivo.
 * **A (*Access time* - `atime`):** data e hora do último acesso para leitura do arquivo. Em muitos sistemas modernos, essa métrica é truncada ou atrasada para poupar operações de I/O (opções de montagem de partição como `noatime` ou `relatime`).
 * **C (*Change time* - `ctime`):** data e hora da última modificação nos **metadados** ou no inode do arquivo (como alterações de permissão, proprietário ou nome). Ao contrário do `mtime` e `atime`, o `ctime` não pode ser forjado diretamente via chamadas de sistema ordinárias em espaço de usuário como `utime()`, sendo atualizado compulsoriamente pelo kernel.
@@ -218,6 +228,7 @@ systemctl list-timers --all
 
 #### Ressalva Investigativa: Ausência de Evidência
 Um erro frequente cometido por analistas iniciantes é assumir que a falta de registros em logs comprova a inexistência de atividade adversária. **A ausência de registros não constitui prova de ausência de atividade**. O atacante pode:
+
 1. Ter executado código diretamente em memória por meio de técnicas de injeção em processos legítimos sem gerar arquivos em disco.
 2. Ter contornado o subsistema de log operando em sessões em que o logging foi desligado antes da execução de comandos.
 3. Ter truncado ou apagado cirurgicamente os arquivos de log após elevar privilégios.
@@ -231,20 +242,20 @@ Portanto, a conclusão de que uma ação não ocorreu deve ser sustentada pela p
 Para analisar as atividades de intrusão com metodologia científica, a indústria utiliza a matriz **MITRE ATT&CK** (*Adversarial Tactics, Techniques, and Common Knowledge*), uma base de conhecimento estruturada que cataloga comportamentos reais de atacantes [3]. No ecossistema Linux, as evidências de pós-exploração distribuem-se predominantemente em táticas de Execução, Persistência, Elevação de Privilégios e Comando e Controle (C2) [3].
 
 #### Mapeamento de Táticas e Técnicas no MITRE ATT&CK para Linux
-* **Execução (*Execution*):** compreende os métodos utilizados para executar comandos na máquina vítima [3]. No Linux, a técnica prevalente é o uso de interpretadores de comandos Unix (*Command and Scripting Interpreter: Unix Shell* — **T1059.004**), como sessões de `/bin/bash`, scripts `/bin/sh` ou execução de código Python e Perl [3].
-* **Persistência (*Persistence*):** compreende os mecanismos empregados para manter o acesso ao endpoint mesmo após reinicializações, interrupções de rede ou encerramento de processos em execução [3][5]. As técnicas centrais incluem:
-  * *Scheduled Task/Job: Cron* (**T1053.003**): criação ou adulteração de entradas em `/etc/crontab` ou `/var/spool/cron/crontabs/` programadas para disparar shells reversos periodicamente [3][5].
-  * *Create or Modify System Process: Systemd Service* (**T1543.002**): criação de arquivos `.service` maliciosos para execução autônoma na inicialização do sistema [3][5].
-  * *Account Manipulation: SSH Authorized Keys* (**T1098.004**): inserção de chaves criptográficas públicas em `~/.ssh/authorized_keys` para assegurar acesso interativo remoto sem necessidade de conhecer senhas de usuários [3][5].
-  * *Create Account: Local Account* (**T1136.001**): provisionamento de novos usuários com privilégios locais para servirem de portas de entrada secundárias [3].
-  * *Event Triggered Execution: .bash_profile and .bashrc* (**T1546.004**): inserção de instruções maliciosas nos scripts de inicialização de ambiente do shell, acionadas automaticamente sempre que o usuário efetua login interativo [3][5].
-* **Elevação de Privilégios (*Privilege Escalation*):** processos executados para obter privilégios de superusuário (`root`) a partir de uma sessão restrita [3]. Destacam-se:
-  * *Abuse Elevation Control Mechanism: Sudo and Sudo Caching* (**T1548.003**): exploração de permissões indevidas no arquivo `/etc/sudoers` (como utilitários de sistema que permitem *escape* para o shell) ou sequestro de sessões autenticadas do sudo via reaproveitamento de tokens em `/var/run/sudo/ts/` [3].
-  * *Abuse Elevation Control Mechanism: Setuid and Setgid* (**T1548.001**): execução de binários modificados com o bit SUID para transicionar a identidade do processo para UID 0 [3].
-* **Comando e Controle (*Command and Control* - C2):** técnicas para comunicar-se com a infraestrutura controlada pelo atacante fora da rede da vítima [3]:
-  * *Application Layer Protocol: Web Protocols* (**T1071.001**): tunelamento de comandos e exfiltração de dados camuflados em requisições HTTP e HTTPS [3].
-  * *Non-Application Layer Protocol* (**T1095**): sessões diretas baseadas em sockets TCP/UDP brutos para viabilizar conexões de *reverse shell* [3].
-  * *Ingress Tool Transfer* (**T1105**): download de scripts, binários de exploração e utilitários auxiliares a partir de servidores externos através de comandos utilitários como `curl`, `wget` ou transferência via sockets Python [3].
+1. **Execução (*Execution*):** compreende os métodos utilizados para executar comandos na máquina vítima [3]. No Linux, a técnica prevalente é o uso de interpretadores de comandos Unix (*Command and Scripting Interpreter: Unix Shell* — **T1059.004**), como sessões de `/bin/bash`, scripts `/bin/sh` ou execução de código Python e Perl [3].
+2. **Persistência (*Persistence*):** compreende os mecanismos empregados para manter o acesso ao endpoint mesmo após reinicializações, interrupções de rede ou encerramento de processos em execução [3][5]. As técnicas centrais incluem:
+    * *Scheduled Task/Job: Cron* (**T1053.003**): criação ou adulteração de entradas em `/etc/crontab` ou `/var/spool/cron/crontabs/` programadas para disparar shells reversos periodicamente [3][5].
+    * *Create or Modify System Process: Systemd Service* (**T1543.002**): criação de arquivos `.service` maliciosos para execução autônoma na inicialização do sistema [3][5].
+    * *Account Manipulation: SSH Authorized Keys* (**T1098.004**): inserção de chaves criptográficas públicas em `~/.ssh/authorized_keys` para assegurar acesso interativo remoto sem necessidade de conhecer senhas de usuários [3][5].
+    * *Create Account: Local Account* (**T1136.001**): provisionamento de novos usuários com privilégios locais para servirem de portas de entrada secundárias [3].
+    * *Event Triggered Execution: .bash_profile and .bashrc* (**T1546.004**): inserção de instruções maliciosas nos scripts de inicialização de ambiente do shell, acionadas automaticamente sempre que o usuário efetua login interativo [3][5].
+3. **Elevação de Privilégios (*Privilege Escalation*):** processos executados para obter privilégios de superusuário (`root`) a partir de uma sessão restrita [3]. Destacam-se:
+    * *Abuse Elevation Control Mechanism: Sudo and Sudo Caching* (**T1548.003**): exploração de permissões indevidas no arquivo `/etc/sudoers` (como utilitários de sistema que permitem *escape* para o shell) ou sequestro de sessões autenticadas do sudo via reaproveitamento de tokens em `/var/run/sudo/ts/` [3].
+    * *Abuse Elevation Control Mechanism: Setuid and Setgid* (**T1548.001**): execução de binários modificados com o bit SUID para transicionar a identidade do processo para UID 0 [3].
+4. **Comando e Controle (*Command and Control* - C2):** técnicas para comunicar-se com a infraestrutura controlada pelo atacante fora da rede da vítima [3]:
+    * *Application Layer Protocol: Web Protocols* (**T1071.001**): tunelamento de comandos e exfiltração de dados camuflados em requisições HTTP e HTTPS [3].
+    * *Non-Application Layer Protocol* (**T1095**): sessões diretas baseadas em sockets TCP/UDP brutos para viabilizar conexões de *reverse shell* [3].
+    * *Ingress Tool Transfer* (**T1105**): download de scripts, binários de exploração e utilitários auxiliares a partir de servidores externos através de comandos utilitários como `curl`, `wget` ou transferência via sockets Python [3].
 
 #### Mecanismos de Persistência e Engenharia de Detecção
 De acordo com os estudos de engenharia de detecção da Elastic Security Labs, a persistência no Linux baseia-se fundamentalmente no abuso de subsistemas nativos e legítimos do sistema operacional, os quais foram projetados para rodar de maneira invisível e sem supervisão direta do usuário [5].
@@ -301,22 +312,22 @@ Como atividade prática desta aula, os estudantes deverão realizar uma análise
 
 ### Referências Bibliográficas
 
-[1] National Institute of Standards and Technology (NIST). *Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile* (NIST Special Publication 800-61 Rev. 3). Gaithersburg: NIST, 2025. Disponível em: https://csrc.nist.gov/pubs/sp/800/61/r3/final
+[1] National Institute of Standards and Technology (NIST). *Incident Response Recommendations and Considerations for Cybersecurity Risk Management: A CSF 2.0 Community Profile* (NIST Special Publication 800-61 Rev. 3). Gaithersburg: NIST, 2025. Disponível em: <https://csrc.nist.gov/pubs/sp/800/61/r3/final>
 
-[2] Kent, Karen; Chevalier, Suzanne; Grance, Tim; Dang, Hung. *Guide to Integrating Forensic Techniques into Incident Response* (NIST Special Publication 800-86). Gaithersburg: National Institute of Standards and Technology (NIST), 2006. Disponível em: https://www.nist.gov/publications/guide-integrating-forensic-techniques-incident-response
+[2] Kent, Karen; Chevalier, Suzanne; Grance, Tim; Dang, Hung. *Guide to Integrating Forensic Techniques into Incident Response* (NIST Special Publication 800-86). Gaithersburg: National Institute of Standards and Technology (NIST), 2006. Disponível em: <https://www.nist.gov/publications/guide-integrating-forensic-techniques-incident-response>
 
-[3] The MITRE Corporation. *MITRE ATT&CK Matrix for Enterprise: Linux*. McLean: The MITRE Corporation, 2024. Disponível em: https://attack.mitre.org/matrices/enterprise/linux/
+[3] The MITRE Corporation. *MITRE ATT&CK Matrix for Enterprise: Linux*. McLean: The MITRE Corporation, 2024. Disponível em: <https://attack.mitre.org/matrices/enterprise/linux/>
 
-[4] TryHackMe. *Linux Endpoint Investigation*. TryHackMe, 2023. Disponível em: https://tryhackme.com/module/linux-endpoint-investigation
+[4] TryHackMe. *Linux Endpoint Investigation*. TryHackMe, 2023. Disponível em: <https://tryhackme.com/module/linux-endpoint-investigation>
 
-[5] Elastic Security Labs. *Linux Detection Engineering: A primer on persistence mechanisms*. Mountain View: Elastic, 2023. Disponível em: https://www.elastic.co/security-labs/threat-command/primer-on-persistence-mechanisms
+[5] Elastic Security Labs. *Linux Detection Engineering: A primer on persistence mechanisms*. Mountain View: Elastic, 2023. Disponível em: <https://www.elastic.co/security-labs/threat-command/primer-on-persistence-mechanisms>
 
-[6] CyberDefenders. *Hammered*. CyberDefenders, 2020. Disponível em: https://cyberdefenders.org/blueteam-ctf-challenges/hammered/
+[6] CyberDefenders. *Hammered*. CyberDefenders, 2020. Disponível em: <https://cyberdefenders.org/blueteam-ctf-challenges/hammered/>
 
-[7] systemd Project. *journalctl(1) — Query the systemd journal*. systemd Manual Pages, freedesktop.org. Disponível em: https://www.freedesktop.org/software/systemd/man/latest/journalctl.html
+[7] systemd Project. *journalctl(1) — Query the systemd journal*. systemd Manual Pages, freedesktop.org. Disponível em: <https://www.freedesktop.org/software/systemd/man/latest/journalctl.html>
 
-[8] Kerrisk, Michael et al. *ss(8) — Another utility to investigate sockets*. Linux man-pages project / iproute2. Disponível em: https://man7.org/linux/man-pages/man8/ss.8.html
+[8] Kerrisk, Michael et al. *ss(8) — Another utility to investigate sockets*. Linux man-pages project / iproute2. Disponível em: <https://man7.org/linux/man-pages/man8/ss.8.html>
 
-[9] procps-ng Project. *ps(1) — Report a snapshot of the current processes*. Linux man-pages project. Disponível em: https://man7.org/linux/man-pages/man1/ps.1.html
+[9] procps-ng Project. *ps(1) — Report a snapshot of the current processes*. Linux man-pages project. Disponível em: <https://man7.org/linux/man-pages/man1/ps.1.html>
 
-[10] Free Software Foundation (FSF). *GNU Coreutils: stat invocation*. GNU Operating System Manual. Disponível em: https://www.gnu.org/software/coreutils/manual/html_node/stat-invocation.html
+[10] Free Software Foundation (FSF). *GNU Coreutils: stat invocation*. GNU Operating System Manual. Disponível em: <https://www.gnu.org/software/coreutils/manual/html_node/stat-invocation.html>
