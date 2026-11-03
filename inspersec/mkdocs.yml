@@ -57,6 +57,7 @@ nav:
       - Extras:
         - Linux - Shells e Processos: aulas/redTeam/aulasextras/linux-shells-processos.md
         - Criptomoedas e Segurança: aulas/redTeam/aulasextras/criptomoedas.md
+        - Prompt Injection: aulas/redTeam/aulasextras/aurora.md
     - Blue Team:
       - Aula 1:
         - Fundamentos de Blue Team: aulas/blueTeam/aula1/fundamentos.md
